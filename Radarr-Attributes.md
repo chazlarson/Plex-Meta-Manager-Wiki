@@ -22,7 +22,7 @@ radarr:
 
 | Name | Attribute | Allowed Values| Default | Required |
 | :--- | :--- | :--- | :---: | :---: |
-| Radarr URL | `url` | Radarr URL<br>**Example:** http://192.168.1.12:32788 | N/A | :heavy_check_mark: |
+| Radarr URL | `url` | Radarr URL (Including URL Base if set)<br>**Example:** http://192.168.1.12:32788 | N/A | :heavy_check_mark: |
 | API Token | `token` | Radarr API Token | N/A | :heavy_check_mark: |
 | Add | `add` | Add missing movies found to Radarr<br>**boolean:** true or false | false | :x: |
 | Add Existing | `add_existing` | Add movie existing in this collection to Radarr<br>**boolean:** true or false | false | :x: |
