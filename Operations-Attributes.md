@@ -79,13 +79,12 @@ library:
           - 10
         remove_suffix: Collection
         dictionary_variables:
-          poster:
-            my_collection_poster:
-              119: https://www.themoviedb.org/t/p/original/oENY593nKRVL2PnxXsMtlh8izb4.jpg
-              531241: https://www.themoviedb.org/t/p/original/nogV4th2P5QWYvQIMiWHj4CFLU9.jpg
+          my_collection_poster:
+            119: https://www.themoviedb.org/t/p/original/oENY593nKRVL2PnxXsMtlh8izb4.jpg
+            531241: https://www.themoviedb.org/t/p/original/nogV4th2P5QWYvQIMiWHj4CFLU9.jpg
         template:
           optional:
-            - poster
+            - my_collection_poster
           tmdb_collection_details: <<collection_id>>
           collection_order: release
           url_poster: <<my_collection_poster>>
