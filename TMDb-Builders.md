@@ -8,7 +8,7 @@ You can find items using the features of [TheMovieDb.org](https://www.themoviedb
 | [TMDb List](#tmdb-list) | `tmdb_list` | Finds every item in the TMDb List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [TMDb Actor](#tmdb-actor) | `tmdb_actor` | Finds every item in the TMDb Person's Actor Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [TMDb Crew](#tmdb-crew) | `tmdb_crew` | Finds every item in the TMDb Person's Crew Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Director](#tmdb-director) | `tmdb_director` | Finds every item in the TMDb Person's Actor Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [TMDb Director](#tmdb-director) | `tmdb_director` | Finds every item in the TMDb Person's Director Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [TMDb Producer](#tmdb-producer) | `tmdb_producer` | Finds every item in the TMDb Person's Producer Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [TMDb Writer](#tmdb-writer) | `tmdb_writer` | Finds every item in the TMDb Person's Writer Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [TMDb Movie](#tmdb-movie) | `tmdb_movie` | Finds the movie specified | :heavy_check_mark: | :x: | :x: |
