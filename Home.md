@@ -14,9 +14,9 @@ This wiki should tell you everything you need to know about the script to get it
 
 1. Install Plex Meta Manager either by installing Python3 and following the [Local Installation Guide](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Installation)
    or by installing Docker and following the [Docker Installation Guide](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Docker-Installation) or the [unRAID Installation Guide](https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Walkthrough).
-2. Once installed, you have to create a [Configuration File](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Configuration-File) filled with all your values to connect to the various services. 
-3. After that you can start updating Metadata and building automatic Collections by creating a [Metadata File](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Metadata-File) for each Library you want to interact with.
-4. Explore the [Wiki](https://github.com/meisnate12/Plex-Meta-Manager/wiki) to see all the different Collection Builders that can be used to create collections. 
+2. Once installed, you have to create a [Configuration File](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Configuration-File) filled with all your values to connect to the various services.
+3. After that you can start updating Metadata and building automatic Collections by creating a [Metadata File](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Metadata-and-Playlist-File) for each Library you want to interact with.
+4. Explore the [Wiki](https://github.com/meisnate12/Plex-Meta-Manager/wiki) to see all the different Collection Builders that can be used to create collections.
 
 ## IBRACORP Video Walkthrough
 
@@ -49,8 +49,8 @@ This wiki should tell you everything you need to know about the script to get it
   - [Plex Attributes](Plex-Attributes)
   - [TMDb Attributes](TMDb-Attributes)
   - [Tautulli Attributes](Tautulli-Attributes)
-  - [OMDb Attributes](OMDb-Attributes) 
-  - [Notifiarr Attributes](Notifiarr-Attributes) 
+  - [OMDb Attributes](OMDb-Attributes)
+  - [Notifiarr Attributes](Notifiarr-Attributes)
   - [AniDB Attributes](AniDB-Attributes)
   - [Radarr Attributes](Radarr-Attributes)
   - [Sonarr Attributes](Sonarr-Attributes)
