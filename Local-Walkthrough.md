@@ -310,7 +310,7 @@ This article will describe how to get a token: [Finding an authentication token]
 
 #### Editing the config template
 
-First, make a copy of the template, then open the copy in an editor:
+First, make a copy of the template.  This is going to create a copy of the base template that you can then edit.  You only need to do this once.
 
 <details>
   <summary>OS X/Linux</summary>
@@ -318,6 +318,27 @@ First, make a copy of the template, then open the copy in an editor:
 
   ```
   cp config/config.yml.template config/config.yml
+  ```
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+
+  ```
+  copy .\config\config.yml.template .\config\config.yml
+  ```
+</details>
+
+---
+
+Now open the copy in an editor:
+
+<details>
+  <summary>OS X/Linux</summary>
+  <br />
+
+  ```
   nano config/config.yml
   ```
 
@@ -329,12 +350,13 @@ First, make a copy of the template, then open the copy in an editor:
   <br />
 
   ```
-  copy .\config\config.yml.template .\config\config.yml
   notepad .\config\config.yml
   ```
   I’m using `notepad` here simply because it’s built into Windows.  You can use any other text editor provided it saves files as PLAIN TEXT.
 
 </details>
+
+From here on in, when I say "open the config file", I mean this `nano` or `notepad` command.  You don't want to copy the template again.
 
 ---
 
@@ -418,7 +440,7 @@ I’ve removed some of the lines for space, but have left the important bits:
 
 You can see there that PMM found its config file, was able to connect to TMDB, was able to connect to Plex, and then failed trying to read the “Movies-HIDDEN” library, which of course doesn’t exist.
 
-Open the config file again and fix the name of the Movies library to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
+Open the config file again and change "Movies-HIDDEN" [or whatever you used in the previous step] to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
 
 My Movies library is called “Main Movies", so mine looks like this:
 

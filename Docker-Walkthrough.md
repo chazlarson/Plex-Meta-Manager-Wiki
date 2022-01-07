@@ -169,8 +169,13 @@ First, make a copy of the template, then open the copy in an editor:
   <summary>OS X/Linux</summary>
   <br />
 
+  Get a copy of the template to edit:
   ```
   curl -fLvo config.yml https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template
+  ```
+
+  Open it in an editor:
+  ```
   nano config.yml
   ```
 
@@ -189,6 +194,8 @@ First, make a copy of the template, then open the copy in an editor:
   I’m using `notepad` here simply because it’s built into Windows.  You can use any other text editor provided it saves files as PLAIN TEXT.
 
 </details>
+
+From here on in, when I say "open the config file", I mean the `nano` or `notepad` command.  You don't want to download the template again.
 
 ---
 
