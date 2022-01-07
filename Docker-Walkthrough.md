@@ -282,7 +282,7 @@ I’ve removed some of the lines for space, but have left the important bits:
 
 You can see there that PMM found its config file, was able to connect to TMDB, was able to connect to Plex, and then failed trying to read the “Movies-HIDDEN” library, which of course doesn’t exist.
 
-Open the config file again and fix the name of the Movies library to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
+Open the config file again and change "Movies-HIDDEN" [or whatever you used in the previous step] to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
 
 My Movies library is called “Main Movies", so mine looks like this:
 
