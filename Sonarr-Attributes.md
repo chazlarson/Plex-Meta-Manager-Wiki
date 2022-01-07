@@ -25,7 +25,7 @@ sonarr:
 
 | Name | Attribute | Allowed Values| Default | Required |
 | :--- | :--- | :--- | :---: | :---: |
-| Sonarr URL | `url` | Sonarr URL<br>**Example:** http://192.168.1.12:32788 | N/A | :heavy_check_mark: |
+| Sonarr URL | `url` | Sonarr URL (Including URL Base if set)<br>**Example:** http://192.168.1.12:32788 | N/A | :heavy_check_mark: |
 | API Token | `token` | Sonarr API Token | N/A | :heavy_check_mark: |
 | Add | `add` | Add missing shows found to Sonarr<br>**boolean:** true or false | false | :x: |
 | Add Existing | `add_existing` | Add shows existing in this collection to Sonarr<br>**boolean:** true or false | false | :x: |
