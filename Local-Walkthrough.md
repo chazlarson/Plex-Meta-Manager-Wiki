@@ -20,6 +20,10 @@ This walkthrough is going to be pretty pedantic.  I’m assuming you’re readin
 
 I am assuming you do not have any of these tools already installed.  When writing this up I started with a brand new Windows 10 install.
 
+### If you are using Windows, do everything here in Powershell.  You don't need to run it as an Administrator.  Git, notably, installs its own command line interface.  Don't use that.  Do everything here is Powershell.
+
+### On OSX or Linux, you can use any terminal or shell.
+
 ### Installing Python.
 
 NOTE:
@@ -105,6 +109,8 @@ You need to use Python 3.9, not Python 3.10.  There's one specific requirement t
   Run the install; you can probably just accept the defaults and click through except for the step that asks you to choose an editor; you probably want to choose something other than the default there:
 
   ![](https://i.ibb.co/vsL4fDG/Screen-Shot-2021-10-21-at-12-08-39-PM.png)
+
+  This install comes with its own command line interface.  Do not use this interface in this walkthrough.  Continue to do everything here in Powershell.
 
 </details>
 

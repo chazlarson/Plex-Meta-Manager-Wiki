@@ -30,7 +30,7 @@ There are two mappings allowed in the Playlist File's root:
 * You can find example Playlist Files in the [Plex Meta Manager Configs Repository](https://github.com/meisnate12/Plex-Meta-Manager-Configs)
 
 ## Collections and Playlists Mappings
-The script can run different collection/playlist operations like automatically build collections/playlists, send missing movies/series to radarr/sonarr, and even refresh item's added within the last 30 days in order to update their metadata all using the `collections`/`platlists` attributes.
+The script can run different collection/playlist operations like automatically build collections/playlists, send missing movies/series to radarr/sonarr, and even refresh item's added within the last 30 days in order to update their metadata all using the `collections`/`playlists` attributes.
 
 Each collection/playlist operation is defined by the mapping name which becomes the name of the Plex collection/playlist if it's created.
 
