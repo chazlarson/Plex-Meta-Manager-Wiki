@@ -50,6 +50,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 | [Run Libraries Only](#libraries-only) | `-lo` or `--libraries-only` | `PMM_LIBRARIES_ONLY` | Process everything but collections during the run | `False` |
 | [Run Collections](#run-collections) | `-rc` or `--run-collections` | `PMM_COLLECTIONS` | comma-separated list of collection names to process | All Collections |
 | [Run Libraries](#run-libraries) | `-rl` or `--run-libraries` | `PMM_LIBRARIES` | comma-separated list of library names to process | All libraries |
+| [Run Libraries First](#run-libraries-first) | `-lf` or `--libraries-first` | `PMM_LIBRARIES_FIRST` | Run library operations first before collections during the run | `False` |
+| [Ignore Schedules](#ignore-schedules) | `-is` or `--ignore-schedules` | `PMM_IGNORE_SCHEDULES` | Ignore all schedules during the run except for range schedules | `False` |
+| [Delete Collections](#delete-collections) | `-dc` or `--delete-collections` | `PMM_DELETE_COLLECTIONS` | Delete all collections in a Library before a run | `False` |
 | [Resume Run](#resume-run) | `-re` or `--resume` | `PMM_RESUME` | Name of the Collection you want to resume the run at | ` ` |
 | [No Countdown](#no-countdown) | `-nc` or `--no-countdown` | `PMM_NO_COUNTDOWN` | Run without displaying the countdown | `False` |
 | [No Missing](#no-missing) | `-nm` or `--no-missing` | `PMM_NO_MISSING` | Run without any of the missing movie/show functions | `False` |
@@ -60,7 +63,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 * Environmental Variable values are used over Shell Command values 
 
 ### Config
-To choose the location of the YAML config file use the `--config` option
+To choose the location of the YAML config file use the `--config` option.
 
 <details>
   <summary>Local</summary>
@@ -80,7 +83,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Time to Run
-To choose the times when the script will run each day use a comma-separated list with the `--time` option
+To choose the times when the script will run each day use a comma-separated list with the `--time` option.
 
 <details>
   <summary>Local</summary>
@@ -100,7 +103,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run
-To just run the script without having it continuously run use the `--run` option
+To just run the script without having it continuously run use the `--run` option.
 
 <details>
   <summary>Local</summary>
@@ -120,7 +123,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Tests
-To run the script in debug mode while only running collections that have `test: true` use the `--run-tests` option
+To run the script in debug mode while only running collections that have `test: true` use the `--run-tests` option.
 
 <details>
   <summary>Local</summary>
@@ -140,7 +143,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Collections Only
-To have the script run only collections and not any library operations use the `--collections-only` option
+To have the script run only collections and not any library operations use the `--collections-only` option.
 
 <details>
   <summary>Local</summary>
@@ -160,7 +163,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Libraries Only
-To have the script run only library operations and not any collections use the `--libraries-only` option
+To have the script run only library operations and not any collections use the `--libraries-only` option.
 
 <details>
   <summary>Local</summary>
@@ -180,7 +183,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Collections
-To have the script run only using the collections in the comma-separated list use the `--run-collections` option
+To have the script run only using the collections in the comma-separated list use the `--run-collections` option.
 
 <details>
   <summary>Local</summary>
@@ -200,7 +203,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Libraries
-To have the script run only the libraries in the comma-separated list use the `--run-libraries` option
+To have the script run only the libraries in the comma-separated list use the `--run-libraries` option.
 
 <details>
   <summary>Local</summary>
@@ -219,8 +222,68 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
+### Run Libraries First
+To have the script run library operations first before collections during the run use the `--libraries-first` option.
+
+<details>
+  <summary>Local</summary>
+
+```shell
+python plex_meta_manager.py --libraries-first
+```
+
+</details>
+<details>
+  <summary>Docker</summary>
+
+```shell
+docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --libraries-first
+```
+
+</details>
+
+### Ignore Schedules
+To have the script ignore all schedules during the run except for range schedules use the `--ignore-schedules` option.
+
+<details>
+  <summary>Local</summary>
+
+```shell
+python plex_meta_manager.py --ignore-schedules
+```
+
+</details>
+<details>
+  <summary>Docker</summary>
+
+```shell
+docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --ignore-schedules
+```
+
+</details>
+
+### Delete Collections
+To have the script delete all collections in a Library before a run use the `--delete-collections` option.
+
+<details>
+  <summary>Local</summary>
+
+```shell
+python plex_meta_manager.py --delete-collections
+```
+
+</details>
+<details>
+  <summary>Docker</summary>
+
+```shell
+docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --delete-collections
+```
+
+</details>
+
 ### Resume Run
-To have the script resume a run from a specific collection use the `--resume` option
+To have the script resume a run from a specific collection use the `--resume` option.
 
 <details>
   <summary>Local</summary>
@@ -240,7 +303,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Countdown 
-To have the script run without displaying a countdown use the `--no-countdown` option
+To have the script run without displaying a countdown use the `--no-countdown` option.
 
 <details>
   <summary>Local</summary>
@@ -260,7 +323,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Missing 
-To have the script run without any of the missing movie/show functions use the `--no-missing` option
+To have the script run without any of the missing movie/show functions use the `--no-missing` option.
 
 <details>
   <summary>Local</summary>
@@ -280,7 +343,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Read Only Config
-To have the script run without writing to the config use the `--read-only-config` option
+To have the script run without writing to the config use the `--read-only-config` option.
 
 <details>
   <summary>Local</summary>
@@ -301,7 +364,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 
 ### Divider Character & Screen Width
-To change the terminal output divider character or width use `--divider` and `--width`
+To change the terminal output divider character or width use the `--divider` and `--width` options.
 
 <details>
   <summary>Local</summary>

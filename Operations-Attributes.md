@@ -18,7 +18,8 @@ The available operations attributes for each library are as follows
 | Name | Attribute | Description | Allowed Values |
 | :--- | :--- | :--- | :--- |
 | [TMDb Collections](#tmdb-collections) | `tmdb_collections` | Builds Collections for every movie in your library based on TMDb Collections | [`tmdb_collections` mapping details](#tmdb-collections) |
-| [Genre Mapper](#genre-mapper) | `genre_mapper` |Will check every item in your library and changed mapped genres | [`genre_mapper` mapping details](#genre-mapper) |
+| [Genre Collections](#genre-collections) | `genre_collections` | Builds Collections for every genre in your library | [`genre_collections` mapping details](#genre-collections) |
+| [Genre Mapper](#genre-mapper) | `genre_mapper` | Will check every item in your library and changed mapped genres | [`genre_mapper` mapping details](#genre-mapper) |
 | Image Assets For All | `assets_for_all` | Search in assets for images for every item in your library | `true` or `false` |
 | Delete Collections With Less | `delete_collections_with_less` | Deletes every collection with less then the given number | number greater then 0 |
 | Delete Unmanaged Collections | `delete_unmanaged_collections` | Deletes every unmanaged collection | `true` or `false` |
@@ -39,7 +40,7 @@ The available operations attributes for each library are as follows
 ## TMDb Collections
 This operation will scan every movie in your library and create collections based on a `template` for those collections.
 
-To run the most basic way you can just leave `tmdb_collections` Blank like so:
+To run the most basic way you can just leave `tmdb_collections` blank like so:
 
 ```yaml
 library:
@@ -48,7 +49,18 @@ library:
       tmdb_collections:
 ```
 
-This will run all collections found with the template that simply has `tmdb_collection_details: <<collection_id>>` in it.
+This will run all collections found with this default template:
+
+```yaml
+library:
+  Movies:
+    operations:
+      tmdb_collections:
+        template:
+          tmdb_collection_details: <<collection_id>>
+```
+
+Where `<<collection_id>>` is the TMDb Collection ID.
 
 To change the template for more complex runs you can use the `template` attribute to define the template that is used for the operation like so:
 
@@ -62,13 +74,13 @@ library:
           collection_order: release
 ```
 
-* Remember if you define your own template you need to use the `<<collection_id>>` still to make the collection
+* Remember if you define your own template you need to use the `<<collection_id>>` template variable to differentiate the collections.
 
-There are two other attributes that can be used under `tmdb_collections`
+There are other attributes that can be used under `tmdb_collections`
 
 * `exclude_ids`: list or comma separate list of TMDb Collection IDs to ignore 
 * `remove_suffix`: Removes the suffix given from the TMDb Collection names. i.e. `Star Wars Collection` -> `Star Wars`. Multiple suffixes can be given as a list or comma separated string.
-* `dictionary_variables`: Variable changes by TMDb Collection ID This can allow you to have other attributes change per Collection.
+* `dictionary_variables`: Variable changes by TMDb Collection ID this can allow you to have other attributes change per Collection.
 
 ```yaml
 library:
@@ -91,6 +103,82 @@ library:
 ```
 
 * If the Collection is defined in another Metadata file (i.e. you define your own `Star Wars` Collection) then it will not run under `tmdb_collections` as long as the collection names match.
+
+## Genre Collections
+This operation will build a collection for every genre in your library based on a `template` for those collections.
+
+To run the most basic way you can just leave `genre_collections` blank like so:
+
+```yaml
+library:
+  Movies:
+    operations:
+      genre_collections:
+```
+
+This will run all genres found with this default template:
+
+```yaml
+library:
+  Movies:
+    operations:
+      genre_collections:
+        title_format: "Top <<genre>> <<library_type>>s"
+        template:
+          smart_filter:
+            limit: 50
+            sort_by: critic_rating.desc
+            all:
+              genre: <<genre>>
+```
+
+Where `<<genre>>` is the Genre found in Plex and `<<library_type>>` is either `Movie`, `Show`, or `Artist` depending on your library type.
+
+To change the template for more complex runs you can use the `template` attribute to define the template that is used for the operation like so:
+
+```yaml
+library:
+  Movies:
+    operations:
+      genre_collections:
+        template:
+          smart_filter:
+            limit: 50
+            sort_by: critic_rating.desc
+            all:
+              genre: <<genre>>
+          collection_mode: hide
+```
+
+* Remember if you define your own template you need to use the `<<genre>>` template variable to differentiate the collections.
+
+There are other attributes that can be used under `genre_collections`
+
+* `exclude_genres`: list or comma separate list of Genres to ignore 
+* `title_format`: Format you want the title in.
+* `dictionary_variables`: Variable changes by Genre this can allow you to have other attributes change per Collection.
+
+```yaml
+library:
+  Movies:
+    operations:
+      tmdb_collections:
+        exclude_genres:
+          - Family
+        title_format: "Top <<genre>> <<library_type>>s on IMDb"
+        dictionary_variables:
+          my_collection_poster:
+            Action: https://theposterdb.com/api/assets/69195
+            Comedy: https://theposterdb.com/api/assets/69200
+        template:
+          optional:
+            - my_collection_poster
+          imdb_list: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=<<genre>>
+          collection_order: custom
+          url_poster: <<my_collection_poster>>
+```
+
+* If the Collection is defined in another Metadata file (i.e. you define your own `Action` Collection) then it will not run under `genre_collections` as long as the collection names match.
 
 ## Genre Mapper
 You can use the `genre_mapper` operation to map genres in your library.

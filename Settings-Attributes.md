@@ -12,6 +12,7 @@ settings:
   asset_depth: 0
   create_asset_folders: false
   dimensional_asset_rename: false
+  download_url_assets: false
   show_missing_season_assets: false
   sync_mode: append
   collection_minimum: 1
@@ -29,6 +30,8 @@ settings:
   tvdb_language: eng
   ignore_ids:
   ignore_imdb_ids:
+  playlist_sync_to_user: all
+  verify_ssl: true
 ```
 
 | Name | Attribute | Allowed Values | Global Level | Library Level | Collection/Playlist Level |
@@ -40,9 +43,11 @@ settings:
 | [Asset Depth](#asset-depth) | `asset_depth` | **integer**<br>**default: 0** | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Create Asset Folders](#create-asset-folders) | `create_asset_folders` | **boolean:** true or false<br>**default: false** | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Dimensional Asset Rename](#dimensional-asset-rename) | `dimensional_asset_rename` | **boolean:** true or false<br>**default: false** | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Download URL Assets](#download-url-assets) | `download_url_assets` | **boolean:** true or false<br>**default: false** | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Show Missing Season Assets](#show-missing-season-assets) | `show_missing_season_assets` | **boolean:** true or false<br>**default: false** | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | [Sync Mode](#sync-mode) | `sync_mode` | `append` or `sync`<br>**default: append** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Collection Minimum](#collection-minimum) | `collection_minimum` | **integer**<br>**default: 1** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Default Collection Order](#default-collection-order) | `default_collection_order` | `release`: Order Collection by Release Dates<br>`alpha`: Order Collection Alphabetically<br>`custom`: Order Collection Via the Builder Order<br>[Any `plex_search` Sort Option](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Builders#sort-options) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| [Minimum Items](#minimum-items) | `minimum_items` | **integer**<br>**default: 1** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Delete Below Minimum](#delete-below-minimum) | `delete_below_minimum` | **boolean:** true or false<br>**default: false** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Delete Not Scheduled](#delete-not-scheduled ) | `delete_not_scheduled ` | **boolean:** true or false<br>**default: false** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Run Again Delay](#run-again-delay) | `run_again_delay` | **integer**<br>**default: 0** | :heavy_check_mark: | :x: | :x: |
@@ -57,6 +62,8 @@ settings:
 | [Ignore IDs](#ignore-ids) | `ignore_ids` | List or comma-separated String of TMDb/TVDb IDs | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | [Ignore IMDb IDs](#ignore-imdb-ids) | `ignore_imdb_ids` | List or comma-separated String of IMDb IDs | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Playlist Sync to User](#playlist-sync-to-user) | `playlist_sync_to_user` | `all` or List or comma-separated String of Users to sync the playlist to.<br>**default: `all`** | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| [Verify SSL](#verify-ssl) | `verify_ssl` | Turn SSL Verification on or off. | :heavy_check_mark: | :x: | :x: |
+| [Missing Path](#missing-path) | `missing_path` | Path to missing YAML file for the library | :x: | :heavy_check_mark: | :x: |
 
 ## Cache
 Will use a cached database for faster processing. The cache file is created in the same location as your config file.
@@ -75,17 +82,28 @@ When using the `assets_for_all` [Library Operation](https://github.com/meisnate1
 ## Dimensional Asset Rename
 When using `asset_folders` this will scan the folder for image files and rename the first image found that has a height greater than its width to `poster.ext` as long as an asset poster was not found and the first image found that has a width greater than its height to `background.ext` as long as an asset background was not found.
 
+## Download URL Assets
+When using `download_url_assets` if you are using `url_poster` or `url_background` in your collection config this will download the image to your asset folder if no image is found.
+
 ## Show Missing Season Assets
 When searching for assets for a show if a Season poster is found then this will display all other missing Season posters.
 
 ## Sync Mode
 Set the default `sync_mode`. It can be either `append` when you want to add only and `sync` when you want to add and remove from collections.
 
-## Collection Minimum
-Minimum number of items that must be found in order to update a collection.
+## Default Collection Order
+Sets the `collection_order` for every collection run You can use any of these options:
+
+* `release`: Order Collection by Release Dates
+* `alpha`: Order Collection Alphabetically
+* `custom`: Order Collection Via the Builder Order
+* [Any `plex_search` Sort Option](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Builders#sort-options)
+
+## Minimum Items
+Minimum number of items that must be found in order to update a collection/playlist.
 
 ## Delete Below Minimum
-When a collection is run it will be deleted if it is below the minimum specified by `collection_minimum`.
+When a collection is run it will be deleted if it is below the minimum specified by `minimum_items`.
 
 ## Delete Not Scheduled
 When a collection is skipped due to it not being scheduled delete it.
@@ -129,3 +147,18 @@ List or comma-separated String of IMDb IDs to ignore in all collections
 
 ## Playlist Sync to User
 `all` or List or comma-separated String of Users to sync the playlist to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_user` blank. Defaults to `all`.
+
+## Verify SSL
+Turn SSl Verification on or off.
+
+## Missing Path
+Path where to save the missing YAML File. Default is `/config/<<library_name>>_missing.yml` where `<<library_name>>` is your library name.
+
+* This setting can only be set under setting for each particular library.
+
+```yaml
+libraries:
+  Movies:
+    settings:
+      missing_path: /config/Missing/Movies.yml
+```

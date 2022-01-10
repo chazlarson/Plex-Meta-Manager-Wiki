@@ -37,11 +37,38 @@ config
 │       ├── overlay.png
 ```
 
+### Alternative URL Images
+The alternative way to specify your overlay image is do use the `name` and either `url` or `git` attributes like so.
+
+```yaml
+collections:
+  4K Overlay:
+    plex_search:
+      all:
+        resolution: 4K
+    item_overlay: 
+      name: 4K
+      url: https://raw.githubusercontent.com/wiki/meisnate12/Plex-Meta-Manager/overlay.png
+    build_collection: false
+```
+
+```yaml
+collections:
+  4K Overlay:
+    plex_search:
+      all:
+        resolution: 4K
+    item_overlay: 
+      name: 4K
+      git: yozora/Overlays/4K/overlay
+    build_collection: false
+```
+
 ### Examples Collection Configs
 
 #### 4K Overlay Only 
 
-![4K Overlay](https://raw.githubusercontent.com/wiki/meisnate12/Plex-Meta-Manager/overlay.png)
+![4K Overlay](https://raw.githubusercontent.com/wiki/meisnate12/Plex-Meta-Manager/overlay1.png)
 
 Add a 4K overlay to all 4K Movies
 
@@ -137,3 +164,7 @@ collections:
     item_overlay: Dolby
     build_collection: false
 ```
+
+## User Generated Overlays
+
+![Language Overlay](https://raw.githubusercontent.com/wiki/meisnate12/Plex-Meta-Manager/overlay2.png)

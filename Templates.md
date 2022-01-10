@@ -28,7 +28,7 @@ collections:
 
 There are three attributes unique to `templates`, `default`, `optional`, and `move_prefix`. 
 * `default` can set default values for template variables to be used if they're not specified in the call. 
-* `optional` can specify variables that if not specified on the template call will cause any attribute using one of those variables to be ignored in the template.
+* `optional` can specify variables that if not specified on the template call will cause any attribute using one of those variables to be ignored in the template. You can make any template variable optional per collection by setting it to `null`.
 * `move_prefix` can be given a list or comma-separated string of prefixes to move to the end of the collection/playlist name for sorting.
     i.e. If you have `move_prefix: The` and a collection is called `The Avengers` then `<<collection_name>>` is replaced with `Avengers, The` instead of `The Avengers` for that collection.
 

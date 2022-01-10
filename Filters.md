@@ -27,12 +27,14 @@ String filters can take multiple values **only as a list**.
 
 ### Attribute
 
-| String Filter | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `title` | Uses the title attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `studio` | Uses the studio attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `filepath` | Uses the item's filepath to match | :heavy_check_mark: | :heavy_check_mark: |
-| `audio_track_title` | Uses the audio track titles to match | :heavy_check_mark: | :x: |
+| String Filter | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Track |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `title` | Uses the title attribute to match | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `summary` | Uses the summary attribute to match | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `studio` | Uses the studio attribute to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `record_label` | Uses the record label attribute to match | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :x: |
+| `filepath` | Uses the item's filepath to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| `audio_track_title` | Uses the audio track titles to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 
 ## Tag Filters
 Tag filters can be used with either no modifier or with `.not`.
@@ -50,33 +52,33 @@ The `original_language` filter will also filter out movies from being added to R
 
 ### Attribute
 
-| Tag Filters | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `actor` | Uses the actor tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `collection` | Uses the collection tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `content_rating` | Uses the content rating tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `network` | Uses the network tags to match | :x: | :heavy_check_mark: |
-| `country` | Uses the country tags to match | :heavy_check_mark: | :x: |
-| `director` | Uses the director tags to match | :heavy_check_mark: | :x: |
-| `genre` | Uses the genre tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `label` | Uses the label tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `producer` | Uses the actor tags to match | :heavy_check_mark: | :x: |
-| `year` | Uses the year tag to match | :heavy_check_mark: | :heavy_check_mark: |
-| `writer` | Uses the writer tags to match | :heavy_check_mark: | :x: |
-| `original_language` | Uses TMDb original language [ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) to match<br>Example: `original_language: en, ko` | :heavy_check_mark: | :heavy_check_mark: |
-| `resolution` | Uses the resolution tag to match | :heavy_check_mark: | :x: |
-| `audio_language` | Uses the audio language tags to match | :heavy_check_mark: | :x: |
-| `subtitle_language` | Uses the subtitle language tags to match | :heavy_check_mark: | :x: |
+| Tag Filters | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Track |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `actor` | Uses the actor tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `collection` | Uses the collection tags to match | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `content_rating` | Uses the content rating tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `network` | Uses the network tags to match | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `country` | Uses the country tags to match | :heavy_check_mark: | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: |
+| `director` | Uses the director tags to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `genre` | Uses the genre tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `label` | Uses the label tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :heavy_check_mark: | :x: |
+| `producer` | Uses the actor tags to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `year` | Uses the year tag to match | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| `writer` | Uses the writer tags to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `original_language` | Uses TMDb original language [ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) to match<br>Example: `original_language: en, ko` | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `resolution` | Uses the resolution tag to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `audio_language` | Uses the audio language tags to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `subtitle_language` | Uses the subtitle language tags to match | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
 
 ## Boolean Filters
 Boolean Filters have no modifiers.
 
 ### Attribute
 
-| Boolean Filter | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `has_collection` | Matches every item that has or does not have a collection | :heavy_check_mark: | :heavy_check_mark: |
-| `has_overlay` | Matches every item that has or does not have an overlay | :heavy_check_mark: | :heavy_check_mark: |
+| Boolean Filters | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Track |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `has_collection` | Matches every item that has or does not have a collection | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `has_overlay` | Matches every item that has or does not have an overlay | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
 
 ## Date Filters
 Date filters can be used with either no modifier or with `.not`, `.before`, `.after`, or `.regex`.
@@ -97,13 +99,13 @@ The `first_episode_aired` and `last_episode_aired` filters will also filter out 
 
 ### Attribute
 
-| Date Filter | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `release` | Uses the release date attribute (originally available) to match | :heavy_check_mark: | :heavy_check_mark: |
-| `added` | Uses the date added attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `last_played` | Uses the date last played attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `first_episode_aired` | Uses the first episode aired date to match | :x: | :heavy_check_mark: |
-| `last_episode_aired` | Uses the last episode aired date to match | :x: | :heavy_check_mark: |
+| Date Filters | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Track |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `release` | Uses the release date attribute (originally available) to match | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| `added` | Uses the date added attribute to match | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `last_played` | Uses the date last played attribute to match | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `first_episode_aired` | Uses the first episode aired date to match | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `last_episode_aired` | Uses the last episode aired date to match | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
 
 ## Number Filters
 Number filters must use `.gt`, `.gte`, `.lt`, or `.lte` as a modifier.
@@ -123,25 +125,25 @@ The `tmdb_vote_count` and `tmdb_year` filters will also filter out movies/shows 
 
 ### Attribute
 
-| Number Filters | Description | Restrictions | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: | :---: |
-| `year` | Uses the year attribute to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: |
-| `tmdb_year` | Uses the year on TMDb to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: |
-| `critic_rating` | Uses the critic rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: |
-| `audience_rating` | Uses the audience rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: |
-| `user_rating` | Uses the user rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: |
-| `tmdb_vote_count` | Uses the tmdb vote count to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: |
-| `plays` | Uses the plays attribute to match | minimum: `1` | :heavy_check_mark: | :x: |
-| `duration` | Uses the duration attribute to match using minutes | minimum: `1` | :heavy_check_mark: | :x: |
+| Number Filters | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Track |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `year` | Uses the year attribute to match<br>minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| `tmdb_year` | Uses the year on TMDb to match<br>minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `critic_rating` | Uses the critic rating attribute to match<br>`0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| `audience_rating` | Uses the audience rating attribute to match<br> `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `user_rating` | Uses the user rating attribute to match<br>`0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `tmdb_vote_count` | Uses the tmdb vote count to match<br>minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `plays` | Uses the plays attribute to match<br>minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `duration` | Uses the duration attribute to match using minutes<br>minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 
 ## Special Filters
 Special Filters each have their own set of rules for how they're used.
 
 ### Attribute
 
-| Special Filters | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `history` | Uses the release date attribute (originally available) to match dates throughout history<br>`day`: Match the Day and Month to Today's Date<br>`month`: Match the Month to Today's Date<br>`1-30`: Match the Day and Month to Today's Date or `1-30` days before Today's Date  | :heavy_check_mark: | :heavy_check_mark: |
+| Special Filters | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Track |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `history` | Uses the release date attribute (originally available) to match dates throughout history<br>`day`: Match the Day and Month to Today's Date<br>`month`: Match the Month to Today's Date<br>`1-30`: Match the Day and Month to Today's Date or `1-30` days before Today's Date  | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 
 ## Collection Filter Examples
 
