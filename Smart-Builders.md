@@ -36,30 +36,30 @@ There are a couple other attributes you can have at the top level only along wit
 
 | Sort Option | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Tracks |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `title.asc`/`title.desc` | Sort by Title | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| `season.asc`/`season.desc` | Sort by Season | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
-| `show.asc`/`show.desc` | Sort by Show | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: |
-| `album_artist.asc`/`album_artist.desc` | Sort by Album Artist | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
-| `artist.asc`/`artist.desc` | Sort by Artist | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
-| `album.asc`/`album.desc` | Sort by Album | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
-| `year.asc`/`year.desc` | Sort by Year | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| `title.asc`/<br>`title.desc` | Sort by Title | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `season.asc`/<br>`season.desc` | Sort by Season | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
+| `show.asc`/<br>`show.desc` | Sort by Show | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: |
+| `album_artist.asc`/<br>`album_artist.desc` | Sort by Album Artist | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| `artist.asc`/<br>`artist.desc` | Sort by Artist | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `album.asc`/<br>`album.desc` | Sort by Album | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `year.asc`/<br>`year.desc` | Sort by Year | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 | `release.asc`/<br>`release.desc` | Sort by Release Date (Originally Available) | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 | `critic_rating.asc`/<br>`critic_rating.desc` | Sort by Critic Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 | `audience_rating.asc`/<br>`audience_rating.desc` | Sort by Audience Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
 | `user_rating.asc`/<br>`user_rating.desc` | Sort by User Rating | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | `content_rating.asc`/<br>`content_rating.desc` | Sort by Content Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
-| `duration.asc`/`duration.desc` | Sort by Duration | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
-| `progress.asc`/`progress.desc` | Sort by Progress | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
-| `played.asc`/`played.desc` | Sort by Date Last Played | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| `plays.asc`/`plays.desc` | Sort by Number of Plays | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `duration.asc`/<br>`duration.desc` | Sort by Duration | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
+| `progress.asc`/<br>`progress.desc` | Sort by Progress | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `played.asc`/<br>`played.desc` | Sort by Date Last Played | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `plays.asc`/<br>`plays.desc` | Sort by Number of Plays | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | `unplayed.asc`/<br>`unplayed.desc` | Sort by Unplayed | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
 | `episode_added.asc`/<br>`episode_added.desc` | Sort by Last Episode Date Added | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
-| `added.asc`/`added.desc` | Sort by Date Added | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| `viewed.asc`/`viewed.desc` | Sort by Date Last Viewed | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
-| `rated.asc`/`rated.desc` | Sort by Date Last Rated | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
-| `popularity.asc`/`popularity.desc` | Sort by Popularity | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
-| `resolution.asc`/`resolution.desc` | Sort by Resolution | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
-| `bitrate.asc`/`bitrate.desc` | Sort by Bitrate | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
+| `added.asc`/<br>`added.desc` | Sort by Date Added | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `viewed.asc`/<br>`viewed.desc` | Sort by Date Last Viewed | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `rated.asc`/<br>`rated.desc` | Sort by Date Last Rated | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `popularity.asc`/<br>`popularity.desc` | Sort by Popularity | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `resolution.asc`/<br>`resolution.desc` | Sort by Resolution | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `bitrate.asc`/<br>`bitrate.desc` | Sort by Bitrate | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 | `random` | Sort by Random | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Filters
@@ -193,7 +193,7 @@ No number filter can take multiple values.
 ### Number Attributes
 
 | Number Search | Description | Restrictions | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
-| :--- | :--- | :---: | :---: | :---: |
+| :--- | :--- | :---: | :---: | :---: | :---: |
 | `duration` | Uses the duration attribute to match using minutes | minimum: `1` | :heavy_check_mark: | :x: | :x: |
 | `plays` | Uses the plays attribute to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :x: |
 | `episode_plays` | Uses the Episode's plays attribute to match | minimum: `1` | :x: | :heavy_check_mark: | :x: |
