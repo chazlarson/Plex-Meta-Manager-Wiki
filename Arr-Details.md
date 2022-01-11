@@ -3,7 +3,8 @@ All the following attributes can override the global/library [Radarr](https://gi
 
 | Name | Attribute | Description | Allowed Values | Works with Playlists |
 | :--- | :--- | :--- | :--- | :---: |
-| [Radarr Add](#arr-add) | `radarr_add` | Override Radarr `add` attribute | **boolean:** `true` or `false` | :heavy_check_mark: |
+| [Radarr Add Missing](#arr-add-missing) | `radarr_add_missing` | Override Radarr `add` attribute | **boolean:** `true` or `false` | :heavy_check_mark: |
+| [Radarr Add](#arr-add-missing) | `radarr_add` | Alias of `radar_add_missing` | **boolean:** `true` or `false` | :heavy_check_mark: |
 | [Radarr Add Existing](#arr-add-existing) | `radarr_add_existing` | Override Radarr `add_existing` attribute  | **boolean:** `true` or `false` | :heavy_check_mark: |
 | [Radarr Root Folder](#radarr-add-details) | `radarr_folder` | Override Radarr `root_folder_path` attribute  | Folder Path | :heavy_check_mark: |
 | [Radarr Monitor](#radarr-add-details) | `radarr_monitor` | Override Radarr `monitor` attribute | **boolean:** `true` or `false` | :heavy_check_mark: |
@@ -20,7 +21,8 @@ All the following attributes can override the global/library [Sonarr](https://gi
 
 | Name | Attribute | Description | Allowed Values | Works with Playlists |
 | :--- | :--- | :--- | :--- | :---: |
-| [Sonarr Add](#arr-add) | `sonarr_add` | Override Sonarr `add` attribute  | **boolean:** `true` or `false` | :heavy_check_mark: |
+| [Sonarr Add](#arr-add-missing) | `sonarr_add_missing` | Override Sonarr `add` attribute  | **boolean:** `true` or `false` | :heavy_check_mark: |
+| [Sonarr Add](#arr-add-missing) | `sonarr_add` | Alias of `sonarr_add_missing`  | **boolean:** `true` or `false` | :heavy_check_mark: |
 | [Sonarr Add Existing](#arr-add-existing) | `sonarr_add_existing` |  Override Sonarr `add_existing` attribute  | **boolean:** `true` or `false` | :heavy_check_mark: |
 | [Sonarr Root Folder](#radarr-add-details) | `sonarr_folder` |  Override Sonarr `root_folder_path` attribute | Folder Path | :heavy_check_mark: |
 | [Sonarr Monitor](#radarr-add-details) | `sonarr_monitor` |  Override Sonarr `monitor` attribute | `all`, `future`, `missing`, `existing`, `pilot`, `first`, `latest`, `none` | :heavy_check_mark: |
@@ -35,11 +37,11 @@ All the following attributes can override the global/library [Sonarr](https://gi
 | [Item Sonarr Tag Remove](#arr-edit-details)  | `item_sonarr_tag.remove` | Used to remove existing tags in Sonarr for every series found by the builders that's in Sonarr | List or comma-separated string of tags | :heavy_check_mark: |
 | [Item Sonarr Tag Sync](#arr-edit-details)  | `item_sonarr_tag.sync` | Matches the tags in Sonarr for every series found by the builders that's in Sonarr with the provided tags | List or comma-separated string of tags | :heavy_check_mark: |
 
-### Arr Add
-When `radarr_add`/`sonarr_add` are true the items missing from the collection/playlist will be added to Radarr/Sonarr.
+### Arr Add Missing
+When `radarr_add_missing`/`sonarr_add_missing` are true the items missing from the collection/playlist will be added to Radarr/Sonarr.
 
 ### Arr Add Existing
-When `radarr_add`/`sonarr_add` are true the items that exist in the collection/playlist will be added to Radarr/Sonarr.
+When `radarr_add_existing`/`sonarr_add_existing` are true the items that exist in the collection/playlist will be added to Radarr/Sonarr.
 
 ### Radarr Add Details
 When adding a movie in Radarr you get the screen below to set these options use `radarr_folder`, `radarr_monitor`, `radarr_availability`, `radarr_quality`, `radarr_tag`, and `radarr_search`.
