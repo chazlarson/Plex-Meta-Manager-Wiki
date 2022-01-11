@@ -4,7 +4,7 @@ All the following attributes can override the global/library [Radarr](https://gi
 | Name | Attribute | Description | Allowed Values | Works with Playlists |
 | :--- | :--- | :--- | :--- | :---: |
 | [Radarr Add Missing](#arr-add-missing) | `radarr_add_missing` | Override Radarr `add` attribute | **boolean:** `true` or `false` | :heavy_check_mark: |
-| [Radarr Add](#arr-add-missing) | `radarr_add` | Alias of `radar_add_missing` | **boolean:** `true` or `false` | :heavy_check_mark: |
+| [Radarr Add](#arr-add-missing) | `radarr_add` | Alias of `radarr_add_missing` | **boolean:** `true` or `false` | :heavy_check_mark: |
 | [Radarr Add Existing](#arr-add-existing) | `radarr_add_existing` | Override Radarr `add_existing` attribute  | **boolean:** `true` or `false` | :heavy_check_mark: |
 | [Radarr Root Folder](#radarr-add-details) | `radarr_folder` | Override Radarr `root_folder_path` attribute  | Folder Path | :heavy_check_mark: |
 | [Radarr Monitor](#radarr-add-details) | `radarr_monitor` | Override Radarr `monitor` attribute | **boolean:** `true` or `false` | :heavy_check_mark: |
