@@ -70,7 +70,7 @@ metadata:
     year: 2007
   "Halo 4: Forward Unto Dawn":
     alt_title: Halo 4 Forward Unto Dawn
-    tmdb_id: 56295
+    tmdb_show: 56295
     content_rating: R
 ```
 
