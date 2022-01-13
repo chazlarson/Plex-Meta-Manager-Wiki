@@ -45,6 +45,6 @@ sonarr:
 
 * The `quality_profile` and `language_profile` must be the exact name of the desired quality profile, including all spaces and capitalization.
 
-* You can set most attributes per collection by using the [Sonarr Collection Detail](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Collection-Details#sonarr-attributes)
+* You can set most attributes per collection by using the [Sonarr Details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Arr-Details#sonarr-details)
  
 ![Sonarr Details](https://raw.githubusercontent.com/wiki/meisnate12/Plex-Meta-Manager/sonarr1.png)
