@@ -53,7 +53,7 @@ services:
     restart: unless-stopped 
 ```
 
-## Run Commands
+## Run Commands & Environmental Variables
 
 | Name | Shell Command | Environmental<br>Variable | Allowed Values | Default Value |
 | :--- | :--- | :--- | :--- | :--- |
