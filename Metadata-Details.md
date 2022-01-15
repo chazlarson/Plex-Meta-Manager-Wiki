@@ -10,14 +10,18 @@ All the following attributes update various details of the collection/playlist's
 | Label Remove | `label.remove` | Used to remove existing labels from the collection | Comma-separated string of labels to remove | :x: |
 | Label Sync | `label.sync` | Matches the labels of the collection to the labels provided (Leave blank to remove all labels) | Comma-separated string of labels to sync | :x: |
 | Collection Mode | `collection_mode` | Used to change the Collection Mode | `default`: Library default<br>`hide`: Hide Collection<br>`hide_items`: Hide Items in this Collection<br>`show_items`: Show this Collection and its Items | :x: |
-| Collection Order | `collection_order` | Used to change the Collection Order | `release`: Order Collection by Release Dates<br>`alpha`: Order Collection Alphabetically<br>`custom`: Order Collection Via the Builder Order | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| Collection Level | `collection_level` | Used to make episode or season collections from `plex_search`, `trakt_list`, or `imdb_list` Builders | `season`: Collection contains seasons<br>`episode`: Collection contains episodes | :x: |
-| Visible on Library | `visible_library` | Used to change collection visible on Library | `true`: Visible<br>`false`: Not Visible<br>Any [`schedule`](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Schedule-Detail) | :x: |
-| Visible on Home | `visible_home` | Used to change collection visible on Home | `true`: Visible<br>`false`: Not Visible<br>Any [`schedule`](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Schedule-Detail) | :x: |
-| Visible on Shared | `visible_shared` | Used to change collection visible on Shared Users' Home | `true`: Visible<br>`false`: Not Visible<br>Any [`schedule`](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Schedule-Detail) | :x: |
+| Collection Order | `collection_order` | Used to change the Collection Order | `release`: Order Collection by Release Dates<br>`alpha`: Order Collection Alphabetically<br>`custom`: Order Collection Via the Builder Order<br>[Any `plex_search` Sort Option](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Builders#sort-options) | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Collection Level | `collection_level` | Used to make season, episode, album or track collections from `plex_all`, `plex_search`, `trakt_list`, or `imdb_list` Builders and Filters | `season`: Collection contains seasons<br>`episode`: Collection contains episodes<br>`album`: Collection contains albums<br>`track`: Collection contains tracks | :x: |
+| Visible on Library | `visible_library` | Used to change collection visible on Library (Only works with Plex Pass) | `true`: Visible<br>`false`: Not Visible<br>Any [`schedule`](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Schedule-Detail) | :x: |
+| Visible on Home | `visible_home` | Used to change collection visible on Home (Only works with Plex Pass) | `true`: Visible<br>`false`: Not Visible<br>Any [`schedule`](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Schedule-Detail) | :x: |
+| Visible on Shared | `visible_shared` | Used to change collection visible on Shared Users' Home (Only works with Plex Pass) | `true`: Visible<br>`false`: Not Visible<br>Any [`schedule`](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Schedule-Detail) | :x: |
 
 * **Sort Title:** You can use `sort_title` to "promote" certain collections to the top of a library by creating a sort title starting with a `+` or "demote" certain collections to the bottom of a library by creating a sort title starting with a `~`.
 * **Custom Collection Order:** When using `collection_order: custom` you can only have a single builder in the collection.
+
+* Here's an example of how the collections can look on the Home Page.
+
+![Display](https://raw.githubusercontent.com/wiki/meisnate12/Plex-Meta-Manager/display.png)
 
 ## Item Metadata Details
 All the following attributes update various details of the metadata for every item in the collection/playlist.

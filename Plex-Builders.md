@@ -66,29 +66,40 @@ There are a couple other attributes you can have at the top level only along wit
 
 | Special Option | Attribute | Description | Default |
 | :--- | :--- | :--- | :---: |
-| Type | `type` | The Type of items inside this collection/playlist<br>**Options**: `movies`, `shows`, `seasons`, and `episodes` | `movies` for Movies Libraries and `shows` for Show Libraries |
+| Type | `type` | The Type of items inside this collection/playlist<br>**Options**: `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks` | `movies` for Movies Libraries, `shows` for Show Libraries, and `artists` for Music Libraries |
 | Limit | `limit` | The max number of item for the search | all |
-| Sort By | `sort_by` | This will control how the search is sorted in your library. You can use any sort options for your search type in the [Sorts Table](#sorts-table) | `random` |
+| Sort By | `sort_by` | This will control how the search is sorted in your library. You can use any sort options for your search type in the [Sorts Options Table](#sort-options) | `random` |
 | Validate | `validate` | Determines if a collection/playlist will fail on a validation error<br>**Options**: `true` or `false` | `true` |
 
 ## Sort Options
 
-| Sort Option | Description | Movies | Shows | Seasons | Episodes |
-| :--- | :--- | :---: | :---: | :---: | :---: |
-| `title.asc`/`title.desc` | Sort by Title | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| `season.asc`/`season.desc` | Sort by Season | :x: | :x: | :heavy_check_mark: | :x: |
-| `show.asc`/`show.desc` | Sort by Show | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
-| `year.asc`/`year.desc` | Sort by Year | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| `release.asc`/<br>`release.desc` | Sort by Release Date (Originally Available) | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| `critic_rating.asc`/<br>`critic_rating.desc` | Sort by Critic Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| `audience_rating.asc`/<br>`audience_rating.desc` | Sort by Audience Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| `user_rating.asc`/<br>`user_rating.desc` | Sort by User Rating | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| `content_rating.asc`/<br>`content_rating.desc` | Sort by Content Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: |
-| `duration.asc`/`duration.desc` | Sort by Duration | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
-| `plays.asc`/`plays.desc` | Sort by Number of Plays | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
-| `added.asc`/`added.desc` | Sort by Date Added | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_added.asc`/<br>`episode_added.desc` | Sort by Last Episode Date Added | :x: | :heavy_check_mark: | :x: | :x: |
-| `random` | Sort by Random | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Sort Option | Description | Movies | Shows | Seasons | Episodes | Artists | Albums | Tracks |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `title.asc`/<br>`title.desc` | Sort by Title | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `season.asc`/<br>`season.desc` | Sort by Season | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
+| `show.asc`/<br>`show.desc` | Sort by Show | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: |
+| `album_artist.asc`/<br>`album_artist.desc` | Sort by Album Artist | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| `artist.asc`/<br>`artist.desc` | Sort by Artist | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `album.asc`/<br>`album.desc` | Sort by Album | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `year.asc`/<br>`year.desc` | Sort by Year | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| `release.asc`/<br>`release.desc` | Sort by Release Date (Originally Available) | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| `critic_rating.asc`/<br>`critic_rating.desc` | Sort by Critic Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+| `audience_rating.asc`/<br>`audience_rating.desc` | Sort by Audience Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `user_rating.asc`/<br>`user_rating.desc` | Sort by User Rating | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `content_rating.asc`/<br>`content_rating.desc` | Sort by Content Rating | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `duration.asc`/<br>`duration.desc` | Sort by Duration | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
+| `progress.asc`/<br>`progress.desc` | Sort by Progress | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `played.asc`/<br>`played.desc` | Sort by Date Last Played | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `plays.asc`/<br>`plays.desc` | Sort by Number of Plays | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `unplayed.asc`/<br>`unplayed.desc` | Sort by Unplayed | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `episode_added.asc`/<br>`episode_added.desc` | Sort by Last Episode Date Added | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| `added.asc`/<br>`added.desc` | Sort by Date Added | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| `viewed.asc`/<br>`viewed.desc` | Sort by Date Last Viewed | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `rated.asc`/<br>`rated.desc` | Sort by Date Last Rated | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `popularity.asc`/<br>`popularity.desc` | Sort by Popularity | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
+| `resolution.asc`/<br>`resolution.desc` | Sort by Resolution | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: |
+| `bitrate.asc`/<br>`bitrate.desc` | Sort by Bitrate | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
+| `random` | Sort by Random | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Searches
 
@@ -112,11 +123,15 @@ String search can take multiple values **only as a list**.
 
 ### String Attributes
 
-| String Search | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `title` | Uses the title attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_title` | Uses the title attribute of the show's episodes to match | :x: | :heavy_check_mark: |
-| `studio` | Uses the studio attribute to match | :heavy_check_mark: | :heavy_check_mark: |
+| String Search | Description | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
+| :--- | :--- | :---: | :---: | :---: |
+| `title` | Uses the title attribute to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_title` | Uses the title attribute of the show's episodes to match | :x: | :heavy_check_mark: | :x: |
+| `studio` | Uses the studio attribute to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `artist_title` | Uses the Artist's Title attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_title` | Uses the Album's Title attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_title` | Uses the Track's Title attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_record_label` | Uses the Album's Record Label attribute to match | :x: | :x: | :heavy_check_mark: |
 
 ## Tag Searches
 Tag searches can be used with either no modifier or with `.not` except for `decade` and `resolution` which can only be used with no modifier.
@@ -132,24 +147,39 @@ Tag search can take multiple values as a **list or a comma-separated string**.
 
 ### Tag Attributes
 
-| Tag Search | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `actor` | Uses the actor tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `audio_language` | Uses the audio language tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `collection` | Uses the collection tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `content_rating` | Uses the content rating tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `country` | Uses the country tags to match | :heavy_check_mark: | :x: |
-| `decade` | Uses the year tag to match the decade | :heavy_check_mark: | :x: |
-| `director` | Uses the director tags to match | :heavy_check_mark: | :x: |
-| `genre` | Uses the genre tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `label` | Uses the label tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `network` | Uses the network tags to match<br>**Only works with the New Plex TV Agent** | :x: | :heavy_check_mark: |
-| `producer` | Uses the actor tags to match | :heavy_check_mark: | :x: |
-| `resolution` | Uses the resolution tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `subtitle_language` | Uses the subtitle language tags to match | :heavy_check_mark: | :heavy_check_mark: |
-| `writer` | Uses the writer tags to match | :heavy_check_mark: | :x: |
-| `year` | Uses the year tag to match | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_year` | Uses the year tag to match | :x: | :heavy_check_mark: |
+| Tag Search | Description | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
+| :--- | :--- | :---: | :---: | :---: |
+| `actor` | Uses the actor tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `audio_language` | Uses the audio language tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `collection` | Uses the collection tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `content_rating` | Uses the content rating tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `country` | Uses the country tags to match | :heavy_check_mark: | :x: | :x: |
+| `decade` | Uses the year tag to match the decade | :heavy_check_mark: | :x: | :x: |
+| `director` | Uses the director tags to match | :heavy_check_mark: | :x: | :x: |
+| `genre` | Uses the genre tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `label` | Uses the label tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `network` | Uses the network tags to match<br>**Only works with the New Plex TV Agent** | :x: | :heavy_check_mark: | :x: |
+| `producer` | Uses the actor tags to match | :heavy_check_mark: | :x: | :x: |
+| `resolution` | Uses the resolution tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `subtitle_language` | Uses the subtitle language tags to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `writer` | Uses the writer tags to match | :heavy_check_mark: | :x: | :x: |
+| `year` | Uses the year tag to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_year` | Uses the year tag to match | :x: | :heavy_check_mark: | :x: |
+| `artist_genre` | Uses the Artist's Genre attribute to match | :x: | :x: | :heavy_check_mark: |
+| `artist_collection` | Uses the Artist's Collection attribute to match | :x: | :x: | :heavy_check_mark: |
+| `artist_country` | Uses the Artist's Country attribute to match | :x: | :x: | :heavy_check_mark: |
+| `artist_mood` | Uses the Artist's Mood attribute to match | :x: | :x: | :heavy_check_mark: |
+| `artist_style` | Uses the Artist's Style attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_genre` | Uses the Album's Genre attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_mood` | Uses the Album's Mood attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_style` | Uses the Album's Style attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_format` | Uses the Album's Format attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_type` | Uses the Album's Type attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_collection` | Uses the Album's Collection attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_source` | Uses the Album's Source attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_label` | Uses the Album's Label attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_mood` | Uses the Track's Mood attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_source` | Uses the Track's Style attribute to match | :x: | :x: | :heavy_check_mark: |
 
 ## Date Searches
 Date searches can be used with either no modifier or with `.not`, `.before`, or `.after`.
@@ -167,14 +197,23 @@ No date search can take multiple values.
 
 ### Date Attributes
 
-| Date Search | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `added` | Uses the date added attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_added` | Uses the date added attribute of the show's episodes to match | :x: | :heavy_check_mark: |
-| `release` | Uses the release date attribute (originally available) to match | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_air_date` | Uses the air date attribute (originally available) of the show's episodes to match | :x: | :heavy_check_mark: |
-| `last_played` | Uses the date last played attribute to match | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_last_played` | Uses the date last played attribute of the show's episodes to match | :x: | :heavy_check_mark: |
+| Date Search | Description | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
+| :--- | :--- | :---: | :---: | :---: |
+| `added` | Uses the date added attribute to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_added` | Uses the date added attribute of the show's episodes to match | :x: | :heavy_check_mark: | :x: |
+| `release` | Uses the release date attribute (originally available) to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_air_date` | Uses the air date attribute (originally available) of the show's episodes to match | :x: | :heavy_check_mark: | :x: |
+| `last_played` | Uses the date last played attribute to match | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_last_played` | Uses the date last played attribute of the show's episodes to match | :x: | :heavy_check_mark: | :x: |
+| `artist_added` | Uses the Artist's date added attribute to match | :x: | :x: | :heavy_check_mark: |
+| `artist_last_played` | Uses the Artist's last played attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_last_played` | Uses the Album's last played attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_added` | Uses the Album's date added attribute to match | :x: | :x: | :heavy_check_mark: |
+| `album_released` | Uses the Album's release date attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_last_played` | Uses the Track's date last played attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_last_skipped` | Uses the Track's date last skipped attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_last_rated` | Uses the Track's date last rated attribute to match | :x: | :x: | :heavy_check_mark: |
+| `track_added` | Uses the Track's date added attribute to match | :x: | :x: | :heavy_check_mark: |
 
 ## Number Searches
 Number searches must use `.gt`, `.gte`, `.lt`, or `.lte` as a modifier.
@@ -192,36 +231,48 @@ No number search can take multiple values.
 
 ### Number Attributes
 
-| Number Search | Description | Restrictions | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: | :--: |
-| `duration` | Uses the duration attribute to match using minutes | minimum: `1` | :heavy_check_mark: | :x: |
-| `plays` | Uses the plays attribute to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_plays` | Uses the plays attribute of the show's episodes to match | minimum: `1` | :x: | :heavy_check_mark: |
-| `critic_rating` | Uses the critic rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: |
-| `audience_rating` | Uses the audience rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: |
-| `user_rating` | Uses the user rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_user_rating` | Uses the user rating attribute of the show's episodes to match | `0.0` - `10.0` | :x: | :heavy_check_mark: |
-| `year` | Uses the year attribute to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: |
-| `episode_year` | Uses the year attribute of the show's episodes to match | minimum: `1` | :x: | :heavy_check_mark: |
+| Number Search | Description | Restrictions | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
+| :--- | :--- | :---: | :---: | :---: | :---: |
+| `duration` | Uses the duration attribute to match using minutes | minimum: `1` | :heavy_check_mark: | :x: | :x: |
+| `plays` | Uses the plays attribute to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_plays` | Uses the Episode's plays attribute to match | minimum: `1` | :x: | :heavy_check_mark: | :x: |
+| `critic_rating` | Uses the critic rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `audience_rating` | Uses the audience rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `user_rating` | Uses the user rating attribute to match | `0.0` - `10.0` | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_user_rating` | Uses the user rating attribute of the show's episodes to match | `0.0` - `10.0` | :x: | :heavy_check_mark: | :x: |
+| `year` | Uses the year attribute to match | minimum: `1` | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `episode_year` | Uses the Episode's year attribute to match | minimum: `1` | :x: | :heavy_check_mark: | :x: |
+| `album_year` | Uses the Album's year attribute to match | minimum: `1` | :x: | :x: | :heavy_check_mark: |
+| `album_decade` | Uses the Album's decade attribute to match | minimum: `1` | :x: | :x: | :heavy_check_mark: |
+| `album_plays` | Uses the Album's plays attribute to match | minimum: `1` | :x: | :x: | :heavy_check_mark: |
+| `track_plays` | Uses the Track's plays attribute to match | minimum: `1` | :x: | :x: | :heavy_check_mark: |
+| `track_skips` | Uses the Track's skips attribute to match | minimum: `1` | :x: | :x: | :heavy_check_mark: |
+| `artist_user_rating` | Uses the Artist's user rating attribute to match | `0.0` - `10.0` | :x: | :x: | :heavy_check_mark: |
+| `album_user_rating` | Uses the Album's user rating attribute to match | `0.0` - `10.0` | :x: | :x: | :heavy_check_mark: |
+| `album_critic_rating` | Uses the Album's critic rating attribute to match | `0.0` - `10.0` | :x: | :x: | :heavy_check_mark: |
+| `track_user_rating` | Uses the Track's user rating attribute to match | `0.0` - `10.0` | :x: | :x: | :heavy_check_mark: |
 
 ## Boolean Searches
 Boolean Searches take no modifier and can only be either `true` or `false`.
 
 ### Boolean Attributes
 
-| Boolean Search | Description | Movie<br>Libraries | Show<br>Libraries |
-| :--- | :--- | :---: | :---: |
-| `hdr` | Is HDR | :heavy_check_mark: | :heavy_check_mark: |
-| `unmatched` | Is Unmatched | :heavy_check_mark: | :x: |
-| `duplicate` | Is Duplicate | :heavy_check_mark: | :x: |
-| `unplayed` | Is Unplayed | :heavy_check_mark: | :x: |
-| `progress` | Is In Progress | :heavy_check_mark: | :x: |
-| `trash` | Is Trashed | :heavy_check_mark: | :heavy_check_mark: |
-| `unplayed_episodes` | Has Unplayed Episodes | :x: | :heavy_check_mark: |
-| `episode_unplayed` | Has Episodes Unplayed | :x: | :heavy_check_mark: |
-| `episode_duplicate` | Has Duplicate Episodes | :x: | :heavy_check_mark: |
-| `episode_progress` | Has Episode Progress | :x: | :heavy_check_mark: |
-| `episode_unmatched` | Has Episodes Unmatched | :x: | :heavy_check_mark: |
+| Boolean Search | Description | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
+| :--- | :--- | :---: | :---: | :---: |
+| `hdr` | Is HDR | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `unmatched` | Is Unmatched | :heavy_check_mark: | :x: | :x: |
+| `duplicate` | Is Duplicate | :heavy_check_mark: | :x: | :x: |
+| `unplayed` | Is Unplayed | :heavy_check_mark: | :x: | :x: |
+| `progress` | Is In Progress | :heavy_check_mark: | :x: | :x: |
+| `trash` | Is Trashed | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| `unplayed_episodes` | Has Unplayed Episodes | :x: | :heavy_check_mark: | :x: |
+| `episode_unplayed` | Has Episodes Unplayed | :x: | :heavy_check_mark: | :x: |
+| `episode_duplicate` | Has Duplicate Episodes | :x: | :heavy_check_mark: | :x: |
+| `episode_progress` | Has Episode Progress | :x: | :heavy_check_mark: | :x: |
+| `episode_unmatched` | Has Episodes Unmatched | :x: | :heavy_check_mark: | :x: |
+| `artist_unmatched` | Is Artist's Unmatched | :x: | :x: | :heavy_check_mark: |
+| `album_unmatched` | Is Album's Unmatched | :x: | :x: | :heavy_check_mark: |
+| `track_trash` | Is Track Trashed | :x: | :x: | :heavy_check_mark: |
 
 ## Plex Search Examples
 

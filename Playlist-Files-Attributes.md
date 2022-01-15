@@ -1,4 +1,4 @@
-Since playlists are not specific to one library they will need their own special [Playlist File](Metadata-and-Playlist-File) to work.
+Since playlists are not specific to one library they will need their own special [Playlist File](Metadata-and-Playlist-Files) to work.
 
 You can define Playlist Files by using `playlist_files`. They can either be on the local system, online at an url, or directly from the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs) repository.
 
