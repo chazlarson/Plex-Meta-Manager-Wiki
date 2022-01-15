@@ -30,7 +30,7 @@ settings:
   tvdb_language: eng
   ignore_ids:
   ignore_imdb_ids:
-  playlist_sync_to_user: all
+  playlist_sync_to_users: all
   verify_ssl: true
 ```
 
@@ -61,7 +61,7 @@ settings:
 | [TVDb Language](#tvdb-language) | `tvdb_language` | [ISO 639-2 Language Code](https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes) or Blank for original Language<br>**default:**  | :heavy_check_mark: | :x: | :x: |
 | [Ignore IDs](#ignore-ids) | `ignore_ids` | List or comma-separated String of TMDb/TVDb IDs | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | 
 | [Ignore IMDb IDs](#ignore-imdb-ids) | `ignore_imdb_ids` | List or comma-separated String of IMDb IDs | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Playlist Sync to User](#playlist-sync-to-user) | `playlist_sync_to_user` | `all` or List or comma-separated String of Users to sync the playlist to.<br>**default: `all`** | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| [Playlist Sync to User](#playlist-sync-to-user) | `playlist_sync_to_users` | `all` or List or comma-separated String of Users to sync the playlist to.<br>**default: `all`** | :heavy_check_mark: | :x: | :heavy_check_mark: |
 | [Verify SSL](#verify-ssl) | `verify_ssl` | Turn SSL Verification on or off. | :heavy_check_mark: | :x: | :x: |
 | [Missing Path](#missing-path) | `missing_path` | Path to missing YAML file for the library | :x: | :heavy_check_mark: | :x: |
 
@@ -146,7 +146,7 @@ List or comma-separated String of TMDb/TVDb IDs to ignore in all collections
 List or comma-separated String of IMDb IDs to ignore in all collections
 
 ## Playlist Sync to User
-`all` or List or comma-separated String of Users to sync the playlist to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_user` blank. Defaults to `all`.
+`all` or List or comma-separated String of Users to sync the playlist to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_users` blank. Defaults to `all`.
 
 ## Verify SSL
 Turn SSl Verification on or off.

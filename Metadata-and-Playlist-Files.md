@@ -70,16 +70,16 @@ Each playlist operation requires the `libraries` attribute. Which is how the scr
 
 The names can either be a list or comma-separated string of names that match the mapping names defined in your Configuration File.
 
-Each playlist can also be given the `sync_to_user` which will overrider the global [`playlist_sync_to_user` Setting](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Settings-Attributes#playlist-sync-to-user). 
+Each playlist can also be given the `sync_to_users` which will overrider the global [`playlist_sync_to_users` Setting](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Settings-Attributes#playlist-sync-to-user). 
 
-The values can either be `all` or a list or comma-separated string of users you want the playlist synced to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_user` blank. 
+The values can either be `all` or a list or comma-separated string of users you want the playlist synced to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_users` blank. 
 
 ```yaml
 plalists:
   Marvel Cinematic Universe:
     sync_mode: sync
     libraries: Movies, TV Shows
-    sync_to_user: all
+    sync_to_users: all
     trakt_list: https://trakt.tv/users/donxy/lists/marvel-cinematic-universe?sort=rank,asc
     summary: Marvel Cinematic Universe In Chronological Order
 ```
