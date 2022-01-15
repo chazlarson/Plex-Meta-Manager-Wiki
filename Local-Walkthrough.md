@@ -33,12 +33,13 @@ You need to use Python 3.9, not Python 3.10.  There's one specific requirement t
   <summary>Linux</summary>
   <br />
 
-  If you're running a recent distro, say Ubuntu 18.04 or better, chances are Python 3 is already installed.  You can verify this with:
+  First let's check if it's installed already:
 
   ```
   python3 --version
   ```
-  If this doesn't return a version number, you'll need to get Python 3 installed.  Describing this for any arbitrary linux is out of scope here, but if you're using Ubuntu, [this](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) might be useful.
+
+  If this doesn't return `3.9.[something]`, you'll need to get Python 3.9 installed. Describing this for any arbitrary linux is out of scope here, but if you're using Ubuntu, [this](https://techviewleo.com/how-to-install-python-on-ubuntu-linux/) might be useful.
 </details>
 
 <details>
@@ -168,6 +169,18 @@ This walkthrough is going to use a "virtual environment", since that provides a 
   ```
   python3 -m venv pmm-venv
   ```
+
+  If you see an error like:
+  ```
+  Error: Command '['/home/mroche/Plex-Meta-Manager/pmm-venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
+  ```
+  You probably need to make sure the Python 3.9-specific virtualenv support library is installed.
+
+  On Linux [which is the one platform where this was seen at this point]:
+  ```
+  sudo apt-get install python3.9-venv
+  ```
+
 </details>
 
 <details>
