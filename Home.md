@@ -59,6 +59,7 @@ Before posting on GitHub about an enhancement, error, or configuration question 
 ## Table of Contents
 - [Home](Home)
 - [Installation](Installation)
+- [Run Commands & Environmental Variables](Run-Commands-&-Environmental-Variables)
   - [Local Walkthrough](Local-Walkthrough)
   - [Docker Walkthrough](Docker-Walkthrough)
   - [unRAID Walkthrough](unRAID-Walkthrough)

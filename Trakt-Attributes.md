@@ -38,4 +38,4 @@ To authenticate Trakt the first time, you need run the container with the `-it` 
 
 #### OAuth Flow using unRAID Docker
 
-Directions on how to authenticate Trakt on unRAID can be found on the [unRAID Installation](https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Walkthrough#advanced-installation-authenticating-trakt-or-myanimelist) page.
+Directions on how to authenticate Trakt on unRAID can be found on the [unRAID Walkthrough](https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Walkthrough#advanced-installation-authenticating-trakt-or-myanimelist) page.

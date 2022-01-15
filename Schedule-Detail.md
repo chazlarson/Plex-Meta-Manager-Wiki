@@ -50,6 +50,6 @@ The scheduling options are:
 | Never | Never updates | never | `never` |
 
 * `daily` is the default when `schedule` isn't specified.
-* You can run the script multiple times per day but using the `--time` command line argument detailed on the [Local Installation Page](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Installation#time-to-run).
+* You can run the script multiple times per day but using the `--time` command line argument detailed on the [Run Commands & Environmental Variables Page](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Run-Commands-&-Environmental-Variables#time-to-run).
 * You can have multiple scheduling options just make them a list or comma-separated values.
 * You can use the `delete_not_scheduled` setting to delete Collections that are skipped due to not being scheduled.
