@@ -107,16 +107,41 @@ pwd
 ```
 
 This will display a full path:
+<details>
+  <summary>OS X/</summary>
+  <br />
+  ```
+  /Users/YOURUSERNAME/plex-meta-manager
+  ```
+</details>
 
-```
-/Users/mroche/plex-meta-manager
-```
+<details>
+  <summary>Linux</summary>
+  <br />
+  ```
+  /home/YOURUSERNAME/plex-meta-manager
+  ```
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+  ```
+  C:\Users\YOURUSERNAME\plex-meta-manager
+  ```
+</details>
 
 You'll need to add this to the docker command every time you run it:
 
 ```
+docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager
+```
+as an example:
+
+```
 docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager
 ```
+
 
 If you run that command now it will display a similar error to before, but without all the image loading:
 
@@ -124,6 +149,8 @@ If you run that command now it will display a similar error to before, but witho
  $ docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
 Config Error: config not found at //config
 ```
+
+Note that I show the example path there.
 
 ### Setting up the initial config file
 
@@ -169,8 +196,13 @@ First, make a copy of the template, then open the copy in an editor:
   <summary>OS X/Linux</summary>
   <br />
 
+  Get a copy of the template to edit:
   ```
   curl -fLvo config.yml https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template
+  ```
+
+  Open it in an editor:
+  ```
   nano config.yml
   ```
 
@@ -189,6 +221,8 @@ First, make a copy of the template, then open the copy in an editor:
   I’m using `notepad` here simply because it’s built into Windows.  You can use any other text editor provided it saves files as PLAIN TEXT.
 
 </details>
+
+From here on in, when I say "open the config file", I mean the `nano` or `notepad` command.  You don't want to download the template again.
 
 ---
 
@@ -243,10 +277,28 @@ This is intended to cause an error, so bear with me.
 
 #### Testing the config file
 
-Save the file [in nano that would be cntl-x, y, return], then run the script again:
+Save the file:
+
+<details>
+  <summary>OS X/Linux</summary>
+  <br />
+
+  If you're using `nano`, type control-`x`, then `y`, then the enter key.
+
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+
+  If you're using `notepad`, type alt-`s` of choose `Save` from the `File` menu.
+
+</details>
+
+Then run the script again:
 
 ```
-docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
+docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
 ```
 
 I’ve removed some of the lines for space, but have left the important bits:
@@ -275,7 +327,7 @@ I’ve removed some of the lines for space, but have left the important bits:
 
 You can see there that PMM found its config file, was able to connect to TMDB, was able to connect to Plex, and then failed trying to read the “Movies-HIDDEN” library, which of course doesn’t exist.
 
-Open the config file again and fix the name of the Movies library to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
+Open the config file again and change "Movies-HIDDEN" [or whatever you used in the previous step] to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
 
 My Movies library is called “Main Movies", so mine looks like this:
 
@@ -288,10 +340,28 @@ libraries:                                      # Library mappings must have a c
 
 NOTE: the matching naming of Library and YML is not actually required, I'm doing it here for clarity.
 
-Save the file and run the script again:
+Save the file:
+
+<details>
+  <summary>OS X/Linux</summary>
+  <br />
+
+  If you're using `nano`, type control-`x`, then `y`, then the enter key.
+
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+
+  If you're using `notepad`, type alt-`s` of choose `Save` from the `File` menu.
+
+</details>
+
+Then run the script again:
 
 ```
-docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
+docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
 ```
 
 Now you’ll see some more activity in the Plex connection section:
@@ -387,10 +457,28 @@ The first one is based on a template, so if you wanted to create a collection fo
      template: {name:  Actor, person: 9273}
 ```
 
-Save the file and run the script again.
+Save the file:
+
+<details>
+  <summary>OS X/Linux</summary>
+  <br />
+
+  If you're using `nano`, type control-`x`, then `y`, then the enter key.
+
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+
+  If you're using `notepad`, type alt-`s` of choose `Save` from the `File` menu.
+
+</details>
+
+Then run the script again:
 
 ```
-docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
+docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
 ```
 
 This time you should see that the metadata file gets loaded:

@@ -33,12 +33,13 @@ You need to use Python 3.9, not Python 3.10.  There's one specific requirement t
   <summary>Linux</summary>
   <br />
 
-  If you're running a recent distro, say Ubuntu 18.04 or better, chances are Python 3 is already installed.  You can verify this with:
+  First let's check if it's installed already:
 
   ```
   python3 --version
   ```
-  If this doesn't return a version number, you'll need to get Python 3 installed.  Describing this for any arbitrary linux is out of scope here, but if you're using Ubuntu, [this](https://phoenixnap.com/kb/how-to-install-python-3-ubuntu) might be useful.
+
+  If this doesn't return `3.9.[something]`, you'll need to get Python 3.9 installed. Describing this for any arbitrary linux is out of scope here, but if you're using Ubuntu, [this](https://techviewleo.com/how-to-install-python-on-ubuntu-linux/) might be useful.
 </details>
 
 <details>
@@ -168,6 +169,18 @@ This walkthrough is going to use a "virtual environment", since that provides a 
   ```
   python3 -m venv pmm-venv
   ```
+
+  If you see an error like:
+  ```
+  Error: Command '['/home/mroche/Plex-Meta-Manager/pmm-venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
+  ```
+  You probably need to make sure the Python 3.9-specific virtualenv support library is installed.
+
+  On Linux [which is the one platform where this was seen at this point]:
+  ```
+  sudo apt-get install python3.9-venv
+  ```
+
 </details>
 
 <details>
@@ -310,7 +323,7 @@ This article will describe how to get a token: [Finding an authentication token]
 
 #### Editing the config template
 
-First, make a copy of the template, then open the copy in an editor:
+First, make a copy of the template.  This is going to create a copy of the base template that you can then edit.  You only need to do this once.
 
 <details>
   <summary>OS X/Linux</summary>
@@ -318,6 +331,27 @@ First, make a copy of the template, then open the copy in an editor:
 
   ```
   cp config/config.yml.template config/config.yml
+  ```
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+
+  ```
+  copy .\config\config.yml.template .\config\config.yml
+  ```
+</details>
+
+---
+
+Now open the copy in an editor:
+
+<details>
+  <summary>OS X/Linux</summary>
+  <br />
+
+  ```
   nano config/config.yml
   ```
 
@@ -329,12 +363,13 @@ First, make a copy of the template, then open the copy in an editor:
   <br />
 
   ```
-  copy .\config\config.yml.template .\config\config.yml
   notepad .\config\config.yml
   ```
   I’m using `notepad` here simply because it’s built into Windows.  You can use any other text editor provided it saves files as PLAIN TEXT.
 
 </details>
+
+From here on in, when I say "open the config file", I mean this `nano` or `notepad` command.  You don't want to copy the template again.
 
 ---
 
@@ -418,7 +453,7 @@ I’ve removed some of the lines for space, but have left the important bits:
 
 You can see there that PMM found its config file, was able to connect to TMDB, was able to connect to Plex, and then failed trying to read the “Movies-HIDDEN” library, which of course doesn’t exist.
 
-Open the config file again and fix the name of the Movies library to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
+Open the config file again and change "Movies-HIDDEN" [or whatever you used in the previous step] to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
 
 My Movies library is called “Main Movies", so mine looks like this:
 
