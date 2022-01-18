@@ -75,7 +75,7 @@ Each playlist can also be given the `sync_to_users` which will overrider the glo
 The values can either be `all` or a list or comma-separated string of users you want the playlist synced to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_users` blank. 
 
 ```yaml
-plalists:
+playlists:
   Marvel Cinematic Universe:
     sync_mode: sync
     libraries: Movies, TV Shows
