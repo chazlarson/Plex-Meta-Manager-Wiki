@@ -11,7 +11,7 @@ To install a container from docker hub, you will need community applications - a
 
 | Config Type | Name | Key | Value | Container Path | Host Path | Access Mode | Description |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Variable | Time to Run | `PMM_TME` | `6:00` | N/A | N/A | N/A | Time to update each day. Format: HH:MM |
+| Variable | Time to Run | `PMM_TIME` | `6:00` | N/A | N/A | N/A | Time to update each day. Format: HH:MM |
 | Variable | Divider Character | `PMM_DIVIDER` | `=` | N/A | N/A | N/A | The character that divides the sections |
 | Variable | Screen Width | `PMM_WIDTH` | `100` | N/A | N/A | N/A | An integer between 90 and 300 |
 | Path | Config Storage Path | N/A | N/A | `/config` | `/mnt/user/appdata/plex-meta-manager` | Read/Write | Translation from docker container path to host path |
