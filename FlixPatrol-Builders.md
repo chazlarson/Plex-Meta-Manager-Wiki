@@ -26,7 +26,7 @@ The `sync_mode: sync` and `collection_order: custom` Details are recommended sin
 ```yaml
 collections:
   US Netflix Monthly Top 20:
-    flicpatrol_top:
+    flixpatrol_top:
       platform: netflix
       location: united_states
       time_window: this_month
@@ -51,7 +51,7 @@ The `sync_mode: sync` and `collection_order: custom` Details are recommended sin
 ```yaml
 collections:
   Instagram Popular:
-    flicpatrol_popular:
+    flixpatrol_popular:
       source: instagram
       time_window: all
       limit: 20
@@ -76,7 +76,7 @@ The `sync_mode: sync` and `collection_order: custom` Details are recommended sin
 ```yaml
 collections:
   Gen X Male US Demographic:
-    flicpatrol_demographics:
+    flixpatrol_demographics:
       generation: x
       gender: men
       location: united_states 
@@ -97,11 +97,11 @@ collections:
     collection_order: custom
     sync_mode: sync
   Instagram Monthly Popular:
-    flicpatrol_url: https://flixpatrol.com/popular/movies/instagram/all-time/
+    flixpatrol_url: https://flixpatrol.com/popular/movies/instagram/all-time/
     collection_order: custom
     sync_mode: sync
   Gen X Male US Demographic:
-    flicpatrol_url: https://flixpatrol.com/demographics/generation-x/men/united-states/
+    flixpatrol_url: https://flixpatrol.com/demographics/generation-x/men/united-states/
     collection_order: custom
     sync_mode: sync
 ```
