@@ -3,56 +3,27 @@ You can have the script edit the metadata of Artists, Albums, and Tracks by addi
 An example of multiple metadata edits in a music library is below:
 ```yaml
 metadata:
-  "Avatar: The Last Airbender":
-    sort_title: Avatar 01
-    seasons:
-      1:
-        title: "Book One: Water"
-        summary: >-
-              After a lapse of 100 years, the Avatar-spiritual master of the elements-has returned. And just in 
-              the nick of time. The Four Nations (Water, Earth, Fire, and Air) have become unbalanced. The Fire 
-              Nation wants to rule the world, and its first conquest will be the Northern Water Tribe. It's up to 
-              a 12-year-old Airbender named Aang to find a way to stop it. Join Aang, Katara, Sokka, Momo, and 
-              Appa as they head north on the adventure of a lifetime.
-        episodes:
+  "Linkin Park":
+    country: "United States of America"
+    album_sorting: newest
+    albums:
+      "Hybrid Theory":
+        originally_available: "2000-10-24"
+        tracks:
           1:
-            rating: 9.1
-      2:
-        title: "Book Two: Earth"
-        summary: >-
-              Avatar Aang continues his quest to master the four elements before the end of summer. Together with
-              Katara, Sokka, Momo, and Appa, he journeys across the Earth Kingdom in search of an Earthbending
-              mentor. Along the way, he confronts Princess Azula, treacherous  daughter of Firelord Ozai and 
-              sister to Prince Zuko. More powerful than her brother, Azula will stop nothing to defeat the Avatar. 
-              But Aang and the gang find plenty of Earth Kingdom allies to help them along the way. From the swamps 
-              of the South to the Earth King's palace, Avatar: Book 2 is an adventure like no other.
-      3:
-        title: "Book Three: Fire"
-        summary: >-
-              Having survived the terrible battle with Azula, Aang faces new challenges as he and his brave
-              friends secretly enter the Fire Nation. Their quest is to find and defeat Firelord Ozai. Along
-              the way, they discover that Ozai has plans of his own. The leader of the Fire Nation intends to 
-              use the massive power of Sozin's comet to spread his dominion permanently across the four nations. 
-              Short on time, Aang has a lot of bending to learn and no master to help him learn it. However, his 
-              friends are there to help, and he finds unexpected allies deep in the heart of the Fire Nation. In 
-              the spectacular four-part conclusion, Aang must fulfill his destiny and become a fully realized 
-              Avatar, or watch the world go up in smoke.
-        episodes:
-          21:
-            summary: The Epic Series Final of Avatar The Last Airbender
-  "Avatar: The Legend of Korra":
-    sort_title: Avatar 02
-    alt_title: The Legend of Korra
-    original_title: The Legend of Korra
-    seasons:
-      1:
-        title: "Book One: Air"
-      2:
-        title: "Book Two: Spirits"
-      3:
-        title: "Book Three: Change"
-      4:
-        title: "Book Four: Balance"
+            rating: 5
+          "One Step Closer":
+            rating: 5
+      "Meteora":
+        originally_available: "2003-03-25"
+        album_sorting: newest
+        tracks:
+          9:
+            rating: 5
+          "Numb":
+            rating: 5
+      "Minutes To Midnight":
+        originally_available: "2007-05-14"
 ```
 
 ## Artist
@@ -67,7 +38,7 @@ The mapping name is the album name.
 ### Tracks
 To edit the metadata of a particular Track on an Album use the `tracks` attribute on its album.
 
-The mapping name is the episode number in that season or the title of the episode.
+The mapping name is the track number in that Album or the title of the Track.
 
 ## Metadata Edits
 
@@ -81,13 +52,13 @@ The available attributes for editing artists, albums, and tracks are as follows
 | Albums | `albums` | Mapping to define Albums | :heavy_check_mark: | :x: | :x: |
 | Tracks | `tracks` | Mapping to define Tracks | :x: | :heavy_check_mark: | :x: |
 
-* If you know of another Title your item might exist under, but you want it titled differently you can use `alt_title` to specify another title to look under and then be changed to the mapping name. For Example TMDb uses the name `The Legend of Korra`, but I want it as `Avatar: The Legend of Korra` (Which must be surrounded by quotes since it uses the character `:`):
+* If you know of another Title your item might exist under, but you want it titled differently you can use `alt_title` to specify another title to look under and then be changed to the mapping name. For Example the Artist `Kesha` used to be stylized as `Ke$ha`, and might still be found that way in Metadata results.
     ```yaml
     metadata:
-      "Avatar: The Legend of Korra":
-        alt_title: The Legend of Korra
+      "Kesha":
+        alt_title: "Ke$ha"
     ```
-    This would change the name of the TMDb default `The Legend of Korra` to `Avatar: The Legend of Korra` and would not mess up any subsequent runs.
+    This would change the name of the default `Ke$ha` to `Kesha` and would not mess up any subsequent runs.
 ``
 ### General Attributes
 
