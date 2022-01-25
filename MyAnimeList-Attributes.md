@@ -14,10 +14,10 @@ mal:
     refresh_token:
 ```
 
-| Name | Attribute | Allowed Values | Default | Required |
-| :--- | :--- | :--- | :---: | :---: |
-| Client ID | `client_id` | MyAnimeList Application Client ID | N/A | :heavy_check_mark: |
-| Client Secret | `client_secret` | MyAnimeList Application Client Secret | N/A | :heavy_check_mark: |
+| Name          | Attribute       | Allowed Values                        | Default |      Required      |
+|:--------------|:----------------|:--------------------------------------|:-------:|:------------------:|
+| Client ID     | `client_id`     | MyAnimeList Application Client ID     |   N/A   | :heavy_check_mark: |
+| Client Secret | `client_secret` | MyAnimeList Application Client Secret |   N/A   | :heavy_check_mark: |
 
 * All other attributes will be filled in by the script.
 

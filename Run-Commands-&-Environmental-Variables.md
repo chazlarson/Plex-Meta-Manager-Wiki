@@ -1,22 +1,23 @@
-| Name | Shell Command | Environmental<br>Variable | Allowed Values | Default Value |
-| :--- | :--- | :--- | :--- | :--- |
-| [Config](#config) | `-c` or `--config` | `PMM_CONFIG` | Path to YAML config file | `config/config.yml` alongside<br>`plex_meta_manager.py` |
-| [Time to Run](#time-to-run) | `-t` or `--time` | `PMM_TIME` | comma-separated list of times to update each day<br>**Format:** HH:MM | `03:00` |
-| [Run](#run) | `-r` or `--run` | `PMM_RUN` | Run without the scheduler | `False` |
-| [Run Tests](#run-tests) | `-rt`, `--tests`, or `--run-tests` | `PMM_TEST` | Run in debug mode with only collections that have `test: true` | `False` |
-| [Run Collections Only](#collections-only) | `-co` or `--collections-only` | `PMM_COLLECTIONS_ONLY` | Process only collections during the run | `False` |
-| [Run Libraries Only](#libraries-only) | `-lo` or `--libraries-only` | `PMM_LIBRARIES_ONLY` | Process everything but collections during the run | `False` |
-| [Run Collections](#run-collections) | `-rc` or `--run-collections` | `PMM_COLLECTIONS` | comma-separated list of collection names to process | All Collections |
-| [Run Libraries](#run-libraries) | `-rl` or `--run-libraries` | `PMM_LIBRARIES` | comma-separated list of library names to process | All libraries |
-| [Run Libraries First](#run-libraries-first) | `-lf` or `--libraries-first` | `PMM_LIBRARIES_FIRST` | Run library operations first before collections during the run | `False` |
-| [Ignore Schedules](#ignore-schedules) | `-is` or `--ignore-schedules` | `PMM_IGNORE_SCHEDULES` | Ignore all schedules during the run except for range schedules | `False` |
-| [Delete Collections](#delete-collections) | `-dc` or `--delete-collections` | `PMM_DELETE_COLLECTIONS` | Delete all collections in a Library before a run | `False` |
-| [Resume Run](#resume-run) | `-re` or `--resume` | `PMM_RESUME` | Name of the Collection you want to resume the run at | ` ` |
-| [No Countdown](#no-countdown) | `-nc` or `--no-countdown` | `PMM_NO_COUNTDOWN` | Run without displaying the countdown | `False` |
-| [No Missing](#no-missing) | `-nm` or `--no-missing` | `PMM_NO_MISSING` | Run without any of the missing movie/show functions | `False` |
-| [Read Only Config](#read-only-config) | `-ro` or `--read-only-config` | `PMM_READ_ONLY_CONFIG` | Run without writing to the config | `False` |
-| [Divider Character](#divider-character--screen-width) | `-d` or `--divider` | `PMM_DIVIDER` | Character that divides the sections | `=` |
-| [Screen Width](#divider-character--screen-width) | `-w` or `--width` | `PMM_WIDTH` | Integer between 90 and 300 | `100` |
+| Name                                                  | Shell Command                      | Environmental<br>Variable | Allowed Values                                                        | Default Value                                           |
+|:------------------------------------------------------|:-----------------------------------|:--------------------------|:----------------------------------------------------------------------|:--------------------------------------------------------|
+| [Config](#config)                                     | `-c` or `--config`                 | `PMM_CONFIG`              | Path to YAML config file                                              | `config/config.yml` alongside<br>`plex_meta_manager.py` |
+| [Time to Run](#time-to-run)                           | `-t` or `--time`                   | `PMM_TIME`                | comma-separated list of times to update each day<br>**Format:** HH:MM | `03:00`                                                 |
+| [Run](#run)                                           | `-r` or `--run`                    | `PMM_RUN`                 | Run without the scheduler                                             | `False`                                                 |
+| [Run Tests](#run-tests)                               | `-rt`, `--tests`, or `--run-tests` | `PMM_TEST`                | Run in debug mode with only collections that have `test: true`        | `False`                                                 |
+| [Run Collections Only](#collections-only)             | `-co` or `--collections-only`      | `PMM_COLLECTIONS_ONLY`    | Process only collections during the run                               | `False`                                                 |
+| [Run Libraries Only](#libraries-only)                 | `-lo` or `--libraries-only`        | `PMM_LIBRARIES_ONLY`      | Process everything but collections during the run                     | `False`                                                 |
+| [Run Collections](#run-collections)                   | `-rc` or `--run-collections`       | `PMM_COLLECTIONS`         | comma-separated list of collection names to process                   | All Collections                                         |
+| [Run Libraries](#run-libraries)                       | `-rl` or `--run-libraries`         | `PMM_LIBRARIES`           | comma-separated list of library names to process                      | All Libraries                                           |
+| [Run Metadata Files](#run-metadata-files)             | `-rm` or `--run-metadata-files`    | `PMM_METADATA_FILES`      | comma-separated list of metadata file names to process                | All Metadata Files                                      |
+| [Run Libraries First](#run-libraries-first)           | `-lf` or `--libraries-first`       | `PMM_LIBRARIES_FIRST`     | Run library operations first before collections during the run        | `False`                                                 |
+| [Ignore Schedules](#ignore-schedules)                 | `-is` or `--ignore-schedules`      | `PMM_IGNORE_SCHEDULES`    | Ignore all schedules during the run except for range schedules        | `False`                                                 |
+| [Delete Collections](#delete-collections)             | `-dc` or `--delete-collections`    | `PMM_DELETE_COLLECTIONS`  | Delete all collections in a Library before a run                      | `False`                                                 |
+| [Resume Run](#resume-run)                             | `-re` or `--resume`                | `PMM_RESUME`              | Name of the Collection you want to resume the run at                  | ` `                                                     |
+| [No Countdown](#no-countdown)                         | `-nc` or `--no-countdown`          | `PMM_NO_COUNTDOWN`        | Run without displaying the countdown                                  | `False`                                                 |
+| [No Missing](#no-missing)                             | `-nm` or `--no-missing`            | `PMM_NO_MISSING`          | Run without any of the missing movie/show functions                   | `False`                                                 |
+| [Read Only Config](#read-only-config)                 | `-ro` or `--read-only-config`      | `PMM_READ_ONLY_CONFIG`    | Run without writing to the config                                     | `False`                                                 |
+| [Divider Character](#divider-character--screen-width) | `-d` or `--divider`                | `PMM_DIVIDER`             | Character that divides the sections                                   | `=`                                                     |
+| [Screen Width](#divider-character--screen-width)      | `-w` or `--width`                  | `PMM_WIDTH`               | Integer between 90 and 300                                            | `100`                                                   |
 
 * Environmental Variable values are used over Shell Command values 
 
@@ -179,6 +180,28 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 ```
 
 </details>
+
+### Run Metadata Files
+To have the script run only the Metadata File Names in the comma-separated list use the `--run-metadata-files` option.
+
+<details>
+  <summary>Local</summary>
+
+```shell
+python plex_meta_manager.py --run-metadata-files "Movies"
+```
+
+</details>
+<details>
+  <summary>Docker</summary>
+
+```shell
+docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --run-metadata-files "Movies"
+```
+
+</details>
+
+* This works for all different metadata paths i.e. `git`, `url`, `file`, or `repo`.
 
 ### Run Libraries First
 To have the script run library operations first before collections during the run use the `--libraries-first` option.

@@ -19,13 +19,13 @@ Assets are searched for only at specific times.
 
 The table below shows the asset folder path structures that will be searched for. There are two different options when it comes to how the program looks at the files inside you Asset Directories. These can be toggled between by using the `asset_folders` attribute under `settings`.
 
-| Image Type | Image Path With Folders<br>`asset_folders: true` | Image Path Without Folder<br>`asset_folders: false` |
-| :--- | :--- | :--- |
-| Collection/Movie/Show poster | `assets/ASSET_NAME/poster.ext` | `assets/ASSET_NAME.ext` |
-| Collection/Movie/Show background | `assets/ASSET_NAME/background.ext` | `assets/ASSET_NAME_background.ext` |
-| Season poster | `assets/ASSET_NAME/Season##.ext` | `assets/ASSET_NAME_Season##.ext` |
-| Season background | `assets/ASSET_NAME/Season##_background.ext` | `assets/ASSET_NAME_Season##_background.ext` |
-| Episode poster | `assets/ASSET_NAME/S##E##.ext` | `assets/ASSET_NAME_S##E##.ext` |
+| Image Type                       | Image Path With Folders<br>`asset_folders: true` | Image Path Without Folder<br>`asset_folders: false` |
+|:---------------------------------|:-------------------------------------------------|:----------------------------------------------------|
+| Collection/Movie/Show poster     | `assets/ASSET_NAME/poster.ext`                   | `assets/ASSET_NAME.ext`                             |
+| Collection/Movie/Show background | `assets/ASSET_NAME/background.ext`               | `assets/ASSET_NAME_background.ext`                  |
+| Season poster                    | `assets/ASSET_NAME/Season##.ext`                 | `assets/ASSET_NAME_Season##.ext`                    |
+| Season background                | `assets/ASSET_NAME/Season##_background.ext`      | `assets/ASSET_NAME_Season##_background.ext`         |
+| Episode poster                   | `assets/ASSET_NAME/S##E##.ext`                   | `assets/ASSET_NAME_S##E##.ext`                      |
 
 * For **Collections** replace `ASSET_NAME` with the mapping name used with the collection unless `system_name` is specified, which you would then use what's specified in `system_name`.
 

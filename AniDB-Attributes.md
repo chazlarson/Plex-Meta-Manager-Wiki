@@ -11,7 +11,7 @@ anidb:
   password: ######
 ```
 
-| Name | Attribute | Allowed Values | Required |
-| :--- | :--- | :--- | :---: |
+| Name     | Attribute  | Allowed Values |      Required      |
+|:---------|:-----------|:---------------|:------------------:|
 | Username | `username` | AniDB Username | :heavy_check_mark: |
 | Password | `password` | AniDB Password | :heavy_check_mark: |

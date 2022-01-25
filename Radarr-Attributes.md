@@ -20,20 +20,20 @@ radarr:
   plex_path: /share/CACHEDEV1_DATA/Multimedia
 ```
 
-| Name | Attribute | Allowed Values| Default | Required |
-| :--- | :--- | :--- | :---: | :---: |
-| Radarr URL | `url` | Radarr URL (Including URL Base if set)<br>**Example:** http://192.168.1.12:32788 | N/A | :heavy_check_mark: |
-| API Token | `token` | Radarr API Token | N/A | :heavy_check_mark: |
-| Add | `add` | Add missing movies found to Radarr<br>**boolean:** true or false | false | :x: |
-| Add Existing | `add_existing` | Add movie existing in this collection to Radarr<br>**boolean:** true or false | false | :x: |
-| Root Folder Path | `root_folder_path` | Radarr Root Folder Path To Use | N/A | :heavy_check_mark: |
-| Monitor | `monitor` | Monitor the added movie | true | :x: |
-| Availability | `availability` | Minimum Availability of the Movie<br>**Options:** `announced`, `cinemas`, `released`, `db` | `announced` | :heavy_check_mark: |
-| Quality Profile | `quality_profile` | Quality Profile To Use | N/A | :x: |
-| Tag | `tag` | Add this list or comma-separated string of tags to every movie added to Radarr | ` ` | :x: |
-| Search | `search` | Search when adding missing movies to Radarr<br>**boolean:** true or false | false | :x: |
-| Plex Path | `plex_path` | When using `add_existing` or `radarr_add_all` Convert this part of the path to `radarr_path` | ` ` | :x: |
-| Radarr Path | `radarr_path` | When using `add_existing` or `radarr_add_all` Convert the `plex_path` part of the path to this | ` ` | :x: |
+| Name             | Attribute          | Allowed Values                                                                                 |   Default   |      Required      |
+|:-----------------|:-------------------|:-----------------------------------------------------------------------------------------------|:-----------:|:------------------:|
+| Radarr URL       | `url`              | Radarr URL (Including URL Base if set)<br>**Example:** http://192.168.1.12:32788               |     N/A     | :heavy_check_mark: |
+| API Token        | `token`            | Radarr API Token                                                                               |     N/A     | :heavy_check_mark: |
+| Add              | `add`              | Add missing movies found to Radarr<br>**boolean:** true or false                               |    false    |        :x:         |
+| Add Existing     | `add_existing`     | Add movie existing in this collection to Radarr<br>**boolean:** true or false                  |    false    |        :x:         |
+| Root Folder Path | `root_folder_path` | Radarr Root Folder Path To Use                                                                 |     N/A     | :heavy_check_mark: |
+| Monitor          | `monitor`          | Monitor the added movie                                                                        |    true     |        :x:         |
+| Availability     | `availability`     | Minimum Availability of the Movie<br>**Options:** `announced`, `cinemas`, `released`, `db`     | `announced` | :heavy_check_mark: |
+| Quality Profile  | `quality_profile`  | Quality Profile To Use                                                                         |     N/A     |        :x:         |
+| Tag              | `tag`              | Add this list or comma-separated string of tags to every movie added to Radarr                 |     ` `     |        :x:         |
+| Search           | `search`           | Search when adding missing movies to Radarr<br>**boolean:** true or false                      |    false    |        :x:         |
+| Plex Path        | `plex_path`        | When using `add_existing` or `radarr_add_all` Convert this part of the path to `radarr_path`   |     ` `     |        :x:         |
+| Radarr Path      | `radarr_path`      | When using `add_existing` or `radarr_add_all` Convert the `plex_path` part of the path to this |     ` `     |        :x:         |
 
 * The `token` can be found by going to `Radarr > Settings > General > Security > API Key`
 

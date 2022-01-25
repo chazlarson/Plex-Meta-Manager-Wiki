@@ -2,14 +2,14 @@ You can find items using the features of [TheTVDb.com](https://www.thetvdb.com/)
 
 No configuration is required for these builders.
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| [TVDb List](#tvdb-list) | `tvdb_list` | Finds every item in a [TVDb List](https://www.thetvdb.com/lists) or [TVDb Userlist](https://www.thetvdb.com/lists/custom) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [TVDb List Details](#tvdb-list) | `tvdb_list_details` | Finds every item in a [TVDb List](https://www.thetvdb.com/lists) or [TVDb Userlist](https://www.thetvdb.com/lists/custom) and updates the collection summary with the TVDb list description | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [TVDb Show](#tvdb-show) | `tvdb_show` | Finds the series specified | :x: | :heavy_check_mark: | :x: | 
-| [TVDb Show Details](#tvdb-show) | `tvdb_show_details` | Finds the series specified and updates the collection with the summary, poster, and background from the TVDb series | :x: | :heavy_check_mark: | :x: |
-| [TVDb Movie](#tvdb-movie) | `tvdb_movie` | Finds the movie specified | :heavy_check_mark: | :x: | :x: |
-| [TVDb Movie Details](#tvdb-movie) | `tvdb_movie_details` | Finds the movie specified and updates the collection with the summary, poster, and background from the TVDb movie | :heavy_check_mark: | :x: | :x: |
+| Name                              | Attribute            | Description                                                                                                                                                                                 | Works with Movies  |  Works with Shows  | Works with Playlists and Custom Sort |
+|:----------------------------------|:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------:|:------------------:|:------------------------------------:|
+| [TVDb List](#tvdb-list)           | `tvdb_list`          | Finds every item in a [TVDb List](https://www.thetvdb.com/lists) or [TVDb Userlist](https://www.thetvdb.com/lists/custom)                                                                   | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TVDb List Details](#tvdb-list)   | `tvdb_list_details`  | Finds every item in a [TVDb List](https://www.thetvdb.com/lists) or [TVDb Userlist](https://www.thetvdb.com/lists/custom) and updates the collection summary with the TVDb list description | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TVDb Show](#tvdb-show)           | `tvdb_show`          | Finds the series specified                                                                                                                                                                  |        :x:         | :heavy_check_mark: |                 :x:                  | 
+| [TVDb Show Details](#tvdb-show)   | `tvdb_show_details`  | Finds the series specified and updates the collection with the summary, poster, and background from the TVDb series                                                                         |        :x:         | :heavy_check_mark: |                 :x:                  |
+| [TVDb Movie](#tvdb-movie)         | `tvdb_movie`         | Finds the movie specified                                                                                                                                                                   | :heavy_check_mark: |        :x:         |                 :x:                  |
+| [TVDb Movie Details](#tvdb-movie) | `tvdb_movie_details` | Finds the movie specified and updates the collection with the summary, poster, and background from the TVDb movie                                                                           | :heavy_check_mark: |        :x:         |                 :x:                  |
 
 ## TVDb List
 Finds every item in a [TVDb List](https://www.thetvdb.com/lists) or [TVDb Userlist](https://www.thetvdb.com/lists/custom)

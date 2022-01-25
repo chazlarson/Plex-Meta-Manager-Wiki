@@ -12,12 +12,12 @@ webhooks:
   changes:
 ```
 
-| Name | Attribute | Global | Library | Collection |
-| :--- | :--- | :---: | :---: | :---: |
-| [Error](#error-notifications) | `error` | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [Run Start](#run-start-notifications) | `run_start` | :heavy_check_mark: | :x: | :x: |
-| [Run End](#run-end-notifications) | `run_end` | :heavy_check_mark: | :x: | :x: |
-| [Collection/Playlist Changes](#changes-notifications) | `changes` | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Name                                                  | Attribute   |       Global       |      Library       |     Collection     |
+|:------------------------------------------------------|:------------|:------------------:|:------------------:|:------------------:|
+| [Error](#error-notifications)                         | `error`     | :heavy_check_mark: | :heavy_check_mark: |        :x:         |
+| [Run Start](#run-start-notifications)                 | `run_start` | :heavy_check_mark: |        :x:         |        :x:         |
+| [Run End](#run-end-notifications)                     | `run_end`   | :heavy_check_mark: |        :x:         |        :x:         |
+| [Collection/Playlist Changes](#changes-notifications) | `changes`   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 * Each Attribute can be either a webhook url as a string or a comma-separated list of webhooks urls.
 * To send notifications to [Notifiarr](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Notifiarr-Attributes) just add `notifiarr` to a webhook instead of the webhook url.
@@ -131,5 +131,7 @@ The Changes Notification will be sent after each collection/playlist containing 
     "tmdb_id": int              // TMDb ID of removal only appears if it's a Movie
     "tvdb_id": int              // TVDb ID of removal only appears if it's a Show
   ],
+  "radarr_adds": [int],         // List of TMDb IDs added to Radarr
+  "sonarr_adds": [int],         // List of TVDb IDs added to Sonarr
 }
 ```

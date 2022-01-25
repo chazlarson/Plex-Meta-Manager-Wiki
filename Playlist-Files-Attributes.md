@@ -24,6 +24,14 @@ To use a Playlist File from the [Plex Meta Manager Configs](https://github.com/m
 playlist_files:
   git: meisnate12/Playlists
 ```
+To use a Playlist File from a `custom_repo` defined in the global Settings add `repo` under playlist_files set to the path in the repository.
+* This loads the yaml file at `https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/Collections/Movies/Movies.yml`
+```yaml
+settings:
+  custom_repo: https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/
+playlist_files:
+  repo: Collections/Movies/Movies
+```
 You can specify multiple paths of any type using a list like below.
 ```yaml
 playlist_files:
