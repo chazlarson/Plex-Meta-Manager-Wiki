@@ -69,6 +69,7 @@ settings:
 | [Ignore IMDb IDs](#ignore-imdb-ids)                         | `ignore_imdb_ids`             | List or comma-separated String of IMDb IDs                                                                                                                                                                  | :heavy_check_mark: | :heavy_check_mark: |    :heavy_check_mark:     |
 | [Item Refresh Delay](#item-refresh-delay)                   | `item_refresh_delay`          | Amount of time to wait between each `item_refresh` of every movie/show a collection/playlist **integer**<br>**default: 0**                                                                                  | :heavy_check_mark: | :heavy_check_mark: |    :heavy_check_mark:     |
 | [Playlist Sync to Users](#playlist-sync-to-users)           | `playlist_sync_to_users`      | `all` or List or comma-separated String of Users to sync the playlist to.<br>**default: `all`**                                                                                                             | :heavy_check_mark: |        :x:         |    :heavy_check_mark:     |
+| [Custom Repo](#custom-repo)                                 | `custom_repo`                 | Defines the custom repo you use with the `repo` attribute when defining metadata_paths and playlist_files                                                                                                   | :heavy_check_mark: |        :x:         |            :x:            |
 | [Verify SSL](#verify-ssl)                                   | `verify_ssl`                  | Turn SSL Verification on or off.                                                                                                                                                                            | :heavy_check_mark: |        :x:         |            :x:            |
 | [Missing Path](#missing-path)                               | `missing_path`                | Path to missing YAML file for the library                                                                                                                                                                   |        :x:         | :heavy_check_mark: |            :x:            |
 
@@ -166,6 +167,12 @@ Amount of time to wait between each `item_refresh` of every movie/show a collect
 
 ## Playlist Sync to Users
 `all` or List or comma-separated String of Users to sync the playlist to in addition to yourself. To Sync a playlist to only yourself leave `playlist_sync_to_users` blank. Defaults to `all`.
+
+## Custom Repo
+Defines the custom repo you use with the `repo` attribute when defining `metadata_paths` and `playlist_files`
+
+* If you want to link you're own GitHub make sure you're using the raw link like below.
+  `https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/`
 
 ## Verify SSL
 Turn SSl Verification on or off.
