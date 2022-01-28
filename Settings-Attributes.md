@@ -71,7 +71,6 @@ settings:
 | [Playlist Sync to Users](#playlist-sync-to-users)           | `playlist_sync_to_users`      | `all` or List or comma-separated String of Users to sync the playlist to.<br>**default: `all`**                                                                                                             | :heavy_check_mark: |        :x:         |    :heavy_check_mark:     |
 | [Custom Repo](#custom-repo)                                 | `custom_repo`                 | Defines the custom repo you use with the `repo` attribute when defining metadata_paths and playlist_files                                                                                                   | :heavy_check_mark: |        :x:         |            :x:            |
 | [Verify SSL](#verify-ssl)                                   | `verify_ssl`                  | Turn SSL Verification on or off.                                                                                                                                                                            | :heavy_check_mark: |        :x:         |            :x:            |
-| [Missing Path](#missing-path)                               | `missing_path`                | Path to missing YAML file for the library                                                                                                                                                                   |        :x:         | :heavy_check_mark: |            :x:            |
 
 ## Cache
 Will use a cached database for faster processing. The cache file is created in the same location as your config file.
@@ -176,15 +175,3 @@ Defines the custom repo you use with the `repo` attribute when defining `metadat
 
 ## Verify SSL
 Turn SSl Verification on or off.
-
-## Missing Path
-Path where to save the missing YAML File. Default is `/config/<<library_name>>_missing.yml` where `<<library_name>>` is your library name.
-
-* This setting can only be set under setting for each particular library.
-
-```yaml
-libraries:
-  Movies:
-    settings:
-      missing_path: /config/Missing/Movies.yml
-```

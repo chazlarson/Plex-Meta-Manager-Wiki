@@ -122,7 +122,9 @@ The available attributes for editing movies are as follows
 | Original Title       | `original_title`       | Text to change Original Title                                 |
 | Originally Available | `originally_available` | Date to change Originally Available<br>**Format:** YYYY-MM-DD |
 | Content Rating       | `content_rating`       | Text to change Content Rating                                 |
-| Rating               | `rating`               | Number to change Rating                                       |
+| User Rating          | `user_rating`          | Number to change User Rating                                  |
+| Audience Rating      | `audience_rating`      | Number to change Audience Rating                              |
+| Critic Rating        | `critic_rating`        | Number to change Critic Rating                                |
 | Studio               | `studio`               | Text to change Studio                                         |
 | Tagline              | `tagline`              | Text to change Tagline                                        |
 | Summary              | `summary`              | Text to change Summary                                        |

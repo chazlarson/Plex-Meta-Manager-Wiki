@@ -117,12 +117,12 @@ The `tmdb_vote_count` and `tmdb_year` filters will also filter out movies/shows 
 
 ### Modifier
 
-| Number Modifier | Description                                                                                   |                      Format                       |
-|:----------------|:----------------------------------------------------------------------------------------------|:-------------------------------------------------:|
-| `.gt`           | Matches every item where the number attribute<br>is greater then the given number             | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.gte`          | Matches every item where the number attribute<br>is greater then or equal to the given number | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.lt`           | Matches every item where the number attribute<br>is less then the given number                | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.lte`          | Matches every item where the number attribute<br>is less then or equal to the given number    | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
+| Number Modifier | Description                                                                                |                      Format                       |
+|:----------------|:-------------------------------------------------------------------------------------------|:-------------------------------------------------:|
+| `.gt`           | Matches every item where the number attribute is greater then the given number             | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
+| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
+| `.lt`           | Matches every item where the number attribute is less then the given number                | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
+| `.lte`          | Matches every item where the number attribute is less then or equal to the given number    | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
 
 ### Attribute
 

@@ -57,16 +57,17 @@ radarr:
 
 The available attributes for each library are as follows
 
-| Name                            | Attribute       | Allowed Values                                                                                             |              Default               |                  Required                  |
-|:--------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------|:----------------------------------:|:------------------------------------------:|
-| [Library Name](#library-name)   | `library_name`  | Library name (Only needed when trying to use multiple libraries with the same name)                        |        Base Attribute Name         |                    :x:                     |
-| [Metadata Path](#metadata-path) | `metadata_path` | Location for your Metadata YAML files                                                                      | Same directory as config YAML file |                    :x:                     |
-| Operations Mapping              | `operations`    | [`operations` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Operations-Attributes) |                N/A                 |                    :x:                     |
-| Settings Mapping                | `settings`      | [`settings` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Settings-Attributes)     |               global               |                    :x:                     |
-| Plex Mapping                    | `plex`          | [`plex` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Attributes)             |               global               | :heavy_check_mark: Either here or globally |
-| Radarr Mapping                  | `radarr`        | [`radarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Radarr-Attributes)         |               global               |                    :x:                     |
-| Sonarr Mapping                  | `sonarr`        | [`sonarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Sonarr-Attributes)         |               global               |                    :x:                     |
-| Tautulli Mapping                | `tautulli`      | [`tautulli` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Tautulli-Attributes)     |               global               |                    :x:                     |
+| Name                            | Attribute       | Allowed Values                                                                                             |                Default                 |                  Required                  |
+|:--------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------|:--------------------------------------:|:------------------------------------------:|
+| [Library Name](#library-name)   | `library_name`  | Library name (Only needed when trying to use multiple libraries with the same name)                        |          Base Attribute Name           |                    :x:                     |
+| [Metadata Path](#metadata-path) | `metadata_path` | Location for your Metadata YAML files                                                                      |     `/config/<<MAPPING_NAME>>.yml`     |                    :x:                     |
+| [Missing Path](#missing-path)   | `missing_path`  | Path to missing YAML file for the library                                                                  | `/config/<<MAPPING_NAME>>_missing.yml` |                    :x:                     |
+| Operations Mapping              | `operations`    | [`operations` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Operations-Attributes) |                  N/A                   |                    :x:                     |
+| Settings Mapping                | `settings`      | [`settings` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Settings-Attributes)     |                 global                 |                    :x:                     |
+| Plex Mapping                    | `plex`          | [`plex` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Attributes)             |                 global                 | :heavy_check_mark: Either here or globally |
+| Radarr Mapping                  | `radarr`        | [`radarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Radarr-Attributes)         |                 global                 |                    :x:                     |
+| Sonarr Mapping                  | `sonarr`        | [`sonarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Sonarr-Attributes)         |                 global                 |                    :x:                     |
+| Tautulli Mapping                | `tautulli`      | [`tautulli` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Tautulli-Attributes)     |                 global                 |                    :x:                     |
 
 * Library mappings must have a colon `:` placed after them
 
@@ -145,4 +146,13 @@ libraries:
       - url: http://somesite.com/people_collections.yml
       - git: meisnate12/Charts
       - git: meisnate12/Studios
+```
+
+## Missing Path
+Path where to save the missing YAML File. Default is `/config/<<MAPPING_NAME>>_missing.yml` where `<<MAPPING_NAME>>` is the mapping name for the library.
+
+```yaml
+libraries:
+  Movies:
+    missing_path: /config/Missing/Movies.yml
 ```

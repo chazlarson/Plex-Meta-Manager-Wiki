@@ -16,7 +16,7 @@ metadata:
               Appa as they head north on the adventure of a lifetime.
         episodes:
           1:
-            rating: 9.1
+            user_rating: 9.1
       2:
         title: "Book Two: Earth"
         summary: >-
@@ -110,11 +110,14 @@ The available attributes for editing shows, seasons, and episodes are as follows
 
 | Name                 | Attribute              | Allowed Values                                                |       Shows        |      Seasons       |      Episodes      |
 |:---------------------|:-----------------------|:--------------------------------------------------------------|:------------------:|:------------------:|:------------------:|
+| Title                | `title`                | Text to change Title                                          |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
 | Sort Title           | `sort_title`           | Text to change Sort Title                                     | :heavy_check_mark: |        :x:         | :heavy_check_mark: |
 | Original Title       | `original_title`       | Text to change Original Title                                 | :heavy_check_mark: |        :x:         | :heavy_check_mark: |
 | Originally Available | `originally_available` | Date to change Originally Available<br>**Format:** YYYY-MM-DD | :heavy_check_mark: |        :x:         | :heavy_check_mark: |
 | Content Rating       | `content_rating`       | Text to change Content Rating                                 | :heavy_check_mark: |        :x:         |        :x:         |
-| Rating               | `rating`               | Number to change Rating                                       | :heavy_check_mark: |        :x:         | :heavy_check_mark: |
+| User Rating          | `user_rating`          | Number to change User Rating                                  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Audience Rating      | `audience_rating`      | Number to change Audience Rating                              | :heavy_check_mark: |        :x:         | :heavy_check_mark: |
+| Critic Rating        | `critic_rating`        | Number to change Critic Rating                                | :heavy_check_mark: |        :x:         | :heavy_check_mark: |
 | Studio               | `studio`               | Text to change Studio                                         | :heavy_check_mark: |        :x:         |        :x:         |
 | Tagline              | `tagline`              | Text to change Tagline                                        | :heavy_check_mark: |        :x:         |        :x:         |
 | Summary              | `summary`              | Text to change Summary                                        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |

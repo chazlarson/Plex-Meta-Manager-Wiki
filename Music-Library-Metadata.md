@@ -11,23 +11,22 @@ metadata:
         originally_available: "2000-10-24"
         tracks:
           1:
-            rating: 5
+            user_rating: 5
           "One Step Closer":
-            rating: 5
+            user_rating: 5
       "Meteora":
         originally_available: "2003-03-25"
         album_sorting: newest
         tracks:
           9:
-            rating: 5
+            user_rating: 5
           "Numb":
-            rating: 5
+            user_rating: 5
       "Minutes To Midnight":
         originally_available: "2007-05-14"
 ```
 
 ## Artist
-
 Each artist is defined by the mapping name which must be the same as the artist name in the library unless an `alt_title` is specified.
 
 ### Albums
@@ -41,7 +40,6 @@ To edit the metadata of a particular Track on an Album use the `tracks` attribut
 The mapping name is the track number in that Album or the title of the Track.
 
 ## Metadata Edits
-
 The available attributes for editing artists, albums, and tracks are as follows
 
 ### Special Attributes
@@ -64,8 +62,10 @@ The available attributes for editing artists, albums, and tracks are as follows
 
 | Name                 | Attribute              | Allowed Values                                                |      Artists       |       Album        |       Tracks       |
 |:---------------------|:-----------------------|:--------------------------------------------------------------|:------------------:|:------------------:|:------------------:|
+| Title                | `title`                | Text to change Title                                          |        :x:         |        :x:         | :heavy_check_mark: |
 | Sort Title           | `sort_title`           | Text to change Sort Title                                     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Rating               | `rating`               | Number to change Rating                                       |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
+| User Rating          | `user_rating`          | Number to change User Rating                                  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Critic Rating        | `critic_rating`        | Number to change Critic Rating                                |        :x:         | :heavy_check_mark: |        :x:         |
 | Originally Available | `originally_available` | Date to change Originally Available<br>**Format:** YYYY-MM-DD |        :x:         | :heavy_check_mark: |        :x:         |
 | Record Label         | `record_label`         | Text to change Record Label                                   |        :x:         | :heavy_check_mark: |        :x:         |
 | Summary              | `summary`              | Text to change Summary                                        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
