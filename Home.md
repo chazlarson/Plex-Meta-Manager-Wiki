@@ -63,6 +63,7 @@ Before posting on GitHub about an enhancement, error, or configuration question 
   - [Local Walkthrough](Local-Walkthrough)
   - [Docker Walkthrough](Docker-Walkthrough)
   - [unRAID Walkthrough](unRAID-Walkthrough)
+  - [Kubernetes Walkthrough](Kubernetes-Walkthrough)
 - [Configuration File](Configuration-File)
   - [Libraries Attributes](Libraries-Attributes)
     - [Operations Attributes](Operations-Attributes)
