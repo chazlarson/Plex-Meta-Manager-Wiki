@@ -3,7 +3,8 @@ This article will walk you through getting Plex-Meta-Manager [PMM] set up and ru
 1. Installing Docker
 2. Retrieving the image
 3. Setting up the initial config file
-4. Setting up a metadata file and creating a couple sample collections.
+4. Setting up a metadata file and creating a couple sample collections
+5. Creating a docker container that will keep running in the background
 
 ## Prerequisites.
 
@@ -27,7 +28,7 @@ The Docker install is discussed here: [Installing Docker](https://docs.docker.co
 ONce you have Docker installed, test it at the command line with:
 
 ```
-docker run hello-world
+docker run --rm hello-world
 ```
 
 You should see something that starts with:
@@ -47,7 +48,7 @@ The great thing about Docker is that all the setup you'd have to do to run PMM i
 That means we can just jump right into running it.  At the command prompt, type:
 
 ```
-docker run meisnate12/plex-meta-manager --run
+docker run --rm meisnate12/plex-meta-manager --run
 
 ```
 
@@ -74,15 +75,6 @@ Config Error: config not found at //config
 
 That error means you don’t have a config file, but we know that most everything is in place to run the image.
 
-### What's a Docker container?
-
-This is a very limited description, but imagine two things:
-
-1. A set of instructions for building and setting up a computer so it's ready to run MS Word
-2. The computer built from those instructions.
-
-A Docker *image* is rather like the instructions, and a Docker *container* is rather like the computer built from those instructions.  [It's a bit more nuanced than that, but that's a useful model].
-
 ### Setting up a volume map
 
 PMM, inside that Docker container, can only see other things *inside the container*.  We want to add our own files for config and metadata, so we need to set something up that lets PMM see files we create *outside* the container.  This is called a "volume map".
@@ -108,7 +100,7 @@ pwd
 
 This will display a full path:
 <details>
-  <summary>OS X/</summary>
+  <summary>OS X</summary>
   <br />
   ```
   /Users/YOURUSERNAME/plex-meta-manager
@@ -134,19 +126,19 @@ This will display a full path:
 You'll need to add this to the docker command every time you run it:
 
 ```
-docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager
+docker run --rm -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager
 ```
 as an example:
 
 ```
-docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager
+docker run --rm -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager
 ```
 
 
 If you run that command now it will display a similar error to before, but without all the image loading:
 
 ```
- $ docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
+ $ docker run --rm -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
 Config Error: config not found at //config
 ```
 
@@ -298,7 +290,7 @@ Save the file:
 Then run the script again:
 
 ```
-docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
+docker run --rm -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
 ```
 
 I’ve removed some of the lines for space, but have left the important bits:
@@ -361,13 +353,13 @@ Save the file:
 Then run the script again:
 
 ```
-docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
+docker run --rm -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
 ```
 
 Now you’ll see some more activity in the Plex connection section:
 
 ```
-$ docker run -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
+$ docker run --rm -it -v "/Users/mroche/plex-meta-manager:/config:rw" meisnate12/plex-meta-manager --run
 ...
 | Connecting to Plex Libraries...
 ...
@@ -478,7 +470,7 @@ Save the file:
 Then run the script again:
 
 ```
-docker run -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
+docker run --rm -it -v "PMM_PATH_GOES_HERE:/config:rw" meisnate12/plex-meta-manager --run
 ```
 
 This time you should see that the metadata file gets loaded:
@@ -494,9 +486,7 @@ Once this mapping is complete it will move on to build those three collections.
 
 As it builds the collections, you should see a fair amount of logging about which movies are being added and which ones aren’t found.  Once it completes, go to Plex, go to your Movies library, and click “Collections” at the top.
 
-NOTE: Before running this script I appended “-EXAMPLE” to the names of these three collections in the metadata file so they are completely separate in my Plex.  I already have all three of these collections defined, but they have custom artwork and the like and I didn’t want to introduce all that in this document.
-
-You should see the three new collections: [remember, yours won’t contain “-EXAMPLE”]
+You should see the three new collections:
 
 ![](https://i.ibb.co/Rzs6Gcd/image.png)
 
@@ -506,7 +496,7 @@ Each time you run the script, new movies that match the collection definition wi
 
 If you download any of the missing 22 movies on the Vulture list, running PMM would add them to that collection.  And so on.
 
-What comes next:
+### What comes next:
 
 Delete these three collections if you want, from both Plex and the metadata file. If you add those “git” lines you removed back into the config file:
 
@@ -526,3 +516,22 @@ If you prefer to create your own, do that in the metadata file.
 TV Shows and other libraries work the same way.  Create a `Libraries:` section in the config.yml, create a metadata file, define collections, run the script.
 
 Investigate the rest of the wiki to learn about everything else Plex-Meta-Manager can do for you.
+
+### Running the container in the background:
+
+The docker commands in this article are creating and deleting containers.
+
+However, you probably ultimately want a container that runs all the time, even after reboots, and wakes up to do its thing.
+
+This would be the minimal case:
+
+```
+docker run -d \
+  --restart=unless-stopped \
+  -v PMM_PATH_GOES_HERE:/config:rw \
+  meisnate12/plex-meta-manager
+```
+
+That will create a container that will run in the background until you explicitly stop it, surviving reboots, and waking up every morning at 3AM to process collections.
+
+There are of course other flags you can add, which are discussed elsewhere in the wiki, but this is the minimal command to create this container.
