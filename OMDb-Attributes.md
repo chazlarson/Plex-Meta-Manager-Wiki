@@ -8,9 +8,9 @@ omdb:
   apikey: ########
 ```
 
-| Name | Attribute | Allowed Values | Default | Required |
-| :--- | :--- | :--- | :---: | :---: |
-| API Key | `apikey` | OMDb API Key | N/A | :heavy_check_mark: |
+| Name    | Attribute | Allowed Values | Default |      Required      |
+|:--------|:----------|:---------------|:-------:|:------------------:|
+| API Key | `apikey`  | OMDb API Key   |   N/A   | :heavy_check_mark: |
 
 * The OMDb apikey can be generated [here](http://www.omdbapi.com/apikey.aspx).
 

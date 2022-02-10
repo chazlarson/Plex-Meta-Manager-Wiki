@@ -57,16 +57,16 @@ radarr:
 
 The available attributes for each library are as follows
 
-| Name | Attribute | Allowed Values | Default | Required |
-| :--- | :--- | :--- | :---: | :---: |
-| [Library Name](#library-name) | `library_name` | Library name (Only needed when trying to use multiple libraries with the same name) | Base Attribute Name | :x: |
-| [Metadata Path](#metadata-path) | `metadata_path` | Location for your Metadata YAML files | Same directory as config YAML file | :x: |
-| Operations Mapping | `operations` | [`operations` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Operations-Attributes) | N/A | :x: |
-| Settings Mapping | `settings` | [`settings` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Settings-Attributes) | global | :x: |
-| Plex Mapping | `plex` | [`plex` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Attributes) | global | :heavy_check_mark: Either here or globally |
-| Radarr Mapping | `radarr` | [`radarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Radarr-Attributes) | global | :x: |
-| Sonarr Mapping | `sonarr` | [`sonarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Sonarr-Attributes) | global | :x: |
-| Tautulli Mapping | `tautulli` | [`tautulli` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Tautulli-Attributes) | global | :x: |
+| Name                            | Attribute       | Allowed Values                                                                                             |              Default               |                  Required                  |
+|:--------------------------------|:----------------|:-----------------------------------------------------------------------------------------------------------|:----------------------------------:|:------------------------------------------:|
+| [Library Name](#library-name)   | `library_name`  | Library name (Only needed when trying to use multiple libraries with the same name)                        |        Base Attribute Name         |                    :x:                     |
+| [Metadata Path](#metadata-path) | `metadata_path` | Location for your Metadata YAML files                                                                      | Same directory as config YAML file |                    :x:                     |
+| Operations Mapping              | `operations`    | [`operations` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Operations-Attributes) |                N/A                 |                    :x:                     |
+| Settings Mapping                | `settings`      | [`settings` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Settings-Attributes)     |               global               |                    :x:                     |
+| Plex Mapping                    | `plex`          | [`plex` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Plex-Attributes)             |               global               | :heavy_check_mark: Either here or globally |
+| Radarr Mapping                  | `radarr`        | [`radarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Radarr-Attributes)         |               global               |                    :x:                     |
+| Sonarr Mapping                  | `sonarr`        | [`sonarr` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Sonarr-Attributes)         |               global               |                    :x:                     |
+| Tautulli Mapping                | `tautulli`      | [`tautulli` mapping details](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Tautulli-Attributes)     |               global               |                    :x:                     |
 
 * Library mappings must have a colon `:` placed after them
 
@@ -127,6 +127,14 @@ libraries:
   Movies:
     metadata_path:
       git: meisnate12/Charts
+```
+To use a Playlist File from a `custom_repo` defined in the global Settings add `repo` under playlist_files set to the path in the repository.
+* This loads the yaml file at `https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/Collections/Movies/Movies.yml`
+```yaml
+settings:
+  custom_repo: https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/
+playlist_files:
+  repo: Collections/Movies/Movies
 ```
 You can specify multiple paths of any type using a list like below.
 ```yaml

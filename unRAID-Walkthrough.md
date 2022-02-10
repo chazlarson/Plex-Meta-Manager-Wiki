@@ -7,17 +7,17 @@ To install a container from docker hub, you will need community applications - a
 
 2. Click the download icon on the `plex meta manager` container by `meisnate12`.
 
-3. Create your [Docker values](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Docker-Installation) using `Add another Path, Port, Variable, Label or Device`. Example config:
+3. Create your [Docker values](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Run-Commands-&-Environmental-Variables) using `Add another Path, Port, Variable, Label or Device`. Example config:
 
-| Config Type | Name | Key | Value | Container Path | Host Path | Access Mode | Description |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Variable | Time to Run | `PMM_TME` | `6:00` | N/A | N/A | N/A | Time to update each day. Format: HH:MM |
-| Variable | Divider Character | `PMM_DIVIDER` | `=` | N/A | N/A | N/A | The character that divides the sections |
-| Variable | Screen Width | `PMM_WIDTH` | `100` | N/A | N/A | N/A | An integer between 90 and 300 |
-| Path | Config Storage Path | N/A | N/A | `/config` | `/mnt/user/appdata/plex-meta-manager` | Read/Write | Translation from docker container path to host path |
+| Config Type | Name                | Key           | Value  | Container Path | Host Path                             | Access Mode | Description                                         |
+|:------------|:--------------------|:--------------|:-------|:---------------|:--------------------------------------|:------------|:----------------------------------------------------|
+| Variable    | Time to Run         | `PMM_TIME`    | `6:00` | N/A            | N/A                                   | N/A         | Time to update each day. Format: HH:MM              |
+| Variable    | Divider Character   | `PMM_DIVIDER` | `=`    | N/A            | N/A                                   | N/A         | The character that divides the sections             |
+| Variable    | Screen Width        | `PMM_WIDTH`   | `100`  | N/A            | N/A                                   | N/A         | An integer between 90 and 300                       |
+| Path        | Config Storage Path | N/A           | N/A    | `/config`      | `/mnt/user/appdata/plex-meta-manager` | Read/Write  | Translation from docker container path to host path |
 
-  * Full list of docker values can be found on the [Docker Installation](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Docker-Installation) page
-  * If you wish to enable one-time [Run](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Docker-Installation), add `-r` to `Post Arguments` by enabling Advanced View in the top right of unRAID.
+  * Full list of docker values can be found on the [Run Commands & Environmental Variables Page](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Run-Commands-&-Environmental-Variables).
+  * If you wish to enable one-time [Run]([Run Commands & Environmental Variables Page](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Run-Commands-&-Environmental-Variables#run)), add `-r` to `Post Arguments` by enabling Advanced View in the top right of unRAID.
   * The Image below shows the above values in the unRAID WebUI.
   ![Image](https://i.imgur.com/2y8RPTt.png)
     

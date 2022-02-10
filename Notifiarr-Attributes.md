@@ -8,9 +8,9 @@ notifiarr:
   apikey: ####################################
 ```
 
-| Name | Attribute | Allowed Values | Default | Required |
-| :--- | :--- | :--- | :---: | :---: |
-| API Key | `apikey` | Notifiarr API Key | N/A | :heavy_check_mark: |
+| Name    | Attribute | Allowed Values    | Default |      Required      |
+|:--------|:----------|:------------------|:-------:|:------------------:|
+| API Key | `apikey`  | Notifiarr API Key |   N/A   | :heavy_check_mark: |
 
 Once you have added the apikey your config.yml you have to add `notifiarr` to any webhook to send that notification to Notifiarr.
 

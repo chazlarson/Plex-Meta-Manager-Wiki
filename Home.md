@@ -59,6 +59,7 @@ Before posting on GitHub about an enhancement, error, or configuration question 
 ## Table of Contents
 - [Home](Home)
 - [Installation](Installation)
+- [Run Commands & Environmental Variables](Run-Commands-&-Environmental-Variables)
   - [Local Walkthrough](Local-Walkthrough)
   - [Docker Walkthrough](Docker-Walkthrough)
   - [unRAID Walkthrough](unRAID-Walkthrough)
@@ -81,9 +82,9 @@ Before posting on GitHub about an enhancement, error, or configuration question 
   - [MyAnimeList Attributes](MyAnimeList-Attributes)
 - [Metadata and Playlist Files](Metadata-and-Playlist-Files)
   - Metadata
-    - [Movies Metadata](Movies-Metadata)
-    - [Shows Metadata](Shows-Metadata)
-    - [Artists Metadata](Artists-Metadata)
+    - [Movie Library Metadata](Movie-Library-Metadata)
+    - [TV Show Library Metadata](TV-Show-Library-Metadata)
+    - [Music Library Metadata](Music-Library-Metadata)
   - [Templates](Templates)
   - [Filters](Filters)
   - Builders
@@ -94,6 +95,7 @@ Before posting on GitHub about an enhancement, error, or configuration question 
     - [IMDb Builders](IMDb-Builders)
     - [Trakt Builders](Trakt-Builders)
     - [Tautulli Builders](Tautulli-Builders)
+    - [MdbList Builders](MdbList-Builders)
     - [Letterboxd Builders](Letterboxd-Builders)
     - [ICheckMovies Builders](ICheckMovies-Builders)
     - [FlixPatrol Builders](FlixPatrol-Builders)

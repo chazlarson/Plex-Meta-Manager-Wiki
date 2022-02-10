@@ -8,11 +8,11 @@ While you specify playlists in a Playlist File that is defined by the [Playlist 
 
 There are three mappings allowed in the Metadata File's root:
 
-| Name | Attribute | Description |
-| :--- | :--- | :--- |
-| [Metadata](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Metadata-Attributes) | `metadata` | mapping where metadata changes go |
-| [Templates](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Templates) | `templates` | mapping where templates for automatic collections go |
-| [Collections](#collections-and-playlists-mappings) | `collections` | mapping where automatic collections and collection metadata go |
+| Name                                                                                 | Attribute     | Description                                                    |
+|:-------------------------------------------------------------------------------------|:--------------|:---------------------------------------------------------------|
+| [Metadata](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Metadata-Attributes) | `metadata`    | mapping where metadata changes go                              |
+| [Templates](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Templates)          | `templates`   | mapping where templates for automatic collections go           |
+| [Collections](#collections-and-playlists-mappings)                                   | `collections` | mapping where automatic collections and collection metadata go |
 
 * Either `metadata` or `collections` is required in order to run the Metadata File.
 * You can find example Metadata Files in the [Plex Meta Manager Configs Repository](https://github.com/meisnate12/Plex-Meta-Manager-Configs)
@@ -23,10 +23,10 @@ There are two mappings allowed in the Playlist File's root:
 
 ++Note: Many players cannot resume playing a playlist in order vote for this [Feature](https://forums.plex.tv/t/playlists-remember-position-for-subsequent-resume/84866) to be added.**
 
-| Name | Attribute | Description |
-| :--- | :--- | :--- |
-| [Templates](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Templates) | `templates` | mapping where templates for automatic collections go |
-| [Playlists](#additional-playlist-attributes) | `playlists` | mapping where automatic playlists and playlist metadata go |
+| Name                                                                        | Attribute   | Description                                                |
+|:----------------------------------------------------------------------------|:------------|:-----------------------------------------------------------|
+| [Templates](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Templates) | `templates` | mapping where templates for automatic collections go       |
+| [Playlists](#additional-playlist-attributes)                                | `playlists` | mapping where automatic playlists and playlist metadata go |
 
 * `playlists` is required in order to run the Playlist File.
 * You can find example Playlist Files in the [Plex Meta Manager Configs Repository](https://github.com/meisnate12/Plex-Meta-Manager-Configs)
@@ -75,7 +75,7 @@ Each playlist can also be given the `sync_to_users` which will overrider the glo
 The values can either be `all` or a list or comma-separated string of users you want the playlist synced to in addition to yourself. To Sync a playlist to only yourself leave `sync_to_users` blank. 
 
 ```yaml
-plalists:
+playlists:
   Marvel Cinematic Universe:
     sync_mode: sync
     libraries: Movies, TV Shows
