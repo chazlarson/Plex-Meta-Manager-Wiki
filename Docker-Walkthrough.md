@@ -498,18 +498,15 @@ If you download any of the missing 22 movies on the Vulture list, running PMM wo
 
 ### What comes next:
 
-Delete these three collections if you want, from both Plex and the metadata file. If you add those “git” lines you removed back into the config file:
+Delete these three collections if you want, from both Plex and the metadata file. If you add that “git” line you removed back into the config file:
 
 ```
       - git: meisnate12/MovieCharts
-      - git: meisnate12/Studios
-      - git: meisnate12/IMDBGenres
-      - git: meisnate12/People
 ```
 
-then run PMM again, the script will add a whole bunch of new collections [which are defined in those files] you may be interested in.
+then run PMM again, the script will add a whole bunch of new collections [which are defined in that file] you may be interested in.
 
-Those lines are links into the github repo of examples I referred to above, so you can review what they contain there.  You can also add others from that repo using this same pattern.
+That line is a link into the github repo of examples I referred to above, so you can review what it contains there.  You can also add others from that repo using this same pattern.
 
 If you prefer to create your own, do that in the metadata file.
 
