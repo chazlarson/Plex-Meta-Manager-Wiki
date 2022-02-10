@@ -379,7 +379,7 @@ Scroll down a bit and update the three things you just collected; Plex URL, Plex
 plex:                                           # Can be individually specified per library as well
   url: http://bing.bang.boing                <<< ENTER YOUR PLEX URL
   token: XXXXXXXXXXXXXXXXXXXX                <<< ENTER YOUR PLEX TOKEN
-  timeout: 180
+  timeout: 60
   clean_bundles: false
   empty_trash: false
   optimize: false
