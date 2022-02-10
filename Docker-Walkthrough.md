@@ -387,7 +387,7 @@ This metadata file contains definitions of the actions you want PMM to take.  Yo
 
 For now we’re going to create a few collections so you can watch the process work, then you’re on your own to create whatever others you want.
 
-First, create and open the metadata file:
+First, open the metadata file [this will create the file if it doesn't already exist]:
 
 <details>
   <summary>OS X/Linux</summary>
