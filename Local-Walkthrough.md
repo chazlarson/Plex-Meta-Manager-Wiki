@@ -584,10 +584,6 @@ Once this mapping is complete it will move on to build those three collections.
 
 As it builds the collections, you should see a fair amount of logging about which movies are being added and which ones aren’t found.  Once it completes, go to Plex, go to your Movies library, and click “Collections” at the top.
 
-NOTE: Before running this script I appended “-EXAMPLE” to the names of these three collections in the metadata file so they are completely separate in my Plex.  I already have all three of these collections defined, but they have custom artwork and the like and I didn’t want to introduce all that in this document.
-
-You should see the three new collections: [remember, yours won’t contain “-EXAMPLE”]
-
 ![](https://i.ibb.co/Rzs6Gcd/image.png)
 
 When you click into each, you’ll see the movies that PMM added to each collection.
@@ -700,5 +696,5 @@ You're set to go.
 
 You can switch back to the `master` branch by changing `develop` to `master`.
 
-The reinstall of requirements every time is probably overkill, but it's harmless and ensures that you always get any new versions or requirements.
+The reinstall of requirements every time is probably overkill, but it's harmless and ensures that you always get any new versions or new requirements.
 
