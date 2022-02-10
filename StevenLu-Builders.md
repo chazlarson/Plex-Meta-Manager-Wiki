@@ -2,9 +2,9 @@ You can find items using StevenLu's Popular Movies list on [StevenLu.com](https:
 
 No configuration is required for this builder.
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| [StevenLu's Popular Movies List](#stevenlus-popular-movies-list) | `stevenlu_popular` | Finds every movie on [StevenLu's Popular Movies List](https://movies.stevenlu.com/). | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| Name                                                             | Attribute          | Description                                                                          | Works with Movies  | Works with Shows | Works with Playlists and Custom Sort |
+|:-----------------------------------------------------------------|:-------------------|:-------------------------------------------------------------------------------------|:------------------:|:----------------:|:------------------------------------:|
+| [StevenLu's Popular Movies List](#stevenlus-popular-movies-list) | `stevenlu_popular` | Finds every movie on [StevenLu's Popular Movies List](https://movies.stevenlu.com/). | :heavy_check_mark: |       :x:        |          :heavy_check_mark:          |
 
 ## StevenLu's Popular Movies List
 Finds every movie on [StevenLu's Popular Movies List](https://movies.stevenlu.com/).

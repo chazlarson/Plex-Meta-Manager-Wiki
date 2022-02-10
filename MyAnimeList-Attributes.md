@@ -14,10 +14,10 @@ mal:
     refresh_token:
 ```
 
-| Name | Attribute | Allowed Values | Default | Required |
-| :--- | :--- | :--- | :---: | :---: |
-| Client ID | `client_id` | MyAnimeList Application Client ID | N/A | :heavy_check_mark: |
-| Client Secret | `client_secret` | MyAnimeList Application Client Secret | N/A | :heavy_check_mark: |
+| Name          | Attribute       | Allowed Values                        | Default |      Required      |
+|:--------------|:----------------|:--------------------------------------|:-------:|:------------------:|
+| Client ID     | `client_id`     | MyAnimeList Application Client ID     |   N/A   | :heavy_check_mark: |
+| Client Secret | `client_secret` | MyAnimeList Application Client Secret |   N/A   | :heavy_check_mark: |
 
 * All other attributes will be filled in by the script.
 
@@ -44,4 +44,4 @@ To authenticate MyAnimeList the first time, you need run the container with the 
 
 #### OAuth Flow using unRAID Docker
 
-Directions on how to authenticate MyAnimeList on unRAID can be found on the [unRAID Installation](https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Walkthrough#advanced-installation-authenticating-trakt-or-myanimelist) page.
+Directions on how to authenticate MyAnimeList on unRAID can be found on the [unRAID Walkthrough](https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Walkthrough#advanced-installation-authenticating-trakt-or-myanimelist) page.

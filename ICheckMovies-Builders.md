@@ -2,10 +2,10 @@ You can find items using the lists on [icheckmovies.com](https://www.icheckmovie
 
 No configuration is required for these builders.
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| [ICheckMovies List](#icheckmovies-list) | `icheckmovies_list` | Finds every movie in the ICheckMovies List | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| [ICheckMovies List Details](#icheckmovies-list) | `icheckmovies_list_details` | Finds every movie in the ICheckMovies List and updates the collection with the description of the ICheckMovies list | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| Name                                            | Attribute                   | Description                                                                                                         | Works with Movies  | Works with Shows | Works with Playlists and Custom Sort |
+|:------------------------------------------------|:----------------------------|:--------------------------------------------------------------------------------------------------------------------|:------------------:|:----------------:|:------------------------------------:|
+| [ICheckMovies List](#icheckmovies-list)         | `icheckmovies_list`         | Finds every movie in the ICheckMovies List                                                                          | :heavy_check_mark: |       :x:        |          :heavy_check_mark:          |
+| [ICheckMovies List Details](#icheckmovies-list) | `icheckmovies_list_details` | Finds every movie in the ICheckMovies List and updates the collection with the description of the ICheckMovies list | :heavy_check_mark: |       :x:        |          :heavy_check_mark:          |
 
 ## ICheckMovies List
 Finds every movie in the ICheckMovies List.

@@ -2,45 +2,45 @@ You can find items using the features of [TheMovieDb.org](https://www.themoviedb
 
 ## Standard TMDb Builders
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| [TMDb Collection](#tmdb-collection) | `tmdb_collection` | Finds every item in the TMDb collection | :heavy_check_mark: | :x: | :x: |
-| [TMDb List](#tmdb-list) | `tmdb_list` | Finds every item in the TMDb List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [TMDb Actor](#tmdb-actor) | `tmdb_actor` | Finds every item in the TMDb Person's Actor Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Crew](#tmdb-crew) | `tmdb_crew` | Finds every item in the TMDb Person's Crew Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Director](#tmdb-director) | `tmdb_director` | Finds every item in the TMDb Person's Director Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Producer](#tmdb-producer) | `tmdb_producer` | Finds every item in the TMDb Person's Producer Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Writer](#tmdb-writer) | `tmdb_writer` | Finds every item in the TMDb Person's Writer Credits | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Movie](#tmdb-movie) | `tmdb_movie` | Finds the movie specified | :heavy_check_mark: | :x: | :x: |
-| [TMDb Show](#tmdb-show) | `tmdb_show` | Finds the show specified | :x: | :heavy_check_mark: | :x: |
-| [TMDb Company](#tmdb-company) | `tmdb_company` | Finds every item from the TMDb company's movie/show list | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Network](#tmdb-network) | `tmdb_network` | Finds every item from the TMDb network's show list | :x: | :heavy_check_mark: | :x: |
-| [TMDb Keyword](#tmdb-keyword) | `tmdb_keyword` | Finds every item from the TMDb keyword's movie/show list | :heavy_check_mark: | :heavy_check_mark: | :x: |
+| Name                                | Attribute         | Description                                              | Works with Movies  |  Works with Shows  | Works with Playlists and Custom Sort |
+|:------------------------------------|:------------------|:---------------------------------------------------------|:------------------:|:------------------:|:------------------------------------:|
+| [TMDb Collection](#tmdb-collection) | `tmdb_collection` | Finds every item in the TMDb collection                  | :heavy_check_mark: |        :x:         |                 :x:                  |
+| [TMDb List](#tmdb-list)             | `tmdb_list`       | Finds every item in the TMDb List                        | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TMDb Actor](#tmdb-actor)           | `tmdb_actor`      | Finds every item in the TMDb Person's Actor Credits      | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Crew](#tmdb-crew)             | `tmdb_crew`       | Finds every item in the TMDb Person's Crew Credits       | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Director](#tmdb-director)     | `tmdb_director`   | Finds every item in the TMDb Person's Director Credits   | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Producer](#tmdb-producer)     | `tmdb_producer`   | Finds every item in the TMDb Person's Producer Credits   | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Writer](#tmdb-writer)         | `tmdb_writer`     | Finds every item in the TMDb Person's Writer Credits     | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Movie](#tmdb-movie)           | `tmdb_movie`      | Finds the movie specified                                | :heavy_check_mark: |        :x:         |                 :x:                  |
+| [TMDb Show](#tmdb-show)             | `tmdb_show`       | Finds the show specified                                 |        :x:         | :heavy_check_mark: |                 :x:                  |
+| [TMDb Company](#tmdb-company)       | `tmdb_company`    | Finds every item from the TMDb company's movie/show list | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Network](#tmdb-network)       | `tmdb_network`    | Finds every item from the TMDb network's show list       |        :x:         | :heavy_check_mark: |                 :x:                  |
+| [TMDb Keyword](#tmdb-keyword)       | `tmdb_keyword`    | Finds every item from the TMDb keyword's movie/show list | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
 
 ## Standard TMDb Details Builders
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| [TMDb Collection Details](#tmdb-collection) | `tmdb_collection_details` | Finds every item in the TMDb collection and updates the collection with the summary, poster, and background from the TMDb collection | :heavy_check_mark: | :x: | :x: |
-| [TMDb List Details](#tmdb-list) | `tmdb_list_details` | Finds every item in the TMDb List and updates the collection with the description of the TMDb list | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Actor Details](#tmdb-actor) | `tmdb_actor_details` | Finds every item in the TMDb Person's Actor Credits with the biography and profile from the TMDb person | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Crew Details](#tmdb-crew) | `tmdb_crew_details` | Finds every item in the TMDb Person's Crew Credits with the biography and profile from the TMDb person | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Director Details](#tmdb-director) | `tmdb_director_details` | Finds every item in the TMDb Person's Actor Credits with the biography and profile from the TMDb person | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Producer Details](#tmdb-producer) | `tmdb_producer_details` | Finds every item in the TMDb Person's Producer Credits with the biography and profile from the TMDb person | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Writer Details](#tmdb-writer) | `tmdb_writer_details` | Finds every item in the TMDb Person's Writer Credits with the biography and profile from the TMDb person | :heavy_check_mark: | :heavy_check_mark: | :x: |
-| [TMDb Movie Details](#tmdb-movie) | `tmdb_movie_details` | Finds the movie specified and updates the collection with the summary, poster, and background from the TMDb movie | :heavy_check_mark: | :x: | :x: |
-| [TMDb Show Details](#tmdb-show) | `tmdb_show_details` | Finds the show specified and updates the collection with the summary, poster, and background from the TMDb show | :x: | :heavy_check_mark: | :x: |
+| Name                                        | Attribute                 | Description                                                                                                                          | Works with Movies  |  Works with Shows  | Works with Playlists and Custom Sort |
+|:--------------------------------------------|:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|:------------------:|:------------------:|:------------------------------------:|
+| [TMDb Collection Details](#tmdb-collection) | `tmdb_collection_details` | Finds every item in the TMDb collection and updates the collection with the summary, poster, and background from the TMDb collection | :heavy_check_mark: |        :x:         |                 :x:                  |
+| [TMDb List Details](#tmdb-list)             | `tmdb_list_details`       | Finds every item in the TMDb List and updates the collection with the description of the TMDb list                                   | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Actor Details](#tmdb-actor)           | `tmdb_actor_details`      | Finds every item in the TMDb Person's Actor Credits with the biography and profile from the TMDb person                              | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Crew Details](#tmdb-crew)             | `tmdb_crew_details`       | Finds every item in the TMDb Person's Crew Credits with the biography and profile from the TMDb person                               | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Director Details](#tmdb-director)     | `tmdb_director_details`   | Finds every item in the TMDb Person's Actor Credits with the biography and profile from the TMDb person                              | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Producer Details](#tmdb-producer)     | `tmdb_producer_details`   | Finds every item in the TMDb Person's Producer Credits with the biography and profile from the TMDb person                           | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Writer Details](#tmdb-writer)         | `tmdb_writer_details`     | Finds every item in the TMDb Person's Writer Credits with the biography and profile from the TMDb person                             | :heavy_check_mark: | :heavy_check_mark: |                 :x:                  |
+| [TMDb Movie Details](#tmdb-movie)           | `tmdb_movie_details`      | Finds the movie specified and updates the collection with the summary, poster, and background from the TMDb movie                    | :heavy_check_mark: |        :x:         |                 :x:                  |
+| [TMDb Show Details](#tmdb-show)             | `tmdb_show_details`       | Finds the show specified and updates the collection with the summary, poster, and background from the TMDb show                      |        :x:         | :heavy_check_mark: |                 :x:                  |
 
 ## Other TMDb Builders
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-| :--- | :--- | :--- | :---: | :---: | :---: |
-| [TMDb Popular](#tmdb-popular) | `tmdb_popular` | Finds the movies/shows in TMDb's [Popular Movies](https://www.themoviedb.org/movie)/[Popular Shows](https://www.themoviedb.org/tv) list | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [TMDb Now Playing](#tmdb-now-playing) | `tmdb_now_playing` | Finds the movies in TMDb's [Now Playing](https://www.themoviedb.org/movie/now-playing) list | :heavy_check_mark: | :x: | :heavy_check_mark: |
-| [TMDb Top Rated](#tmdb-top-rated) | `tmdb_top_rated` | Finds the movies/shows in TMDb's [Top Rated Movies](https://www.themoviedb.org/movie/top-rated)/[Top Rated Shows](https://www.themoviedb.org/tv/top-rated) list | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [TMDb Trending Daily](#tmdb-trending-daily) | `tmdb_trending_daily` | Finds the movies/shows in TMDb's Trending Daily list | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
-| [TMDb Trending Weekly](#tmdb-trending-weekly) | `tmdb_trending_weekly` | Finds the movies/shows in TMDb's Trending Weekly list | :heavy_check_mark: | :heavy_check_mark: |  :heavy_check_mark: |
-| [TMDb Discover](#tmdb-discover) | `tmdb_discover` | Uses [TMDb's Discover Search](https://www.themoviedb.org/documentation/api/discover) to find every movie/show based on the [movie search parameters](https://developers.themoviedb.org/3/discover/movie-discover) or [show search parameters](https://developers.themoviedb.org/3/discover/tv-discover) provided | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Name                                          | Attribute              | Description                                                                                                                                                                                                                                                                                                      | Works with Movies  |  Works with Shows  | Works with Playlists and Custom Sort |
+|:----------------------------------------------|:-----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------:|:------------------:|:------------------------------------:|
+| [TMDb Popular](#tmdb-popular)                 | `tmdb_popular`         | Finds the movies/shows in TMDb's [Popular Movies](https://www.themoviedb.org/movie)/[Popular Shows](https://www.themoviedb.org/tv) list                                                                                                                                                                          | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TMDb Now Playing](#tmdb-now-playing)         | `tmdb_now_playing`     | Finds the movies in TMDb's [Now Playing](https://www.themoviedb.org/movie/now-playing) list                                                                                                                                                                                                                      | :heavy_check_mark: |        :x:         |          :heavy_check_mark:          |
+| [TMDb Top Rated](#tmdb-top-rated)             | `tmdb_top_rated`       | Finds the movies/shows in TMDb's [Top Rated Movies](https://www.themoviedb.org/movie/top-rated)/[Top Rated Shows](https://www.themoviedb.org/tv/top-rated) list                                                                                                                                                  | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TMDb Trending Daily](#tmdb-trending-daily)   | `tmdb_trending_daily`  | Finds the movies/shows in TMDb's Trending Daily list                                                                                                                                                                                                                                                             | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TMDb Trending Weekly](#tmdb-trending-weekly) | `tmdb_trending_weekly` | Finds the movies/shows in TMDb's Trending Weekly list                                                                                                                                                                                                                                                            | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
+| [TMDb Discover](#tmdb-discover)               | `tmdb_discover`        | Uses [TMDb's Discover Search](https://www.themoviedb.org/documentation/api/discover) to find every movie/show based on the [movie search parameters](https://developers.themoviedb.org/3/discover/movie-discover) or [show search parameters](https://developers.themoviedb.org/3/discover/tv-discover) provided | :heavy_check_mark: | :heavy_check_mark: |          :heavy_check_mark:          |
 
 ## Expected Input
 
@@ -413,108 +413,108 @@ Uses [TMDb's Discover Search](https://www.themoviedb.org/documentation/api/disco
 
 The `sync_mode: sync` and `collection_order: custom` Details are recommended since the lists are continuously updated and in a specific order.
 
-| Type | Description |
-| :--- | :--- |
-| String | Any number of alphanumeric characters |
-| Integer | Any whole number greater than zero i.e. 2, 10, 50 |
-| Number | Any number greater than zero i.e. 2.5, 7.4, 9 |
-| Boolean | Must be `true` or `false` |
-| Date: `MM/DD/YYYY` | Date that fits the specified format |
-| Year: `YYYY` | Year must be a 4 digit integer i.e. 1990 |
+| Type               | Description                                       |
+|:-------------------|:--------------------------------------------------|
+| String             | Any number of alphanumeric characters             |
+| Integer            | Any whole number greater than zero i.e. 2, 10, 50 |
+| Number             | Any number greater than zero i.e. 2.5, 7.4, 9     |
+| Boolean            | Must be `true` or `false`                         |
+| Date: `MM/DD/YYYY` | Date that fits the specified format               |
+| Year: `YYYY`       | Year must be a 4 digit integer i.e. 1990          |
 
 ### Discover Movies Parameters
-| Movie Parameters | Description | Type |
-| :--- | :--- | :---: |
-| `limit` | Specify how many movies you want returned by the query. (default: 100) | Integer |
-| `language` | Specify a language to query translatable fields with. (default: en-US) | `([a-z]{2})-([A-Z]{2})` |
-| `region` | Specify a [ISO 3166-1 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) to filter release dates. Must be uppercase. | `^[A-Z]{2}$` |
-| `sort_by` | Choose from one of the many available sort options. (default: `popularity.desc`) | See [sort options](#sort-options) below |
-| `certification_country` | Used in conjunction with the certification parameter, use this to specify a country with a valid certification. | String |
-| `certification` | Filter results with a valid certification from the `certification_country` parameter. | String |
-| `certification.lte` | Filter and only include movies that have a certification that is less than or equal to the specified value. | String |
-| `certification.gte` | Filter and only include movies that have a certification that is greater than or equal to the specified value. | String |
-| `include_adult` | A filter and include or exclude adult movies. | Boolean |
-| `include_video` | A filter and include or exclude videos. | Boolean |
-| `primary_release_year` | A filter to limit the results to a specific primary release year. | Year: YYYY |
-| `primary_release_date.gte` | Filter and only include movies that have a primary release date that is greater or equal to the specified value. | Date: `MM/DD/YYYY` |
-| `primary_release_date.lte` | Filter and only include movies that have a primary release date that is less than or equal to the specified value. | Date: `MM/DD/YYYY` |
-| `release_date.gte` | Filter and only include movies that have a release date (looking at all release dates) that is greater or equal to the specified value. | Date: `MM/DD/YYYY` |
-| `release_date.lte` | Filter and only include movies that have a release date (looking at all release dates) that is less than or equal to the specified value. | Date: `MM/DD/YYYY` |
-| `with_release_type` | Specify a comma (AND) or pipe (OR) separated value to filter release types by. (1: Premiere, 2: Theatrical (limited), 3: Theatrical, 4: Digital, 5: Physical, 6: TV) | String |
-| `year` | A filter to limit the results to a specific year (looking at all release dates). | Year: YYYY |
-| `vote_count.gte` | Filter and only include movies that have a vote count that is greater or equal to the specified value. | Integer |
-| `vote_count.lte` | Filter and only include movies that have a vote count that is less than or equal to the specified value. | Integer |
-| `vote_average.gte` | Filter and only include movies that have a rating that is greater or equal to the specified value. | Number |
-| `vote_average.lte` | Filter and only include movies that have a rating that is less than or equal to the specified value. | Number |
-| `with_cast` | A comma-separated list of person ID's. Only include movies that have one of the ID's added as an actor. | String |
-| `with_crew` | A comma-separated list of person ID's. Only include movies that have one of the ID's added as a crew member. | String |
-| `with_people` | A comma-separated list of person ID's. Only include movies that have one of the ID's added as either an actor or a crew member. | String |
-| `with_companies` | A comma-separated list of production company ID's. Only include movies that have one of the ID's added as a production company. | String |
-| `without_companies` | Filter the results to exclude the specific production companies you specify here. AND / OR filters are supported. | String |
-| `with_genres` | Comma-separated value of genre ids that you want to include in the results. | String |
-| `without_genres` | Comma-separated value of genre ids that you want to exclude from the results. | String |
-| `with_keywords` | A comma-separated list of keyword ID's. Only includes movies that have one of the ID's added as a keyword. | String |
-| `without_keywords` | Exclude items with certain keywords. You can comma and pipe separate these values to create an 'AND' or 'OR' logic. | String |
-| `with_runtime.gte` | Filter and only include movies that have a runtime that is greater or equal to a value. | Integer |
-| `with_runtime.lte` | Filter and only include movies that have a runtime that is less than or equal to a value. | Integer |
-| `with_original_language` | Specify an ISO 639-1 string to filter results by their original language value. | String |
-| `with_watch_providers` | A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region. | String |
-| `watch_region` | An [ISO 3166-1 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region. | String |
-| `with_watch_monetization_types` | In combination with `watch_region`, you can filter by monetization type. | `flatrate`, `free`, `ads`, `rent`, `buy` |
+| Movie Parameters                | Description                                                                                                                                                                                                            |                   Type                   |
+|:--------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------:|
+| `limit`                         | Specify how many movies you want returned by the query. (default: 100)                                                                                                                                                 |                 Integer                  |
+| `language`                      | Specify a language to query translatable fields with. (default: en-US)                                                                                                                                                 |         `([a-z]{2})-([A-Z]{2})`          |
+| `region`                        | Specify a [ISO 3166-1 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) to filter release dates. Must be uppercase.                                                                                  |               `^[A-Z]{2}$`               |
+| `sort_by`                       | Choose from one of the many available sort options. (default: `popularity.desc`)                                                                                                                                       | See [sort options](#sort-options) below  |
+| `certification_country`         | Used in conjunction with the certification parameter, use this to specify a country with a valid certification.                                                                                                        |                  String                  |
+| `certification`                 | Filter results with a valid certification from the `certification_country` parameter.                                                                                                                                  |                  String                  |
+| `certification.lte`             | Filter and only include movies that have a certification that is less than or equal to the specified value.                                                                                                            |                  String                  |
+| `certification.gte`             | Filter and only include movies that have a certification that is greater than or equal to the specified value.                                                                                                         |                  String                  |
+| `include_adult`                 | A filter and include or exclude adult movies.                                                                                                                                                                          |                 Boolean                  |
+| `include_video`                 | A filter and include or exclude videos.                                                                                                                                                                                |                 Boolean                  |
+| `primary_release_year`          | A filter to limit the results to a specific primary release year.                                                                                                                                                      |                Year: YYYY                |
+| `primary_release_date.gte`      | Filter and only include movies that have a primary release date that is greater or equal to the specified value.                                                                                                       |            Date: `MM/DD/YYYY`            |
+| `primary_release_date.lte`      | Filter and only include movies that have a primary release date that is less than or equal to the specified value.                                                                                                     |            Date: `MM/DD/YYYY`            |
+| `release_date.gte`              | Filter and only include movies that have a release date (looking at all release dates) that is greater or equal to the specified value.                                                                                |            Date: `MM/DD/YYYY`            |
+| `release_date.lte`              | Filter and only include movies that have a release date (looking at all release dates) that is less than or equal to the specified value.                                                                              |            Date: `MM/DD/YYYY`            |
+| `with_release_type`             | Specify a comma (AND) or pipe (OR) separated value to filter release types by. (1: Premiere, 2: Theatrical (limited), 3: Theatrical, 4: Digital, 5: Physical, 6: TV)                                                   |                  String                  |
+| `year`                          | A filter to limit the results to a specific year (looking at all release dates).                                                                                                                                       |                Year: YYYY                |
+| `vote_count.gte`                | Filter and only include movies that have a vote count that is greater or equal to the specified value.                                                                                                                 |                 Integer                  |
+| `vote_count.lte`                | Filter and only include movies that have a vote count that is less than or equal to the specified value.                                                                                                               |                 Integer                  |
+| `vote_average.gte`              | Filter and only include movies that have a rating that is greater or equal to the specified value.                                                                                                                     |                  Number                  |
+| `vote_average.lte`              | Filter and only include movies that have a rating that is less than or equal to the specified value.                                                                                                                   |                  Number                  |
+| `with_cast`                     | A comma-separated list of person ID's. Only include movies that have one of the ID's added as an actor.                                                                                                                |                  String                  |
+| `with_crew`                     | A comma-separated list of person ID's. Only include movies that have one of the ID's added as a crew member.                                                                                                           |                  String                  |
+| `with_people`                   | A comma-separated list of person ID's. Only include movies that have one of the ID's added as either an actor or a crew member.                                                                                        |                  String                  |
+| `with_companies`                | A comma-separated list of production company ID's. Only include movies that have one of the ID's added as a production company.                                                                                        |                  String                  |
+| `without_companies`             | Filter the results to exclude the specific production companies you specify here. AND / OR filters are supported.                                                                                                      |                  String                  |
+| `with_genres`                   | Comma-separated value of genre ids that you want to include in the results.                                                                                                                                            |                  String                  |
+| `without_genres`                | Comma-separated value of genre ids that you want to exclude from the results.                                                                                                                                          |                  String                  |
+| `with_keywords`                 | A comma-separated list of keyword ID's. Only includes movies that have one of the ID's added as a keyword.                                                                                                             |                  String                  |
+| `without_keywords`              | Exclude items with certain keywords. You can comma and pipe separate these values to create an 'AND' or 'OR' logic.                                                                                                    |                  String                  |
+| `with_runtime.gte`              | Filter and only include movies that have a runtime that is greater or equal to a value.                                                                                                                                |                 Integer                  |
+| `with_runtime.lte`              | Filter and only include movies that have a runtime that is less than or equal to a value.                                                                                                                              |                 Integer                  |
+| `with_original_language`        | Specify an ISO 639-1 string to filter results by their original language value.                                                                                                                                        |                  String                  |
+| `with_watch_providers`          | A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region.                                      |                  String                  |
+| `watch_region`                  | An [ISO 3166-1 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region. |                  String                  |
+| `with_watch_monetization_types` | In combination with `watch_region`, you can filter by monetization type.                                                                                                                                               | `flatrate`, `free`, `ads`, `rent`, `buy` |
 
 ### Discover Shows Parameters
-| Show Parameters | Description | Type |
-| :--- | :--- | :---: |
-| `limit` | Specify how many movies you want to be returned by the query. (default: 100) | Integer |
-| `language` | Specify a language to query translatable fields with. (default: en-US) | `([a-z]{2})-([A-Z]{2})` |
-| `sort_by` | Choose from one of the many available sort options. (default: `popularity.desc`) | See [sort options](#sort-options) below |
-| `air_date.gte` | Filter and only include TV shows that have an air date (by looking at all episodes) that is greater or equal to the specified value. | Date: `MM/DD/YYYY` |
-| `air_date.lte` | Filter and only include TV shows that have an air date (by looking at all episodes) that is less than or equal to the specified value. | Date: `MM/DD/YYYY` |
-| `first_air_date.gte` | Filter and only include TV shows that have a original air date that is greater or equal to the specified value. Can be used in conjunction with the `include_null_first_air_dates` filter if you want to include items with no air date. | Date: `MM/DD/YYYY` |
-| `first_air_date.lte` | Filter and only include TV shows that have a original air date that is less than or equal to the specified value. Can be used in conjunction with the `include_null_first_air_dates` filter if you want to include items with no air date. | Date: `MM/DD/YYYY` |
-| `first_air_date_year` | Filter and only include TV shows that have an original air date year that equal to the specified value. Can be used in conjunction with the `include_null_first_air_dates` filter if you want to include items with no air date. | Year: YYYY |
-| `include_null_first_air_dates` | Use this filter to include TV shows that don't have an air date while using any of the `first_air_date` filters. | Boolean |
-| `timezone` | Used in conjunction with the `air_date.gte/lte` filter to calculate the proper UTC offset. (default: America/New_York) | String |
-| `vote_count.gte` | Filter and only include TV that have a vote count that is greater or equal to the specified value. | Integer |
-| `vote_count.lte` | Filter and only include TV that have a vote count that is less than or equal to the specified value. | Integer |
-| `vote_average.gte` | Filter and only include TV that have a rating that is greater or equal to the specified value. | Number |
-| `vote_average.lte` | Filter and only include TV that have a rating that is less than or equal to the specified value. | Number |
-| `with_networks` | Comma-separated value of network ids that you want to include in the results. | String |
-| `with_companies` | A comma-separated list of production company ID's. Only include movies that have one of the ID's added as a production company. | String |
-| `without_companies` | Filter the results to exclude the specific production companies you specify here. AND / OR filters are supported. | String |
-| `with_genres` | Comma-separated value of genre ids that you want to include in the results. | String |
-| `without_genres` | Comma-separated value of genre ids that you want to exclude from the results. | String |
-| `with_keywords` | A comma-separated list of keyword ID's. Only includes TV shows that have one of the ID's added as a keyword. | String |
-| `without_keywords` | Exclude items with certain keywords. You can comma and pipe separate these values to create an 'AND' or 'OR' logic. | String |
-| `with_runtime.gte` | Filter and only include TV shows with an episode runtime that is greater than or equal to a value. | Integer |
-| `with_runtime.lte` | Filter and only include TV shows with an episode runtime that is less than or equal to a value. | Integer |
-| `with_original_language` | Specify an ISO 639-1 string to filter results by their original language value. | String |
-| `screened_theatrically` | Filter results to include items that have been screened theatrically. | Boolean |
-| `with_watch_providers` | A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region. | String |
-| `watch_region` | An [ISO 3166-1 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region. | String |
-| `with_watch_monetization_types` | In combination with `watch_region`, you can filter by monetization type. | `flatrate`, `free`, `ads`, `rent`, `buy` |
-| `with_status` | Filter TV shows by their status. | `0`: Returning Series, `1`: Planned, `2`: In Production, `3`: Ended, `4`: Cancelled, `5`: Pilot) | 
-| `with_type` | Filter TV shows by their type. | `0`: Documentary, `1`: News, `2`: Miniseries, `3`: Reality, `4`: Scripted, `5`: Show, `6`: Video) |
+| Show Parameters                 | Description                                                                                                                                                                                                                                |                                               Type                                                |
+|:--------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------:|
+| `limit`                         | Specify how many movies you want to be returned by the query. (default: 100)                                                                                                                                                               |                                              Integer                                              |
+| `language`                      | Specify a language to query translatable fields with. (default: en-US)                                                                                                                                                                     |                                      `([a-z]{2})-([A-Z]{2})`                                      |
+| `sort_by`                       | Choose from one of the many available sort options. (default: `popularity.desc`)                                                                                                                                                           |                              See [sort options](#sort-options) below                              |
+| `air_date.gte`                  | Filter and only include TV shows that have an air date (by looking at all episodes) that is greater or equal to the specified value.                                                                                                       |                                        Date: `MM/DD/YYYY`                                         |
+| `air_date.lte`                  | Filter and only include TV shows that have an air date (by looking at all episodes) that is less than or equal to the specified value.                                                                                                     |                                        Date: `MM/DD/YYYY`                                         |
+| `first_air_date.gte`            | Filter and only include TV shows that have a original air date that is greater or equal to the specified value. Can be used in conjunction with the `include_null_first_air_dates` filter if you want to include items with no air date.   |                                        Date: `MM/DD/YYYY`                                         |
+| `first_air_date.lte`            | Filter and only include TV shows that have a original air date that is less than or equal to the specified value. Can be used in conjunction with the `include_null_first_air_dates` filter if you want to include items with no air date. |                                        Date: `MM/DD/YYYY`                                         |
+| `first_air_date_year`           | Filter and only include TV shows that have an original air date year that equal to the specified value. Can be used in conjunction with the `include_null_first_air_dates` filter if you want to include items with no air date.           |                                            Year: YYYY                                             |
+| `include_null_first_air_dates`  | Use this filter to include TV shows that don't have an air date while using any of the `first_air_date` filters.                                                                                                                           |                                              Boolean                                              |
+| `timezone`                      | Used in conjunction with the `air_date.gte/lte` filter to calculate the proper UTC offset. (default: America/New_York)                                                                                                                     |                                              String                                               |
+| `vote_count.gte`                | Filter and only include TV that have a vote count that is greater or equal to the specified value.                                                                                                                                         |                                              Integer                                              |
+| `vote_count.lte`                | Filter and only include TV that have a vote count that is less than or equal to the specified value.                                                                                                                                       |                                              Integer                                              |
+| `vote_average.gte`              | Filter and only include TV that have a rating that is greater or equal to the specified value.                                                                                                                                             |                                              Number                                               |
+| `vote_average.lte`              | Filter and only include TV that have a rating that is less than or equal to the specified value.                                                                                                                                           |                                              Number                                               |
+| `with_networks`                 | Comma-separated value of network ids that you want to include in the results.                                                                                                                                                              |                                              String                                               |
+| `with_companies`                | A comma-separated list of production company ID's. Only include movies that have one of the ID's added as a production company.                                                                                                            |                                              String                                               |
+| `without_companies`             | Filter the results to exclude the specific production companies you specify here. AND / OR filters are supported.                                                                                                                          |                                              String                                               |
+| `with_genres`                   | Comma-separated value of genre ids that you want to include in the results.                                                                                                                                                                |                                              String                                               |
+| `without_genres`                | Comma-separated value of genre ids that you want to exclude from the results.                                                                                                                                                              |                                              String                                               |
+| `with_keywords`                 | A comma-separated list of keyword ID's. Only includes TV shows that have one of the ID's added as a keyword.                                                                                                                               |                                              String                                               |
+| `without_keywords`              | Exclude items with certain keywords. You can comma and pipe separate these values to create an 'AND' or 'OR' logic.                                                                                                                        |                                              String                                               |
+| `with_runtime.gte`              | Filter and only include TV shows with an episode runtime that is greater than or equal to a value.                                                                                                                                         |                                              Integer                                              |
+| `with_runtime.lte`              | Filter and only include TV shows with an episode runtime that is less than or equal to a value.                                                                                                                                            |                                              Integer                                              |
+| `with_original_language`        | Specify an ISO 639-1 string to filter results by their original language value.                                                                                                                                                            |                                              String                                               |
+| `screened_theatrically`         | Filter results to include items that have been screened theatrically.                                                                                                                                                                      |                                              Boolean                                              |
+| `with_watch_providers`          | A comma or pipe separated list of watch provider ID's. Combine this filter with `watch_region` in order to filter your results by a specific watch provider in a specific region.                                                          |                                              String                                               |
+| `watch_region`                  | An [ISO 3166-1 code](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Combine this filter with `with_watch_providers` in order to filter your results by a specific watch provider in a specific region.                     |                                              String                                               |
+| `with_watch_monetization_types` | In combination with `watch_region`, you can filter by monetization type.                                                                                                                                                                   |                             `flatrate`, `free`, `ads`, `rent`, `buy`                              |
+| `with_status`                   | Filter TV shows by their status.                                                                                                                                                                                                           | `0`: Returning Series, `1`: Planned, `2`: In Production, `3`: Ended, `4`: Cancelled, `5`: Pilot)  | 
+| `with_type`                     | Filter TV shows by their type.                                                                                                                                                                                                             | `0`: Documentary, `1`: News, `2`: Miniseries, `3`: Reality, `4`: Scripted, `5`: Show, `6`: Video) |
 
 ### Sort Options
-| Sort Option | Movie Sort | Show Sort |
-| :--- | :---: | :---: |
-| `popularity.asc` | :heavy_check_mark: | :heavy_check_mark: |
-| `popularity.desc` | :heavy_check_mark: | :heavy_check_mark: |
-| `original_title.asc` | :heavy_check_mark: | :x: |
-| `original_title.desc` | :heavy_check_mark: | :x: |
-| `revenue.asc` | :heavy_check_mark: | :x: |
-| `revenue.desc` | :heavy_check_mark: | :x: |
-| `release_date.asc` | :heavy_check_mark: | :x: |
-| `release_date.desc` | :heavy_check_mark: | :x: |
-| `primary_release_date.asc` | :heavy_check_mark: | :x: |
-| `primary_release_date.desc` | :heavy_check_mark: | :x: |
-| `first_air_date.asc` | :x: | :heavy_check_mark: |
-| `first_air_date.desc` | :x: | :heavy_check_mark: |
-| `vote_average.asc` | :heavy_check_mark: | :heavy_check_mark: |
-| `vote_average.desc` | :heavy_check_mark: | :heavy_check_mark: |
-| `vote_count.asc` | :heavy_check_mark: | :x: |
-| `vote_count.desc` | :heavy_check_mark: | :x: |
+| Sort Option                 |     Movie Sort     |     Show Sort      |
+|:----------------------------|:------------------:|:------------------:|
+| `popularity.asc`            | :heavy_check_mark: | :heavy_check_mark: |
+| `popularity.desc`           | :heavy_check_mark: | :heavy_check_mark: |
+| `original_title.asc`        | :heavy_check_mark: |        :x:         |
+| `original_title.desc`       | :heavy_check_mark: |        :x:         |
+| `revenue.asc`               | :heavy_check_mark: |        :x:         |
+| `revenue.desc`              | :heavy_check_mark: |        :x:         |
+| `release_date.asc`          | :heavy_check_mark: |        :x:         |
+| `release_date.desc`         | :heavy_check_mark: |        :x:         |
+| `primary_release_date.asc`  | :heavy_check_mark: |        :x:         |
+| `primary_release_date.desc` | :heavy_check_mark: |        :x:         |
+| `first_air_date.asc`        |        :x:         | :heavy_check_mark: |
+| `first_air_date.desc`       |        :x:         | :heavy_check_mark: |
+| `vote_average.asc`          | :heavy_check_mark: | :heavy_check_mark: |
+| `vote_average.desc`         | :heavy_check_mark: | :heavy_check_mark: |
+| `vote_count.asc`            | :heavy_check_mark: |        :x:         |
+| `vote_count.desc`           | :heavy_check_mark: |        :x:         |
 
 ```yaml
 collections:

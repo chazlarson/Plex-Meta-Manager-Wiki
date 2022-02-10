@@ -4,20 +4,20 @@ You can find items in your Plex using the features of [Tautulli](https://tautull
 
 It has watch analytics that can show the most watched or most popular Movies/Shows in each Library.
 
-| Name | Attribute | Description | Works with Movies | Works with Shows | Works with Custom Sort | Works with Playlists |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| [Tautulli Popular](#tautulli-popularwatched) | `tautulli_popular` | Gets the Tautulli Most Popular List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Tautulli Watched](#tautulli-popularwatched) | `tautulli_watched` | Gets the Tautulli Most Watched List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Name                                         | Attribute          | Description                         | Works with Movies  |  Works with Shows  | Works with Custom Sort | Works with Playlists |
+|:---------------------------------------------|:-------------------|:------------------------------------|:------------------:|:------------------:|:----------------------:|:--------------------:|
+| [Tautulli Popular](#tautulli-popularwatched) | `tautulli_popular` | Gets the Tautulli Most Popular List | :heavy_check_mark: | :heavy_check_mark: |   :heavy_check_mark:   |  :heavy_check_mark:  |
+| [Tautulli Watched](#tautulli-popularwatched) | `tautulli_watched` | Gets the Tautulli Most Watched List | :heavy_check_mark: | :heavy_check_mark: |   :heavy_check_mark:   |  :heavy_check_mark:  |
 
 ## Tautulli Popular/Watched
 Both Tautulli Popular and Tautulli Watched have the same sub-attributes detailed below.
 
-| Attribute | Description | Required | Default |
-| :--- | :--- | :---: | :---: |
-| `list_days` | Number of Days to look back of the list | :x: | 30 |
-| `list_minimum` | Minimum Number of Users Watching/Plays to add to the list | :x: | 30 |
-| `list_size` | Number of Movies/Shows to add to this list | :x: | 10 |
-| `list_buffer` | Number of extra Movies/Shows to grab in case you have multiple show/movie Libraries. | :x: | 10 |
+| Attribute      | Description                                                                          | Required | Default |
+|:---------------|:-------------------------------------------------------------------------------------|:--------:|:-------:|
+| `list_days`    | Number of Days to look back of the list                                              |   :x:    |   30    |
+| `list_minimum` | Minimum Number of Users Watching/Plays to add to the list                            |   :x:    |   30    |
+| `list_size`    | Number of Movies/Shows to add to this list                                           |   :x:    |   10    |
+| `list_buffer`  | Number of extra Movies/Shows to grab in case you have multiple show/movie Libraries. |   :x:    |   10    |
 
 If you have multiple movie Libraries or multiple show Libraries Tautulli combines those in the popular/watched lists so there might not be 10 movies/shows from the library to make your `list_size`.
 
