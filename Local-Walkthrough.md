@@ -379,7 +379,7 @@ Scroll down a bit and update the three things you just collected; Plex URL, Plex
 plex:                                           # Can be individually specified per library as well
   url: http://bing.bang.boing                <<< ENTER YOUR PLEX URL
   token: XXXXXXXXXXXXXXXXXXXX                <<< ENTER YOUR PLEX TOKEN
-  timeout: 180
+  timeout: 60
   clean_bundles: false
   empty_trash: false
   optimize: false
@@ -503,7 +503,7 @@ This metadata file contains definitions of the actions you want PMM to take.  Yo
 
 For now we’re going to create a few collections so you can watch the process work, then you’re on your own to create whatever others you want.
 
-First, create and open the metadata file:
+First, open the metadata file [this will create the file if it doesn't already exist]:
 
 <details>
   <summary>OS X/Linux</summary>
@@ -584,10 +584,6 @@ Once this mapping is complete it will move on to build those three collections.
 
 As it builds the collections, you should see a fair amount of logging about which movies are being added and which ones aren’t found.  Once it completes, go to Plex, go to your Movies library, and click “Collections” at the top.
 
-NOTE: Before running this script I appended “-EXAMPLE” to the names of these three collections in the metadata file so they are completely separate in my Plex.  I already have all three of these collections defined, but they have custom artwork and the like and I didn’t want to introduce all that in this document.
-
-You should see the three new collections: [remember, yours won’t contain “-EXAMPLE”]
-
 ![](https://i.ibb.co/Rzs6Gcd/image.png)
 
 When you click into each, you’ll see the movies that PMM added to each collection.
@@ -598,18 +594,15 @@ If you download any of the missing 22 movies on the Vulture list, running PMM wo
 
 What comes next:
 
-Delete these three collections if you want, from both Plex and the metadata file. If you add those “git” lines you removed back into the config file:
+Delete these three collections if you want, from both Plex and the metadata file. If you add that “git” line you removed back into the config file:
 
 ```
       - git: meisnate12/MovieCharts
-      - git: meisnate12/Studios
-      - git: meisnate12/IMDBGenres
-      - git: meisnate12/People
 ```
 
-then run PMM again, the script will add a whole bunch of new collections [which are defined in those files] you may be interested in.
+then run PMM again, the script will add a whole bunch of new collections [which are defined in that file] you may be interested in.
 
-Those lines are links into the github repo of examples I referred to above, so you can review what they contain there.  You can also add others from that repo using this same pattern.
+That line is a link into the github repo of examples I referred to above, so you can review what it contains there.  You can also add others from that repo using this same pattern.
 
 If you prefer to create your own, do that in the metadata file.
 
@@ -700,5 +693,5 @@ You're set to go.
 
 You can switch back to the `master` branch by changing `develop` to `master`.
 
-The reinstall of requirements every time is probably overkill, but it's harmless and ensures that you always get any new versions or requirements.
+The reinstall of requirements every time is probably overkill, but it's harmless and ensures that you always get any new versions or new requirements.
 
