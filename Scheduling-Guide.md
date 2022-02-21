@@ -91,7 +91,7 @@ Say you want PMM to run every day at 7 AM, do its thing, and exit.  Here's how t
 
    ![task-scheduler](images/task-scheduler/04-basic-task-04.png)
 
-8. You'll be asked to find the thing] you want to run.  Navigate to the PMM directory and choose `runner.cmd`, which you created in step 1.
+8. Click "Browse" and find the thing you want to run.  Navigate to the PMM directory and choose `runner.cmd`, which you created in step 1.  Click "Open".
 
    ![task-scheduler](images/task-scheduler/04-basic-task-05.png)
 
@@ -103,7 +103,7 @@ Say you want PMM to run every day at 7 AM, do its thing, and exit.  Here's how t
 
    ![task-scheduler](images/task-scheduler/04-basic-task-07.png)
 
-   The Properties dialog will show you details for your review.  You don't have to do anything with them.
+   The Properties dialog will show you details for your review.  Click "OK" to close the dialog.
 
 11. Click "Task Schedule Library" on the left.  You can see your new task in the list.
 
@@ -157,7 +157,7 @@ Say you want PMM to start up with the machine, and use its internal schedule of 
 6. Choose the action to take, click "Next".
 
    ![task-scheduler](images/task-scheduler/06-basic-task-04.png)
-7. You'll be asked to find the thing] you want to run.  Navigate to the PMM directory and choose `waiter.cmd`, which you created in step 1.
+7. Click "Browse" and find the thing you want to run.  Navigate to the PMM directory and choose `waiter.cmd`, which you created in step 1.  Click "Open".
 
    ![task-scheduler](images/task-scheduler/06-basic-task-05.png)
 
