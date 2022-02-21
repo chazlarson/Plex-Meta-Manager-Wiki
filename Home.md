@@ -60,10 +60,12 @@ Before posting on GitHub about an enhancement, error, or configuration question 
 - [Home](Home)
 - [Installation](Installation)
 - [Run Commands & Environmental Variables](Run-Commands-&-Environmental-Variables)
+- Walkthroughs, Guides, and Best Practices
   - [Local Walkthrough](Local-Walkthrough)
   - [Docker Walkthrough](Docker-Walkthrough)
   - [unRAID Walkthrough](unRAID-Walkthrough)
   - [Kubernetes Walkthrough](Kubernetes-Walkthrough)
+  - [Scheduling Guide](Scheduling-Guide)
 - [Configuration File](Configuration-File)
   - [Libraries Attributes](Libraries-Attributes)
     - [Operations Attributes](Operations-Attributes)

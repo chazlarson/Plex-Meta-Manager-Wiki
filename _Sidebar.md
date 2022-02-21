@@ -1,10 +1,12 @@
 - [Home](Home)
 - [Installation](Installation)
 - [Run Commands & Environmental Variables](Run-Commands-&-Environmental-Variables)
+- Walkthroughs, Guides, and Best Practices
   - [Local Walkthrough](Local-Walkthrough)
   - [Docker Walkthrough](Docker-Walkthrough)
   - [unRAID Walkthrough](unRAID-Walkthrough)
   - [Kubernetes Walkthrough](Kubernetes-Walkthrough)
+  - [Scheduling Guide](Scheduling-Guide)
 - [Configuration File](Configuration-File)
   - [Libraries Attributes](Libraries-Attributes)
     - [Operations Attributes](Operations-Attributes)
@@ -51,6 +53,4 @@
     - [Image Overlay Detail](Image-Overlay-Detail)
     - [Metadata Details](Metadata-Details)
     - [Arr Details](Arr-Details)
-- Guides and Best Practices
-    - [Scheduling](Scheduling)
-  - [Acknowledgements](Acknowledgements)
+- [Acknowledgements](Acknowledgements)
