@@ -1,26 +1,25 @@
-The scheduling features of Plex-Meta-Manager depend on it running constantly so it wakes up at 3AM or whatever to do its thing.
+The scheduling features of Plex-Meta-Manager [PMM] depend on it running constantly so it can wake up at 3AM to do its thing.
 
-Note: "command window" herein refers to Terminal on OS X or PowerShell on Windows or the equivalent on whatever other platform.
-
-The simplest way to do this is to just run `python plex-meta-manager.y` in a command window.  That will sit and wait until 3AM, then wake up and do its thing, then go back to waiting.
+The simplest way to do this is to just run `python plex-meta-manager.y` in a command window [Terminal on OS X or PowerShell on Windows].  That will sit and wait until 3AM, wake up and do its thing, then go back to waiting.
 
 However: you need to keep that window open.  You can minimize it, but it always has to be there, and it won't survive a reboot.
+
+Note: you can use things like `screen` or `tmux` to run PMM in the background, which would allow you to close the terminal connection and allow it to continue, but that won't survive a reboot of the machine, so is of limited utility.
 
 That's probably not what you want.  Here are some alternatives.
 
 Note: "do its thing" here refers to creating collections and whatever else you have PMM configured to do.  I'll be using that phrase throughout to distinguish between "running" PMM generally and PMM "running" metadata operations.
 
-## Run it in docker
+## Run it in Docker
 
 This is probably the simplest and most robust if your platform can handle it.
 
-When you run PMM in a docker container, it will come back up after reboots and run in the background without an open window automatically.
+When you run PMM in a Docker container, it will come back up after reboots and run in the background without an open window automatically.
 
 There's a [Docker Walkthrough](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Docker-Walkthrough) to get you started, but basically if you run:
 
 ```
 docker run -d \
-  --name=pmm \
   --restart=unless-stopped \
   -e TZ=US/Pacific \
   -v /path/to/config:/config:rw \
@@ -28,29 +27,39 @@ docker run -d \
 ```
 It will run in the background forever until you stop it, waking up at 3AM every day to do its thing.
 
+There are a variety of [parameters](Run-Commands-&-Environmental-Variables.md) available to customize the time and so on, but that's the minimal case.
+
 Perhaps your system can't run Docker, though.
 
 ## Windows
+<br />
 
 ### Task Scheduler
 
-Windows Task Scheduler allows you to do things on a variety to schedules.
-
-PMM can run, broadly, run in two "modes".  You can tell it to do its thing right away, or it can wait until some time [default is 3AM] to wake up and do its thing.
+Windows Task Scheduler allows you to tell the computer to do things on a variety of schedules.
 
 These examples are assuming you're running it locally, not in Docker.  You could replace the commands in the scripts below with a `docker run` if you wish.
 
+PMM can run, broadly, run in two "modes".  You can tell it to do its thing right away, or it can wait until some time [default is 3AM] to wake up and do its thing.
+
 Say you want PMM to run every day at 7 AM, do its thing, and exit.  Here's how to do that.
 
-#### Scheduled one-time run
+<details>
+  <summary>Scheduled one-time run</summary>
+  <br />
 
 1. Create a script to run PMM.  You can do this in any text editor; I'm using notepad.
 
    I'm assuming you installed PMM using the [Local Walkthrough](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Local-Walkthrough) and so have the virtual environment described there set up.
 
-   ![runner-cmd](images/task-scheduler/01-runner-cmd.png)
+   ```batch
+   cd C:\User\IEUser\Plex-Meta-Manager-1.15.1
+   .\pmm-venv\Scripts\python .\plex_meta_manager.py --run
+   ```
 
-   The script goes to the PMM directory, then runs the script with the `-r` flag for an immediate run.  It will do its thing and exit.
+   Of course, that path should reflect your own environment.
+
+   The script goes to the PMM directory, then runs the script with the `--run` flag which triggers an immediate processing.  It will do its thing and exit.
 
    Save this file in the PMM directory as `runner.cmd`.
 
@@ -66,11 +75,11 @@ Say you want PMM to run every day at 7 AM, do its thing, and exit.  Here's how t
 
    ![task-scheduler](images/task-scheduler/03-task-scheduler-main.png)
 
-4. Give it a name, click "Next".
+4. Give it a name [and a description if you wish], click "Next".
 
    ![task-scheduler](images/task-scheduler/04-basic-task-01.png)
 
-5. Choose when you want it to run, click "Next"
+5. Choose when you want it to run [here we're choosing "daily" since we want it to run every day], click "Next"
 
    ![task-scheduler](images/task-scheduler/04-basic-task-02.png)
 
@@ -82,35 +91,44 @@ Say you want PMM to run every day at 7 AM, do its thing, and exit.  Here's how t
 
    ![task-scheduler](images/task-scheduler/04-basic-task-04.png)
 
-8. You'll be asked to find the script you want to run.  Navigate to the PMM dir and choose `runner.cmd`, which you created in step 1.
+8. You'll be asked to find the thing] you want to run.  Navigate to the PMM directory and choose `runner.cmd`, which you created in step 1.
 
    ![task-scheduler](images/task-scheduler/04-basic-task-05.png)
 
-8. Copy the directory [everything up to but not including `runner.cmd`] from the "Program/Script" field, and paste it into the "Start in" field.
+9. Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below.
 
    ![task-scheduler](images/task-scheduler/04-basic-task-06.png)
 
-8. Check "Open the properties dialog" if you wish, then click "Finish".
+10. Check "Open the properties dialog" if you wish, then click "Finish".
 
    ![task-scheduler](images/task-scheduler/04-basic-task-07.png)
 
    The Properties dialog will show you details for your review.  You don't have to do anything with them.
 
-8. Click "Task Schedule Library" on the left.  You can see your new task in the list.
+11. Click "Task Schedule Library" on the left.  You can see your new task in the list.
 
    ![task-scheduler](images/task-scheduler/04-basic-task-09.png)
 
-9. You're done.
+12. You're done.
+</details><br />
 
-Say you want PMM to start up with the machine, and use its internal schedule of waiting until 3AM to do its thing.  Here's how to do that.
 
-#### Start PMM with the machine
+Say you want PMM to start up with the machine, and use its internal schedule of waiting until 3AM to do its thing.  You want it to be running whenever this computer is running. Here's how to do that.
+
+<details>
+  <summary>Start PMM when the machine starts up</summary>
+  <br />
 
 1. Create a script to run PMM.  You can do this in any text editor; I'm using notepad.
 
    I'm assuming you installed PMM using the [Local Walkthrough](https://github.com/meisnate12/Plex-Meta-Manager/wiki/Local-Walkthrough) and so have the virtual environment described there set up.
 
-   ![runner-cmd](images/task-scheduler/05-waiter-cmd.png))
+   ```batch
+   cd C:\User\IEUser\Plex-Meta-Manager-1.15.1
+   .\pmm-venv\Scripts\python .\plex_meta_manager.py
+   ```
+
+   Of course, that path should reflect your own environment.
 
    The script goes to the PMM directory, then runs the script in the default mode.  It will wait until 3AM, do its thing, and go back to waiting until 3AM the next day.
 
@@ -128,23 +146,22 @@ Say you want PMM to start up with the machine, and use its internal schedule of 
 
    ![task-scheduler](images/task-scheduler/06-basic-task-01.png)
 
-4. Give it a name, click "Next".
+4. Give it a name [and a description if you wish], click "Next".
 
    ![task-scheduler](images/task-scheduler/06-basic-task-02.png)
 
-5. Choose when you want it to run, click "Next"
+5. Choose when you want it to run [here we're choosing "When the computer starts" since we want it to run whenever this machine is up].
 
    ![task-scheduler](images/task-scheduler/06-basic-task-03.png)
 
 6. Choose the action to take, click "Next".
 
    ![task-scheduler](images/task-scheduler/06-basic-task-04.png)
-
-7. You'll be asked to find the script you want to run.  Navigate to the PMM dir and choose `waiter.cmd`, which you created in step 1.
+7. You'll be asked to find the thing] you want to run.  Navigate to the PMM directory and choose `waiter.cmd`, which you created in step 1.
 
    ![task-scheduler](images/task-scheduler/06-basic-task-05.png)
 
-   Copy the directory [everything up to but not including `runner.cmd`] from the "Program/Script" field, and paste it into the "Start in" field.
+   Copy the directory [everything up to but not including `waiter.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below.
 
 8. Click "Finish".
 
@@ -155,11 +172,14 @@ Say you want PMM to start up with the machine, and use its internal schedule of 
 If you wanted to run the script with at startup, but specify a different time from 3AM, your `waiter.cmd` could look like this:
 
 ![task-scheduler](images/task-scheduler/07-waiter-cmd-times.png)
+</details><br />
 
-## OS X
 
-### Launchd
-
+## Mac OS X
+<br />
+<details>
+  <summary>Launchd Service</summary>
+  <br />
 
 1. Create launchd service:
 
@@ -236,7 +256,7 @@ If you wanted to run the script with at startup, but specify a different time fr
 
 2. Load and start the agent 🚀
 
-   Retrieve your user id with `id -u`.  You'll need it for the commands in this step
+   Retrieve your user id with `id -u` in Terminal.  You'll need it for the commands in this step.
 
    Load the agent by executing the following commands:
 
@@ -254,15 +274,21 @@ If you wanted to run the script with at startup, but specify a different time fr
    Note that this command uses the *label*, not the plist filename. The -k options means that the service will first be killed, if running.
 
    The agent should now be active and starting the program according to the schedule you set.
+</details><br />
 
 
-### cron
+<details>
+  <summary>cron</summary>
+  <br />
 
 See the cron section below.
+</details><br />
 
 ## Linux
-
-### cron
+<br />
+<details>
+  <summary>cron</summary>
+  <br />
 
 1. Decide when you want to run Plex Meta Manager
 
@@ -289,8 +315,11 @@ See the cron section below.
 3. Paste in the crontab line you got from `crontab-generator`, or type in one of your own.
 
 4. Save and close the file.
+</details><br />
 
-### Service
+<details>
+  <summary>Run PMM as a systemctl service</summary>
+  <br />
 
 1. Create the service file:
 
@@ -336,4 +365,10 @@ See the cron section below.
    sudo systemctl start plex-meta-manager.service
    ```
 
+3. You can check whether the service is running with:
+
+   ```shell
+   sudo systemctl status plex-meta-manager.service
+   ```
+</details><br />
 
