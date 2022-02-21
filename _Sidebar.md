@@ -50,4 +50,6 @@
     - [Image Overlay Detail](Image-Overlay-Detail)
     - [Metadata Details](Metadata-Details)
     - [Arr Details](Arr-Details)
-- [Acknowledgements](Acknowledgements)
+- Guides and Best Practices
+    - [Scheduling](Scheduling)
+  - [Acknowledgements](Acknowledgements)

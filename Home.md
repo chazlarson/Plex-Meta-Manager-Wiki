@@ -29,7 +29,7 @@ The script works with most Metadata agents including the New Plex Movie Agent, N
 4. Explore the [Wiki](https://github.com/meisnate12/Plex-Meta-Manager/wiki) to see all the different Collection Builders that can be used to create collections.
 
 ## Wiki
-The [Wiki](https://github.com/meisnate12/Plex-Meta-Manager/wiki) details evey available option you have with Plex Meta Manager its Table of Contents is below. 
+The [Wiki](https://github.com/meisnate12/Plex-Meta-Manager/wiki) details evey available option you have with Plex Meta Manager its Table of Contents is below.
 
 ## Example Community Metadata Files
 To see user submitted Metadata configuration files, and you to even add your own, go to the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs).
@@ -74,8 +74,8 @@ Before posting on GitHub about an enhancement, error, or configuration question 
   - [Plex Attributes](Plex-Attributes)
   - [TMDb Attributes](TMDb-Attributes)
   - [Tautulli Attributes](Tautulli-Attributes)
-  - [OMDb Attributes](OMDb-Attributes) 
-  - [Notifiarr Attributes](Notifiarr-Attributes) 
+  - [OMDb Attributes](OMDb-Attributes)
+  - [Notifiarr Attributes](Notifiarr-Attributes)
   - [AniDB Attributes](AniDB-Attributes)
   - [Radarr Attributes](Radarr-Attributes)
   - [Sonarr Attributes](Sonarr-Attributes)
