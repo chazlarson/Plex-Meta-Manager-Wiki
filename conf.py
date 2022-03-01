@@ -64,7 +64,7 @@ napoleon_use_keyword = True
 autodoc_member_order = 'bysource'
 add_module_names = False
 
-master_doc = 'home/plex-meta-manager'
+master_doc = 'index'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
