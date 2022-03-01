@@ -71,4 +71,4 @@ services:
     restart: unless-stopped 
 ```
 ## Dockerfile
-A  `Dockerfile` is included within the GitHub repository for those who want to build their own version of Plex Meta Manager, although this is only suggested for those with knowledge of dockerfiles. The official Plex Meta Manager build is  available on the [Dockerhub Website](https://hub.docker.com/r/meisnate12/plex-meta-manager).
+A `Dockerfile` is included within the GitHub repository for those who require it, although this is only suggested for those with knowledge of dockerfiles. The official Plex Meta Manager build is  available on the [Dockerhub Website](https://hub.docker.com/r/meisnate12/plex-meta-manager).
