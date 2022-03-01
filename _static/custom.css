@@ -15,6 +15,11 @@ code {
   color: #0ce3ac;
   background-color: #030303 !important;
 }
+td hr {
+    height: 5px;
+    visibility: hidden;
+    margin: 0;
+}
 hr {
   border-top: 3px solid #bcbcbc;
   margin-top: 50px;
