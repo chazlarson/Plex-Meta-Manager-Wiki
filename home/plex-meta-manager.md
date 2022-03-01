@@ -7,7 +7,7 @@
 
 [![Discord](https://img.shields.io/discord/822460010649878528?label=Discord&style=plastic)](https://discord.gg/NfH6mGFuAB)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/meisnate12/plex-meta-manager?style=plastic)](https://hub.docker.com/r/meisnate12/plex-meta-manager)
-[![Read the Docs](https://img.shields.io/readthedocs/pmm-wiki?style=plastic)](https://pmm-wiki.readthedocs.io/en/latest/?badge=latest)
+[![Read the Docs](https://img.shields.io/readthedocs/plex-meta-manager-wiki?style=plastic)](https://plex-meta-manager-wiki.readthedocs.io/en/latest/?badge=latest)
 [![Sponsor or Donate](https://img.shields.io/badge/-Sponsor_or_Donate-blueviolet?style=plastic)](https://github.com/sponsors/meisnate12)
 
 The original concept for Plex Meta Manager is [Plex Auto Collections](https://github.com/mza921/Plex-Auto-Collections), but this is rewritten from the ground up to be able to include a scheduler, metadata edits, multiple libraries, and logging. Plex Meta Manager is a Python 3 script that can be continuously run using YAML configuration files to update on a schedule the metadata of the movies, shows, and collections in your libraries as well as automatically build collections based on various methods all detailed in the wiki. Some collection examples that the script can automatically build and update daily include Plex Based Searches like actor, genre, or studio collections or Collections based on TMDb, IMDb, Trakt, TVDb, AniDB, or MyAnimeList lists and various other services.
@@ -45,6 +45,13 @@ Before posting on GitHub about an enhancement, error, or configuration question 
 ## Development Build
 * There is a [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) branch which will have the most updated fixes and enhancements to the script.
 * to access the Docker Image for the develop branch use the `develop` tag by adding `:develop` to the image name. i.e. `meisnate12/plex-meta-manager:develop`
+
+## Development Wiki
+* There is a [develop](https://plex-meta-manager-wiki.readthedocs.io/en/develop/home/plex-meta-manager.html) version of the wiki that has the latest additions to the develop branch of Plex Meta Manager detailed.
+
+## Nightly Build
+* There is a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) branch which will have the absolute latest version of the script but it could easily break and the features are not documented until they're in develop.
+* to access the Docker Image for the nightly branch use the `nightly` tag by adding `:nightly` to the image name. i.e. `meisnate12/plex-meta-manager:nightly`
 
 ## Contributing
 * Pull Request are welcome but please submit them to the develop branch.
