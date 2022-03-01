@@ -8,11 +8,6 @@ build:
 sphinx:
   configuration: conf.py
 
-search:
-   ignore:
-     - .github/
-     - README.md
-
 formats: all
 
 python:
