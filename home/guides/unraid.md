@@ -9,7 +9,7 @@ To install a container from docker hub, you will need community applications - a
 
 2. Click the download icon on the `plex meta manager` container by `meisnate12`.
 
-3. Create your [Docker values](../home/environmental) using `Add another Path, Port, Variable, Label or Device`. Example config:
+3. Create your [Docker values](../../home/environmental) using `Add another Path, Port, Variable, Label or Device`. Example config:
 
 | Config Type | Name                | Key           | Value  | Container Path | Host Path                             | Access Mode | Description                                         |
 |:------------|:--------------------|:--------------|:-------|:---------------|:--------------------------------------|:------------|:----------------------------------------------------|
@@ -18,7 +18,7 @@ To install a container from docker hub, you will need community applications - a
 | Variable    | Screen Width        | `PMM_WIDTH`   | `100`  | N/A            | N/A                                   | N/A         | An integer between 90 and 300                       |
 | Path        | Config Storage Path | N/A           | N/A    | `/config`      | `/mnt/user/appdata/plex-meta-manager` | Read/Write  | Translation from docker container path to host path |
 
-  * Full list of docker values can be found on the [Run Commands & Environmental Variables Page](../home/environmental).
+  * Full list of docker values can be found on the [Run Commands & Environmental Variables Page](../../home/environmental).
   * If you wish to enable one-time [Run]([Run Commands & Environmental Variables Page](../environmental.md#run)), add `-r` to `Post Arguments` by enabling Advanced View in the top right of unRAID.
   * The Image below shows the above values in the unRAID WebUI.
   ![unRAID WebUI](unraid-webui.png)
@@ -27,7 +27,7 @@ To install a container from docker hub, you will need community applications - a
 
 5. Navigate to the `Docker` tab in unRAID, and stop the `plex-meta-manager` container if it has auto-started.
 
-6. Create `config.yml` and `library.yml` files as-per the [documentation](../config/configuration) in the Host Path you set (/mnt/user/appdata/plex-meta-manager in the example)
+6. Create `config.yml` and `library.yml` files as-per the [documentation](../../config/configuration) in the Host Path you set (/mnt/user/appdata/plex-meta-manager in the example)
 
 7. Once finished, run the container. Voila! Logs are located in `yourhostpath/logs`.
 
@@ -37,7 +37,7 @@ Due to how unRAID handles docker containers, it can be a little confusing at fir
 
 1. Stop the Plex Meta Manager docker container if it's currently running.
 
-2. Follow the instructions for either [Trakt](../config/trakt) or [MyAnimeList](../config/myanimelist), and add the relevant values to your `config.yml`
+2. Follow the instructions for either [Trakt](../../config/trakt) or [MyAnimeList](../../config/myanimelist), and add the relevant values to your `config.yml`
 
 3. Edit the `Time to Run` variable to reflect a time that is NOT the current time. We don't want the script to be running right now. Set `Run` to `false` if you've chosen to add that variable. Then, start the container.
 
@@ -51,6 +51,6 @@ Due to how unRAID handles docker containers, it can be a little confusing at fir
   
 7. Run `python plex_meta_manager.py -r`, and watch as the script comes to life.
 
-8. You'll now notice, as per the [configuration documentation](../config/configuration) on these sources, the script will ask you to click a URL and return an input. Go ahead and do so in this terminal window.
+8. You'll now notice, as per the [configuration documentation](../../config/configuration) on these sources, the script will ask you to click a URL and return an input. Go ahead and do so in this terminal window.
 
 9. Once finished, and the script succeeds in connecting to your source, press `Ctrl + C` to cancel the script - and close out of the terminal window. Go ahead and stop the docker container, restore your container settings to your original preferences (restore `Time to Run`), and start the container.

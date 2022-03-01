@@ -112,7 +112,7 @@ minimum requirement is the PMM config, but the example here assumes you have a s
 Here's a config map for the `config.yml` file for PMM.  Note there are many placeholders that will need update based on 
 your environment and needs.
 
-Follow the [Trakt Attributes](../config/trakt) directions for generating the OAuth authorization
+Follow the [Trakt Attributes](../../config/trakt) directions for generating the OAuth authorization
 values.
 
 ``` 

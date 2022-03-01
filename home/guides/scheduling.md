@@ -29,7 +29,7 @@ docker run -d \
 ```
 It will run in the background forever until you stop it, waking up at 3AM every day to do its thing.
 
-There are a variety of [parameters](../home/environmental) available to customize the time and so on, but that's the minimal case.
+There are a variety of [parameters](../../home/environmental) available to customize the time and so on, but that's the minimal case.
 
 Perhaps your system can't run Docker, though.
 
