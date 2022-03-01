@@ -9,10 +9,9 @@ __pycache__/
 # Distribution / packaging
 .idea
 .Python
-/test.py
+/test*
 logs/
-config/*
-!config/*.template
+old/
 build/
 develop-eggs/
 dist/
@@ -74,7 +73,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+_build/
 
 # PyBuilder
 target/
