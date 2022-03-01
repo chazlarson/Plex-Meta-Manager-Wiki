@@ -85,8 +85,8 @@ html_theme = "bootstrap"
 html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
 # Path should be relative to the ``_static`` files directory.
-html_logo = "my_logo.png"
-html_favicon = "home/pmm.png"
+html_logo = "pmm.png"
+html_favicon = "pmm.png"
 
 html_copy_source = False
 html_show_sourcelink = False
@@ -113,7 +113,7 @@ html_theme_options = {
     # an arbitrary url.
     'navbar_links': [
         ("_menu", "Essentials", [
-            ("Plex Meta Manager", "home/plex-meta-manager"),
+            ("Plex Meta Manager", "index"),
             ("_divider", ),
             ("Installation", "home/installation"),
             ("Run Commands & Environmental Variables", "home/environmental"),

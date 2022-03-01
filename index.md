@@ -1,4 +1,4 @@
-# <img width="24px" src="https://i.ibb.co/VBJjT3V/pmm.png" alt="Sonarr"> Plex Meta Manager
+# <img width="24px" src="pmm.png" alt="Sonarr"> Plex Meta Manager
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/meisnate12/Plex-Meta-Manager?style=plastic)](https://github.com/meisnate12/Plex-Meta-Manager/releases)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/meisnate12/plex-meta-manager?label=docker&sort=semver&style=plastic)](https://hub.docker.com/r/meisnate12/plex-meta-manager)
@@ -7,19 +7,19 @@
 
 [![Discord](https://img.shields.io/discord/822460010649878528?label=Discord&style=plastic)](https://discord.gg/NfH6mGFuAB)
 [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/meisnate12/plex-meta-manager?style=plastic)](https://hub.docker.com/r/meisnate12/plex-meta-manager)
-[![Read the Docs](https://img.shields.io/readthedocs/plex-meta-manager-wiki?style=plastic)](https://plex-meta-manager-wiki.readthedocs.io/en/latest/?badge=latest)
+[![Read the Docs](https://img.shields.io/readthedocs/plex-meta-manager-wiki?style=plastic)](https://metamanager.wiki)
 [![Sponsor or Donate](https://img.shields.io/badge/-Sponsor_or_Donate-blueviolet?style=plastic)](https://github.com/sponsors/meisnate12)
 
 Plex Meta Manager is an open source Python 3 project that has been designed to ease the creation and maintenance of metadata, collections, and playlists within a Plex Media Server. The script is designed to be run continuously and be able to update information based on sources outside your plex environment. Plex Meta Manager supports Movie/TV/Music libraries and Playlists.
 
 ## Getting Started
 
-1. Install Plex Meta Manager either by following the [Local Walkthrough](guides/local)
-   or by installing Docker and following the [Docker Walkthrough](guides/docker) or the [unRAID Walkthrough](guides/unraid).
+1. Install Plex Meta Manager either by following the [Local Walkthrough](home/guides/local)
+   or by installing Docker and following the [Docker Walkthrough](home/guides/docker) or the [unRAID Walkthrough](home/guides/unraid).
 
-2. Once installed, you have to create a [Configuration File](../config/configuration) filled with all your values to connect to the various services.
+2. Once installed, you have to create a [Configuration File](config/configuration) filled with all your values to connect to the various services.
 
-3. After that you can start updating Metadata and building automatic Collections by creating a [Metadata File](../metadata/metadata) for each Library you want to interact with.
+3. After that you can start updating Metadata and building automatic Collections by creating a [Metadata File](metadata/metadata) for each Library you want to interact with.
 
 4. Explore the Wiki to see all the different Collection Builders that can be used to create collections.
 
@@ -27,9 +27,9 @@ Plex Meta Manager is an open source Python 3 project that has been designed to e
 There is a [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) build which will have the most updated fixes and enhancements to the script.
 . To access the Docker Image for the develop build use the `develop` tag by adding `:develop` to the image name. i.e. `meisnate12/plex-meta-manager:develop`
 
-If switching to the develop build, it is recommended to also use the [develop](https://plex-meta-manager-wiki.readthedocs.io/en/develop/home/plex-meta-manager.html) branch of the wiki documents any changes made from the Master build.
+If switching to the develop build, it is recommended to also use the [develop](https://metamanager.wiki/en/develop/) branch of the wiki documents any changes made from the Master build.
 
-There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script but it could easily break and the features are not documented until they're in develop. To access the Docker Image for the nightly build use the `nightly` tag by adding `:nightly` to the image name. i.e. `meisnate12/plex-meta-manager:nightly`. As this build is subject to extreme change, there is no nightly branch of the wiki and all discussions relating to changes made in the nightly build will be held within the [Plex Meta Manager Discord Server](https://discord.gg/NfH6mGFuAB).
+There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break and the features are not documented until they're in develop. To access the Docker Image for the nightly build use the `nightly` tag by adding `:nightly` to the image name. i.e. `meisnate12/plex-meta-manager:nightly`. As this build is subject to extreme change, there is no nightly branch of the wiki and all discussions relating to changes made in the nightly build will be held within the [Plex Meta Manager Discord Server](https://discord.gg/NfH6mGFuAB).
 
 ## Example Usage
 
@@ -46,9 +46,9 @@ Some example collections that can be created are:
 
 Below are some user-curated collections which have been created by Plex Meta Manager.
 
-![Movie Preview](movie-preview.png)
+![Movie Preview](home/movie-preview.png)
 
-![Show Preview](show-preview.png)
+![Show Preview](home/show-preview.png)
 
 To see user submitted Metadata configuration files, and you to even add your own, go to the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs).
 
