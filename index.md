@@ -1,4 +1,4 @@
-# <img width="24px" src="_images/pmm.png" alt="PMM"> Plex Meta Manager
+# <img width="80px" src="_images/pmm.png" alt="PMM"> Plex Meta Manager
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/meisnate12/Plex-Meta-Manager?style=plastic)](https://github.com/meisnate12/Plex-Meta-Manager/releases)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/meisnate12/plex-meta-manager?label=docker&sort=semver&style=plastic)](https://hub.docker.com/r/meisnate12/plex-meta-manager)
@@ -72,15 +72,3 @@ If you are unable to use the [Plex Meta Manager Discord Server](https://discord.
 [IBRACORP](https://ibracorp.io/) made a video walkthough for installing Plex Meta Manager on unRAID. While you might not be using unRAID the video goes over many key accepts of Plex Meta Manager and can be a great place to start learning how to use the script.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dF69MNoot3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-# <img width="24px" src="_images/pmm.png" alt="PMM"> Plex Meta Manager
-
-f
-
-# <src="_images/pmm.png"> Plex Meta Manager
-
-f
-
-# ![PMM](pmm.png) Plex Meta Manager
-
-f
