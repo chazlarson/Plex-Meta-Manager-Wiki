@@ -1,53 +1,63 @@
-# Installation
+# Installing Plex Meta Manager
 
-## Local Installation
+## Install Walkthroughs
+The below installation overviews are aimed at users who have previous experience of installing services via command-line terminal commands. For those who need full installation walkthroughs, please refer to the following walkthrough guides:
+  * [Local Walkthrough](https://metamanager.wiki/en/develop/home/guides/local.html)
+  * [Docker Walkthrough](https://metamanager.wiki/en/develop/home/guides/docker.html)
+  * [unRAID Walkthrough](https://metamanager.wiki/en/develop/home/guides/unraid.html)
+  * [Kubernetes Walkthrough](https://metamanager.wiki/en/develop/home/guides/kubernetes.html)
+## Local Install Overview
 
-Testing has been done only on Python 3.7, 3.8, and 3.9 on Linux and Windows.
+Plex Meta Manager is compatible with Python 3.7, 3.8 or 3.9 only. Later versions may function but are untested.
 
-To start clone the repo or [download](https://github.com/meisnate12/Plex-Meta-Manager/archive/refs/heads/master.zip) and unzip the repo.
+The below are high-level steps which assume the user has knowledge of python and pip, and the general ability to troubleshoot issues. For a detailed step-by-step walkthrough, refer to the [Local Walkthrough](https://metamanager.wiki/en/develop/home/guides/local.html#) guide.
 
-![Zip](zip.png)
+1. Clone or [download and unzip](https://github.com/meisnate12/Plex-Meta-Manager/archive/refs/heads/master.zip) the repo.
 
-Then install dependencies by running:
+```shell
+git clone https://github.com/meisnate12/Plex-Meta-Manager
+```
+2. Install dependencies:
 
 ```shell
 pip install -r requirements.txt
 ```
 
-If there are issues installing dependencies try:
+3. If the above command fails, run the following command:
 
 ```shell
 pip install -r requirements.txt --ignore-installed
 ```
 
-To run the script in an interactive terminal run:
+At this point Plex Meta Manager has been installed and you can verify installation by running:
 
 ```shell
 python plex_meta_manager.py
 ```
 
-## Docker Installation
+## Docker Install Overview
 
-A simple `Dockerfile` is available in this repo if you'd like to build it yourself. The official build is also available from dockerhub here: https://hub.docker.com/r/meisnate12/plex-meta-manager
+### Docker Run:
 
 ```shell
 docker run -it -v <PATH_TO_CONFIG>:/config:rw meisnate12/plex-meta-manager
 ```
-* The `-it` allows you to interact with the script when needed. 
-  * For example, it's required in order to go through the OAuth flow while connecting to Trakt or MyAnimeList.
-* The `-v <PATH_TO_CONFIG>:/config:rw` mounts the location you choose as a persistent volume to store your files. 
+* The `-it` flag allows you to interact with the script when needed (such as for Trakt or MyAnimeList authentication). 
+* The `-v <PATH_TO_CONFIG>:/config:rw` flag mounts the location you choose as a persistent volume to store your files. 
   * Change `<PATH_TO_CONFIG>` to a folder where your config.yml and other files are. 
-  * The docker image defaults to running the config named `config.yml` in your persistent volume.
-  * Use quotes around the whole thing if your path has spaces i.e. `-v "<PATH_TO_CONFIG>:/config:rw"`
+  * The docker image defaults to running the configuration file named `config.yml` which resides in your persistent volume.
+  * If your directory has spaces (such as "My Documentes"), place quotation marks around your directory pathing as shown here: `-v "<PATH_TO_CONFIG>:/config:rw"`
 
-Example
+
+Example Docker Run command:
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager
 ```
 
-### Docker Compose Example
+### Docker Compose:
 
+Example Docker Compose file:
 ```yaml
 version: "2.1"
 services:
@@ -60,3 +70,5 @@ services:
       - /path/to/config:/config 
     restart: unless-stopped 
 ```
+## Dockerfile
+A `Dockerfile` is included within the GitHub repository for those who require it, although this is only suggested for those with knowledge of dockerfiles. The official Plex Meta Manager build is  available on the [Dockerhub Website](https://hub.docker.com/r/meisnate12/plex-meta-manager).
