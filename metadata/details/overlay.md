@@ -17,6 +17,8 @@ config
 * Posters will be backed up in the overlay director and if an item is removed from the search the original poster should be added back.
 * `revert_overlay` can be added to an overlay collection configuration to revert all movies changed by that overlay back to their original posters. 
 
+## Examples
+
 ### Example Folder Structure
 
 This is an example of the default set found [here](https://github.com/meisnate12/Plex-Meta-Manager/tree/master/config/overlays) which would have 5 overlay options `4K`, `4K-Dolby`, `4K-HDR`, `Dolby`, and `HDR` and have a directory structured like below:

@@ -52,6 +52,7 @@ All the following attributes update various details of the metadata for every it
 | `item_use_original_title` | Changes the use original title of every movie/show in the collection<hr>**Values:**<table class="clearTable"><tbody><tr><td>`default`</td><td>Library default</td></tr><tr><td>`no`</td><td>No</td></tr><tr><td>`yes`</td><td>Yes</td></tr></tbody></table>                                                                                                                                                                                                                                                                                       |
 
 <sup>1</sup> Only works with TV Show Libraries
+
 <sup>2</sup> Must be using the **New Plex Movie Agent** or the **New Plex TV Agent** 
 
 ## Summary Details
