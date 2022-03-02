@@ -1,6 +1,11 @@
 # Run Commands & Environmental Variables
 
-| Name                                                  | Shell Command                      | Environmental Variable   |
+The below table outlines the run commands and environment variables that can be utilized to customise the running of Plex Meta Manager to the user's requirements. Environmental Variable values are used over Shell Command values.
+
+If you run into a race condition where you have set an Environment Variable within your system and also use a Shell Command for the same attribute, then the Environment Variable will take priority.
+
+
+| Attribute                                                  | Shell Command                      | Environmental Variable   |
 |:------------------------------------------------------|:-----------------------------------|:-------------------------|
 | [Config](#config)                                     | `-c` or `--config`                 | `PMM_CONFIG`             |
 | [Time to Run](#time-to-run)                           | `-t` or `--time`                   | `PMM_TIME`               |
@@ -21,16 +26,17 @@
 | [Divider Character](#divider-character--screen-width) | `-d` or `--divider`                | `PMM_DIVIDER`            |
 | [Screen Width](#divider-character--screen-width)      | `-w` or `--width`                  | `PMM_WIDTH`              |
 
-* Environmental Variable values are used over Shell Command values 
-
+Further explanation and examples of each command can be found below.
+## Run Command Attribute Examples
 ### Config
-To choose the location of the YAML config file use the `--config` option.
+Specify the location of the configuration YAML file.
 
-**Default Value:** `config/config.yml`<br>
-**Allowed Values:** Path to YAML config file
+| Flags               | Default Value       | Allowed Values            | Example Value       |
+|:--------------------|:--------------------|:--------------------------|:--------------------|
+| `-c` or `--config`  | `config/config.yml` | Path to YAML config file  | `/data/config.yml`  |
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --config <path_to_config>
@@ -38,7 +44,7 @@ python plex_meta_manager.py --config <path_to_config>
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --config <path_to_config>
@@ -47,14 +53,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Time to Run
-To choose the times when the script will run each day use a comma-separated list with the `--time` option.
+Specify the time of day that Plex Meta Manager will run.
 
-**Default Value:** `03:00`<br>
-**Format:** `HH:MM`<br>
-**Allowed Values:** comma-separated list of times to update each day
+| Flags             | Default Value | Allowed Values                          | Example Value             |
+|:------------------|:--------------|:----------------------------------------|:--------------------------|
+| `-t` or `--time`  | `03:00`       | comma-separated list in `HH:MM` format  | `00:00,06:00,12:00,18:00` |
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --time 22:00,03:00
@@ -62,7 +68,7 @@ python plex_meta_manager.py --time 22:00,03:00
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --time 22:00,03:00
@@ -71,10 +77,13 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run
-To perform a run immediately use the `--run` option.
+Perform a run immediately, bypassing the time to run flag.
 
+| Flags            |  
+|:-----------------|
+| `-r` or `--run`  |
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --run
@@ -82,7 +91,7 @@ python plex_meta_manager.py --run
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --run
@@ -91,10 +100,15 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Tests
-To run the script in debug mode while only running collections that have `test: true` use the `--run-tests` option.
+Run Plex Meta Manager in test/debug mode
 
+| Flags                              |
+|:-----------------------------------|
+| `-rt`, `--tests` or `--run-tests`  | 
+
+* Only collections with `test: true` enabled will be run 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --run-tests
@@ -102,7 +116,7 @@ python plex_meta_manager.py --run-tests
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --run-tests
@@ -111,10 +125,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Collections Only
-To have the script run only collections and not any library operations use the `--collections-only` option.
+Only run collection metadata/YAML files, skip library operations.
+
+| Flags                          |
+|:-------------------------------
+| `-co` or `--collections-only`  |
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --collections-only
@@ -122,7 +140,7 @@ python plex_meta_manager.py --collections-only
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --collections-only
@@ -131,10 +149,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Libraries Only
-To have the script run only library operations and not any collections use the `--libraries-only` option.
+Only run library operations, skip collections.
+
+| Flags                        |
+|:-----------------------------|
+| `-lo` or `--libraries-only`  |
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --libraries-only
@@ -142,7 +164,7 @@ python plex_meta_manager.py --libraries-only
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --libraries-only
@@ -151,12 +173,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Collections
-To have the script run only using the collections in the comma-separated list use the `--run-collections` option.
+Run only the pre-defined collections
 
-**Allowed Values:** comma-separated list of collection names to process
+| Flags             | Allowed Values                          | Example Value             |
+|:------------------|:----------------------------------------|:--------------------------|
+| `-rc` or `--run-collections` | comma-separated list  | `Star Wars, Marvel Cinematic Universe` |
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --run-collections "Harry Potter, Star Wars"
@@ -164,7 +188,7 @@ python plex_meta_manager.py --run-collections "Harry Potter, Star Wars"
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --run-collections "Harry Potter, Star Wars"
@@ -173,12 +197,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Libraries
-To have the script run only the libraries in the comma-separated list use the `--run-libraries` option.
+Run only the pre-defined libraries
 
-**Allowed Values:** comma-separated list of library names to process
+| Flags             | Allowed Values                          | Example Value             |
+|:------------------|:----------------------------------------|:--------------------------|
+| `-rl` or `--run-libraries` | comma-separated list  | `Movies - 4K, TV Shows - 4K` |
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --run-libraries "TV Shows"
@@ -186,7 +212,7 @@ python plex_meta_manager.py --run-libraries "TV Shows"
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --run-libraries "TV Shows"
@@ -195,12 +221,15 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Metadata Files
-To have the script run only the Metadata File Names in the comma-separated list use the `--run-metadata-files` option.
+Run only the pre-defined metadata files
 
-**Allowed Values:** comma-separated list of metadata file names to process
+| Flags             | Allowed Values                          | Example Value             |
+|:------------------|:----------------------------------------|:--------------------------|
+| `-rm` or `--run-metadata-files` | comma-separated list  | `Movies.yml, MovieCharts` |
 
+* This works for all different metadata paths i.e. `git`, `url`, `file`, or `repo`.
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --run-metadata-files "Movies"
@@ -208,7 +237,7 @@ python plex_meta_manager.py --run-metadata-files "Movies"
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --run-metadata-files "Movies"
@@ -216,13 +245,21 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
-* This works for all different metadata paths i.e. `git`, `url`, `file`, or `repo`.
+
 
 ### Libraries First
-To have the script run library operations first before collections during the run use the `--libraries-first` option.
+Run library operations prior to running collections.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-lf</code> or <code>--libraries-first</code></td>
+  </tr>
+</table>
+
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --libraries-first
@@ -230,7 +267,7 @@ python plex_meta_manager.py --libraries-first
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --libraries-first
@@ -239,10 +276,18 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Ignore Schedules
-To have the script ignore all schedules during the run except for range schedules use the `--ignore-schedules` option.
+Ignore all schedules for the run.
 
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-is</code> or <code>--ignore-schedules</code></td>
+  </tr>
+</table>
+
+* Range Scheduled collections (such as Christmas movies) will still be ignored.
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --ignore-schedules
@@ -250,7 +295,7 @@ python plex_meta_manager.py --ignore-schedules
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --ignore-schedules
@@ -259,10 +304,17 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Delete Collections
-To have the script delete all collections in a Library before a run use the `--delete-collections` option.
+Delete all collections in a Library prior to running collections/operations.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-dc</code> or <code>--delete-collections</code></td>
+  </tr>
+</table>
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --delete-collections
@@ -270,7 +322,7 @@ python plex_meta_manager.py --delete-collections
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --delete-collections
@@ -279,12 +331,25 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Resume Run
-To have the script resume a run from a specific collection use the `--resume` option.
+Resume a run from a specific collection use the `--resume` option.
 
-**Allowed Values:** Name of the Collection you want to resume the run at
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-re</code> or <code>--resume</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>Name of collection</td>
+  </tr>
+    <tr>
+    <th>Example Value</th>
+    <td><code>Star Wars</code></td>
+  </tr>
+</table>
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --resume "Star Wars"
@@ -292,7 +357,7 @@ python plex_meta_manager.py --resume "Star Wars"
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --resume "Star Wars"
@@ -301,10 +366,17 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Countdown 
-To have the script run without displaying a countdown use the `--no-countdown` option.
+Run without displaying a countdown to the next scheduled run.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-nc</code> or <code>--no-countdown</code></td>
+  </tr>
+</table>
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --no-countdown
@@ -312,7 +384,7 @@ python plex_meta_manager.py --no-countdown
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --no-countdown
@@ -321,10 +393,17 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Missing 
-To have the script run without any of the missing movie/show functions use the `--no-missing` option.
+Run without utilizing the missing movie/show functions.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-nm</code> or <code>--no-missing</code></td>
+  </tr>
+</table>
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --no-missing
@@ -332,7 +411,7 @@ python plex_meta_manager.py --no-missing
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --no-missing
@@ -341,10 +420,17 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Read Only Config
-To have the script run without writing to the config use the `--read-only-config` option.
+Run without writing to the configuration file
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-ro</code> or <code>--read-only-config</code></td>
+  </tr>
+</table>
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --read-only-config
@@ -352,7 +438,7 @@ python plex_meta_manager.py --read-only-config
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --read-only-config
@@ -362,18 +448,50 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 
 ### Divider Character & Screen Width
-To change the terminal output divider character or width use the `--divider` and `--width` options.
+Change the terminal output divider character or width
 
 #### Divider Character
-**Default Value:** `=`<br>
-**Allowed Values:** Any character
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-d</code> or <code>--divider</code></td>
+  </tr>
+  <tr>
+    <th>Default Value</th>
+    <td><code>=</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>An character</td>
+  </tr>
+  <tr>
+    <th>Example Value</th>
+    <td><code>*</code></td>
+  </tr>
+</table>
 
 #### Screen Width
-**Default Value:** `100`<br>
-**Allowed Values:** Integer between 90 and 300
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-w</code> or <code>--width</code></td>
+  </tr>
+  <tr>
+    <th>Default Value</th>
+    <td><code>100</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>Integer between 90 and 300</td>
+  </tr>
+  <tr>
+    <th>Example Value</th>
+    <td><code>150</code></td>
+  </tr>
+</table>
 
 <details>
-  <summary>Local</summary>
+  <summary>Local Environment</summary>
 
 ```shell
 python plex_meta_manager.py --divider * --width 200
@@ -381,7 +499,7 @@ python plex_meta_manager.py --divider * --width 200
 
 </details>
 <details>
-  <summary>Docker</summary>
+  <summary>Docker Environment</summary>
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --divider * --width 200
