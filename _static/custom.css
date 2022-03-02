@@ -133,3 +133,6 @@ details[open] > summary:before {
 details summary::-webkit-details-marker {
   display:none;
 }
+strong {
+  color: #0ce3ac
+}

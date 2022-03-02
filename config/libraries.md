@@ -1,4 +1,4 @@
-# Libraries
+# Libraries Attributes
 
 One of the two required configuration mappings is `libraries` which is where you set up a configuration for each Plex Library you want the program to interact with. 
 

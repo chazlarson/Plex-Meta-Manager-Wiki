@@ -129,7 +129,11 @@ html_theme_options = {
             ("Metadata File", "metadata/metadata"),
             ("_divider", ),
             ("Scheduling Guide", "home/guides/scheduling"),
-            ("Image Asset Directory Guide", "home/guides/assets")
+            ("Image Asset Directory Guide", "home/guides/assets"),
+            ("_divider", ),
+            ("Discord Server", "https://discord.gg/NfH6mGFuAB", True),
+            ("Sponsor", "https://github.com/sponsors/meisnate12", True),
+            ("Acknowledgements", "home/acknowledgements"),
         ]),
         ("_menu", "Config", [
             ("Configuration File", "config/configuration"),
@@ -139,6 +143,7 @@ html_theme_options = {
                 ("Playlists", "config/playlist"),
                 ("Operations", "config/operations"),
             ]),
+            ("Settings Attributes", "config/settings"),
             ("_menu", "Services Attributes", [
                 ("Webhooks Attributes", "config/webhooks"),
                 ("Plex Attributes", "config/plex"),
@@ -187,11 +192,6 @@ html_theme_options = {
                 ("Metadata Details", "metadata/details/metadata"),
                 ("Arr Details", "metadata/details/arr"),
             ])
-        ]),
-        ("_menu", "Support", [
-            ("Discord Server", "https://discord.gg/NfH6mGFuAB", True),
-            ("Sponsor", "https://github.com/sponsors/meisnate12", True),
-            ("Acknowledgements", "home/acknowledgements"),
         ]),
         ("&#10084", "https://github.com/sponsors/meisnate12", True),
     ],
