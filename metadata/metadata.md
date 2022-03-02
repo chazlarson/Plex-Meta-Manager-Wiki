@@ -13,10 +13,10 @@ There are three attributes which can be utilized within the Metadata File:
 | Name                                               | Attribute     | Description                                                    |
 |:---------------------------------------------------|:--------------|:---------------------------------------------------------------|
 | Metadata                                           | `metadata`    | maps where metadata changes go                              |
-| [Templates](templates)                             | `templates`   | maps where templates for automatic collections go           |
-| [Collections](#collections-and-playlists-mappings) | `collections` | maps where automatic collections and collection metadata go |
-
-* Either `metadata` or `collections` must be present for the Metadata File to execure.
+| [Templates](templates)                             | `templates`   | maps where templates for collections go           |
+| [Collections](#collections-and-playlists-mappings) | `collections` | maps where collections and collection metadata go |
+| Dynamic Collections | `dynamic_collections` | maps where dynamic collections go |
+* One of `metadata`, `collections` or `dynamic_collections` must be present for the Metadata File to execure.
 * Example Metadata Files can be found in the [Plex Meta Manager Configs Repository](https://github.com/meisnate12/Plex-Meta-Manager-Configs)
 
 ## Playlist Files
@@ -42,12 +42,19 @@ Plex Meta Manager can run a number of different operations within `collections:`
 * Send missing media to Sonarr/Radarr (Lidarr not supported at this time)
 * Show and Hide collections and playlists at set intervals (i.e. show Chrismas collections in December only)
 
-The name of each collection/playlist is defined by the mapping name within the Metadata/Playlis file. In the below example the collection name would be "Star Wars (Animated)":
+
+## Dynamic Collection Mappings
+Plex Meta Manager can automatically create dynamic collections based on different criteria, such as
+* Collections for the top `X` popular people on TMDB (Bruce Willis, Tom Hanks etc.)
+* Collections for each decade represented in the library (Best of 1990s, Best of 2000s etc.)
+* Collections for each of the moods/styles within a Music library (Accapella, Pop Rock etc.)
+
+Below is an example dynamic collection which will create a collection for each of the decades represented within the library:
 
 ```yaml
-collections:
-  Star Wars (Animated):
-    imdb_id: tt0458290, tt2930604
+dynamic_collections:
+  Decades:
+    type: decade
 ```
 
 ## Collection and Playlist Attributes
