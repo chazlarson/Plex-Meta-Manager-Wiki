@@ -106,6 +106,12 @@ table tbody tr:nth-child(even) {
 table tbody tr:nth-child(odd) {
   background: #1D1D1D;
 }
+table.clearTable tbody tr:nth-child(odd) {
+  background: #222222;
+}
+table.clearTable td {
+  padding: 3px;
+}
 details {
   margin-bottom: 5px
 }
