@@ -193,6 +193,8 @@ As with `libraries:`, YAML files are defined to create the Playlists. It should 
 <details>
   <summary>Example playlists.yml file</summary>
   <br />
+
+```yaml
 playlists:
   Marvel Cinematic Universe:
     sync_to_users: all
@@ -205,6 +207,7 @@ playlists:
     sync_mode: sync
     libraries: Movies, TV Shows
     trakt_list: https://trakt.tv/users/tomfin46/lists/star-wars-the-clone-wars-chronological-episode-order
+```
 </details>
 
 As can be seen in the above examples, multiple libraries are being used to combine different types of media (movies and tv shows in this case) into one playlist.
