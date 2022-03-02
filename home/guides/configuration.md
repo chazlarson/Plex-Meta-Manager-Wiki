@@ -8,7 +8,7 @@ The below example outlines what a "standard" config.yml file might look like whe
 
 ```yaml
 libraries:                                      
-  Movies:
+  Movies - 4K:
     metadata_path:
       - file: config/Movies.yml
       - git: meisnate12/MovieCharts
@@ -17,6 +17,9 @@ libraries:
       - file: config/TVShows.yml
       - folder: config/TV Shows/
       - git: meisnate12/ShowCharts
+  Animé:
+    metadata_path:
+      - file: config/Anime.yml
   Music:
     metadata_path:
       - file: config/Music.yml
@@ -170,7 +173,7 @@ Within the above example, PMM will:
 
 It should be noted that whilst the user should be able to edit any metadata files which are `- file:` or `- folder:` based, they have little to no control over `- git:` metadata files **unless a copy of the YAML file is downloaded and ran locally**. In the above example, if the user downloaded the [MovieCharts.yml file](https://github.com/meisnate12/Plex-Meta-Manager-Configs/blob/master/meisnate12/MovieCharts.yml) from the [GitHub Configs Repo](https://github.com/meisnate12/Plex-Meta-Manager-Configs) and placed it in the root directory of PMM (`config/`), then the metadata_path mapping would be updated to reflect this as follows:
 ```yaml
-  Movies:
+  Movies - 4K:
     metadata_path:
       - file: config/Movies.yml
       - file: config/MovieCharts.yml        <------ HERE
