@@ -1,12 +1,12 @@
 # Configuration File
 
-The script utilizes a YAML config file to load information to connect to the various APIs you can connect with. 
+Plex Meta Manager utilizes a YAML configuration file to connect with the Plex Media Server and other third-party services via API.
 
-By default, the script looks at `/config/config.yml` for the Configuration File unless otherwise specified.
+By default and unless otherwise stated, Plex Meta Manager looks for the configuration file within `/config/config.yml`
 
-A template Configuration File can be found in the repo [config/config.yml.template](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template). 
+A template Configuration File can be found in the [GitHub Repo](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template). 
 
-The YAML mappings that can be set in the configuration file's root:
+The below table outlines the third-party services that are compatible with Plex Meta Manager. Each service has specific requirements for setup that can be found by clicking the links within the table.
 
 | Name                       | YAML Attribute   |              Required              |
 |:---------------------------|:-----------------|:----------------------------------:|
@@ -14,7 +14,7 @@ The YAML mappings that can be set in the configuration file's root:
 | [Playlist Files](playlist) | `playlist_files` |              &#10060;              |
 | [Settings](settings)       | `settings`       |              &#10060;              |
 | [Webhooks](webhooks)       | `webhooks`       |              &#10060;              |
-| [Plex](plex)               | `plex`           | &#9989; Either here or per library |
+| [Plex](plex)               | `plex`           | &#9989; <br/>Either here or per library |
 | [TMDb](tmdb)               | `tmdb`           |              &#9989;               |
 | [Tautulli](tautulli)       | `tautulli`       |              &#10060;              |
 | [OMDb](omdb)               | `omdb`           |              &#10060;              |
@@ -24,5 +24,3 @@ The YAML mappings that can be set in the configuration file's root:
 | [Sonarr](sonarr)           | `sonarr`         |              &#10060;              |
 | [Trakt](trakt)             | `trakt`          |              &#10060;              |
 | [MyAnimeList](myanimelist) | `mal`            |              &#10060;              |
-
-* You can find a template config file in [config/config.yml.template](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template)
