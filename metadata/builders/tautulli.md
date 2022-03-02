@@ -6,10 +6,10 @@ You can find items in your Plex using the features of [Tautulli](https://tautull
 
 It has watch analytics that can show the most watched or most popular Movies/Shows in each Library.
 
-| Name                                         | Attribute          | Description                         | Works with Movies | Works with Shows | Works with Custom Sort | Works with Playlists |
-|:---------------------------------------------|:-------------------|:------------------------------------|:-----------------:|:----------------:|:----------------------:|:--------------------:|
-| [Tautulli Popular](#tautulli-popularwatched) | `tautulli_popular` | Gets the Tautulli Most Popular List |      &#9989;      |     &#9989;      |        &#9989;         |       &#9989;        |
-| [Tautulli Watched](#tautulli-popularwatched) | `tautulli_watched` | Gets the Tautulli Most Watched List |      &#9989;      |     &#9989;      |        &#9989;         |       &#9989;        |
+| Attribute                                      | Description                         | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
+|:-----------------------------------------------|:------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
+| [`tautulli_popular`](#tautulli-popularwatched) | Gets the Tautulli Most Popular List |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`tautulli_watched`](#tautulli-popularwatched) | Gets the Tautulli Most Watched List |      &#9989;      |     &#9989;      |               &#9989;                |
 
 ## Tautulli Popular/Watched
 

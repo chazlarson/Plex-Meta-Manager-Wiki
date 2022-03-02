@@ -4,10 +4,10 @@ You can find items using the lists on [Letterboxd.com](https://letterboxd.com/) 
 
 No configuration is required for these builders.
 
-| Name                                        | Attribute                 | Description                                                                                                     | Works with Movies | Works with Shows  | Works with Playlists and Custom Sort |
-|:--------------------------------------------|:--------------------------|:----------------------------------------------------------------------------------------------------------------|:-----------------:|:-----------------:|:------------------------------------:|
-| [Letterboxd List](#letterboxd-list)         | `letterboxd_list`         | Finds every movie in the Letterboxd List                                                                        |      &#9989;      |     &#10060;      |               &#9989;                |
-| [Letterboxd List Details](#letterboxd-list) | `letterboxd_list_details` | Finds every movie in the Letterboxd List and updates the collection with the description of the Letterboxd list |      &#9989;      |     &#10060;      |               &#9989;                |
+| Attribute                                     | Description                                                                                                     | Works with Movies | Works with Shows  | Works with Playlists and Custom Sort |
+|:----------------------------------------------|:----------------------------------------------------------------------------------------------------------------|:-----------------:|:-----------------:|:------------------------------------:|
+| [`letterboxd_list`](#letterboxd-list)         | Finds every movie in the Letterboxd List                                                                        |      &#9989;      |     &#10060;      |               &#9989;                |
+| [`letterboxd_list_details`](#letterboxd-list) | Finds every movie in the Letterboxd List and updates the collection with the description of the Letterboxd list |      &#9989;      |     &#10060;      |               &#9989;                |
 
 ## Letterboxd List
 

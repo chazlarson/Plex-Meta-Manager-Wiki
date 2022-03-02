@@ -190,7 +190,7 @@ html_theme_options = {
                 ("Schedule Details", "metadata/details/schedule"),
                 ("Image Overlay Details", "metadata/details/overlay"),
                 ("Metadata Details", "metadata/details/metadata"),
-                ("Arr Details", "metadata/details/arr"),
+                ("Radarr/Sonarr Details", "metadata/details/arr"),
             ])
         ]),
         ("&#10084", "https://github.com/sponsors/meisnate12", True),

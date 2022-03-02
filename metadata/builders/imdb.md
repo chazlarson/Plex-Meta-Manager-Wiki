@@ -2,11 +2,11 @@
 
 You can find items using the features of [IMDb.com](https://www.imdb.com/) (IMDb).
 
-| Name                      | Attribute    | Description                                                                                                                                               | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-|:--------------------------|:-------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
-| [IMDb ID](#imdb-id)       | `imdb_id`    | Gets the movie/show specified.                                                                                                                            |      &#9989;      |     &#9989;      |               &#10060;               |
-| [IMDb Chart](#imdb-chart) | `imdb_chart` | Gets every movie/show in an IMDb Chart like [IMDb Top 250 Movies](https://www.imdb.com/chart/top).                                                        |      &#9989;      |     &#9989;      |               &#9989;                |
-| [IMDb List](#imdb-list)   | `imdb_list`  | Gets every movie/show in an IMDb List, [IMDb Keyword Search](https://www.imdb.com/search/keyword/), or [IMDb Search](https://www.imdb.com/search/title/). |      &#9989;      |     &#9989;      |               &#9989;                |
+| Attribute                   | Description                                                                                                                                               | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
+|:----------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
+| [`imdb_id`](#imdb-id)       | Gets the movie/show specified.                                                                                                                            |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`imdb_chart`](#imdb-chart) | Gets every movie/show in an IMDb Chart like [IMDb Top 250 Movies](https://www.imdb.com/chart/top).                                                        |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`imdb_list`](#imdb-list)   | Gets every movie/show in an IMDb List, [IMDb Keyword Search](https://www.imdb.com/search/keyword/), or [IMDb Search](https://www.imdb.com/search/title/). |      &#9989;      |     &#9989;      |               &#9989;                |
 
 ## IMDb ID
 

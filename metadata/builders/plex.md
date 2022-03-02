@@ -4,12 +4,12 @@ This builder finds its items by using the features of Plex.
 
 No configuration is required for these builders.
 
-| Name                                        | Attribute             | Description                                                              | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-|:--------------------------------------------|:----------------------|:-------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
-| [Plex All](#plex-all)                       | `plex_all`            | Gets every movie/show in your library. Useful with [Filters](../filters) |      &#9989;      |     &#9989;      |               &#10060;               |
-| [Plex Pilots](#plex-pilots)                 | `plex_pilots`         | Gets the first episode of every show in your library                     |     &#10060;      |     &#9989;      |               &#9989;                |
-| [Plex Collectionless](#plex-collectionless) | `plex_collectionless` | Gets every movie/show that is not in a collection                        |      &#9989;      |     &#9989;      |               &#10060;               |
-| [Plex Search](#plex-search)                 | `plex_search`         | Gets every movie/show based on the search parameters provided            |      &#9989;      |     &#9989;      |               &#9989;                |
+| Attribute                                     | Description                                                              | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
+|:----------------------------------------------|:-------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
+| [`plex_all`](#plex-all)                       | Gets every movie/show in your library. Useful with [Filters](../filters) |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`plex_pilots`](#plex-pilots)                 | Gets the first episode of every show in your library                     |     &#10060;      |     &#9989;      |               &#9989;                |
+| [`plex_collectionless`](#plex-collectionless) | Gets every movie/show that is not in a collection                        |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`plex_search`](#plex-search)                 | Gets every movie/show based on the search parameters provided            |      &#9989;      |     &#9989;      |               &#9989;                |
 
 ## Plex All
 

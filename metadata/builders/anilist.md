@@ -4,15 +4,15 @@ You can find anime using the features of [AniList.co](https://anilist.co/) (AniL
 
 No configuration is required for these builders.
 
-| Name                                                | Attribute           | Description                                                                                                              | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-|:----------------------------------------------------|:--------------------|:-------------------------------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
-| [AniList Top Rated Anime](#anilist-top-rated-anime) | `anilist_top_rated` | Finds every anime in AniList's [Top Rated Anime](https://anilist.co/search/anime?sort=SCORE_DESC) list                   |      &#9989;      |     &#9989;      |               &#9989;                |
-| [AniList Popular Anime](#anilist-popular-anime)     | `anilist_popular`   | Finds every anime in AniList's [Popular Anime](https://anilist.co/search/anime/popular) list                             |      &#9989;      |     &#9989;      |               &#9989;                |
-| [AniList Trending Anime](#anilist-trending-anime)   | `anilist_trending`  | Finds every anime in AniList's [Trending Anime](https://anilist.co/search/anime/trending) list                           |      &#9989;      |     &#9989;      |               &#9989;                |
-| [AniList Relations](#anilist-relations)             | `anilist_relations` | Finds the anime specified by the AniList ID and every relation in its relation tree except Character and Other relations |      &#9989;      |     &#9989;      |               &#10060;               |
-| [AniList Studio](#anilist-studio)                   | `anilist_studio`    | Finds all anime specified by the AniList Studio ID                                                                       |      &#9989;      |     &#9989;      |               &#10060;               |
-| [AniList ID](#anilist-id)                           | `anilist_id`        | Finds the anime specified by the AniList ID                                                                              |      &#9989;      |     &#9989;      |               &#10060;               |
-| [AniList Search](#anilist-search)                   | `anilist_search`    | Finds the anime specified by the AniList search parameters provided                                                      |      &#9989;      |     &#9989;      |               &#9989;                |
+| Attribute                                       | Description                                                                                                              | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
+|:------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
+| [`anilist_top_rated`](#anilist-top-rated-anime) | Finds every anime in AniList's [Top Rated Anime](https://anilist.co/search/anime?sort=SCORE_DESC) list                   |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`anilist_popular`](#anilist-popular-anime)     | Finds every anime in AniList's [Popular Anime](https://anilist.co/search/anime/popular) list                             |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`anilist_trending`](#anilist-trending-anime)   | Finds every anime in AniList's [Trending Anime](https://anilist.co/search/anime/trending) list                           |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`anilist_relations`](#anilist-relations)       | Finds the anime specified by the AniList ID and every relation in its relation tree except Character and Other relations |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`anilist_studio`](#anilist-studio)             | Finds all anime specified by the AniList Studio ID                                                                       |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`anilist_id`](#anilist-id)                     | Finds the anime specified by the AniList ID                                                                              |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`anilist_search](#anilist-search)              | Finds the anime specified by the AniList search parameters provided                                                      |      &#9989;      |     &#9989;      |               &#9989;                |
 
 ## AniList Top Rated Anime
 

@@ -2,9 +2,9 @@
 
 You can find items using the features of [MdbList.com](https://mdblist.com/) (MdbList).
 
-| Name                          | Attribute      | Description                                                               | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-|:------------------------------|:---------------|:--------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
-| [MdbList List](#mdblist-list) | `mdblist_list` | Gets every movie/show in a [MdbList List](https://mdblist.com/toplists/). |      &#9989;      |     &#9989;      |               &#9989;                |
+| Attribute                       | Description                                                               | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
+|:--------------------------------|:--------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
+| [`mdblist_list`](#mdblist-list) | Gets every movie/show in a [MdbList List](https://mdblist.com/toplists/). |      &#9989;      |     &#9989;      |               &#9989;                |
 
 ## MdbList List
 

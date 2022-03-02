@@ -4,12 +4,12 @@ You can find anime using the features of [AniDB.net](https://anidb.net/) (AniDB)
 
 No configuration is required for these builders.
 
-| Name                              | Attribute        | Description                                                                                    | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
-|:----------------------------------|:-----------------|:-----------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
-| [AniDB ID](#anidb-id)             | `anidb_id`       | Finds the anime specified by the AniDB ID                                                      |      &#9989;      |     &#9989;      |               &#10060;               |
-| [AniDB Relation](#anidb-relation) | `anidb_relation` | Finds all anime in the relation graph of the specified AniDB ID                                |      &#9989;      |     &#9989;      |               &#10060;               |
-| [AniDB Popular](#anidb-popular)   | `anidb_popular`  | Finds every anime in AniDB's [Popular Anime](https://anidb.net/latest/anime/popular/?h=1) list |      &#9989;      |     &#9989;      |               &#9989;                |
-| [AniDB Tags](#anidb-tag)          | `anidb_tags`     | Finds every anime in a AniDB Tag                                                               |      &#9989;      |     &#9989;      |               &#10060;               |
+| Attribute                           | Description                                                                                    | Works with Movies | Works with Shows | Works with Playlists and Custom Sort |
+|:------------------------------------|:-----------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:------------------------------------:|
+| [`anidb_id`](#anidb-id)             | Finds the anime specified by the AniDB ID                                                      |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`anidb_relation`](#anidb-relation) | Finds all anime in the relation graph of the specified AniDB ID                                |      &#9989;      |     &#9989;      |               &#10060;               |
+| [`anidb_popular`](#anidb-popular)   | Finds every anime in AniDB's [Popular Anime](https://anidb.net/latest/anime/popular/?h=1) list |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`anidb_tags`](#anidb-tag)          | Finds every anime in a AniDB Tag                                                               |      &#9989;      |     &#9989;      |               &#10060;               |
 
 ## AniDB ID
 

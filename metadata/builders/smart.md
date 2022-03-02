@@ -28,42 +28,42 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Special Attributes
 
-| Special Option | Attribute  | Description                                                                                                                                               |                                            Default                                            |
-|:---------------|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------:|
-| Type           | `type`     | The Type of items inside this collection/playlist<br>**Options**: `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks`              | `movies` for Movies Libraries, `shows` for Show Libraries, and `artists` for Music Libraries  |
-| Limit          | `limit`    | The max number of item for the filter                                                                                                                     |                                              all                                              |
-| Sort By        | `sort_by`  | This will control how the filter is sorted in your library. You can use any sort options for your filter type in the [Sorts Options Table](#sort-options) |                                           `random`                                            |
-| Validate       | `validate` | Determines if a collection/playlist will fail on a validation error<br>**Options**: `true` or `false`                                                     |                                            `true`                                             |
+| Attribute  | Description                                                                                                                                                                                                                                                |
+|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`     | The Type of items inside this collection/playlist.<hr>**Options:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks`<hr>**Default:** `movies` for Movies Libraries, `shows` for Show Libraries, and `artists` for Music Libraries |
+| `limit`    | The max number of item for the filter.<hr>**Options:** `all` or a number greater then 0                                                                                                                                                                    |
+| `sort_by`  | This will control how the filter is sorted in your library.<hr>**Options:** Any sort options for your filter type in the [Sorts Options Table](#sort-options)<hr>**Default:** `random`                                                                     |
+| `validate` | Determines if a collection/playlist will fail on a validation error<hr>**Options**: `true` or `false`<hr>**Default:** `true`                                                                                                                               |
 
 ## Sort Options
 
-| Sort Option                                      | Description                                 |  Movies  |  Shows   | Seasons  | Episodes | Artists  |  Albums  |  Tracks  |
-|:-------------------------------------------------|:--------------------------------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| `title.asc`/<br>`title.desc`                     | Sort by Title                               | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
-| `season.asc`/<br>`season.desc`                   | Sort by Season                              | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; |
-| `show.asc`/<br>`show.desc`                       | Sort by Show                                | &#10060; | &#10060; | &#9989;  | &#9989;  | &#10060; | &#10060; | &#10060; |
-| `album_artist.asc`/<br>`album_artist.desc`       | Sort by Album Artist                        | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  | &#9989;  |
-| `artist.asc`/<br>`artist.desc`                   | Sort by Artist                              | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
-| `album.asc`/<br>`album.desc`                     | Sort by Album                               | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
-| `year.asc`/<br>`year.desc`                       | Sort by Year                                | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#9989;  | &#10060; |
-| `release.asc`/<br>`release.desc`                 | Sort by Release Date (Originally Available) | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#9989;  | &#10060; |
-| `critic_rating.asc`/<br>`critic_rating.desc`     | Sort by Critic Rating                       | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#9989;  | &#10060; |
-| `audience_rating.asc`/<br>`audience_rating.desc` | Sort by Audience Rating                     | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
-| `user_rating.asc`/<br>`user_rating.desc`         | Sort by User Rating                         | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
-| `content_rating.asc`/<br>`content_rating.desc`   | Sort by Content Rating                      | &#9989;  | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
-| `duration.asc`/<br>`duration.desc`               | Sort by Duration                            | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#9989;  |
-| `progress.asc`/<br>`progress.desc`               | Sort by Progress                            | &#10060; | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
-| `played.asc`/<br>`played.desc`                   | Sort by Date Last Played                    | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  | &#9989;  | &#9989;  |
-| `plays.asc`/<br>`plays.desc`                     | Sort by Number of Plays                     | &#9989;  | &#10060; | &#10060; | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
-| `unplayed.asc`/<br>`unplayed.desc`               | Sort by Unplayed                            | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
-| `episode_added.asc`/<br>`episode_added.desc`     | Sort by Last Episode Date Added             | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
-| `added.asc`/<br>`added.desc`                     | Sort by Date Added                          | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
-| `viewed.asc`/<br>`viewed.desc`                   | Sort by Date Last Viewed                    | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
-| `rated.asc`/<br>`rated.desc`                     | Sort by Date Last Rated                     | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
-| `popularity.asc`/<br>`popularity.desc`           | Sort by Popularity                          | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
-| `resolution.asc`/<br>`resolution.desc`           | Sort by Resolution                          | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
-| `bitrate.asc`/<br>`bitrate.desc`                 | Sort by Bitrate                             | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#9989;  |
-| `random`                                         | Sort by Random                              | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| Sort Option                                     | Description                                 |  Movies  |  Shows   | Seasons  | Episodes | Artists  |  Albums  |  Tracks  |
+|:------------------------------------------------|:--------------------------------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| `title.asc`<br>`title.desc`                     | Sort by Title                               | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| `season.asc`<br>`season.desc`                   | Sort by Season                              | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; |
+| `show.asc`<br>`show.desc`                       | Sort by Show                                | &#10060; | &#10060; | &#9989;  | &#9989;  | &#10060; | &#10060; | &#10060; |
+| `album_artist.asc`<br>`album_artist.desc`       | Sort by Album Artist                        | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  | &#9989;  |
+| `artist.asc`<br>`artist.desc`                   | Sort by Artist                              | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
+| `album.asc`<br>`album.desc`                     | Sort by Album                               | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
+| `year.asc`<br>`year.desc`                       | Sort by Year                                | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#9989;  | &#10060; |
+| `release.asc`<br>`release.desc`                 | Sort by Release Date (Originally Available) | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#9989;  | &#10060; |
+| `critic_rating.asc`<br>`critic_rating.desc`     | Sort by Critic Rating                       | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#9989;  | &#10060; |
+| `audience_rating.asc`<br>`audience_rating.desc` | Sort by Audience Rating                     | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
+| `user_rating.asc`<br>`user_rating.desc`         | Sort by User Rating                         | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| `content_rating.asc`<br>`content_rating.desc`   | Sort by Content Rating                      | &#9989;  | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
+| `duration.asc`<br>`duration.desc`               | Sort by Duration                            | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#9989;  |
+| `progress.asc`<br>`progress.desc`               | Sort by Progress                            | &#10060; | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
+| `played.asc`<br>`played.desc`                   | Sort by Date Last Played                    | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  | &#9989;  | &#9989;  |
+| `plays.asc`<br>`plays.desc`                     | Sort by Number of Plays                     | &#9989;  | &#10060; | &#10060; | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| `unplayed.asc`<br>`unplayed.desc`               | Sort by Unplayed                            | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
+| `episode_added.asc`<br>`episode_added.desc`     | Sort by Last Episode Date Added             | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
+| `added.asc`<br>`added.desc`                     | Sort by Date Added                          | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| `viewed.asc`<br>`viewed.desc`                   | Sort by Date Last Viewed                    | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
+| `rated.asc`<br>`rated.desc`                     | Sort by Date Last Rated                     | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
+| `popularity.asc`<br>`popularity.desc`           | Sort by Popularity                          | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; | &#9989;  |
+| `resolution.asc`<br>`resolution.desc`           | Sort by Resolution                          | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
+| `bitrate.asc`<br>`bitrate.desc`                 | Sort by Bitrate                             | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#9989;  |
+| `random`                                        | Sort by Random                              | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
 
 ## Filters
 
@@ -155,12 +155,12 @@ No date filter can take multiple values.
 
 ### Date Modifiers
 
-| Date Modifier | Description                                                              |                   Format                    | Plex Web UI Display  |
-|:--------------|:-------------------------------------------------------------------------|:-------------------------------------------:|:--------------------:|
-| No Modifier   | Matches every item where the date attribute<br>is in the last X days     |   **Format:** number of days<br>e.g. `30`   |   `is in the last`   |
-| `.not`        | Matches every item where the date attribute<br>is not in the last X days |   **Format:** number of days<br>e.g. `30`   | `is not in the last` |
-| `.before`     | Matches every item where the date attribute<br>is before the given date  | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |     `is before`      |
-| `.after`      | Matches every item where the date attribute<br>is after the given date   | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |      `is after`      |
+| Date Modifier | Description                                                                                                         | Plex Web UI Display  |
+|:--------------|:--------------------------------------------------------------------------------------------------------------------|:--------------------:|
+| No Modifier   | Matches every item where the date attribute is in the last X days<hr>**Format:** number of days<br>e.g. `30`        |   `is in the last`   |
+| `.not`        | Matches every item where the date attribute is not in the last X days<hr>**Format:** number of days<br>e.g. `30`    | `is not in the last` |
+| `.before`     | Matches every item where the date attribute is before the given date<hr>**Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |     `is before`      |
+| `.after`      | Matches every item where the date attribute is after the given date<hr>**Format:** MM/DD/YYYY<br>e.g. `01/01/2000`  |      `is after`      |
 
 ### Date Attributes
 
@@ -190,35 +190,35 @@ No number filter can take multiple values.
 
 ### Number Modifiers
 
-| Number Modifier | Description                                                                                   |                      Format                       | Plex Web UI Display |
-|:----------------|:----------------------------------------------------------------------------------------------|:-------------------------------------------------:|:-------------------:|
-| `.gt`           | Matches every item where the number attribute<br>is greater then the given number             | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |  `is greater than`  |
-| `.gte`          | Matches every item where the number attribute<br>is greater then or equal to the given number | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |         N/A         |
-| `.lt`           | Matches every item where the number attribute<br>is less then the given number                | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |   `is less than`    |
-| `.lte`          | Matches every item where the number attribute<br>is less then or equal to the given number    | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |         N/A         |
+| Number Modifier | Description                                                                                                                                     | Plex Web UI Display |
+|:----------------|:------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------:|
+| `.gt`           | Matches every item where the number attribute is greater then the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`            |  `is greater than`  |
+| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5` |         N/A         |
+| `.lt`           | Matches every item where the number attribute is less then the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`                |   `is less than`    |
+| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`    |         N/A         |
 
 ### Number Attributes
 
-| Number Search         | Description                                                    |  Restrictions  | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
-|:----------------------|:---------------------------------------------------------------|:--------------:|:------------------:|:-----------------:|:------------------:|
-| `duration`            | Uses the duration attribute to match using minutes             |  minimum: `1`  |      &#9989;       |     &#10060;      |      &#10060;      |
-| `plays`               | Uses the plays attribute to match                              |  minimum: `1`  |      &#9989;       |      &#9989;      |      &#10060;      |
-| `episode_plays`       | Uses the Episode's plays attribute to match                    |  minimum: `1`  |      &#10060;      |      &#9989;      |      &#10060;      |
-| `critic_rating`       | Uses the critic rating attribute to match                      | `0.0` - `10.0` |      &#9989;       |      &#9989;      |      &#10060;      |
-| `audience_rating`     | Uses the audience rating attribute to match                    | `0.0` - `10.0` |      &#9989;       |      &#9989;      |      &#10060;      |
-| `user_rating`         | Uses the user rating attribute to match                        | `0.0` - `10.0` |      &#9989;       |      &#9989;      |      &#10060;      |
-| `episode_user_rating` | Uses the user rating attribute of the show's episodes to match | `0.0` - `10.0` |      &#10060;      |      &#9989;      |      &#10060;      |
-| `year`                | Uses the year attribute to match                               |  minimum: `1`  |      &#9989;       |      &#9989;      |      &#10060;      |
-| `episode_year`        | Uses the Episode's year attribute to match                     |  minimum: `1`  |      &#10060;      |      &#9989;      |      &#10060;      |
-| `album_year`          | Uses the Album's year attribute to match                       |  minimum: `1`  |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_decade`        | Uses the Album's decade attribute to match                     |  minimum: `1`  |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_plays`         | Uses the Album's plays attribute to match                      |  minimum: `1`  |      &#10060;      |     &#10060;      |      &#9989;       |
-| `track_plays`         | Uses the Track's plays attribute to match                      |  minimum: `1`  |      &#10060;      |     &#10060;      |      &#9989;       |
-| `track_skips`         | Uses the Track's skips attribute to match                      |  minimum: `1`  |      &#10060;      |     &#10060;      |      &#9989;       |
-| `artist_user_rating`  | Uses the Artist's user rating attribute to match               | `0.0` - `10.0` |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_user_rating`   | Uses the Album's user rating attribute to match                | `0.0` - `10.0` |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_critic_rating` | Uses the Album's critic rating attribute to match              | `0.0` - `10.0` |      &#10060;      |     &#10060;      |      &#9989;       |
-| `track_user_rating`   | Uses the Track's user rating attribute to match                | `0.0` - `10.0` |      &#10060;      |     &#10060;      |      &#9989;       |
+| Number Search         | Description                                                                                 | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
+|:----------------------|:--------------------------------------------------------------------------------------------|:------------------:|:-----------------:|:------------------:|
+| `duration`            | Uses the duration attribute to match using minutes<hr>**Minimum:** `1`                      |      &#9989;       |     &#10060;      |      &#10060;      |
+| `plays`               | Uses the plays attribute to match<hr>**Minimum:** `1`                                       |      &#9989;       |      &#9989;      |      &#10060;      |
+| `episode_plays`       | Uses the Episode's plays attribute to match<hr>**Minimum:** `1`                             |      &#10060;      |      &#9989;      |      &#10060;      |
+| `critic_rating`       | Uses the critic rating attribute to match<hr>**Range:** `0.0` - `10.0`                      |      &#9989;       |      &#9989;      |      &#10060;      |
+| `audience_rating`     | Uses the audience rating attribute to match<hr>**Range:** `0.0` - `10.0`                    |      &#9989;       |      &#9989;      |      &#10060;      |
+| `user_rating`         | Uses the user rating attribute to match<hr>**Range:** `0.0` - `10.0`                        |      &#9989;       |      &#9989;      |      &#10060;      |
+| `episode_user_rating` | Uses the user rating attribute of the show's episodes to match<hr>**Range:** `0.0` - `10.0` |      &#10060;      |      &#9989;      |      &#10060;      |
+| `year`                | Uses the year attribute to match<hr>**Minimum:** `1`                                        |      &#9989;       |      &#9989;      |      &#10060;      |
+| `episode_year`        | Uses the Episode's year attribute to match<hr> **Minimum:** `1`                             |      &#10060;      |      &#9989;      |      &#10060;      |
+| `album_year`          | Uses the Album's year attribute to match<hr>**Minimum:** `1`                                |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_decade`        | Uses the Album's decade attribute to match<hr>**Minimum:** `1`                              |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_plays`         | Uses the Album's plays attribute to match<hr>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `track_plays`         | Uses the Track's plays attribute to match<hr>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `track_skips`         | Uses the Track's skips attribute to match<hr>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `artist_user_rating`  | Uses the Artist's user rating attribute to match<hr>**Range:** `0.0` - `10.0`               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_user_rating`   | Uses the Album's user rating attribute to match<hr>**Range:** `0.0` - `10.0`                |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_critic_rating` | Uses the Album's critic rating attribute to match<hr>**Range:** `0.0` - `10.0`              |      &#10060;      |     &#10060;      |      &#9989;       |
+| `track_user_rating`   | Uses the Track's user rating attribute to match<hr>**Range:** `0.0` - `10.0`                |      &#10060;      |     &#10060;      |      &#9989;       |
 
 ## Boolean Filters
 

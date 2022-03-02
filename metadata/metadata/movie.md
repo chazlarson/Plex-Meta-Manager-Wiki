@@ -86,13 +86,13 @@ The available attributes for editing movies are as follows
 
 ### Special Attributes
 
-| Name              | Attribute    | Allowed Values                                                                                    |
-|:------------------|:-------------|:--------------------------------------------------------------------------------------------------|
-| Title             | `title`      | Title if different from the mapping value useful when you have multiple movies with the same name |
-| Alternative Title | `alt_title`  | Alternative title to look for                                                                     |
-| Year              | `year`       | Year of movie for better identification                                                           |
-| TMDb Show ID      | `tmdb_show`  | TMDb Show ID to use for metadata useful for miniseries that have been compiled into a movie       |
-| TMDb Movie ID     | `tmdb_movie` | TMDb Movie ID to use for metadata useful for movies that have been split into segments            |
+| Attribute    | Allowed Values                                                                                    |
+|:-------------|:--------------------------------------------------------------------------------------------------|
+| `title`      | Title if different from the mapping value useful when you have multiple movies with the same name |
+| `alt_title`  | Alternative title to look for                                                                     |
+| `year`       | Year of movie for better identification                                                           |
+| `tmdb_show`  | TMDb Show ID to use for metadata useful for miniseries that have been compiled into a movie       |
+| `tmdb_movie` | TMDb Movie ID to use for metadata useful for movies that have been split into segments            |
 
 
 * YAML files cannot have two items with the same mapping name so if you have two movies with the same name you would change the mapping values to whatever you want. Then use the `title` attribute to specify the real title and use the `year` attribute to specify which of the multiple movies to choose.
@@ -118,18 +118,18 @@ The available attributes for editing movies are as follows
 
 ### General Attributes
 
-| Name                 | Attribute              | Allowed Values                                                |
-|:---------------------|:-----------------------|:--------------------------------------------------------------|
-| Sort Title           | `sort_title`           | Text to change Sort Title                                     |
-| Original Title       | `original_title`       | Text to change Original Title                                 |
-| Originally Available | `originally_available` | Date to change Originally Available<br>**Format:** YYYY-MM-DD |
-| Content Rating       | `content_rating`       | Text to change Content Rating                                 |
-| User Rating          | `user_rating`          | Number to change User Rating                                  |
-| Audience Rating      | `audience_rating`      | Number to change Audience Rating                              |
-| Critic Rating        | `critic_rating`        | Number to change Critic Rating                                |
-| Studio               | `studio`               | Text to change Studio                                         |
-| Tagline              | `tagline`              | Text to change Tagline                                        |
-| Summary              | `summary`              | Text to change Summary                                        |
+| Attribute              | Allowed Values                                                |
+|:-----------------------|:--------------------------------------------------------------|
+| `sort_title`           | Text to change Sort Title                                     |
+| `original_title`       | Text to change Original Title                                 |
+| `originally_available` | Date to change Originally Available<br>**Format:** YYYY-MM-DD |
+| `content_rating`       | Text to change Content Rating                                 |
+| `user_rating`          | Number to change User Rating                                  |
+| `audience_rating`      | Number to change Audience Rating                              |
+| `critic_rating`        | Number to change Critic Rating                                |
+| `studio`               | Text to change Studio                                         |
+| `tagline`              | Text to change Tagline                                        |
+| `summary`              | Text to change Summary                                        |
 
 ### Tag Attributes
 
@@ -137,30 +137,30 @@ You can add `.remove` to any tag attribute to only remove those tags i.e. `genre
 
 You can add `.sync` to any tag attribute to sync all tags vs just appending the new ones i.e. `genre.sync`.
 
-| Name       | Attribute    | Allowed Values                                      |
-|:-----------|:-------------|:----------------------------------------------------|
-| Director   | `director`   | List or comma-separated text of each Director Tag   |
-| Country    | `country`    | List or comma-separated text of each Country Tag    |
-| Genre      | `genre`      | List or comma-separated text of each Genre Tag      |
-| Writer     | `writer`     | List or comma-separated text of each Writer Tag     |
-| Producer   | `producer`   | List or comma-separated text of each Producer Tag   |
-| Collection | `collection` | List or comma-separated text of each Collection Tag |
-| Label      | `label`      | List or comma-separated text of each Label Tag      |
+| Attribute    | Allowed Values                                      |
+|:-------------|:----------------------------------------------------|
+| `director`   | List or comma-separated text of each Director Tag   |
+| `country`    | List or comma-separated text of each Country Tag    |
+| `genre`      | List or comma-separated text of each Genre Tag      |
+| `writer`     | List or comma-separated text of each Writer Tag     |
+| `producer`   | List or comma-separated text of each Producer Tag   |
+| `collection` | List or comma-separated text of each Collection Tag |
+| `label`      | List or comma-separated text of each Label Tag      |
 
 ### Advance Attributes
 
-| Name                | Attribute            | Allowed Values                                                                                                                                                                                                                                                                                                                                                                                      |
-|:--------------------|:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Metadata Language*  | `metadata_language`  | `default`, `ar-SA`, `ca-ES`, `cs-CZ`, `da-DK`, `de-DE`, `el-GR`, `en-AU`, `en-CA`, `en-GB`, `en-US`, `es-ES`, `es-MX`, `et-EE`, `fa-IR`, `fi-FI`, `fr-CA`, `fr-FR`, `he-IL`, `hi-IN`, `hu-HU`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `lt-LT`, `lv-LV`, `nb-NO`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `ru-RU`, `sk-SK`, `sv-SE`, `th-TH`, `tr-TR`, `uk-UA`, `vi-VN`, `zh-CN`, `zh-HK`, `zh-TW` |
-| Use Original Title* | `use_original_title` | `default`: Library default<br>`no`: No<br>`yes`: Yes                                                                                                                                                                                                                                                                                                                                                |
+| Attribute            | Allowed Values                                                                                                                                                                                                                                                                                                                                                                                      |
+|:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `metadata_language`  | `default`, `ar-SA`, `ca-ES`, `cs-CZ`, `da-DK`, `de-DE`, `el-GR`, `en-AU`, `en-CA`, `en-GB`, `en-US`, `es-ES`, `es-MX`, `et-EE`, `fa-IR`, `fi-FI`, `fr-CA`, `fr-FR`, `he-IL`, `hi-IN`, `hu-HU`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `lt-LT`, `lv-LV`, `nb-NO`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `ru-RU`, `sk-SK`, `sv-SE`, `th-TH`, `tr-TR`, `uk-UA`, `vi-VN`, `zh-CN`, `zh-HK`, `zh-TW` |
+| `use_original_title` | `default`: Library default<br>`no`: No<br>`yes`: Yes                                                                                                                                                                                                                                                                                                                                                |
 
 \* Must be using the **New Plex Movie Agent*
 
 ### Image Attributes
 
-| Name            | Attribute         | Description                                                           | Allowed Values                                  |
-|:----------------|:------------------|:----------------------------------------------------------------------|:------------------------------------------------|
-| URL Poster      | `url_poster`      | Used to change the movie's poster to the URL                          | URL of image publicly available on the internet |
-| File Poster     | `file_poster`     | Used to change the movie's poster to the image in the file system     | Path to image in the file system                |
-| URL Background  | `url_background`  | Use to change the movie's background to the URL                       | URL of image publicly available on the internet |
-| File Background | `file_background` | Used to change the movie's background to the image in the file system | Path to image in the file system                |
+| Attribute         | Description                                                           | Allowed Values                                  |
+|:------------------|:----------------------------------------------------------------------|:------------------------------------------------|
+| `url_poster`      | Used to change the movie's poster to the URL                          | URL of image publicly available on the internet |
+| `file_poster`     | Used to change the movie's poster to the image in the file system     | Path to image in the file system                |
+| `url_background`  | Use to change the movie's background to the URL                       | URL of image publicly available on the internet |
+| `file_background` | Used to change the movie's background to the image in the file system | Path to image in the file system                |
