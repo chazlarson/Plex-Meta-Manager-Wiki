@@ -103,7 +103,7 @@ If you wanted to run the script with at startup, but specify a different time fr
 ![task-scheduler](task-scheduler/07-waiter-cmd-times.png)
 </details><br />
 
-# Single Run Scheduled Task
+## Single Run Scheduled Task
 This method will start Plex Meta Manager at the desired time, immediately begin running the Configuration File and will then kill the process once it has completed.
 
 <details>
