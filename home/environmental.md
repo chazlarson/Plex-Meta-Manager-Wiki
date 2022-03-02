@@ -248,7 +248,15 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 
 ### Libraries First
-To have the script run library operations first before collections during the run use the `--libraries-first` option.
+Run library operations prior to running collections.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-lf</code> or <code>--libraries-first</code></td>
+  </tr>
+</table>
+
 
 <details>
   <summary>Local Environment</summary>
@@ -268,8 +276,16 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Ignore Schedules
-To have the script ignore all schedules during the run except for range schedules use the `--ignore-schedules` option.
+Ignore all schedules for the run.
 
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-is</code> or <code>--ignore-schedules</code></td>
+  </tr>
+</table>
+
+* Range Scheduled collections (such as Christmas movies) will still be ignored.
 <details>
   <summary>Local Environment</summary>
 
@@ -288,7 +304,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Delete Collections
-To have the script delete all collections in a Library before a run use the `--delete-collections` option.
+Delete all collections in a Library prior to running collections/operations.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-dc</code> or <code>--delete-collections</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -308,9 +331,22 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Resume Run
-To have the script resume a run from a specific collection use the `--resume` option.
+Resume a run from a specific collection use the `--resume` option.
 
-**Allowed Values:** Name of the Collection you want to resume the run at
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-re</code> or <code>--resume</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>Name of collection</td>
+  </tr>
+    <tr>
+    <th>Example Value</th>
+    <td><code>Star Wars</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -330,7 +366,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Countdown 
-To have the script run without displaying a countdown use the `--no-countdown` option.
+Run without displaying a countdown to the next scheduled run.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-nc</code> or <code>--no-countdown</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -350,7 +393,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Missing 
-To have the script run without any of the missing movie/show functions use the `--no-missing` option.
+Run without utilizing the missing movie/show functions.
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-nm</code> or <code>--no-missing</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -370,7 +420,14 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Read Only Config
-To have the script run without writing to the config use the `--read-only-config` option.
+Run without writing to the configuration file
+
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-ro</code> or <code>--read-only-config</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -391,15 +448,47 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 
 ### Divider Character & Screen Width
-To change the terminal output divider character or width use the `--divider` and `--width` options.
+Change the terminal output divider character or width
 
 #### Divider Character
-**Default Value:** `=`<br>
-**Allowed Values:** Any character
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-d</code> or <code>--divider</code></td>
+  </tr>
+  <tr>
+    <th>Default Value</th>
+    <td><code>=</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>An character</td>
+  </tr>
+  <tr>
+    <th>Example Value</th>
+    <td><code>*</code></td>
+  </tr>
+</table>
 
 #### Screen Width
-**Default Value:** `100`<br>
-**Allowed Values:** Integer between 90 and 300
+<table>
+  <tr>
+    <th>Flags</th>
+    <td><code>-w</code> or <code>--width</code></td>
+  </tr>
+  <tr>
+    <th>Default Value</th>
+    <td><code>100</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>Integer between 90 and 300</td>
+  </tr>
+  <tr>
+    <th>Example Value</th>
+    <td><code>150</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
