@@ -2,9 +2,10 @@
 
 The below table outlines the run commands and environment variables that can be utilized to customise the running of Plex Meta Manager to the user's requirements. Environmental Variable values are used over Shell Command values.
 
+If you run into a race condition where you have set an Environment Variable within your system and also use a Shell Command for the same attribute, then the Environment Variable will take priority.
 
 
-| Name                                                  | Shell Command                      | Environmental Variable   |
+| Attribute                                                  | Shell Command                      | Environmental Variable   |
 |:------------------------------------------------------|:-----------------------------------|:-------------------------|
 | [Config](#config)                                     | `-c` or `--config`                 | `PMM_CONFIG`             |
 | [Time to Run](#time-to-run)                           | `-t` or `--time`                   | `PMM_TIME`               |
@@ -26,7 +27,7 @@ The below table outlines the run commands and environment variables that can be 
 | [Screen Width](#divider-character--screen-width)      | `-w` or `--width`                  | `PMM_WIDTH`              |
 
 Further explanation and examples of each command can be found below.
-## Run Command Examples
+## Run Command Attribute Examples
 ### Config
 Specify the location of the configuration YAML file.
 
@@ -101,9 +102,11 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 ### Run Tests
 Run Plex Meta Manager in test/debug mode
 
-| Flags                              | Notes                                                    |
-|:-----------------------------------|:---------------------------------------------------------|
-| `-rt`, `--tests` or `--run-tests`  |  Only collections with `test: true` enabled will be run  |
+| Flags                              |
+|:-----------------------------------|
+| `-rt`, `--tests` or `--run-tests`  | 
+
+* Only collections with `test: true` enabled will be run 
 <details>
   <summary>Local Environment</summary>
 
@@ -170,9 +173,11 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Collections
-To have the script run only using the collections in the comma-separated list use the `--run-collections` option.
+Run only the pre-defined collections
 
-**Allowed Values:** comma-separated list of collection names to process
+| Flags             | Allowed Values                          | Example Value             |
+|:------------------|:----------------------------------------|:--------------------------|
+| `-rc` or `--run-collections` | comma-separated list  | `Star Wars, Marvel Cinematic Universe` |
 
 <details>
   <summary>Local Environment</summary>
@@ -192,9 +197,11 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Libraries
-To have the script run only the libraries in the comma-separated list use the `--run-libraries` option.
+Run only the pre-defined libraries
 
-**Allowed Values:** comma-separated list of library names to process
+| Flags             | Allowed Values                          | Example Value             |
+|:------------------|:----------------------------------------|:--------------------------|
+| `-rl` or `--run-libraries` | comma-separated list  | `Movies - 4K, TV Shows - 4K` |
 
 <details>
   <summary>Local Environment</summary>
@@ -214,10 +221,13 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Metadata Files
-To have the script run only the Metadata File Names in the comma-separated list use the `--run-metadata-files` option.
+Run only the pre-defined metadata files
 
-**Allowed Values:** comma-separated list of metadata file names to process
+| Flags             | Allowed Values                          | Example Value             |
+|:------------------|:----------------------------------------|:--------------------------|
+| `-rm` or `--run-metadata-files` | comma-separated list  | `Movies.yml, MovieCharts` |
 
+* This works for all different metadata paths i.e. `git`, `url`, `file`, or `repo`.
 <details>
   <summary>Local Environment</summary>
 
@@ -235,7 +245,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
-* This works for all different metadata paths i.e. `git`, `url`, `file`, or `repo`.
+
 
 ### Libraries First
 To have the script run library operations first before collections during the run use the `--libraries-first` option.
