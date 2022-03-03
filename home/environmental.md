@@ -5,7 +5,7 @@ The below table outlines the run commands and environment variables that can be 
 If you run into a race condition where you have set an Environment Variable within your system and also use a Shell Command for the same attribute, then the Environment Variable will take priority.
 
 
-| Attribute                                                  | Shell Command                      | Environmental Variable   |
+| Attribute                                             | Shell Command                      | Environmental Variable   |
 |:------------------------------------------------------|:-----------------------------------|:-------------------------|
 | [Config](#config)                                     | `-c` or `--config`                 | `PMM_CONFIG`             |
 | [Time to Run](#time-to-run)                           | `-t` or `--time`                   | `PMM_TIME`               |
@@ -27,13 +27,38 @@ If you run into a race condition where you have set an Environment Variable with
 | [Screen Width](#divider-character--screen-width)      | `-w` or `--width`                  | `PMM_WIDTH`              |
 
 Further explanation and examples of each command can be found below.
+
 ## Run Command Attribute Examples
+
 ### Config
+
 Specify the location of the configuration YAML file.
 
-| Flags               | Default Value       | Allowed Values            | Example Value       |
-|:--------------------|:--------------------|:--------------------------|:--------------------|
-| `-c` or `--config`  | `config/config.yml` | Path to YAML config file  | `/data/config.yml`  |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-c</code> or <code>--config</code></td>
+    <td><code>PMM_CONFIG</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--config /data/config.yml</code></td>
+    <td><code>PMM_CONFIG=/data/config.yml</code></td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td colspan="2"><code>config/config.yml</code></td>
+  </tr>
+  <tr>
+    <th>Values</th>
+    <td colspan="2">Path to YAML config file</td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -53,11 +78,34 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Time to Run
+
 Specify the time of day that Plex Meta Manager will run.
 
-| Flags             | Default Value | Allowed Values                          | Example Value             |
-|:------------------|:--------------|:----------------------------------------|:--------------------------|
-| `-t` or `--time`  | `03:00`       | comma-separated list in `HH:MM` format  | `00:00,06:00,12:00,18:00` |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-t</code> or <code>--time</code></td>
+    <td><code>PMM_TIME</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--time 06:00,18:00</code></td>
+    <td><code>PMM_TIME=06:00,18:00</code></td>
+  </tr>
+  <tr>
+    <th>Default Value</th>
+    <td colspan="2"><code>03:00</code></td>
+  </tr>
+  <tr>
+    <th>Available Values</th>
+    <td colspan="2">comma-separated list in <code>HH:MM</code> format</td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -77,11 +125,27 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run
+
 Perform a run immediately, bypassing the time to run flag.
 
-| Flags            |  
-|:-----------------|
-| `-r` or `--run`  |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-r</code> or <code>--run</code></td>
+    <td><code>PMM_RUN</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--run</code></td>
+    <td><code>PMM_RUN=true</code></td>
+  </tr>
+</table>
+
 <details>
   <summary>Local Environment</summary>
 
@@ -100,13 +164,29 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Tests
+
 Run Plex Meta Manager in test/debug mode
 
-| Flags                              |
-|:-----------------------------------|
-| `-rt`, `--tests` or `--run-tests`  | 
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-rt</code>, <code>--tests</code>, or <code>--run-tests</code></td>
+    <td><code>PMM_TEST</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--run-tests</code></td>
+    <td><code>PMM_TEST=true</code></td>
+  </tr>
+</table>
 
 * Only collections with `test: true` enabled will be run 
+
 <details>
   <summary>Local Environment</summary>
 
@@ -125,11 +205,26 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Collections Only
+
 Only run collection metadata/YAML files, skip library operations.
 
-| Flags                          |
-|:-------------------------------
-| `-co` or `--collections-only`  |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-co</code> or <code>--collections-only</code></td>
+    <td><code>PMM_COLLECTIONS_ONLY</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--collections-only</code></td>
+    <td><code>PMM_COLLECTIONS_ONLY=true</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -149,11 +244,26 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Libraries Only
+
 Only run library operations, skip collections.
 
-| Flags                        |
-|:-----------------------------|
-| `-lo` or `--libraries-only`  |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-lo</code> or <code>--libraries-only</code></td>
+    <td><code>PMM_LIBRARIES_ONLY</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--libraries-only</code></td>
+    <td><code>PMM_LIBRARIES_ONLY=true</code></td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -173,11 +283,30 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Collections
+
 Run only the pre-defined collections
 
-| Flags             | Allowed Values                          | Example Value             |
-|:------------------|:----------------------------------------|:--------------------------|
-| `-rc` or `--run-collections` | comma-separated list  | `Star Wars, Marvel Cinematic Universe` |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-rc</code> or <code>--run-collections</code></td>
+    <td><code>PMM_COLLECTIONS</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--run-collections "Harry Potter, Star Wars"</code></td>
+    <td><code>PMM_COLLECTIONS=Harry Potter, Star Wars</code></td>
+  </tr>
+  <tr>
+    <th>Values</th>
+    <td colspan="2">Comma-separated list of Collection Names to run</td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -197,11 +326,30 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Libraries
+
 Run only the pre-defined libraries
 
-| Flags             | Allowed Values                          | Example Value             |
-|:------------------|:----------------------------------------|:--------------------------|
-| `-rl` or `--run-libraries` | comma-separated list  | `Movies - 4K, TV Shows - 4K` |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-rl</code> or <code>--run-libraries</code></td>
+    <td><code>PMM_LIBRARIES</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--run-libraries "Movies - 4K, TV Shows - 4K"</code></td>
+    <td><code>PMM_LIBRARIES=Movies - 4K, TV Shows - 4K</code></td>
+  </tr>
+  <tr>
+    <th>Values</th>
+    <td colspan="2">Comma-separated list of Library Names to run</td>
+  </tr>
+</table>
 
 <details>
   <summary>Local Environment</summary>
@@ -221,11 +369,30 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Run Metadata Files
+
 Run only the pre-defined metadata files
 
-| Flags             | Allowed Values                          | Example Value             |
-|:------------------|:----------------------------------------|:--------------------------|
-| `-rm` or `--run-metadata-files` | comma-separated list  | `Movies.yml, MovieCharts` |
+<table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-rm</code> or <code>--run-metadata-files</code></td>
+    <td><code>PMM_METADATA_FILES</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--run-metadata-files "Movies.yml, MovieCharts"</code></td>
+    <td><code>PMM_METADATA_FILES=Movies.yml, MovieCharts</code></td>
+  </tr>
+  <tr>
+    <th>Available Values</th>
+    <td colspan="2">Comma-separated list of Metadata Filenames to run</td>
+  </tr>
+</table>
 
 * This works for all different metadata paths i.e. `git`, `url`, `file`, or `repo`.
 <details>
@@ -245,18 +412,27 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
-
-
 ### Libraries First
+
 Run library operations prior to running collections.
 
 <table>
   <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
     <th>Flags</th>
     <td><code>-lf</code> or <code>--libraries-first</code></td>
+    <td><code>PMM_LIBRARIES_FIRST</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--libraries-first</code></td>
+    <td><code>PMM_LIBRARIES_FIRST=true</code></td>
   </tr>
 </table>
-
 
 <details>
   <summary>Local Environment</summary>
@@ -276,12 +452,24 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Ignore Schedules
+
 Ignore all schedules for the run.
 
 <table>
   <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
     <th>Flags</th>
     <td><code>-is</code> or <code>--ignore-schedules</code></td>
+    <td><code>PMM_IGNORE_SCHEDULES</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--ignore-schedules</code></td>
+    <td><code>PMM_IGNORE_SCHEDULES=true</code></td>
   </tr>
 </table>
 
@@ -304,12 +492,24 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Delete Collections
+
 Delete all collections in a Library prior to running collections/operations.
 
 <table>
   <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
     <th>Flags</th>
     <td><code>-dc</code> or <code>--delete-collections</code></td>
+    <td><code>PMM_DELETE_COLLECTIONS</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--delete-collections</code></td>
+    <td><code>PMM_DELETE_COLLECTIONS=true</code></td>
   </tr>
 </table>
 
@@ -335,16 +535,23 @@ Resume a run from a specific collection use the `--resume` option.
 
 <table>
   <tr>
-    <th>Flags</th>
-    <td><code>-re</code> or <code>--resume</code></td>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
   </tr>
   <tr>
-    <th>Allowed Values</th>
-    <td>Name of collection</td>
+    <th>Flags</th>
+    <td><code>-re</code> or <code>--resume</code></td>
+    <td><code>PMM_RESUME</code></td>
   </tr>
-    <tr>
-    <th>Example Value</th>
-    <td><code>Star Wars</code></td>
+  <tr>
+    <th>Example</th>
+    <td><code>--resume "Star Wars"</code></td>
+    <td><code>PMM_RESUME=Star Wars</code></td>
+  </tr>
+  <tr>
+    <th>Available Values</th>
+    <td colspan="2">Name of collection to resume from</td>
   </tr>
 </table>
 
@@ -366,12 +573,24 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Countdown 
+
 Run without displaying a countdown to the next scheduled run.
 
 <table>
   <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
     <th>Flags</th>
     <td><code>-nc</code> or <code>--no-countdown</code></td>
+    <td><code>PMM_NO_COUNTDOWN</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--no-countdown</code></td>
+    <td><code>PMM_NO_COUNTDOWN=true</code></td>
   </tr>
 </table>
 
@@ -393,12 +612,24 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### No Missing 
+
 Run without utilizing the missing movie/show functions.
 
 <table>
   <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
     <th>Flags</th>
     <td><code>-nm</code> or <code>--no-missing</code></td>
+    <td><code>PMM_NO_MISSING</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--no-missing</code></td>
+    <td><code>PMM_NO_MISSING=true</code></td>
   </tr>
 </table>
 
@@ -420,12 +651,24 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 </details>
 
 ### Read Only Config
+
 Run without writing to the configuration file
 
 <table>
   <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
     <th>Flags</th>
     <td><code>-ro</code> or <code>--read-only-config</code></td>
+    <td><code>PMM_READ_ONLY_CONFIG</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--read-only-config</code></td>
+    <td><code>PMM_READ_ONLY_CONFIG=true</code></td>
   </tr>
 </table>
 
@@ -446,47 +689,63 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
-
 ### Divider Character & Screen Width
+
 Change the terminal output divider character or width
 
 #### Divider Character
+
 <table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
   <tr>
     <th>Flags</th>
     <td><code>-d</code> or <code>--divider</code></td>
+    <td><code>PMM_DIVIDER</code></td>
   </tr>
   <tr>
-    <th>Default Value</th>
-    <td><code>=</code></td>
+    <th>Example</th>
+    <td><code>--divider *</code></td>
+    <td><code>PMM_DIVIDER=*</code></td>
   </tr>
   <tr>
-    <th>Allowed Values</th>
-    <td>An character</td>
+    <th>Default</th>
+    <td colspan="2"><code>=</code></td>
   </tr>
   <tr>
-    <th>Example Value</th>
-    <td><code>*</code></td>
+    <th>Values</th>
+    <td colspan="2">A character</td>
   </tr>
 </table>
 
 #### Screen Width
+
 <table>
+  <tr>
+    <th></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
   <tr>
     <th>Flags</th>
     <td><code>-w</code> or <code>--width</code></td>
+    <td><code>PMM_WIDTH</code></td>
   </tr>
   <tr>
-    <th>Default Value</th>
-    <td><code>100</code></td>
+    <th>Example</th>
+    <td><code>--width 150</code></td>
+    <td><code>PMM_WIDTH=150</code></td>
   </tr>
   <tr>
-    <th>Allowed Values</th>
-    <td>Integer between 90 and 300</td>
+    <th>Default</th>
+    <td colspan="2">Integer between 90 and 300</td>
   </tr>
   <tr>
-    <th>Example Value</th>
-    <td><code>150</code></td>
+    <th>Values</th>
+    <td colspan="2">A character</td>
   </tr>
 </table>
 
