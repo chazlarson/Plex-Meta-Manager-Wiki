@@ -1,43 +1,21 @@
-# Settings Attributes
+# Settings Definition & Attributes
 
-Configuring different options for Plex Meta Manager can be done in the Settings. These include enabling a cache to store each Plex GUID and its accompanying IDs to vastly speed up the execution of the script, defining the Image Asset Directory for local assets, setting a global Sync Mode, and many other display features.
+## Overview
+The `settings:` definition and subsequent attributes can be used to command various aspects of the functions and actions that Plex Meta Manager performs. 
 
-A `settings` mapping can be either in the root of the config file as global mapping for all libraries or you can specify the `settings` mapping individually per library. Some settings can be individually set per collection using [Setting Details](../metadata/details/setting).
+Examples of these attributes include the ability to:
+* Cache each Plex GUID and IDs to increase performance
+* Create asset folders for collections so that custom posters can be stored for upload.
+* Use a custom repository as the base for all `git` Metadata files. 
 
-Below is a `settings` mapping example and the full set of attributes:
-```yaml
-settings:
-  cache: true
-  cache_expiration: 60
-  asset_directory: config/assets
-  asset_folders: true
-  asset_depth: 0
-  create_asset_folders: false
-  dimensional_asset_rename: false
-  download_url_assets: false
-  show_missing_season_assets: false
-  show_missing_episode_assets: false
-  show_asset_not_needed: true
-  sync_mode: append
-  collection_minimum: 1
-  delete_below_minimum: true
-  delete_not_scheduled: false
-  run_again_delay: 2
-  missing_only_released: false
-  only_filter_missing: false
-  show_unmanaged: true
-  show_filtered: false
-  show_options: false
-  show_missing: true
-  show_missing_assets: true
-  save_missing: true
-  tvdb_language: eng
-  ignore_ids:
-  ignore_imdb_ids:
-  item_refresh_delay: 0
-  playlist_sync_to_users: all
-  verify_ssl: true
-```
+The settings definition and attributes can be specified individually per library, or can be inhereted from the global value if it has been set. If an attribute is specified at both the library and global level, then the library level attribute will take priority.
+
+There are some attributes which can be specified at the collection level using [Setting Details](../metadata/details/setting). Attributes set at the collection label will take priority over any library or global-level attribute.
+
+## Attributes
+
+The available setting attributes which can be set at each level are outlined below:
+
 
 | Name                                                        | Attribute                     | Global Level | Library Level | Collection/Playlist Level |
 |:------------------------------------------------------------|:------------------------------|:------------:|:-------------:|:-------------------------:|
@@ -59,11 +37,11 @@ settings:
 | [Delete Not Scheduled](#delete-not-scheduled)               | `delete_not_scheduled `       |   &#9989;    |    &#9989;    |          &#9989;          |
 | [Run Again Delay](#run-again-delay)                         | `run_again_delay`             |   &#9989;    |   &#10060;    |         &#10060;          |
 | [Missing Only Released](#missing-only-released)             | `missing_only_released`       |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Only Filter Missing](#only-filter-missing)                 | `only_filter_missing`         |   &#9989;    |    &#9989;    |          &#9989;          |
 | [Show Unmanaged Collections](#show-unmanaged-collections)   | `show_unmanaged`              |   &#9989;    |    &#9989;    |         &#10060;          |
 | [Show Filtered](#show-filtered)                             | `show_filtered`               |   &#9989;    |    &#9989;    |          &#9989;          |
 | [Show Options](#show-options)                               | `show_options`                |   &#9989;    |    &#9989;    |          &#9989;          |
 | [Show Missing](#show-missing)                               | `show_missing`                |   &#9989;    |    &#9989;    |          &#9989;          |
+| [Only Filter Missing](#only-filter-missing)                 | `only_filter_missing`         |   &#9989;    |    &#9989;    |          &#9989;          |
 | [Show Missing Assets](#show-missing-assets)                 | `show_missing_assets`         |   &#9989;    |    &#9989;    |          &#9989;          |
 | [Save Missing](#save-missing)                               | `save_missing`                |   &#9989;    |    &#9989;    |          &#9989;          |
 | [TVDb Language](#tvdb-language)                             | `tvdb_language`               |   &#9989;    |   &#10060;    |         &#10060;          |
@@ -75,204 +53,488 @@ settings:
 | [Verify SSL](#verify-ssl)                                   | `verify_ssl`                  |   &#9989;    |   &#10060;    |         &#10060;          |
 
 ## Cache
-While `cache` is true a cached database will be created and used for faster processing. The cache file is created in the same location as your config file.
+Cache the Plex GUID and associated IDs for each library item for faster subsequent processing. The cache file is created in the same directory as the configuration file. 
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Cache Expiration
-You can change the number of `cache_expiration` to set the number of days before each cache mapping expires and has to be reloaded.
+Set the number of days before each cache mapping expires and has to be re-cached.
 
-**Default Value:** `60`<br>
-**Allowed Values:** `integer`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>60</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>any integer</td>
+  </tr>
+</table>
 
 ## Image Asset Directory
-Use `asset_directory` to specify the folders where assets should be searched for.
+Specify the directory where assets are located.
 
-**Default Value:**  [Directory containing YAML config]/assets<br>
-**Allowed Values:** list of paths
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>[Directory containing YAML config]/assets</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>any directory</td>
+  </tr>
+</table>
 
 ## Image Asset Folders
-While `asset_folders` is true search using named folders and while it's false search using named files<br>i.e. `assets/Star Wars.png` vs `assets/Star Wars/poster.png`.
+Search the `asset_directory` for a dedicated folder. Set to true if each poster is within its own directory.<br>
+i.e. `assets/Star Wars/poster.png` instead of `assets/Star Wars.png`
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Asset Depth
-`asset_depth` determines how many folder levels deep you want to search for an item in the asset directory higher values will take longer. 
+Specify how many folder levels to scan for an item within the asset directory<br>
+* `asset_folders` must be set to `true` for this to take effect.
+* increasing the amount of levels to scan will reduce performance
 
-**Default Value:** `0`<br>
-**Allowed Values:** `integer`<br>
-**Requires:** `asset_folders: true`
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>0</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>any integer</td>
+  </tr>
+</table>
 
 ## Create Asset Folders
-While `create_asset_folders` is true then whenever PMM looks for an asset folder and cannot find it then it will be created.
+Whilst searching for assets, if an asset folder cannot be found within the `asset_directory`, create one. This only applies to library items utilized in a Metadata/Playlist file (i.e. Star Wars Collection)
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
+
 
 ## Dimensional Asset Rename
-While `dimensional_asset_rename` is true when scanning for assets PMM will scan the folder for image files and rename the first image found that has a height greater than or equal to its width to `poster.ext`, as long as an asset poster was not found, and the first image found that has a width greater than its height to `background.ext`, as long as an asset background was not found.
+Whilst searching for assets, scan the folders within the `asset_directory` and if an asset poster (i.e. `/ASSET_NAME/poster.ext`) was not found , rename the first image found that has a height greater than or equal to its width to `poster.ext`. If an asset background (i.e. `/ASSET_NAME/background.ext`), rename the first image found that has a width greater than its height to `background.ext`,
+* `asset_folders` must be set to `true` for this to take effect.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`<br>
-**Requires:** `asset_folders: true`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Download URL Assets
-While `download_url_assets` is true PMM will automatically download images in your collection config (Images set by `url_poster` or `url_background`) to your asset folder if no asset is found.
+Whilst searching for assets, download images set within Metadata/Playlist files( i.e. images set by `url_poster` or `url_background`) into the asset folder if none are already present.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Missing Season Assets
-While `show_missing_season_assets` is true when searching for assets for a show if a Season poster is found then this will display all other missing Season posters.
+Whilst searching for assets, when scanning for assets for a TV Show, if Season posters are found (i.e. `/ASSET_NAME/Season##.ext`, notify the user of any seasons which do not have an asset image.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Missing Episode Assets
-While `show_missing_episode_assets` is true when searching for assets for a show if an Episode Title Card is found then this will display all other missing Episode Title Cards.
+Whilst searching for assets, when scanning for assets for a TV Show, if an Episode Title Card is found (i.e. `/ASSET_NAME/S##E##.ext`), notify the user of any episodes which do not have an asset image.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Asset Not Needed
-While `show_asset_not_needed` is true when searching for assets show or hide the `update not needed` Messages.
+Whilst searching for assets, show or hide the `update not needed` messages.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Sync Mode
-Set the default `sync_mode` for collection. It can be either `append` when you want to add only and `sync` when you want to add and remove from collections.
+Set the default `sync_mode` for collections. 
 
-**Default Value:** `append`<br>
-**Allowed Values:** `append` or `sync`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>append</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>append</code> or <code>sync</code>
+    </td>
+  </tr>
+</table>
 
 ## Default Collection Order
-Use `default_collection_order` to set the default `collection_order` for every collection run by PMM. You can use any of these options:
+Set the default `collection_order` for every collection run by PMM.
 
-**Default Value:** None<br>
-**Allowed Values:** 
-* `release`: Order Collection by Release Dates
-* `alpha`: Order Collection Alphabetically
-* `custom`: Order Collection Via the Builder Order
-* [Any `plex_search` Sort Option](../metadata/builders/plex.md#sort-options)
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>None</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>release</code>: Order Collection by Release Dates<br>
+    <code>alpha</code>: Order Collection Alphabetically<br>
+    <code>custom</code>: Order Collection Via the Builder Order<br>
+    Any <code>plex_search</code> sort option<sup>1</sup><br>
+    </td>
+  </tr>
+</table>
+
+<sup>1</sup> `plex_search` sort options can be found [here](../metadata/builders/plex.md#sort-options)
 
 ## Minimum Items
-Use `minimum_items` to set the minimum number of items that must be found in order to update a collection/playlist.
+Set the minimum number of items that must be found in order to update a collection/playlist.
 
-**Default Value:** `1`<br>
-**Allowed Values:** `integer`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>1</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>any integer</td>
+  </tr>
+</table>
 
 ## Delete Below Minimum
-While `delete_below_minimum` is true and a collection is run it will be deleted if it is below the minimum number specified by `minimum_items`.
-
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+When a collection is run, delete the collection if it is below the minimum number specified by `minimum_items`.
+* Relies on `minimum_items` being set to the desired integer.
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Delete Not Scheduled
-While `delete_below_minimum` is true and a collection is skipped due to it not being scheduled then it is deleted.
+If a collection is skipped due to it not being scheduled, delete the collection.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Run Again Delay
-Use `run_again_delay` to set the number of minutes to delay running `run_again` collections after daily run is finished.
+Set the number of minutes to delay running `run_again` collections after daily run is finished.
+* A collection is a `run_again` collection if it has the `run_again` [Setting Detail](../metadata/details/setting) attribute set to true.
 
-A collection is a `run_again` collection if it has the `run_again` [Setting Detail](../metadata/details/setting) attribute set to true.
-
-**Default Value:** `1`<br>
-**Allowed Values:** `integer`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>1</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>any integer</td>
+  </tr>
+</table>
 
 ## Missing Only Released
-While `missing_only_released` is true then all unreleased missing items from a collection will be filtered out.
+Whilst running a collection, all unreleased missing items will be filtered out from the [missing YAML file](../metadata/details/setting)
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
-
-## Only Filter Missing
-While `only_filter_missing` is true then only items missing from a collection will be filtered.
-
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Unmanaged Collections
-While `show_unmanaged` is true all collections not managed by Plex Meta Manager will be listed at the end of each run.
+List all collections not managed by Plex Meta Manager at the end of each run.
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Filtered
-While `show_filtered` is true all items filtered out from a collection will be displayed.
+List all items which have been filtered out of a collection (i.e. if it doesn't meet the filter criteria)
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Options
 While `show_options` is true the available options for an attribute when using `plex_search`, `smart_filter` or `filters` will be shown.
 
-**Default Value:** `false`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
+
 
 ## Show Missing
 While `show_missing` is true items missing from collections will be displayed.
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
+
+## Only Filter Missing
+Only items missing from a collection will be filtered
+* this can be used to filter which missing media items get sent to Sonarr/Radarr
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Show Missing Assets
-While `show_missing_assets` is true missing assets warnings will be displayed.
+Display missing asset warnings
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## Save Missing
-While `save_missing` is true missing items from collections will be saved to a file in the same directory as your Metadata file.
+Save missing items from collections to a YAML file in the same directory as your Metadata file.
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>
 
 ## TVDb Language
-Use `tvdb_language` to specify the language to query TVDb in. If no language is specified or the specified language is not found then the original language is used.
+Specify the language to query TVDb in. 
+* If no language is specified or the specified language is not found then the original language is used.
 
-**Default Value:** None<br>
-**Allowed Values:** [ISO 639-2 Language Code](https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes)
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>None</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>Any ISO 639-2 Language Code<sup>1</sup></td>
+  </tr>
+</table>
+
+<sup>1</sup> Language Codes can be found [here](https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes)
 
 ## Ignore IDs
-Use `ignore_ids` to set a list or comma-separated string of TMDb/TVDb IDs to ignore in all collections.
+Set a list or comma-separated string of TMDb/TVDb IDs to ignore in all collections.
 
-**Default Value:** None<br>
-**Allowed Values:** List or comma-separated string of TMDb/TVDb IDs
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>None</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>List or comma-separated string of TMDb/TVDb IDs</td>
+  </tr>
+</table>
 
 ## Ignore IMDb IDs
-Use `ignore_imdb_ids` to set a list or comma-separated string of IMDb IDs to ignore in all collections.
+Set alist or comma-separated string of IMDb IDs to ignore in all collections.
 
-**Default Value:** None<br>
-**Allowed Values:** List or comma-separated string of IMDb IDs
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>None</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>List or comma-separated string of IMDB IDs</td>
+  </tr>
+</table>
 
 ## Item Refresh Delay
-Use `item_refresh_delay` to specify the amount of time to wait between each `item_refresh` of every movie/show in a collection/playlist.
+Specify the amount of time to wait between each `item_refresh` of every movie/show in a collection/playlist.
+* Useful if your Plex Media Server is having issues with high request levels.
 
-**Default Value:** `0`<br>
-**Allowed Values:** `integer`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>0</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>any integer</td>
+  </tr>
+</table>
 
 ## Playlist Sync to Users
-Use `playlist_sync_to_users` to set the default playlist `sync_to_users`. To Sync a playlist to only yourself leave `playlist_sync_to_users` blank.
+Set the default playlist `sync_to_users`. To Sync a playlist to only yourself leave `playlist_sync_to_users` blank.
 
-**Default Value:** `all`<br>
-**Allowed Values:** `all`, list of users, or comma-separated string of users
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>all</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>all</code>, list of users, or comma-separated string of users</td>
+  </tr>
+</table>
 
 ## Custom Repo
-Use `custom_repo` to define where the `repo` attribute's base is when defining `metadata_paths` and `playlist_files`.
-
-**Default Value:** None<br>
-**Allowed Values:** Link to Repo Base
-
-* If you want to link you're own GitHub make sure you're using the raw link like below.
-  `https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/`
+Specify where the `repo` attribute's base is when defining `metadata_paths` and `playlist_files`.
+* Ensure you are using the raw GitHub link (i.e. https://github.com/meisnate12/Plex-Meta-Manager-Configs/tree/master/meisnate12 )
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>None</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td>link to base repository</td>
+  </tr>
+</table>
 
 ## Verify SSL
 Turn SSl Verification on or off.
 
-**Default Value:** `true`<br>
-**Allowed Values:** `boolean`: `true` or `false`
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Default Value</th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th>Allowed Values</th>
+    <td><code>true</code> or <code>false</code>
+    </td>
+  </tr>
+</table>

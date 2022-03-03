@@ -1,8 +1,8 @@
-# Libraries Attributes
+# Library Attributes
 
-Within the [Configuration File](https://metamanager.wiki/en/develop/config/configuration.html) `libraries` determines the configurations that the user wants to apply to each of the Plex Libraries that they define.
+Within the [Configuration File](https://metamanager.wiki/en/develop/config/configuration.html) `libraries:` determines the Plex libraries that the user wants to apply Attributes to.
 
-Attributes are used to instruct Plex Meta Manager what actions tao take, such as "exectute a metadata file" or "run the following library operations". These attributes can be defined individually per library, or can be inhereted from the global value if it has been set. If an attribute is defined at both the library and global level, then the library level attribute will take priority.
+Attributes are used to instruct Plex Meta Manager what actions to take, such as "exectute a metadata file" or "run the following library operations". These attributes can be specified individually per library, or can be inhereted from the global value if it has been set. If an attribute is specified at both the library and global level, then the library level attribute will take priority.
 
 The below example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
 
