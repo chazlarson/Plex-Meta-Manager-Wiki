@@ -34,9 +34,9 @@ Further explanation and examples of each command can be found below.
 
 Specify the location of the configuration YAML file.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -81,9 +81,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Specify the time of day that Plex Meta Manager will run.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -128,9 +128,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Perform a run immediately, bypassing the time to run flag.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -167,9 +167,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run Plex Meta Manager in test/debug mode
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -208,9 +208,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Only run collection metadata/YAML files, skip library operations.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -247,9 +247,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Only run library operations, skip collections.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -286,9 +286,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run only the pre-defined collections
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -329,9 +329,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run only the pre-defined libraries
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -372,9 +372,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run only the pre-defined metadata files
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -416,9 +416,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run library operations prior to running collections.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -455,9 +455,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Ignore all schedules for the run.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -495,9 +495,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Delete all collections in a Library prior to running collections/operations.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -533,9 +533,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 ### Resume Run
 Resume a run from a specific collection use the `--resume` option.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -576,9 +576,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run without displaying a countdown to the next scheduled run.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -615,9 +615,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run without utilizing the missing movie/show functions.
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -654,9 +654,9 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 Run without writing to the configuration file
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -695,9 +695,9 @@ Change the terminal output divider character or width
 
 #### Divider Character
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>
@@ -723,9 +723,9 @@ Change the terminal output divider character or width
 
 #### Screen Width
 
-<table>
+<table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th></th>
+    <th style="background-color: #222;"></th>
     <th>Shell</th>
     <th>Environmental</th>
   </tr>

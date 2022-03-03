@@ -116,6 +116,9 @@ table.clearTable td {
 table.clearTable, table.clearTable tbody, table.clearTable tr, table.clearTable td, table.clearTable th {
   background-color: rgba(0, 0, 0, 0.0) !important;
 }
+table.dualTable td, table.dualTable th{
+  padding-left: 20px
+}
 details {
   margin-bottom: 5px
 }
