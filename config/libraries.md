@@ -2,7 +2,7 @@
 
 Within the [Configuration File](https://metamanager.wiki/en/develop/config/configuration.html) `libraries` determines the configurations that the user wants to apply to each of the Plex Libraries that they define.
 
-Each library is defined by the mapping name (i.e. `Movies` or `TV Shows`) which must exactly match the name of a library within the Plex Media Server, unless a different `library_name` is specified as can be seen with "TV Shows On Second Plex" in the below example. Attributes can be defined individually per library, or can be inhereted from the global value if it has been set. If an attribute is defined at both the library and global level, then the library level attribute will take priority.
+Attributes are used to instruct Plex Meta Manager what actions tao take, such as "exectute a metadata file" or "run the following library operations". These attributes can be defined individually per library, or can be inhereted from the global value if it has been set. If an attribute is defined at both the library and global level, then the library level attribute will take priority.
 
 The below example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
 
@@ -79,10 +79,9 @@ The available attributes for each library are as follows
 | [Sonarr Mapping](sonarr)        | `sonarr`        | Any `sonarr` attribute that overrides a global value                               |                 global                 |            &#10060;             |
 | [Tautulli Mapping](tautulli)    | `tautulli`      | Any `tautulli` attribute that overrides a global value                             |                 global                 |            &#10060;             |
 
+## Library Definitions
 
-## Library Name
-
-Each library must have a unique name that matches the name of a library within the Plex Media Server. In the situation that two servers are being connected to which both have libraries of the same name, the `library_name` attribute can be utilized to specify the real Library Name, whilst the library mapping name can be made into a placeholder. This is showcased below:
+Each library that the user wants Plex Meta Manager to interact with must be documented with a library definition. A library definition is represented by the mapping name (i.e. `Movies` or `TV Shows`), this must have a unique name that correlates with a library of the same name within the Plex Media Server. In the situation that two servers are being connected to which both have libraries of the same name, the `library_name` attribute can be utilized to specify the real Library Name, whilst the library definition name can be made into a placeholder. This is showcased below:
 <details>
   <summary>Click to Expand</summary>
   <br />
@@ -145,9 +144,9 @@ Within the above example, PMM will:
 ## Missing Path
 The `missing_path` attribute is used to define where to save the missing YAML file. This file is used to store information about media which is missing from the Plex library compared to what is expected from the Metadata file.
 
-If your Metadata file creates a collection with `Movie 1`, `Movie 2` and `Movie 3` but your library only has `Movie 1` and `Movie 3`, then the missing YAML file will be updated to inform the user that `User 2` was missing from the library. 
+If your Metadata file creates a collection with `Movie 1`, `Movie 2` and `Movie 3` but your Plex library only has `Movie 1` and `Movie 3`, then the missing YAML file will be updated to inform the user that `User 2` was missing from the library. 
 
-The default and recommended path is `/config/<<MAPPING_NAME>>_missing.yml` where `<<MAPPING_NAME>>` is the mapping name for the library, as showcased below:
+The default and recommended path is `/config/<<MAPPING_NAME>>_missing.yml` where `<<MAPPING_NAME>>` is the name of the library definition, as showcased below:
 
 ```yaml
 libraries:

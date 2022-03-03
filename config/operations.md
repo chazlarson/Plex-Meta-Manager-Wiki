@@ -1,9 +1,8 @@
 ## Operations
-There are multiple different Library Operations you can have preformed on each of your libraries.
+There are a variety of Library Operations that can be utilized in a library.
 
-You can define which operations you want to run under the `operations` attribute you can define per library.
+Within each library definition, operations can be defined by using the `operations` definition, as demonstrated below.
 
-A simple example of using some operations is below:
 ```yaml
 libraries:
   Movies:
@@ -14,11 +13,11 @@ libraries:
       split_duplicates: true
 ```
 
-The available operations attributes for each library are as follows
+The available attributes for the operations definition are as follows
 
 | Attribute                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `genre_mapper`                 | Will check every item in your library and changed mapped genres<hr>**Values:** [`genre_mapper` mapping details](#genre-mapper)                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `genre_mapper`                 | Will check every item in your library and changed mapped genres<hr>**Values:** [key mapper and value mapper](#genre-mapper)                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `assets_for_all`               | Search in assets for images for every item in your library<hr>**Values:** `true` or `false`                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `delete_collections_with_less` | Deletes every collection with less then the given number<hr>**Values:** number greater then 0                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `delete_unmanaged_collections` | Deletes every unmanaged collection<hr>**Values:** `true` or `false`                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
