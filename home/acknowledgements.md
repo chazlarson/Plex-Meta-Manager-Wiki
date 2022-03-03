@@ -12,7 +12,7 @@ These are the developers and creators who are an active part of the Plex Meta Ma
 
 | Acknowledgement                       | Reason  |        Sponsor the Developer              |
 |:---------------------------|:-----------------|:----------------------------------:|
-| [chazlarson](https://github.com/chazlarson/) | Creator of [Media-Scripts](https://github.com/chazlarson/Media-Scripts) which offers supporting functionality to users of Plex Meta Manager |              &#10060;    |
+| [chazlarson](https://github.com/chazlarson/) | Creator of [Media-Scripts](https://github.com/chazlarson/Media-Scripts) which offers supporting functionality to users of Plex Meta Manager | [Click Here](https://www.google.com/search?q=food+shelf+near+me) |
 | [Fribb](https://github.com/Fribb)    | Creator of the [MyAnimelist.net Metadata Agent](https://github.com/Fribb/MyAnimeList.bundle) which makes matching Animé easy for Plex Meta Manager users    | [Click Here](https://github.com/sponsors/JonnyWong16)              |
 | [linas](https://github.com/linaspurinis) | Creator of [MDBlist.com](https://github.com/deva5610/IMDBList2PlexCollection) which makes creating Plex Meta Manager compatible lists easy | [Click Here](https://www.patreon.com/mdblist/posts) |
 | [nitsua](https://github.com/austinwbest) | Creator of [Notifiarr](https://github.com/Notifiarr) which integrates Plex Meta Manager with Discord| [Click Here](https://github.com/sponsors/Notifiarr) |
@@ -41,7 +41,7 @@ These are the developers and creators of the technologies that are required to m
 |:---------------------------|:-----------------|:----------------------------------:|
 | [pkkid](https://github.com/pkkid) | Creator of [python-plexapi](https://github.com/pkkid/python-plexapi) |              &#10060;    |
 | [dbader](https://github.com/dbader) | Creator of [schedule](https://github.com/dbader/schedule)  |  &#10060;       |
-| [rholder](https://github.com/rholder) | Creator of [[retrying](https://github.com/rholder/retrying) |&#10060;  |
+| [rholder](https://github.com/rholder) | Creator of [retrying](https://github.com/rholder/retrying) |&#10060;  |
 | [ZeroQI](https://github.com/ZeroQI) | Creator of [Absolute Series Scanner](https://github.com/ZeroQI/Absolute-Series-Scanner) and [HTTP Anidb Metadata Agent (HAMA)](https://github.com/ZeroQI/Hama.bundle)| [Click Here](https://github.com/sponsors/ZeroQI) |
 | [ScudLee](https://github.com/ScudLee) | Creator of [AniDb Anime Lists](https://github.com/Anime-Lists/anime-lists) |  &#10060; |
 
