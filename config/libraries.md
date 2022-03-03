@@ -1,10 +1,17 @@
 # Libraries Attributes
 
-One of the two required configuration mappings is `libraries` which is where you set up a configuration for each Plex Library you want the program to interact with. 
+Within the [Configuration File](https://metamanager.wiki/en/develop/config/configuration.html) `libraries` determines the configurations that the user wants to apply to each of the Plex Libraries that they define.
 
-Each library is defined by the mapping name which must be the same as the library name unless a different `library_name` is specified. You can either set attributes individually per library or you can let them be inherited from the global value. 
+Each library is defined by the mapping name (i.e. `Movies` or `TV Shows`) which must exactly match the name of a library within the Plex Media Server, unless a different `library_name` is specified as can be seen with "TV Shows On Second Plex" in the below example. Attributes can be defined individually per library, or can be inhereted from the global value if it has been set. If an attribute is defined at both the library and global level, then the library level attribute will take priority.
 
-An advance example of multiple libraries with some using the global values and some having their own values is below:
+The below example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
+
+<details>
+  <summary>Click to Expand</summary>
+  <br />
+
+In this example, the `"TV Shows On Second Plex"` library has a library-level `plex` configuration, which takes priority over the `plex` configuration set at the global level. <br>
+The `"Anime"` library also has a library-level `radarr` configuration, which takes priority over the `radarr` configuration set at the global level.
 ```yaml
 libraries:
   Movies:
@@ -56,26 +63,29 @@ radarr:
   tag: pmm
   search: false
 ```
+</details>
 
 The available attributes for each library are as follows
 
 | Name                            | Attribute       | Allowed Values                                                                      |                Default                 |            Required             |
 |:--------------------------------|:----------------|:------------------------------------------------------------------------------------|:--------------------------------------:|:-------------------------------:|
-| [Library Name](#library-name)   | `library_name`  | Library name (Only needed when trying to use multiple libraries with the same name) |          Base Attribute Name           |            &#10060;             |
-| [Metadata Path](#metadata-path) | `metadata_path` | Location for your Metadata YAML files                                               |     `/config/<<MAPPING_NAME>>.yml`     |            &#10060;             |
-| [Missing Path](#missing-path)   | `missing_path`  | Path to missing YAML file for the library                                           | `/config/<<MAPPING_NAME>>_missing.yml` |            &#10060;             |
+| [Library Name](#library-name)   | `library_name`  | Library name (required only when trying to use multiple libraries with the same name) |          Base Attribute Name           |            &#10060;             |
+| [Metadata Path](#metadata-path) | `metadata_path` | Location of Metadata YAML files                                               |     `/config/<<MAPPING_NAME>>.yml`     |            &#10060;             |
+| [Missing Path](#missing-path)   | `missing_path`  | Location to create missing YAML file for the library                                           | `/config/<<MAPPING_NAME>>_missing.yml` |            &#10060;             |
 | [Operations](#operations)       | `operations`    | Library Operations to run                                                           |                  N/A                   |            &#10060;             |
-| [Settings Mapping](settings)    | `settings`      | Any `setting` attribute you want different from global                              |                 global                 |            &#10060;             |
-| [Plex Mapping](plex)            | `plex`          | Any `plex` attribute you want different from global                                 |                 global                 | &#9989; Either here or globally |
-| [Radarr Mapping](radarr)        | `radarr`        | Any `radarr` attribute you want different from global                               |                 global                 |            &#10060;             |
-| [Sonarr Mapping](sonarr)        | `sonarr`        | Any `sonarr` attribute you want different from global                               |                 global                 |            &#10060;             |
-| [Tautulli Mapping](tautulli)    | `tautulli`      | Any `tautulli` attribute you want different from global                             |                 global                 |            &#10060;             |
+| [Settings Mapping](settings)    | `settings`      | Any `setting` attribute that overrides a global value                              |                 global                 |            &#10060;             |
+| [Plex Mapping](plex)            | `plex`          | Any `plex` attribute that overrides a global value                                 |                 global                 | &#9989; Either here or globally |
+| [Radarr Mapping](radarr)        | `radarr`        | Any `radarr` attribute that overrides a global value                               |                 global                 |            &#10060;             |
+| [Sonarr Mapping](sonarr)        | `sonarr`        | Any `sonarr` attribute that overrides a global value                               |                 global                 |            &#10060;             |
+| [Tautulli Mapping](tautulli)    | `tautulli`      | Any `tautulli` attribute that overrides a global value                             |                 global                 |            &#10060;             |
 
-* Library mappings must have a colon `:` placed after them
 
 ## Library Name
 
-Each library must have a different name. If you want to use multiple libraries with the same name you can use the `library_name` attribute to specify the real Library Name and just have a placeholder as the library mapping name. A simple example is below:
+Each library must have a unique name that matches the name of a library within the Plex Media Server. In the situation that two servers are being connected to which both have libraries of the same name, the `library_name` attribute can be utilized to specify the real Library Name, whilst the library mapping name can be made into a placeholder. This is showcased below:
+<details>
+  <summary>Click to Expand</summary>
+  <br />
 
 ```yaml
 libraries:
@@ -93,69 +103,60 @@ plex:
   token: ####################
 ```
 
-* Movies01, TV Shows, and Anime will all use the global plex server http://192.168.1.12:32400, defined using the global `plex` mapping. While the library, Movies02, will use the plex server http://192.168.1.35:32400 which is defined under its `plex` mapping over the global mapping.
+* In this example, `"Movies01"`, `"TV Shows"`, and `"Anime"` will all use the global plex server (http://192.168.1.12:32400) which is defined using the global `plex` mapping. `"Movies02"` will use the plex server http://192.168.1.35:32400 which is defined under its `plex` mapping over the global mapping.
+</details>
 
 ## Metadata Path
 
-You can define Metadata Files by using `metadata_path`. They can either be on the local system, online at an url, or directly from the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs) repository.
+### Overview
 
-By default, when `metadata_path` is missing the script will look in your config directory for `<MAPPING_NAME>.yml` so `Movies.yml` in the example below.
+The `metadata_path` attribute is used to define the metadata (aka YAML) files that will be exectuted against the parent library. 
+
+By default, when `metadata_path` is missing the script will look within the root PMM directory for a metadata file called `<MAPPING_NAME>.yml`. In the below example, `"TV Shows.yml"` will be searched for.
 ```yaml
 libraries:
-  Movies:
+  TV Shows:
 ```
-To use a local Metadata File add `file` under metadata set to the system path of the yaml file.
+
+
+### Path Types
+
+In the below example, four metadata file path types are  defined for the `"TV Shows"` library:
 ```yaml
-libraries:
-  Movies:
-    metadata_path: 
-      file: /config/My Movies.yml
-```
-To use all yaml files in a particular folder add `folder` under metadata set to the system path of the folder containing the yaml files.
-```yaml
-libraries:
-  Movies:
-    metadata_path: 
-      folder: /config/Movie Configs/
-```
-To use a Metadata File online add `url` under metadata set to the url of the yaml file.
-```yaml
-libraries:
-  Movies:
+  TV Shows:
     metadata_path:
-      url: http://somesite.com/metadata_file.yml
+      - file: config/TVShows.yml
+      - folder: config/TV Shows/
+      - git: meisnate12/ShowCharts
+      - url: https://somewhere.com/PopularTV.yml
 ```
-To use a Metadata File from the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs) repository add `git` under metadata set to the path in the repository.
-```yaml
-libraries:
-  Movies:
-    metadata_path:
-      git: meisnate12/Charts
-```
-To use a Playlist File from a `custom_repo` defined in the global Settings add `repo` under playlist_files set to the path in the repository.
-* This loads the yaml file at `https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/Collections/Movies/Movies.yml`
-```yaml
-settings:
-  custom_repo: https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/
-playlist_files:
-  repo: Collections/Movies/Movies
-```
-You can specify multiple paths of any type using a list like below.
-```yaml
-libraries:
-  Movies:
-    metadata_path:
-      - file: /config/My Movies.yml
-      - url: http://somesite.com/people_collections.yml
-      - git: meisnate12/Charts
-      - git: meisnate12/Studios
-```
+The four path types are outlined as follows:
+* `- file:` refers to a metadata file which is located within the system that PMM is being run from. 
+* `- folder:` refers to a directory containing metadata files which is located within the system that PMM is being run from. 
+* `- git:` refers to a metadata file which is hosted on the [GitHub Configs Repo](https://github.com/meisnate12/Plex-Meta-Manager-Configs) unless the user has specified a custom repository within the settings section of the config.yml file.
+* `- url:` refers to a metadata file which is hosted publicly on the internet.
+
+Within the above example, PMM will:
+* First, look within the root of the PMM directory (also known as `config/`) for a metadata file named `TVShows.yml`. If this file does not exist, PMM will skip the entry and move to the next one in the list.
+* Then, look within the root of the PMM directory (also known as `config/`) for a directory called `TV Shows`, and then load any metadata files within that directory.
+* Then, look at the [meisnate12 folder](https://github.com/meisnate12/Plex-Meta-Manager-Configs/tree/master/meisnate12) within the GitHub Configs Repo for a file called `MovieCharts.yml` which it finds [here](https://github.com/meisnate12/Plex-Meta-Manager-Configs/blob/master/meisnate12/MovieCharts.yml).
+* Finally, load the metadata file located at `https://somewhere.com/PopularTV.yml`
 
 ## Missing Path
-Path where to save the missing YAML File. Default is `/config/<<MAPPING_NAME>>_missing.yml` where `<<MAPPING_NAME>>` is the mapping name for the library.
+The `missing_path` attribute is used to define where to save the missing YAML file. This file is used to store information about media which is missing from the Plex library compared to what is expected from the Metadata file.
+
+If your Metadata file creates a collection with `Movie 1`, `Movie 2` and `Movie 3` but your library only has `Movie 1` and `Movie 3`, then the missing YAML file will be updated to inform the user that `User 2` was missing from the library. 
+
+The default and recommended path is `/config/<<MAPPING_NAME>>_missing.yml` where `<<MAPPING_NAME>>` is the mapping name for the library, as showcased below:
 
 ```yaml
 libraries:
   Movies:
-    missing_path: /config/Missing/Movies.yml
+    missing_path: /config/Movies_movies.yml
+```
+Alternatively, missing YAML files can be placed in their own directory, as below:
+```yaml
+libraries:
+  Movies:
+    missing_path: /config/missing/Movies.yml
 ```
