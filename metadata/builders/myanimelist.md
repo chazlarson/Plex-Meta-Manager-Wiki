@@ -193,16 +193,16 @@ collections:
 
 ## MyAnimeList User Anime List
 
-Gets anime in MyAnimeList User's Anime list. The different sub-attributes are detailed below.
+Gets anime in MyAnimeList User's Anime list. The different sub-attributes are detailed below. The only required attribute is `username`
 
 The `sync_mode: sync` and `collection_order: custom` Details are recommended since the lists are continuously updated and in a specific order. 
 
-| Attribute  | Description                                                                                                                                                                               | Required | Default |
-|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:-------:|
-| `username` | A user's MyAnimeList Username or `@me` for the authorized user                                                                                                                            | &#9989;  |   N/A   |
-| `status`   | `all` (All Anime List)<br>`watching` (Currently Watching List)<br>`completed` (Completed List)<br>`on_hold` (On Hold List)<br>`dropped` (Dropped List)<br>`plan_to_watch` (Plan to Watch) | &#10060; |  `all`  |
-| `sort_by`  | `score` (Sort by Score)<br>`last_updated` (Sort by Last Updated)<br>`title` (Sort by Anime Title)<br>`start_date` (Sort by Start Date)                                                    | &#10060; | `score` |
-| `limit`    | Number of Anime to query from MyAnimeList (max: 1000)                                                                                                                                     | &#10060; |   100   |
+| Attribute  | Description                                                                                                                                                                                                                                                                                                                                                                              |
+|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `username` | A user's MyAnimeList Username or `@me` for the authorized user                                                                                                                                                                                                                                                                                                                           |
+| `status`   | **Values:**<table class="clearTable"><tr><td>`all`</td><td>All Anime List</td></tr><tr><td>`watching`</td><td>Currently Watching List</td></tr><tr><td>`completed`</td><td>Completed List</td></tr><tr><td>`on_hold`</td><td>On Hold List</td></tr><tr><td>`dropped`</td><td>Dropped List</td></tr><tr><td>`plan_to_watch`</td><td>Plan to Watch</td></tr></table><hr>**Default:** `all` |
+| `sort_by`  | **Values:**<table class="clearTable"><tr><td>`score`</td><td>Sort by Score</td></tr><tr><td>`last_updated`</td><td>Sort by Last Updated</td></tr><tr><td>`title`</td><td>Sort by Anime Title</td></tr><tr><td>`start_date`</td><td>Sort by Start Date</td></tr></table><hr>**Default:** `score`                                                                                          |
+| `limit`    | **Values:** Number of Anime to query from MyAnimeList (max: 1000)<hr>**Default:** `100`                                                                                                                                                                                                                                                                                                  |
 
 ```yaml
 collections:
@@ -222,12 +222,12 @@ Gets anime in MyAnimeList's [Seasonal Anime](https://myanimelist.net/anime/seaso
 
 The `sync_mode: sync` and `collection_order: custom` Details are recommended since the lists are continuously updated and in a specific order. 
 
-| Attribute | Description                                                                                                                                                                                                            | Required |    Default     |
-|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------:|:--------------:|
-| `season`  | `winter` (For winter season January, February, March)<br>`spring` (For spring season April, May, June)<br>`summer` (For summer season July, August, September)<br>`fall` (For fall season October, November, December) | &#10060; | Current Season |
-| `year`    | 4 digit integer year between 1917-Current                                                                                                                                                                              | &#10060; |  Current Year  |
-| `sort_by` | `members` (Sort by Most Members)<br>`score` (Sort by Score)                                                                                                                                                            | &#10060; |   `members`    |
-| `limit`   | Number of Anime to query from MyAnimeList (max: 500)                                                                                                                                                                   | &#10060; |      100       |
+| Attribute | Description                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `season`  | **Values:**<table class="clearTable"><tr><td>`winter`</td><td>For winter season January, February, March</td></tr><tr><td>`spring`</td><td>For spring season April, May, June</td></tr><tr><td>`summer`</td><td>For summer season July, August, September</td></tr><tr><td>`fall`</td><td>For fall season October, November, December</td></tr><tr><td>`current`</td><td>For the current Season</td></tr></table><hr>**Default:** `current` |
+| `year`    | **Values:** Number between `1917` and the current year.<hr>**Default:** Current Year                                                                                                                                                                                                                                                                                                                                                        |
+| `sort_by` | **Values:**<table class="clearTable"><tr><td>`members`</td><td>Sort by Most Members</td></tr><tr><td>`score`</td><td>Sort by Score</td></tr></table><hr>**Default:** `members`                                                                                                                                                                                                                                                              |
+| `limit`   | **Values:** Number of Anime to query from MyAnimeList (max: 500)<hr>**Default:** 100                                                                                                                                                                                                                                                                                                                                                        |
 
 ```yaml
 collections:
@@ -251,7 +251,7 @@ collections:
 
 ## MyAnimeList Genre
 
-Gets every anime tagged with the specified genre ID sorted by members the options are detailed below.
+Gets every anime tagged with the specified genre ID sorted by members the options are detailed below. `genre_id` is the only required attribute.
 
 The `sync_mode: sync` and `collection_order: custom` Details are recommended since the lists are continuously updated and in a specific order. 
 
@@ -259,10 +259,10 @@ The `sync_mode: sync` and `collection_order: custom` Details are recommended sin
 * To find the ID click on a Genre in the link above and there should be a number in the URL that's the `genre_id`.
 * For example if the url is `https://myanimelist.net/anime/genre/1/Action` the `genre_id` would be `1`.
 
-| Attribute  | Description                               | Required | Default |
-|:-----------|:------------------------------------------|:--------:|:-------:|
-| `genre_id` | The ID of Genre from MyAnimeList          | &#9989;  |   N/A   |
-| `limit`    | Number of Anime to query from MyAnimeList | &#10060; | 0 (All) |
+| Attribute  | Description                                                         |
+|:-----------|:--------------------------------------------------------------------|
+| `genre_id` | The ID of Genre from MyAnimeList                                    |
+| `limit`    | Number of Anime to query from MyAnimeList<hr>**Default:** `0` (All) |
 
 ```yaml
 collections:
@@ -275,7 +275,7 @@ collections:
 
 ## MyAnimeList Studio 
 
-Gets every anime tagged with the specified studio/producer/licensor ID sorted by members the options are detailed below.
+Gets every anime tagged with the specified studio/producer/licensor ID sorted by members the options are detailed below. `studio_id` is the only required attribute.
 
 The `sync_mode: sync` and `collection_order: custom` Details are recommended since the lists are continuously updated and in a specific order. 
 
@@ -283,10 +283,10 @@ The `sync_mode: sync` and `collection_order: custom` Details are recommended sin
 * To find the ID click on a Studio in the link above and there should be a number in the URL that's the `studio_id`.
 * For example if the url is `https://myanimelist.net/anime/producer/4/Bones` the `studio_id` would be `4`.
 
-| Attribute   | Description                                         | Required | Default |
-|:------------|:----------------------------------------------------|:--------:|:-------:|
-| `studio_id` | The ID of Studio/Producer/Licensor from MyAnimeList | &#9989;  |   N/A   |
-| `limit`     | Number of Anime to query from MyAnimeList           | &#10060; | 0 (All) |
+| Attribute   | Description                                                         |
+|:------------|:--------------------------------------------------------------------|
+| `studio_id` | The ID of Studio/Producer/Licensor from MyAnimeList                 |
+| `limit`     | Number of Anime to query from MyAnimeList<hr>**Default:** `0` (All) |
 
 ```yaml
 collections:

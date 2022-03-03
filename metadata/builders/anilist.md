@@ -110,17 +110,21 @@ The `sync_mode: sync` and `collection_order: custom` Details are recommended sin
 
 Special attributes do not support any modifiers.
 
-| Special Attribute | Description                              |                                                                                                                           Options                                                                                                                            | Default |
-|:------------------|:-----------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|
-| `sort_by`         | How to sort the Anime                    |                                                                              `score` (Sort by Average Score)<br>`popular` (Sort by Popularity)<br>`trending` (Sort by Trending)                                                                              | `score` |
-| `limit`           | Number of Anime to query                 |                                                                                                      `int` (use 0 or don't use it at all for all anime)                                                                                                      |   `0`   |
-| `search`          | Text to search                           |                                                                                                                           Any Text                                                                                                                           |  `N/A`  | 
-| `season`          | Season to search for                     | `winter` (For winter season December, January, February)<br>`spring` (For spring season March, April, May)<br>`summer` (For summer season June, July, August)<br>`fall` (For fall season September, October, November)<br>Leave blank for the Current Season |   ` `   |
-| `year`            | Season year to search for                |                                                                                                 `int` `1917` - next year or leave blank for the current year                                                                                                 |   ` `   |
-| `min_tag_percent` | Minimum tag percentage for the Anime     |                                                                                                                       `int` `0`-`100`                                                                                                                        |  `N/A`  |
-| `adult`           | Search for or not for Adult Anime        |                                                                                                                      `true` or `false`                                                                                                                       |  `N/A`  |
-| `country`         | Search for anime from a specific country |                                                                                     [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                                                                                      |  `N/A`  |
-| `source`          | Uses the anime's source to match         |                                                                           `original`, `manga`, `light_novel`, `visual_novel`, `video_game`, `other`, `novel`, `doujinshi`, `anime`                                                                           |  `N/A`  |
+| Special Attribute | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `sort_by`         | How to sort the Anime<hr>**Values:**<table class="clearTable"><tr><td>`score`</td><td>Sort by Average Score</td></tr><tr><td>`popular`</td><td>Sort by Popularity</td></tr><tr><td>`trending`</td><td>Sort by Trending</td></tr></table><hr>**Default:** `score`                                                                                                                                                                                                 |
+| `limit`           | Number of Anime to query<hr>**Values:** Number greater or equal to 0` (use 0 or don't use it at all for all anime)<hr>**Default:** `0`                                                                                                                                                                                                                                                                                                                           |
+| `search`          | Text to search<hr>**Values:** Any Text                                                                                                                                                                                                                                                                                                                                                                                                                           | 
+| `season`          | Season to search for<hr>**Values:** <table class="clearTable"><tr><td>`winter`</td><td>For winter season December, January, February</td></tr><tr><td>`spring`</td><td>For spring season March, April, May</td></tr><tr><td>`summer`</td><td>For summer season June, July, August</td></tr><tr><td>`fall`</td><td>For fall season September, October, November</td></tr><tr><td>`current`</td><td>For current Season</td></tr></table><hr>**Default:** `current` |
+| `year`            | Season year to search for<hr>**Values:** Number between `1917` and next year or leave blank for the current year<hr>**Default:** Current Year                                                                                                                                                                                                                                                                                                                    |
+| `min_tag_percent` | Minimum tag percentage for the Anime<hr>**Values:** Number between `0`-`100`                                                                                                                                                                                                                                                                                                                                                                                     |
+| `adult`           | Search for or not for Adult Anime<hr>**Values:** `true` or `false`                                                                                                                                                                                                                                                                                                                                                                                               |
+| `country`         | Search for anime from a specific country<hr>**Values:** [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)                                                                                                                                                                                                                                                                                                                      |
+| `source`          | Uses the anime's source to match<hr>**Values:** `original`, `manga`, `light_novel`, `visual_novel`, `video_game`, `other`, `novel`, `doujinshi`, or `anime`                                                                                                                                                                                                                                                                                                      |
+
+
+
+
 
 ## Tag Attributes
 
@@ -137,13 +141,13 @@ String attributes can take multiple values as a **list or a comma-separated stri
 
 ### Tag Attributes
 
-| Tag Attribute  | Description                            |                                                         Options                                                         | 
-|:---------------|:---------------------------------------|:-----------------------------------------------------------------------------------------------------------------------:|
-| `format`       | Uses the anime's format to match       |                                `tv`, `short`, `movie`, `special`, `ova`, `ona`, `music`                                 |
-| `status`       | Uses the anime's status to match       |                              `finished`, `airing`, `not_yet_aired`, `cancelled`, `hiatus`                               |
-| `genre`        | Uses the anime's genre to match        |            Any Genre in the Genre Dropdown box on the [AniList Search Page](https://anilist.co/search/anime)            |
-| `tag`          | Uses the anime's tag to match          |             Any Tag in the Genre Dropdown box on the [AniList Search Page](https://anilist.co/search/anime)             |
-| `tag_category` | Uses the anime's tag category to match | Any Tag Category in the Advance Genres & Tag Filters Menu on the [AniList Search Page](https://anilist.co/search/anime) |
+| Tag Attribute  | Description                                                                                                                                                                   |
+|:---------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `format`       | Uses the anime's format to match<hr>**Values:** `tv`, `short`, `movie`, `special`, `ova`, `ona`, `music`                                                                      |
+| `status`       | Uses the anime's status to match<hr>**Values:** `finished`, `airing`, `not_yet_aired`, `cancelled`, `hiatus`                                                                  |
+| `genre`        | Uses the anime's genre to match<hr>**Values:** Any Genre in the Genre Dropdown box on the [AniList Search Page](https://anilist.co/search/anime)                              |
+| `tag`          | Uses the anime's tag to match<hr>**Values:** Any Tag in the Genre Dropdown box on the [AniList Search Page](https://anilist.co/search/anime)                                  |
+| `tag_category` | Uses the anime's tag category to match<hr>**Values:** Any Tag Category in the Advance Genres & Tag Filters Menu on the [AniList Search Page](https://anilist.co/search/anime) |
 
 ## Date Attributes
 
@@ -153,10 +157,10 @@ No date attribute can take multiple values.
 
 ### Date Modifiers
 
-| Date Modifier | Description                                                             |                   Format                    |
-|:--------------|:------------------------------------------------------------------------|:-------------------------------------------:|
-| `.before`     | Matches every item where the date attribute<br>is before the given date | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
-| `.after`      | Matches every item where the date attribute<br>is after the given date  | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
+| Date Modifier | Description                                                                                                         |
+|:--------------|:--------------------------------------------------------------------------------------------------------------------|
+| `.before`     | Matches every item where the date attribute<br>is before the given date<hr>**Format:** MM/DD/YYYY e.g. `01/01/2000` |
+| `.after`      | Matches every item where the date attribute<br>is after the given date<hr>**Format:** MM/DD/YYYY e.g. `01/01/2000`  |
 
 ### Date Attributes
 
@@ -173,21 +177,21 @@ No number attribute can take multiple values.
 
 ### Number Modifiers
 
-| Number Modifier | Description                                                                                   |                      Format                       |
-|:----------------|:----------------------------------------------------------------------------------------------|:-------------------------------------------------:|
-| `.gt`           | Matches every item where the number attribute<br>is greater then the given number             | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.gte`          | Matches every item where the number attribute<br>is greater then or equal to the given number | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.lt`           | Matches every item where the number attribute<br>is less then the given number                | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.lte`          | Matches every item where the number attribute<br>is less then or equal to the given number    | **Format:** number<br>e.g. `30`, `1995`, or `7.5` |
+| Number Modifier | Description                                                                                                                                        |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
+| `.gt`           | Matches every item where the number attribute<br>is greater then the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`             |
+| `.gte`          | Matches every item where the number attribute<br>is greater then or equal to the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5` |
+| `.lt`           | Matches every item where the number attribute<br>is less then the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`                |
+| `.lte`          | Matches every item where the number attribute<br>is less then or equal to the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`    |
 
 ### Number Attributes
 
-| Number Attribute | Description                                        | Restrictions |
-|:-----------------|:---------------------------------------------------|:------------:|
-| `duration`       | Uses the duration attribute to match using minutes | minimum: `1` |
-| `episodes`       | Uses the number of episodes attribute to match     | minimum: `1` |
-| `score`          | Uses the score attribute to match                  | minimum: `1` |
-| `popularity`     | Uses the popularity attribute to match             | minimum: `1` |
+| Number Attribute | Description                                                                          |
+|:-----------------|:-------------------------------------------------------------------------------------|
+| `duration`       | Uses the duration attribute to match using minutes<hr>**Restrictions:** minimum: `1` |
+| `episodes`       | Uses the number of episodes attribute to match<hr>**Restrictions:** minimum: `1`     |
+| `score`          | Uses the score attribute to match<hr>**Restrictions:** minimum: `1`                  |
+| `popularity`     | Uses the popularity attribute to match<hr>**Restrictions:** minimum: `1`             |
 
 ## AniList Search Examples
 
