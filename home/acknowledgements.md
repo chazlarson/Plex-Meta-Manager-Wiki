@@ -42,6 +42,6 @@ These are the developers and creators of the technologies that are required to m
 | [pkkid](https://github.com/pkkid) | Creator of [python-plexapi](https://github.com/pkkid/python-plexapi) |              &#10060;    |
 | [dbader](https://github.com/dbader) | Creator of [schedule](https://github.com/dbader/schedule)  |  &#10060;       |
 | [rholder](https://github.com/rholder) | Creator of [[retrying](https://github.com/rholder/retrying) |&#10060;  |
-| [[ZeroQI](https://github.com/ZeroQI) | Creator of [Absolute Series Scanner](https://github.com/ZeroQI/Absolute-Series-Scanner) and [HTTP Anidb Metadata Agent (HAMA)](https://github.com/ZeroQI/Hama.bundle)| [Click Here](https://github.com/sponsors/ZeroQI) |
+| [ZeroQI](https://github.com/ZeroQI) | Creator of [Absolute Series Scanner](https://github.com/ZeroQI/Absolute-Series-Scanner) and [HTTP Anidb Metadata Agent (HAMA)](https://github.com/ZeroQI/Hama.bundle)| [Click Here](https://github.com/sponsors/ZeroQI) |
 | [ScudLee](https://github.com/ScudLee) | Creator of [AniDb Anime Lists](https://github.com/Anime-Lists/anime-lists) |  &#10060; |
 
