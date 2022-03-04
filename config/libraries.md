@@ -1,9 +1,11 @@
-# Library Attributes
+# Library Definitions, Attributes & Metadata Paths
 
-Within the [Configuration File](https://metamanager.wiki/en/develop/config/configuration.html) `libraries:` determines the Plex libraries that the user wants to apply Attributes to.
+## Overview
+Within the [Configuration File](https://metamanager.wiki/en/develop/config/configuration.html), the `libraries:` definiion specifies the Plex libraries that the user wants to apply Attributes to.
 
 Attributes are used to instruct Plex Meta Manager what actions to take, such as "exectute a metadata file" or "run the following library operations". These attributes can be specified individually per library, or can be inhereted from the global value if it has been set. If an attribute is specified at both the library and global level, then the library level attribute will take priority.
 
+## Example 
 The below example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
 
 <details>
@@ -65,6 +67,8 @@ radarr:
 ```
 </details>
 
+## Attributes
+
 The available attributes for each library are as follows
 
 | Name                            | Attribute       | Allowed Values                                                                      |                Default                 |            Required             |
@@ -79,7 +83,7 @@ The available attributes for each library are as follows
 | [Sonarr Mapping](sonarr)        | `sonarr`        | Any `sonarr` attribute that overrides a global value                               |                 global                 |            &#10060;             |
 | [Tautulli Mapping](tautulli)    | `tautulli`      | Any `tautulli` attribute that overrides a global value                             |                 global                 |            &#10060;             |
 
-## Library Definitions
+## Definitions
 
 Each library that the user wants Plex Meta Manager to interact with must be documented with a library definition. A library definition is represented by the mapping name (i.e. `Movies` or `TV Shows`), this must have a unique name that correlates with a library of the same name within the Plex Media Server. In the situation that two servers are being connected to which both have libraries of the same name, the `library_name` attribute can be utilized to specify the real Library Name, whilst the library definition name can be made into a placeholder. This is showcased below:
 <details>
@@ -105,7 +109,7 @@ plex:
 * In this example, `"Movies01"`, `"TV Shows"`, and `"Anime"` will all use the global plex server (http://192.168.1.12:32400) which is defined using the global `plex` mapping. `"Movies02"` will use the plex server http://192.168.1.35:32400 which is defined under its `plex` mapping over the global mapping.
 </details>
 
-## Metadata Path
+# Metadata Path
 
 ### Overview
 

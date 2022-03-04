@@ -161,14 +161,15 @@ html_theme_options = {
         ("_menu", "Metadata", [
             ("Metadata and Playlist Files", "metadata/metadata"),
             ("_divider", ),
-            ("_menu", "Metadata", [
-                ("Movie Library Metadata", "metadata/metadata/movie"),
-                ("TV Show Library Metadata", "metadata/metadata/show"),
-                ("Music Library Metadata", "metadata/metadata/music"),
-            ]),
             ("Templates", "metadata/templates"),
             ("Filters", "metadata/filters"),
-            ("_menu", "Builders", [
+            ("Dynamic Collections", "metadata/dynamic"),
+            ("_menu", "Editing Media Metadata", [
+                ("Editing Movie Metadata", "metadata/metadata/movie"),
+                ("Editing TV Metadata", "metadata/metadata/show"),
+                ("Editing Music Metadata", "metadata/metadata/music"),
+            ]),
+            ("_menu", "Metadata Builders", [
                 ("Plex Builders", "metadata/builders/plex"),
                 ("Smart Builders", "metadata/builders/smart"),
                 ("TMDb Builders", "metadata/builders/tmdb"),
