@@ -81,12 +81,12 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Special Attributes
 
-| Attribute  | Description                                                                                                                                                                                                                                                                                                                               |
-|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`     | The Type of items inside this collection/playlist.<hr>**Options:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks`<hr>**Default:**<table class="clearTable"><tr><td>`movies` for Movies Libraries</td></tr><tr><td>`shows` for Show Libraries</td></tr><tr><td>`artists` for Music Libraries</td></tr></table> |
-| `limit`    | The max number of item for the filter.<hr>**Options:** `all` or a number greater then 0<hr>**Default:** `all`                                                                                                                                                                                                                             |
-| `sort_by`  | This will control how the filter is sorted in your library.<hr>**Options:** Any sort options for your filter type in the [Sorts Options Table](#sort-options)<hr>**Default:** `random`                                                                                                                                                    |
-| `validate` | Determines if a collection/playlist will fail on a validation error<hr>**Options**: `true` or `false`<hr>**Default:** `true`                                                                                                                                                                                                              |
+| Attribute  | Description & Values                                                                                                                                                                                                                                                                                                                                      |
+|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`     | **Description:** The Type of items inside this collection/playlist.<br>**Default:**<table class="clearTable"><tr><td>`movies` for Movies Libraries</td></tr><tr><td>`shows` for Show Libraries</td></tr><tr><td>`artists` for Music Libraries</td></tr></table><br>**Values:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks` |
+| `limit`    | **Description:** The max number of item for the search.<br>**Default:** `all`<br>**Values:** `all` or a number greater then 0                                                                                                                                                                                                                             |
+| `sort_by`  | **Description:** This will control how the filter is sorted in your library.<br>**Default:** `random`<br>**Values:** Any sort options for your search type in the [Sorts Options Table](#sort-options)                                                                                                                                                    |
+| `validate` | **Description:** Determines if a collection/playlist will fail on a validation error<br>**Default:** `true`<br>**Values**: `true` or `false`                                                                                                                                                                                                              |
 
 ## Sort Options
 
@@ -216,10 +216,10 @@ No date search can take multiple values.
 
 | Date Modifier | Description                                                                                                                 | Plex Web UI Display  |
 |:--------------|:----------------------------------------------------------------------------------------------------------------------------|:--------------------:|
-| No Modifier   | Matches every item where the date attribute is in the last X days<hr>**Format:** number of days<hr>**Example:** `30`        |   `is in the last`   |
-| `.not`        | Matches every item where the date attribute is not in the last X days<hr>**Format:** number of days<hr>**Example:** `30`    | `is not in the last` |
-| `.before`     | Matches every item where the date attribute is before the given date<hr>**Format:** MM/DD/YYYY<hr>**Example:** `01/01/2000` |     `is before`      |
-| `.after`      | Matches every item where the date attribute is after the given date<hr>**Format:** MM/DD/YYYY<hr>**Example:** `01/01/2000`  |      `is after`      |
+| No Modifier   | Matches every item where the date attribute is in the last X days<br>**Format:** number of days<br>**Example:** `30`        |   `is in the last`   |
+| `.not`        | Matches every item where the date attribute is not in the last X days<br>**Format:** number of days<br>**Example:** `30`    | `is not in the last` |
+| `.before`     | Matches every item where the date attribute is before the given date<br>**Format:** MM/DD/YYYY<br>**Example:** `01/01/2000` |     `is before`      |
+| `.after`      | Matches every item where the date attribute is after the given date<br>**Format:** MM/DD/YYYY<br>**Example:** `01/01/2000`  |      `is after`      |
 
 ### Date Attributes
 
@@ -251,33 +251,33 @@ No number search can take multiple values.
 
 | Number Modifier | Description                                                                                                                                             | Plex Web UI Display |
 |:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------:|
-| `.gt`           | Matches every item where the number attribute is greater then the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5`             |  `is greater than`  |
-| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5` |         N/A         |
-| `.lt`           | Matches every item where the number attribute is less then the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5`                |   `is less than`    |
-| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5`    |         N/A         |
+| `.gt`           | Matches every item where the number attribute is greater then the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5`             |  `is greater than`  |
+| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5` |         N/A         |
+| `.lt`           | Matches every item where the number attribute is less then the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5`                |   `is less than`    |
+| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5`    |         N/A         |
 
 ### Number Attributes
 
 | Number Search         | Description                                                                                 | Movie<br>Libraries | Show<br>Libraries | Music<br>Libraries |
 |:----------------------|:--------------------------------------------------------------------------------------------|:------------------:|:-----------------:|:------------------:|
-| `duration`            | Uses the duration attribute to match using minutes<hr>**Minimum:** `1`                      |      &#9989;       |     &#10060;      |      &#10060;      |
-| `plays`               | Uses the plays attribute to match<hr>**Minimum:** `1`                                       |      &#9989;       |      &#9989;      |      &#10060;      |
-| `episode_plays`       | Uses the Episode's plays attribute to match<hr>**Minimum:** `1`                             |      &#10060;      |      &#9989;      |      &#10060;      |
-| `critic_rating`       | Uses the critic rating attribute to match<hr>**Range:** `0.0` - `10.0`                      |      &#9989;       |      &#9989;      |      &#10060;      |
-| `audience_rating`     | Uses the audience rating attribute to match<hr>**Range:** `0.0` - `10.0`                    |      &#9989;       |      &#9989;      |      &#10060;      |
-| `user_rating`         | Uses the user rating attribute to match<hr>**Range:** `0.0` - `10.0`                        |      &#9989;       |      &#9989;      |      &#10060;      |
-| `episode_user_rating` | Uses the user rating attribute of the show's episodes to match<hr>**Range:** `0.0` - `10.0` |      &#10060;      |      &#9989;      |      &#10060;      |
-| `year`                | Uses the year attribute to match<hr>**Minimum:** `1`                                        |      &#9989;       |      &#9989;      |      &#10060;      |
-| `episode_year`        | Uses the Episode's year attribute to match<hr>**Minimum:** `1`                              |      &#10060;      |      &#9989;      |      &#10060;      |
-| `album_year`          | Uses the Album's year attribute to match<hr>**Minimum:** `1`                                |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_decade`        | Uses the Album's decade attribute to match<hr>**Minimum:** `1`                              |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_plays`         | Uses the Album's plays attribute to match<hr>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
-| `track_plays`         | Uses the Track's plays attribute to match<hr>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
-| `track_skips`         | Uses the Track's skips attribute to match<hr>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
-| `artist_user_rating`  | Uses the Artist's user rating attribute to match<hr>**Range:** `0.0` - `10.0`               |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_user_rating`   | Uses the Album's user rating attribute to match<hr>**Range:** `0.0` - `10.0`                |      &#10060;      |     &#10060;      |      &#9989;       |
-| `album_critic_rating` | Uses the Album's critic rating attribute to match<hr>**Range:** `0.0` - `10.0`              |      &#10060;      |     &#10060;      |      &#9989;       |
-| `track_user_rating`   | Uses the Track's user rating attribute to match<hr>**Range:** `0.0` - `10.0`                |      &#10060;      |     &#10060;      |      &#9989;       |
+| `duration`            | Uses the duration attribute to match using minutes<br>**Minimum:** `1`                      |      &#9989;       |     &#10060;      |      &#10060;      |
+| `plays`               | Uses the plays attribute to match<br>**Minimum:** `1`                                       |      &#9989;       |      &#9989;      |      &#10060;      |
+| `episode_plays`       | Uses the Episode's plays attribute to match<br>**Minimum:** `1`                             |      &#10060;      |      &#9989;      |      &#10060;      |
+| `critic_rating`       | Uses the critic rating attribute to match<br>**Range:** `0.0` - `10.0`                      |      &#9989;       |      &#9989;      |      &#10060;      |
+| `audience_rating`     | Uses the audience rating attribute to match<br>**Range:** `0.0` - `10.0`                    |      &#9989;       |      &#9989;      |      &#10060;      |
+| `user_rating`         | Uses the user rating attribute to match<br>**Range:** `0.0` - `10.0`                        |      &#9989;       |      &#9989;      |      &#10060;      |
+| `episode_user_rating` | Uses the user rating attribute of the show's episodes to match<br>**Range:** `0.0` - `10.0` |      &#10060;      |      &#9989;      |      &#10060;      |
+| `year`                | Uses the year attribute to match<br>**Minimum:** `1`                                        |      &#9989;       |      &#9989;      |      &#10060;      |
+| `episode_year`        | Uses the Episode's year attribute to match<br>**Minimum:** `1`                              |      &#10060;      |      &#9989;      |      &#10060;      |
+| `album_year`          | Uses the Album's year attribute to match<br>**Minimum:** `1`                                |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_decade`        | Uses the Album's decade attribute to match<br>**Minimum:** `1`                              |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_plays`         | Uses the Album's plays attribute to match<br>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `track_plays`         | Uses the Track's plays attribute to match<br>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `track_skips`         | Uses the Track's skips attribute to match<br>**Minimum:** `1`                               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `artist_user_rating`  | Uses the Artist's user rating attribute to match<br>**Range:** `0.0` - `10.0`               |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_user_rating`   | Uses the Album's user rating attribute to match<br>**Range:** `0.0` - `10.0`                |      &#10060;      |     &#10060;      |      &#9989;       |
+| `album_critic_rating` | Uses the Album's critic rating attribute to match<br>**Range:** `0.0` - `10.0`              |      &#10060;      |     &#10060;      |      &#9989;       |
+| `track_user_rating`   | Uses the Track's user rating attribute to match<br>**Range:** `0.0` - `10.0`                |      &#10060;      |     &#10060;      |      &#9989;       |
 
 ## Boolean Searches
 

@@ -96,13 +96,13 @@ The `first_episode_aired` and `last_episode_aired` filters will also filter out 
 
 ### Modifier
 
-| Date Modifier | Description                                                              |                   Format                    |
-|:--------------|:-------------------------------------------------------------------------|:-------------------------------------------:|
-| No Modifier   | Matches every item where the date attribute<br>is in the last X days     |   **Format:** number of days<br>e.g. `30`   |
-| `.not`        | Matches every item where the date attribute<br>is not in the last X days |   **Format:** number of days<br>e.g. `30`   |
-| `.before`     | Matches every item where the date attribute<br>is before the given date  | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
-| `.after`      | Matches every item where the date attribute<br>is after the given date   | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
-| `.regex`      | Matches every item where the attribute matches the regex given           |                     N/A                     |
+| Date Modifier | Description                                                           |                   Format                    |
+|:--------------|:----------------------------------------------------------------------|:-------------------------------------------:|
+| No Modifier   | Matches every item where the date attribute is in the last X days     |   **Format:** number of days<br>e.g. `30`   |
+| `.not`        | Matches every item where the date attribute is not in the last X days |   **Format:** number of days<br>e.g. `30`   |
+| `.before`     | Matches every item where the date attribute is before the given date  | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
+| `.after`      | Matches every item where the date attribute is after the given date   | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
+| `.regex`      | Matches every item where the attribute matches the regex given        |                     N/A                     |
 
 ### Attribute
 
