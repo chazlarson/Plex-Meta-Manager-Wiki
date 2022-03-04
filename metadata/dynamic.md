@@ -98,6 +98,41 @@ dynamic_collections:
       actor_depth: 5
       actor_minimum: 20
 ```
+
+## Country
+
+Create a collection for each country found in the library 
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Type</th>
+    <td><code>country</code></td>
+  </tr>
+</table>
+
+#### Example: 
+* Create a collection for the top 100 items for each country found in the library
+* Name the collection "Top [Genre] Movies or Top [Genre] Shows
+
+
+```yaml
+templates:
+  country_dynamic:
+    smart_filter: 
+      limit: 100
+      sort_by: critic_rating.desc
+      all: 
+        country: <<country>>
+    sort_title: +4_2_<<collection_name>>
+dynamic_collections:
+  Genres:         # this name does not matter
+    type: country
+    title_format: <<country>> Cinema
+    template: country_dynamic
+```
+
+
+
 # Special Attributes
 
 ## Overview
