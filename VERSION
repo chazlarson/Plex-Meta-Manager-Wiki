@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 1.15.1-develop31
 =======
 1.15.1-develop26
@@ -27,3 +28,6 @@
 =======
 1.15.1-develop32
 >>>>>>> 95fb475 ([32] Add Dynamic Collections WIP page and navigation, libraries.md formatting)
+=======
+1.15.1-develop33
+>>>>>>> 10b326b ([33] WIP Dynamic Collections page, moved within metadata folder.)

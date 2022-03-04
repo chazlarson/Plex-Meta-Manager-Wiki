@@ -1,6 +1,5 @@
 # Dynamic Collections
 
-## Overview
 
 Plex Meta Manager can automatically create dynamic collections based on different criteria, such as
 * Collections for the top `X` popular people on TMDB (Bruce Willis, Tom Hanks etc.)
@@ -17,7 +16,7 @@ dynamic_collections:
     type: decade
 ```
 
-## Attributes
+# Attributes
 
 The available attributes for dynamic collections are shown below. Example usage of each attribute can be found further down this page.
 
@@ -33,7 +32,72 @@ The available attributes for dynamic collections are shown below. Example usage 
 | [`style`](#style)              | Create a collection for each style found in the library|     &#10060;      |     &#10060;      |               &#9989;               |               &#10060;               |
 | [`tmdb_people`](#special-attributes) | Create a collection based on user criteria<br>* see Special Attributes section for further info|     &#9989;      |     &#9989;      |               &#10060;               |               &#9989;               |
 
+## Attribute Examples
 
+### Genre
+
+Create a collection for each genre found in the library 
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Type</th>
+    <td><code>actor</code></td>
+  </tr>
+</table>
+
+#### Example: 
+* Create a collection for the top 100 items for each genre found in the library (TV and Movies)
+* Exclude the "Talk Show" genre
+* Name the collection "Top [Genre] Movies or Top [Genre] Shows
+
+```yaml
+templates:
+  genre collection:
+    smart_filter: 
+      limit: 100
+      sort_by: critic_rating.desc
+      all: 
+        genre: <<genre>>
+    sort_title: <<collection_name>>
+dynamic_collections:
+  Genres:         # this name does not matter
+    type: genre
+    exclude:
+          - Talk Show
+    title_format: Top <<title>> <<library_type>>s
+    template: genre collection
+```
+
+### Actor
+
+Create a collection for each actor found in the library 
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Type</th>
+    <td><code>actor</code></td>
+  <tr>
+    <th>Data</th>
+    <td><code>`actor_depth`</code>: integer<br>
+    <code>`actor_minimum`</code>: integer</td>
+  </tr>
+</table>
+
+* `actor_depth` searches the top billed actor per movie they they are in (i.e. if they play a cameo role, this is unlikely to be counted)
+* `actor_minimum` is the minimum number of times the actor must appear within `actor_depth` for the collection to be created.
+
+#### Example:
+* Create a collection for actors who appear in the top 5 billing credits of movies
+* Only create the collection if they are in the top 5 billing credits of at least 20 movies
+
+```yaml
+dynamic_collections:
+  Actors:         # this name does not matter
+    type: actor
+    data:
+      actor_depth: 5
+      actor_minimum: 20
+```
 # Special Attributes
 
 ## Overview
