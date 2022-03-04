@@ -86,7 +86,6 @@ th {
 .dropdown-submenu.pull-left {
   float: none;
 }
-
 .dropdown-submenu.pull-left>.dropdown-menu {
   left: -100%;
   margin-left: 10px;
@@ -147,5 +146,8 @@ details summary::-webkit-details-marker {
   display:none;
 }
 strong {
-  color: #0ce3ac
+  color: #0ce3ac;
+}
+td br {
+    margin-bottom: 15px;
 }
