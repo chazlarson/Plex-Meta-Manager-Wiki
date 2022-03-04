@@ -149,5 +149,14 @@ strong {
   color: #0ce3ac;
 }
 td br {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+}
+td p {
+  margin-bottom: 0 !important;
+}
+p {
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
 }
