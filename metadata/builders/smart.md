@@ -28,12 +28,12 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Special Attributes
 
-| Attribute  | Description                                                                                                                                                                                                                                                |
-|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`     | The Type of items inside this collection/playlist.<hr>**Options:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks`<hr>**Default:** `movies` for Movies Libraries, `shows` for Show Libraries, and `artists` for Music Libraries |
-| `limit`    | The max number of item for the filter.<hr>**Options:** `all` or a number greater then 0                                                                                                                                                                    |
-| `sort_by`  | This will control how the filter is sorted in your library.<hr>**Options:** Any sort options for your filter type in the [Sorts Options Table](#sort-options)<hr>**Default:** `random`                                                                     |
-| `validate` | Determines if a collection/playlist will fail on a validation error<hr>**Options**: `true` or `false`<hr>**Default:** `true`                                                                                                                               |
+| Attribute  | Description                                                                                                                                                                                                                                                                                                                               |
+|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`     | The Type of items inside this collection/playlist.<hr>**Options:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks`<hr>**Default:**<table class="clearTable"><tr><td>`movies` for Movies Libraries</td></tr><tr><td>`shows` for Show Libraries</td></tr><tr><td>`artists` for Music Libraries</td></tr></table> |
+| `limit`    | The max number of item for the filter.<hr>**Options:** `all` or a number greater then 0<hr>**Default:** `all`                                                                                                                                                                                                                             |
+| `sort_by`  | This will control how the filter is sorted in your library.<hr>**Options:** Any sort options for your filter type in the [Sorts Options Table](#sort-options)<hr>**Default:** `random`                                                                                                                                                    |
+| `validate` | Determines if a collection/playlist will fail on a validation error<hr>**Options**: `true` or `false`<hr>**Default:** `true`                                                                                                                                                                                                              |
 
 ## Sort Options
 
@@ -67,7 +67,13 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Filters
 
-There are three fields per filter option when using Plex's Advance Filters in the Web UI. The first is the **Attribute** (what attribute you wish to filter), the second is the **Modifier** (which modifier to use), and the third is the **Term** (actual term to filter).
+There are three fields per filter option when using Plex's Advance Filters in the Web UI.
+
+1. **Attribute:** What attribute you wish to filter.
+2. **Modifier:** Which modifier to use.
+3. **Value:** Actual value to filter.
+
+**Example:** `Attribute.Modifier: Value`
 
 ## String Filters
 
@@ -155,12 +161,12 @@ No date filter can take multiple values.
 
 ### Date Modifiers
 
-| Date Modifier | Description                                                                                                         | Plex Web UI Display  |
-|:--------------|:--------------------------------------------------------------------------------------------------------------------|:--------------------:|
-| No Modifier   | Matches every item where the date attribute is in the last X days<hr>**Format:** number of days<br>e.g. `30`        |   `is in the last`   |
-| `.not`        | Matches every item where the date attribute is not in the last X days<hr>**Format:** number of days<br>e.g. `30`    | `is not in the last` |
-| `.before`     | Matches every item where the date attribute is before the given date<hr>**Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |     `is before`      |
-| `.after`      | Matches every item where the date attribute is after the given date<hr>**Format:** MM/DD/YYYY<br>e.g. `01/01/2000`  |      `is after`      |
+| Date Modifier | Description                                                                                                                 | Plex Web UI Display  |
+|:--------------|:----------------------------------------------------------------------------------------------------------------------------|:--------------------:|
+| No Modifier   | Matches every item where the date attribute is in the last X days<hr>**Format:** number of days<hr>**Example:** `30`        |   `is in the last`   |
+| `.not`        | Matches every item where the date attribute is not in the last X days<hr>**Format:** number of days<hr>**Example:** `30`    | `is not in the last` |
+| `.before`     | Matches every item where the date attribute is before the given date<hr>**Format:** MM/DD/YYYY<hr>**Example:** `01/01/2000` |     `is before`      |
+| `.after`      | Matches every item where the date attribute is after the given date<hr>**Format:** MM/DD/YYYY<hr>**Example:** `01/01/2000`  |      `is after`      |
 
 ### Date Attributes
 
@@ -190,12 +196,12 @@ No number filter can take multiple values.
 
 ### Number Modifiers
 
-| Number Modifier | Description                                                                                                                                     | Plex Web UI Display |
-|:----------------|:------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------:|
-| `.gt`           | Matches every item where the number attribute is greater then the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`            |  `is greater than`  |
-| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5` |         N/A         |
-| `.lt`           | Matches every item where the number attribute is less then the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`                |   `is less than`    |
-| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<hr>**Format:** number<br>e.g. `30`, `1995`, or `7.5`    |         N/A         |
+| Number Modifier | Description                                                                                                                                             | Plex Web UI Display |
+|:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------:|
+| `.gt`           | Matches every item where the number attribute is greater then the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5`             |  `is greater than`  |
+| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5` |         N/A         |
+| `.lt`           | Matches every item where the number attribute is less then the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5`                |   `is less than`    |
+| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<hr>**Format:** number<hr>**Example:** `30`, `1995`, or `7.5`    |         N/A         |
 
 ### Number Attributes
 

@@ -12,7 +12,7 @@ No configuration is required for these builders.
 | [`anilist_relations`](#anilist-relations)       | Finds the anime specified by the AniList ID and every relation in its relation tree except Character and Other relations |      &#9989;      |     &#9989;      |               &#10060;               |
 | [`anilist_studio`](#anilist-studio)             | Finds all anime specified by the AniList Studio ID                                                                       |      &#9989;      |     &#9989;      |               &#10060;               |
 | [`anilist_id`](#anilist-id)                     | Finds the anime specified by the AniList ID                                                                              |      &#9989;      |     &#9989;      |               &#10060;               |
-| [`anilist_search](#anilist-search)              | Finds the anime specified by the AniList search parameters provided                                                      |      &#9989;      |     &#9989;      |               &#9989;                |
+| [`anilist_search`](#anilist-search)             | Finds the anime specified by the AniList search parameters provided                                                      |      &#9989;      |     &#9989;      |               &#9989;                |
 
 ## AniList Top Rated Anime
 
