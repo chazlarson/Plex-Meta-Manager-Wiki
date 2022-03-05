@@ -1,14 +1,14 @@
-# Settings Definition & Attributes
+# Settings
 
 ## Overview
-The `settings:` definition and subsequent attributes can be used to command various aspects of the functions and actions that Plex Meta Manager performs. 
+The `settings:` attribute and subsequent settings can be used to command various aspects of the functionality of Plex Meta Manager. 
 
-Examples of these attributes include the ability to:
+Examples of these settings include the ability to:
 * Cache each Plex GUID and IDs to increase performance
 * Create asset folders for collections so that custom posters can be stored for upload.
 * Use a custom repository as the base for all `git` Metadata files. 
 
-The settings definition and attributes can be specified individually per library, or can be inhereted from the global value if it has been set. If an attribute is specified at both the library and global level, then the library level attribute will take priority.
+The settings attribute and attributes can be specified individually per library, or can be inherited from the global value if it has been set. If an attribute is specified at both the library and global level, then the library level attribute will take priority.
 
 There are some attributes which can be specified at the collection level using [Setting Details](../metadata/details/setting). Attributes set at the collection label will take priority over any library or global-level attribute.
 
@@ -176,7 +176,7 @@ Whilst searching for assets, download images set within Metadata/Playlist files(
 </table>
 
 ## Show Missing Season Assets
-Whilst searching for assets, when scanning for assets for a TV Show, if Season posters are found (i.e. `/ASSET_NAME/Season##.ext`, notify the user of any seasons which do not have an asset image.
+Whilst searching for assets, when scanning for assets for a TV Show, if Season posters are found (i.e. `/ASSET_NAME/Season##.ext`), notify the user of any seasons which do not have an asset image.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>

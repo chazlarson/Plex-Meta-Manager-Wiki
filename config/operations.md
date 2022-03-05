@@ -1,7 +1,7 @@
 ## Operations
 There are a variety of Library Operations that can be utilized in a library.
 
-Within each library definition, operations can be defined by using the `operations` definition, as demonstrated below.
+Within each library, operations can be defined by using the `operations` attribute, as demonstrated below.
 
 ```yaml
 libraries:
@@ -13,7 +13,7 @@ libraries:
       split_duplicates: true
 ```
 
-The available attributes for the operations definition are as follows
+The available attributes for the operations attribute are as follows
 
 | Attribute                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

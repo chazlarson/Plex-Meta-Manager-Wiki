@@ -7,7 +7,7 @@ You can define Playlist Files by using `playlist_files` mapper. They can either 
 
 ## Path Types
 
-In the below example, four `playlist_files`path types are defined:
+In the below example, four `playlist_files`attribute path types are defined:
 ```yaml
 playlist_files:
   - file: config/playlists.yml
