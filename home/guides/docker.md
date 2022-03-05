@@ -1,4 +1,4 @@
-# Docker Walk-hrough
+# Docker Walkthrough
 
 This article will walk you through getting Plex-Meta-Manager [PMM] set up and running via Docker.  It will cover:
 
@@ -19,7 +19,7 @@ something like this
 That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).
 
 IMPORTANT NOTE:
-This walk-through is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Docker container going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path walkthrough, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
+This walkthrough is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Docker container going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path walkthrough, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
 
 I am assuming you do not have any of these tools already installed.  When writing this up I started with a brand new Windows 10 install.
 
@@ -440,7 +440,7 @@ collections:
     letterboxd_list: https://letterboxd.com/brianformo/list/vultures-101-best-movie-endings/
 ```
 
-I chose a letterboxd list for the last one since trakt requires authentication and again, I didn’t want to complicate this walk-through.
+I chose a letterboxd list for the last one since trakt requires authentication and again, I didn’t want to complicate this walkthrough.
 
 This is going to create three collections.  One contains movies that feature Bill Murray.  One is up to 100 movies that came out in the 1980s sorted by popularity.  The last are movies that appear on a list of good endings according to Vulture.
 

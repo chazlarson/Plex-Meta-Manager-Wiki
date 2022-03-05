@@ -1,4 +1,4 @@
-# Configuration File Walk-through
+# Configuration File Walkthrough
 
 The below example outlines what a "standard" config.yml file might look like when in use.
 

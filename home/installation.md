@@ -1,16 +1,16 @@
 # Installing Plex Meta Manager
 
-## Install Walk-throughs
-The below installation overviews are aimed at users who have previous experience of installing services via command-line terminal commands. For those who need full installation walk-throughs, please refer to the following walkthrough guides:
-  * [Local Walk-through](https://metamanager.wiki/en/develop/home/guides/local.html)
-  * [Docker Walk-through](https://metamanager.wiki/en/develop/home/guides/docker.html)
-  * [unRAID Walk-through](https://metamanager.wiki/en/develop/home/guides/unraid.html)
-  * [Kubernetes Walk-through](https://metamanager.wiki/en/develop/home/guides/kubernetes.html)
+## Install Walkthroughs
+The below installation overviews are aimed at users who have previous experience of installing services via command-line terminal commands. For those who need full installation walkthroughs, please refer to the following walkthrough guides:
+  * [Local Walkthrough](https://metamanager.wiki/en/develop/home/guides/local.html)
+  * [Docker Walkthrough](https://metamanager.wiki/en/develop/home/guides/docker.html)
+  * [unRAID Walkthrough](https://metamanager.wiki/en/develop/home/guides/unraid.html)
+  * [Kubernetes Walkthrough](https://metamanager.wiki/en/develop/home/guides/kubernetes.html)
 ## Local Install Overview
 
 Plex Meta Manager is compatible with Python 3.7, 3.8 or 3.9 only. Later versions may function but are untested.
 
-The below are high-level steps which assume the user has knowledge of python and pip, and the general ability to troubleshoot issues. For a detailed step-by-step walk-through, refer to the [Local Walkthrough](https://metamanager.wiki/en/develop/home/guides/local.html#) guide.
+The below are high-level steps which assume the user has knowledge of python and pip, and the general ability to troubleshoot issues. For a detailed step-by-step walkthrough, refer to the [Local Walkthrough](https://metamanager.wiki/en/develop/home/guides/local.html#) guide.
 
 1. Clone or [download and unzip](https://github.com/meisnate12/Plex-Meta-Manager/archive/refs/heads/master.zip) the repo.
 

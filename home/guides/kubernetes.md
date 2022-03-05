@@ -1,4 +1,4 @@
-# Kubernetes Walk-through
+# Kubernetes Walkthrough
 
 This article will walk you through getting Plex-Meta-Manager [PMM] set up and running in Kubernetes.  It will cover:
 
