@@ -1,45 +1,28 @@
-# Playlist Files Attributes
+# Playlist Files 
+## Overview
 
-Since playlists are not specific to one library they will need their own special [Playlist File](../metadata/metadata) to work.
+As playlists are not tied to one specific library and can combine media from multiple libraries, they require their own special [Playlist File](../metadata/metadata) to work.
 
-You can define Playlist Files by using `playlist_files`. They can either be on the local system, online at an url, or directly from the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs) repository.
+You can define Playlist Files by using `playlist_files` mapper. They can either be on the local system, online at an url, or directly from the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs) repository.
 
-By default, when `playlist_files` is missing the script will look in your config directory for `playlists.yml`.
+## Path Types
 
-To use a local Playlist File add `file` under playlist_files set to the system path of the yaml file.
+In the below example, four `playlist_files`attribute path types are defined:
 ```yaml
 playlist_files:
-  file: /config/My Movies Playlists.yml
-```
-To use all yaml files in a particular folder add `folder` under playlist_files set to the system path of the folder containing the yaml files.
-```yaml
-playlist_files: 
-  folder: /config/Movie Playlists/
-```
-To use a Playlist File online add `url` under playlist_files set to the url of the yaml file.
-```yaml
-playlist_files:
-  url: http://somesite.com/playlist_file.yml
-```
-To use a Playlist File from the [Plex Meta Manager Configs](https://github.com/meisnate12/Plex-Meta-Manager-Configs) repository add `git` under playlist_files set to the path in the repository.
-```yaml
-playlist_files:
-  git: meisnate12/Playlists
-```
-To use a Playlist File from a `custom_repo` defined in the global Settings add `repo` under playlist_files set to the path in the repository.
-* This loads the yaml file at `https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/Collections/Movies/Movies.yml`
-```yaml
-settings:
-  custom_repo: https://raw.githubusercontent.com/zluckytraveler/Plex-Meta-Manager-Configs/master/zluckytraveler/
-playlist_files:
-  repo: Collections/Movies/Movies
-```
-You can specify multiple paths of any type using a list like below.
-```yaml
-playlist_files:
-  - file: /config/My Movies Playlists.yml
-  - file: /config/My Shows Playlists.yml
-  - url: http://somesite.com/playlist_file.yml
+  - file: config/playlists.yml
+  - folder: config/Playlists/
   - git: meisnate12/Playlists
+  - url: https://somewhere.com/Playlists.yml
 ```
+The four path types are outlined as follows:
+* `- file:` refers to a playlist file which is located within the system that PMM is being run from. 
+* `- folder:` refers to a directory containing playlist files which is located within the system that PMM is being run from. 
+* `- git:` refers to a playlist file which is hosted on the [GitHub Configs Repo](https://github.com/meisnate12/Plex-Meta-Manager-Configs) unless the user has specified a custom repository within the settings section of the config.yml file.
+* `- url:` refers to a playlist file which is hosted publicly on the internet.
 
+Within the above example, PMM will:
+* First, look within the root of the PMM directory (also known as `config/`) for a playlist file named `Playlists.yml`. If this file does not exist, PMM will skip the entry and move to the next one in the list.
+* Then, look within the root of the PMM directory (also known as `config/`) for a directory called `Playlists`, and then load any playlist files within that directory.
+* Then, look at the [meisnate12 folder](https://github.com/meisnate12/Plex-Meta-Manager-Configs/tree/master/meisnate12) within the GitHub Configs Repo for a file called `MovieCharts.yml` which it finds [here](https://github.com/meisnate12/Plex-Meta-Manager-Configs/blob/master/meisnate12/Playlists.yml).
+* Finally, load the playlist file located at `https://somewhere.com/Playlists.yml`

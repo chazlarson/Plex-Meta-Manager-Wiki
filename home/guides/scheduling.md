@@ -8,6 +8,10 @@ Instead, it is recommended to set an automated scheduling service so that Plex M
 
 ## Docker Run
 
+<details>
+  <summary>Click to Expand</summary>
+  <br />
+
 Using docker is the most simple and robust solution to automating Plex Meta Manager scheduling. When utilizing Plex Meta Manageer within docker, the session will resume after a system reboot (assuming Docker is set to start at system startup, which is the default) and will allow Plex Meta Manager to run in the background at all times.
 
 There's a [Docker Walkthrough](docker) with more detailed instructions on setting up Plex Meta Manager within docker. The simplest command to facilitate a docker run is:
@@ -22,8 +26,14 @@ docker run -d \
 This will run Plex Meta Manager in the background persistently until it is stopped by the user. Whilst the docker container will be persistently running, Plex Meta Manager will not begin the run until the scheduled time.
 
 Further customizations of the docker run command can be used to specify set times to run Plex Meta Manager, further information on this and other Run Commands can be found [here](https://metamanager.wiki/en/develop/home/environmental.html#time-to-run)
+</details>
 
 ## Windows
+
+<details>
+  <summary>Click to Expand</summary>
+  <br />
+
 ### Task Scheduler
 
 Windows Task Scheduler is advised for those who followed the Windows instructions in the [Local Walkthrough Guides](https://metamanager.wiki/en/develop/home/guides/local.html) and/or do not want to run Plex Meta Manager within docker.
@@ -38,8 +48,7 @@ These will be explained further down this page.
 
 These guides assumes the user has followed the Windows instructions in the [Local Walkthrough Guides](https://metamanager.wiki/en/develop/home/guides/local.html) which includes setting up the [virtual environment](https://metamanager.wiki/en/develop/home/guides/local.html#setting-up-a-virtual-environment). Please also ensure to edit any commands to be reflective of the live environment (such as usernames, installation directories).
 
-## Background Run Scheduled Task
-
+### Background Run Scheduled Task
 This method will start Plex Meta Manager at system startup and will keep the script running in the background indefinitely. The user can then define set days and times for the Configuration File to be processed, and Plex Meta Manager will handle processing as and when required. 
 
 This is the recommended approach as it allows the user additional control over how and when Plex Meta Manager processes.
@@ -48,62 +57,57 @@ This is the recommended approach as it allows the user additional control over h
   <summary>Backgound Run Scheduled Task</summary>
   <br />
 
-1. Create a script to run PMM.  You can do this in any text editor; I'm using notepad.
-
-   I'm assuming you installed PMM using the [Local Walkthrough](local) and so have the virtual environment described there set up.
+1. Create a `waiter.cmd` file by opening the text editor (i.e. Notepad, TextEdit) and pasting the following code:
 
    ```batch
-   cd C:\User\IEUser\Plex-Meta-Manager-1.15.1
+   cd C:\User\USERNAMEHERE\Plex-Meta-Manager
    .\pmm-venv\Scripts\python .\plex_meta_manager.py
    ```
+* This will navigate to the PMM directory, then runs PMM. At the scheduled time, PMM will action the Configuration File and will then wait until the next scheduled time.
 
-   Of course, that path should reflect your own environment.
+2. Open Task Scheduler by searching for it in the Start Menu or by opening the Run window (Windows + R) and typing taskschd.msc before hitting OK.
 
-   The script goes to the PMM directory, then runs the script in the default mode.  It will wait until 3AM, do its thing, and go back to waiting until 3AM the next day.
-
-   Save this file in the PMM directory as `waiter.cmd`.
-
-2. Open Task Scheduler
-
-   Type "task" into the search field of the start menu, and choose "Task Scheduler" [NOT "Task Manager"
+* ** Ensure that Task Scheduler is opened and not Task Manager **
 
    ![task-scheduler](task-scheduler/02-open-task-scheduler.png)
 
-3. Create a basic task
+3. Select "Create a basic task" on the right-hand column
 
-   Over on the right, click "Create Basic Task"
+   ![task-scheduler](task-scheduler/03-task-scheduler-main.png)
 
-   ![task-scheduler](task-scheduler/06-basic-task-01.png)
-
-4. Give it a name [and a description if you wish], click "Next".
+4. Give the task a name, in this example `Background PMM` and then select "Next"
 
    ![task-scheduler](task-scheduler/06-basic-task-02.png)
 
-5. Choose when you want it to run [here we're choosing "When the computer starts" since we want it to run whenever this machine is up].
+5. Choose the frequency that PMM should run and then select "Next", `When the computer starts` is recommended.
 
    ![task-scheduler](task-scheduler/06-basic-task-03.png)
 
-6. Choose the action to take, click "Next".
+6. Choose the action "Start a program" and select "Next".
 
    ![task-scheduler](task-scheduler/06-basic-task-04.png)
-7. Click "Browse" and find the thing you want to run.  Navigate to the PMM directory and choose `waiter.cmd`, which you created in step 1.  Click "Open".
+
+7. Click "Browse", Navigate to the PMM directory and choose `waiter.cmd`, which was created in Step 1, then select "Open".
 
    ![task-scheduler](task-scheduler/06-basic-task-05.png)
 
-   Copy the directory [everything up to but not including `waiter.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below.
+   Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
 
-8. Click "Finish".
+   ![task-scheduler](task-scheduler/04-basic-task-06.png)
 
-   ![task-scheduler](task-scheduler/06-basic-task-06.png)
+8. Check "Open the properties dialog" if desired (not required) then select "Finish".
 
-9.  You're done.
+   ![task-scheduler](task-scheduler/04-basic-task-07.png)
 
-If you wanted to run the script with at startup, but specify a different time from 3AM, your `waiter.cmd` could look like this:
+9. Click "Task Schedule Library" on the left. The PMM Run task should be visible.
 
-![task-scheduler](task-scheduler/07-waiter-cmd-times.png)
-</details><br />
+   ![task-scheduler](task-scheduler/04-basic-task-09.png)
 
-## Single Run Scheduled Task
+Plex Meta Manager will now launch at system startup, but will wait until the user-specified scheduled time before executing, and will then wait in the background for the next scheduled run.
+
+</details>
+
+### Single Run Scheduled Task
 This method will start Plex Meta Manager at the desired time, immediately begin running the Configuration File and will then kill the process once it has completed.
 
 <details>
@@ -134,7 +138,7 @@ This method will start Plex Meta Manager at the desired time, immediately begin 
 
    ![task-scheduler](task-scheduler/04-basic-task-01.png)
 
-5. Choose the frequency that you want the script to run and then select "Next", `Daily` is recommended.
+5. Choose the frequency that PMM should run and then select "Next", `Daily` is recommended.
 
    ![task-scheduler](task-scheduler/04-basic-task-02.png)
 
@@ -166,8 +170,14 @@ This method will start Plex Meta Manager at the desired time, immediately begin 
 Plex Meta Manager will now run at the set date/time you selected in Step 6, and will run each subsequent day at the same time.
 
 </details><br />
+</details>
 
-## Mac OS X
+## MacOS
+
+<details>
+  <summary>Click to Expand</summary>
+  <br />
+
 <br />
 <details>
   <summary>Launchd Service</summary>
@@ -270,16 +280,23 @@ Plex Meta Manager will now run at the set date/time you selected in Step 6, and 
 
 
 <details>
-  <summary>cron</summary>
+  <summary>cron Schedule</summary>
   <br />
 
 See the cron section below.
 </details><br />
 
+</details>
+
 ## Linux
+
+<details>
+  <summary>Click to Expand</summary>
+  <br />
+
 <br />
 <details>
-  <summary>cron</summary>
+  <summary>cron Schedule</summary>
   <br />
 
 1. Decide when you want to run Plex Meta Manager
@@ -310,7 +327,7 @@ See the cron section below.
 </details><br />
 
 <details>
-  <summary>Run PMM as a systemctl service</summary>
+  <summary>Systemctl Service</summary>
   <br />
 
 1. Create the service file:
@@ -363,4 +380,4 @@ See the cron section below.
    sudo systemctl status plex-meta-manager.service
    ```
 </details><br />
-
+</details>
