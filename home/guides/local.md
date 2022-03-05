@@ -1,4 +1,4 @@
-# Local Walkthrough
+# Local Walk-through
 
 This article will walk you through getting Plex-Meta-Manager [PMM] set up and running.  It will cover:
 
@@ -18,7 +18,7 @@ something like this
 That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).  In some cases it's displaying *output* from a command you've typed, but the difference should be apparent in context.
 
 IMPORTANT NOTE:
-This walkthrough is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Python script going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path walkthrough, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
+This walk-through is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Python script going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path walkthrough, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
 
 I am assuming you do not have any of these tools already installed.  When writing this up I started with a brand new Windows 10 install.
 
@@ -113,7 +113,7 @@ You need to use Python 3.9, not Python 3.10.  There's one specific requirement t
 
   ![Git Install](git-install.png)
 
-  This install comes with its own command line interface.  Do not use this interface in this walkthrough.  Continue to do everything here in Powershell.
+  This install comes with its own command line interface.  Do not use this interface in this walk-through.  Continue to do everything here in Powershell.
 
 </details>
 
@@ -158,11 +158,11 @@ Now move into that directory:
 cd ~/Plex-Meta-Manager
 ```
 
-**NOTE: The rest of this walkthrough assumes you are staying in this directory.**
+**NOTE: The rest of this walk-through assumes you are staying in this directory.**
 
 ### Setting up a virtual environment
 
-This walkthrough is going to use a "virtual environment", since that provides a simple way to keep the requirements for a given thing self-contained; think of it as a "sandbox" for this script.  It also provides a clean way to recover from mistakes, and keeps the host system clean.
+This walk-through is going to use a "virtual environment", since that provides a simple way to keep the requirements for a given thing self-contained; think of it as a "sandbox" for this script.  It also provides a clean way to recover from mistakes, and keeps the host system clean.
 
 <details>
   <summary>OS X/Linux</summary>
@@ -556,7 +556,7 @@ collections:
     letterboxd_list: https://letterboxd.com/brianformo/list/vultures-101-best-movie-endings/
 ```
 
-I chose a letterboxd list for the last one since trakt requires authentication and again, I didn’t want to complicate this walkthrough.
+I chose a letterboxd list for the last one since trakt requires authentication and again, I didn’t want to complicate this walk-through.
 
 This is going to create three collections.  One contains movies that feature Bill Murray.  One is up to 100 movies that came out in the 1980s sorted by popularity.  The last are movies that appear on a list of good endings according to Vulture.
 

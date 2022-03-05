@@ -1,6 +1,6 @@
 # Scheduling Guide
 
-Plex Meta Manager is designed to be a background running service that "wakes up" and "sleeps" when it is scheduled to do so. By default and unless configured using the [Time to Run Command](https://metamanager.wiki/en/develop/home/environmental.html#time-to-run), Plex Meta Manager expects to run every day at 3AM local time.
+Plex Meta Manager is designed to be a background running service that "wakes up" and "sleeps" when it is scheduled to do so. By default, and unless configured using the [Time to Run Command](https://metamanager.wiki/en/develop/home/environmental.html#time-to-run), Plex Meta Manager expects to run every day at 3AM local time.
 
 Whilst it is possible to have `python plex-meta-manager.py` running in an open window constantly, this is not the recommended approach as it relies on an always-open command window that can be obtrusive to the user.
 
@@ -12,9 +12,9 @@ Instead, it is recommended to set an automated scheduling service so that Plex M
   <summary>Click to Expand</summary>
   <br />
 
-Using docker is the most simple and robust solution to automating Plex Meta Manager scheduling. When utilizing Plex Meta Manageer within docker, the session will resume after a system reboot (assuming Docker is set to start at system startup, which is the default) and will allow Plex Meta Manager to run in the background at all times.
+Using docker is the most simple and robust solution to automating Plex Meta Manager scheduling. When utilizing Plex Meta Manager within docker, the session will resume after a system reboot (assuming Docker is set to start at system startup, which is the default) and will allow Plex Meta Manager to run in the background at all times.
 
-There's a [Docker Walkthrough](docker) with more detailed instructions on setting up Plex Meta Manager within docker. The simplest command to facilitate a docker run is:
+There's a [Docker Walk-through](docker) with more detailed instructions on setting up Plex Meta Manager within docker. The simplest command to facilitate a docker run is:
 
 ```
 docker run -d \
@@ -36,7 +36,7 @@ Further customizations of the docker run command can be used to specify set time
 
 ### Task Scheduler
 
-Windows Task Scheduler is advised for those who followed the Windows instructions in the [Local Walkthrough Guides](https://metamanager.wiki/en/develop/home/guides/local.html) and/or do not want to run Plex Meta Manager within docker.
+Windows Task Scheduler is advised for those who followed the Windows instructions in the [Local Walk-through Guides](https://metamanager.wiki/en/develop/home/guides/local.html) and/or do not want to run Plex Meta Manager within docker.
 
 Windows Task Scheduler allows the user to run commands and services at scheduled times and intervals.
 
@@ -46,7 +46,7 @@ There are two methods of running Plex Meta Manager:
 
 These will be explained further down this page.
 
-These guides assumes the user has followed the Windows instructions in the [Local Walkthrough Guides](https://metamanager.wiki/en/develop/home/guides/local.html) which includes setting up the [virtual environment](https://metamanager.wiki/en/develop/home/guides/local.html#setting-up-a-virtual-environment). Please also ensure to edit any commands to be reflective of the live environment (such as usernames, installation directories).
+These guides assume the user has followed the Windows instructions in the [Local Walk-through Guides](https://metamanager.wiki/en/develop/home/guides/local.html) which includes setting up the [virtual environment](https://metamanager.wiki/en/develop/home/guides/local.html#setting-up-a-virtual-environment). Please also ensure to edit any commands to be reflective of the live environment (such as usernames, installation directories).
 
 ### Background Run Scheduled Task
 This method will start Plex Meta Manager at system startup and will keep the script running in the background indefinitely. The user can then define set days and times for the Configuration File to be processed, and Plex Meta Manager will handle processing as and when required. 
@@ -54,7 +54,7 @@ This method will start Plex Meta Manager at system startup and will keep the scr
 This is the recommended approach as it allows the user additional control over how and when Plex Meta Manager processes.
 
 <details>
-  <summary>Backgound Run Scheduled Task</summary>
+  <summary>Background Run Scheduled Task</summary>
   <br />
 
 1. Create a `waiter.cmd` file by opening the text editor (i.e. Notepad, TextEdit) and pasting the following code:
@@ -91,7 +91,7 @@ This is the recommended approach as it allows the user additional control over h
 
    ![task-scheduler](task-scheduler/06-basic-task-05.png)
 
-   Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
+   Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field], and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
 
    ![task-scheduler](task-scheduler/04-basic-task-06.png)
 
@@ -154,7 +154,7 @@ This method will start Plex Meta Manager at the desired time, immediately begin 
 
    ![task-scheduler](task-scheduler/04-basic-task-05.png)
 
-9. Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
+9. Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field], and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
 
    ![task-scheduler](task-scheduler/04-basic-task-06.png)
 
@@ -313,7 +313,7 @@ See the cron section below.
    /path/to/plex-meta-manager/pmm-venv/bin/python /path/to/plex-meta-manager/plex_meta_manager.py --config /path/to/plex-meta-manager/config/config.yml --run
    ```
 
-   NOTE: This is assuming you created the `pmm-venv` virtual environment as described in the [Local Walkthrough](local)
+   NOTE: This is assuming you created the `pmm-venv` virtual environment as described in the [Local Walk-through](local)
 
 2. Open the system crontab for editing:
 
@@ -363,7 +363,7 @@ See the cron section below.
 
    Change `/path/to/plex-meta-manager` to reflect where you've installed Plex Meta Manager.
 
-   NOTE: This is assuming you created the `pmm-venv` virtual environment as described in the [Local Walkthrough](local)
+   NOTE: This is assuming you created the `pmm-venv` virtual environment as described in the [Local Walk-through](local)
 
    Save and close the file.
 

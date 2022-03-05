@@ -40,4 +40,4 @@ To authenticate Trakt the first time, you need run the container with the `-it` 
 
 <h4>OAuth Flow using unRAID Docker</h4>
 
-Directions on how to authenticate Trakt on unRAID can be found on the [unRAID Walkthrough](../home/guides/unraid.md#advanced-installation-authenticating-trakt-or-myanimelist) page.
+Directions on how to authenticate Trakt on unRAID can be found on the [unRAID Walk-through](../home/guides/unraid.md#advanced-installation-authenticating-trakt-or-myanimelist) page.

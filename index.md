@@ -14,8 +14,8 @@ Plex Meta Manager is an open source Python 3 project that has been designed to e
 
 ## Getting Started
 
-1. Install Plex Meta Manager either by following the [Local Walkthrough](home/guides/local)
-   or by installing Docker and following the [Docker Walkthrough](home/guides/docker) or the [unRAID Walkthrough](home/guides/unraid).
+1. Install Plex Meta Manager either by following the [Local Walk-through](home/guides/local)
+   or by installing Docker and following the [Docker Walk-through](home/guides/docker) or the [unRAID Walkthrough](home/guides/unraid).
 
 2. Once installed, you have to create a [Configuration File](config/configuration) filled with all your values to connect to the various services.
 
@@ -67,7 +67,7 @@ If you are unable to use the [Plex Meta Manager Discord Server](https://discord.
 * Pull Requests are greatly encouraged, please submit all Pull Requests to the nightly branch.
 * If you wish to contribute to the Wiki please fork and send a pull request on the [Plex Meta Manager Wiki Repository](https://github.com/meisnate12/Plex-Meta-Manager-Wiki).
 
-## IBRACORP Video Walkthrough
+## IBRACORP Video Walk-through
 
 [IBRACORP](https://ibracorp.io/) made a video walkthough for installing Plex Meta Manager on unRAID. While you might not be using unRAID the video goes over many key accepts of Plex Meta Manager and can be a great place to start learning how to use the script.
 
