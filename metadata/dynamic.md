@@ -267,5 +267,5 @@ dynamic_collections:
     type: trakt_people_lists
     data:
      - https://trakt.tv/users/movistapp/lists/star-wars
-     - https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline?display=show
+     - https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline
 ```
