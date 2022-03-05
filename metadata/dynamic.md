@@ -4,7 +4,7 @@
 Plex Meta Manager can automatically create dynamic collections based on different criteria, such as
 * Collections for the top `X` popular people on TMDB (Bruce Willis, Tom Hanks etc.)
 * Collections for each decade represented in the library (Best of 1990s, Best of 2000s etc.)
-* Collections for each of the moods/styles within a Music library (Accapella, Pop Rock etc.)
+* Collections for each of the moods/styles within a Music library (A Cappella, Pop Rock etc.)
 
 The main purpose of dynamic collections is to automate the creation of collections which would otherwise require considerable user input and repetition (such as creating a collection for every genre).
 
@@ -20,17 +20,16 @@ dynamic_collections:
 
 The available attributes for dynamic collections are shown below. Example usage of each attribute can be found further down this page.
 
-| Attribute                                       | Description                                                                                                              | Works with Movies | Works with Shows | Works with Music | Playlists and Custom Sort |
-|:------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:----------------:|:------------------------------------:|
-| [`genre`](#genre) | Create a collection for each genre found in the library   |      &#9989;      |     &#9989;      |               &#10060;               |               &#9989;                |
-| [`actor`](#actor)     | Create a collection for each actor found in the library   |      &#9989;      |     &#9989;      |               &#10060;               |               &#9989;                |
-| [`year`](#ayear)   | Create a collection for each year found in the library |      &#9989;      |     &#9989;      |               &#10060;               |               &#9989;                |
-| [`decade`](#decade)       | Create a collection for each decade found in the library |      &#9989;      |     &#10060;        |               &#10060;               |               &#10060;               |
-| [`country`](#country) | Create a collection for each country found in the library |      &#9989;      |     &#9989;      |               &#10060;               |               &#9989;                |
-| [`network`](#network)     | Create a collection for each network found in the library  |      &#10060;      |     &#9989;      |               &#10060;               |               &#9989;                |
-| [`mood`](#mood)              | Create a collection for each mood found in the library |      &#10060;      |     &#10060;      |               &#9989;               |               &#10060;                |
-| [`style`](#style)              | Create a collection for each style found in the library|     &#10060;      |     &#10060;      |               &#9989;               |               &#10060;               |
-| [`tmdb_people`](#special-attributes) | Create a collection based on user criteria<br>* see Special Attributes section for further info|     &#9989;      |     &#9989;      |               &#10060;               |               &#9989;               |
+| Attribute                            | Description                                                                                     | Works with Movies | Works with Shows | Works with Music | Playlists and Custom Sort |
+|:-------------------------------------|:------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:----------------:|:-------------------------:|
+| [`genre`](#genre)                    | Create a collection for each genre found in the library                                         |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
+| [`actor`](#actor)                    | Create a collection for each actor found in the library                                         |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
+| [`year`](#year)                      | Create a collection for each year found in the library                                          |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
+| [`decade`](#decade)                  | Create a collection for each decade found in the library                                        |      &#9989;      |     &#10060;     |     &#10060;     |         &#10060;          |
+| [`country`](#country)                | Create a collection for each country found in the library                                       |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
+| [`network`](#network)                | Create a collection for each network found in the library                                       |     &#10060;      |     &#9989;      |     &#10060;     |          &#9989;          |
+| [`mood`](#mood)                      | Create a collection for each mood found in the library                                          |     &#10060;      |     &#10060;     |     &#9989;      |         &#10060;          |
+| [`style`](#style)                    | Create a collection for each style found in the library                                         |     &#10060;      |     &#10060;     |     &#9989;      |         &#10060;          |
 
 ## Attribute Examples
 
@@ -83,7 +82,7 @@ Create a collection for each actor found in the library
   </tr>
 </table>
 
-* `actor_depth` searches the top billed actor per movie they they are in (i.e. if they play a cameo role, this is unlikely to be counted)
+* `actor_depth` searches the top billed actor per movie they are in (i.e. if they play a cameo role, this is unlikely to be counted)
 * `actor_minimum` is the minimum number of times the actor must appear within `actor_depth` for the collection to be created.
 
 #### Example:
@@ -136,12 +135,13 @@ dynamic_collections:
 # Special Attributes
 
 ## Overview
-The `tmdb_people` attribute is a special attribute which requires the user to specify the `type` and `data` of the attribute, allowing for personalization of the dynamic collections that are created.
+Some attributes require the user to specify the `type` and `data` of the attribute, allowing for personalization of the dynamic collections that are created.
+For these, the name of the collection within the Metadata file is a placeholder and will be replaced with the title used within the template of the attribute being used.
 
 The below example will create dynamic collections for the 10 most popular actors
 ```yaml
 dynamic_collections:
-  tmdb_people:
+  TMDB Popular People:          # This name is a placeholder
     type: tmdb_popular_people
     data: 10
 ```
@@ -149,7 +149,7 @@ dynamic_collections:
 This example will create dynamic collections based on the lists that the user defines
 ```yaml
 dynamic_collections:
-  tmdb_people:
+  Trakt User Lists:          # This name is a placeholder
     type: trakt_user_lists
     data:
      - URL1
@@ -176,7 +176,7 @@ Create collections based on the most popular people according to TMDB
 ##### Example: Create collection for the top 10 popular people
 ```yaml
 dynamic_collections:
-  tmdb_people:
+  TMDB Popular People:          # This name is a placeholder
     type: tmdb_popular_people
     data: 10
 ```
@@ -196,7 +196,7 @@ Create collections based on the list of TMDB Collections specified.
 ##### Example: Create collections for Star Wars, The Hunger Games and Lord of the Rings
 ```yaml
 dynamic_collections:
-  tmdb_people:
+  TMDB Collections:          # This name is a placeholder
     type: tmdb_collections
     data: 10, 131635, 119
 ```
@@ -218,7 +218,7 @@ Create collections for each of the Trakt lists that the user has liked/
 ##### Example: Create collections for each of the lists that the user has liked within Trakt
 ```yaml
 dynamic_collections:
-  tmdb_people:
+  Trakt Liked Lists:          # This name is a placeholder
     type: trakt_liked_lists
 ```
 
@@ -239,7 +239,7 @@ Create collections for each of the Trakt list that the user specifies
 ##### Example: Create collections for each of the lists that the user has liked within Trakt
 ```yaml
 dynamic_collections:
-  tmdb_people:
+  Trakt User Lists:          # This name is a placeholder
     type: trakt_user_lists
     data:
      - https://trakt.tv/users/giladg/lists/latest-releases      
@@ -263,8 +263,8 @@ Create collections for each of the people found within Trakt lists that the user
 ##### Example: Create a collection for each of the people within the Star Wars Canon franchise
 ```yaml
 dynamic_collections:
-  tmdb_people:
-    type: trakt_user_lists
+  Trakt User Lists:
+    type: trakt_people_lists
     data:
      - https://trakt.tv/users/movistapp/lists/star-wars
      - https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline?display=show
