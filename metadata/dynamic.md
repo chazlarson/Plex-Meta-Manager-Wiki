@@ -1,37 +1,105 @@
 # Dynamic Collections
 
-
-Plex Meta Manager can automatically create dynamic collections based on different criteria, such as
-* Collections for the top `X` popular people on TMDB (Bruce Willis, Tom Hanks etc.)
-* Collections for each decade represented in the library (Best of 1990s, Best of 2000s etc.)
-* Collections for each of the moods/styles within a Music library (A Cappella, Pop Rock etc.)
+Plex Meta Manager can dynamically create collections based on different criteria, such as
+* Collections based on the Collections from TMDb for every item in your library. ([Star Wars](https://www.themoviedb.org/collection/10-star-wars-collection), [The Lord of the Rings](https://www.themoviedb.org/collection/119), etc...)
+* Collections based on each of a Users Trakt Lists
+* Collections for the top `X` popular people on TMDb (Bruce Willis, Tom Hanks, etc...)
+* Collections for each decade represented in the library (Best of 1990s, Best of 2000s, etc...)
+* Collections for each of the moods/styles within a Music library (A Cappella, Pop Rock, etc...)
 
 The main purpose of dynamic collections is to automate the creation of collections which would otherwise require considerable user input and repetition (such as creating a collection for every genre).
 
-Below is an example dynamic collection which will create a collection for each of the decades represented within the library:
+Each dynamic collection like collections must have a mapping name, which is also attached to the collection as a label to mark the collections created by this dynamic collection. 
+
+Below is an example dynamic collection which will create a collection for every TMDb Collection associated with items in the library.
 
 ```yaml
 dynamic_collections:
-  Decades:
-    type: decade
+  TMDB Collections:          # This name is the mapping name
+    type: tmdb_collections
+    remove_suffix: "Collection"
 ```
 
-# Attributes
+## Attributes
 
-The available attributes for dynamic collections are shown below. Example usage of each attribute can be found further down this page.
+| Attribute                                   | Description                                                                                                   |     Required      |
+|:--------------------------------------------|:--------------------------------------------------------------------------------------------------------------|:-----------------:|
+| [`type`](#type)                             | Type of Dynamic Collection to be created.                                                                     |      &#9989;      |
+| [`data`](#data)                             | Data to determine how certain `type`s of dynamic collections are created.                                     | Depends on `type` | 
+| [`exclude`](#exclude)                       | Exclude this list of keys from being created into collections.                                                |     &#10060;      |
+| [`addons`](#addons)                         | Defines how multiple keys can be combined under a parent key.                                                 |     &#10060;      |
+| [`remove_suffix`](#remove-suffix)           | Removes suffixes from the key before it's used in the collection title.                                       |     &#10060;      |
+| [`remove_prefix`](#remove-prefix)           | Removes prefixes from the key before it's used in the collection title.                                       |     &#10060;      |
+| [`template`](#template)                     | Name of the template to use for these dynamic collections.                                                    |     &#10060;      |
+| [`template_variables`](#template-variables) | Defines how template variables can be defined by key.                                                         |     &#10060;      |
+| [`title_format`](#title-format)             | This is the format for the collection titles.                                                                 |     &#10060;      |
+| [`titles`](#titles)                         | Defines how collection titles can be specifically defined by key.                                             |     &#10060;      |
+| [`keys`](#keys)                             | Defines how keys can be overridden before being turned into collection titles.                                |     &#10060;      |
+| [`test`](#test)                             | Can set all dynamic collections to having `test: true` for test runs.                                         |     &#10060;      |
+| [`sync`](#sync)                             | Will remove dynamic collections that are no longer in the creation list.                                      |     &#10060;      |
+| [`include`](#include)                       | Define a list of keys you want made into collections.                                                         |     &#10060;      |
+| [`other_name`](#other-name)                 | Used with `include` when defined all keys not in `include` or `addons` will be combined into this collection. |     &#10060;      |
 
-| Attribute                            | Description                                                                                     | Works with Movies | Works with Shows | Works with Music | Playlists and Custom Sort |
-|:-------------------------------------|:------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:----------------:|:-------------------------:|
-| [`genre`](#genre)                    | Create a collection for each genre found in the library                                         |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`actor`](#actor)                    | Create a collection for each actor found in the library                                         |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`year`](#year)                      | Create a collection for each year found in the library                                          |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`decade`](#decade)                  | Create a collection for each decade found in the library                                        |      &#9989;      |     &#10060;     |     &#10060;     |         &#10060;          |
-| [`country`](#country)                | Create a collection for each country found in the library                                       |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`network`](#network)                | Create a collection for each network found in the library                                       |     &#10060;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`mood`](#mood)                      | Create a collection for each mood found in the library                                          |     &#10060;      |     &#10060;     |     &#9989;      |         &#10060;          |
-| [`style`](#style)                    | Create a collection for each style found in the library                                         |     &#10060;      |     &#10060;     |     &#9989;      |         &#10060;          |
+## Type
 
-## Attribute Examples
+The available `type` options for dynamic collections are shown below. Example usage of each option can be found further down this page.
+
+| Type Option                                   | Description                                                                                                 | Requires<br>`data` |  Movies  |  Shows   |  Music   |  Video   |
+|:----------------------------------------------|:------------------------------------------------------------------------------------------------------------|:------------------:|:--------:|:--------:|:--------:|:--------:|
+| [`tmdb_collection`](#tmdb-collection)         | Create a collection for each TMDb Collection associated with an item in the library                         |      &#10060;      | &#9989;  | &#10060; | &#10060; | &#10060; |
+| [`tmdb_popular_people`](#tmdb-popular-people) | Create a collection for each actor found on [TMDb's Popular People List](https://www.themoviedb.org/person) |      &#9989;       | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`trakt_user_lists`](#trakt-user-lists)       | Create a collection for each list from specific trakt users                                                 |      &#9989;       | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`trakt_liked_lists`](#trakt-liked-lists)     | Create a collection for each list the authenticated trakt user likes                                        |      &#10060;      | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`trakt_people_list`](#trakt-people-list)     | Create a collection for each actor found in the trakt list                                                  |      &#9989;       | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`genre`](#genre)                             | Create a collection for each genre found in the library                                                     |      &#10060;      | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| [`actor`](#actor)                             | Create a collection for each actor found in the library                                                     |      &#9989;       | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`year`](#year)                               | Create a collection for each year found in the library                                                      |      &#10060;      | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`decade`](#decade)                           | Create a collection for each decade found in the library                                                    |      &#10060;      | &#9989;  | &#10060; | &#10060; | &#10060; |
+| [`country`](#country)                         | Create a collection for each country found in the library                                                   |      &#10060;      | &#9989;  | &#10060; | &#9989;  | &#9989;  |
+| [`network`](#network)                         | Create a collection for each network found in the library                                                   |      &#10060;      | &#10060; | &#9989;  | &#10060; | &#10060; |
+| [`mood`](#mood)                               | Create a collection for each mood found in the library                                                      |      &#10060;      | &#10060; | &#10060; | &#9989;  | &#10060; |
+| [`style`](#style)                             | Create a collection for each style found in the library                                                     |      &#10060;      | &#10060; | &#10060; | &#9989;  | &#10060; |
+
+### TMDb Collection
+
+Create collections based on the TMDb Collections associated with items in the library.
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th>Type</th>
+    <td><code>tmdb_collection</code></td>
+  </tr>
+  <tr>
+    <th>Data</th>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  tmdb_collection_details: <<tmdb_collection>>
+```
+
+</td>
+  </tr>
+</table>
+
+##### Example:
+```yaml
+dynamic_collections:
+  TMDB Collections:          # This name is the mapping name
+    type: tmdb_collections
+    remove_suffix: "Collection"
+```
+
+
+
+
+
+
+
 
 ### Genre
 
