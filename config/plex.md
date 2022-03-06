@@ -15,14 +15,14 @@ plex:
   optimize: false
 ```
 
-| Name                 | Attribute       | Allowed Values                                                         | Default | Required |
-|:---------------------|:----------------|:-----------------------------------------------------------------------|:-------:|:--------:|
-| Server URL           | `url`           | Plex Server URL<br><strong>Example:</strong> http://192.168.1.12:32400 |   N/A   | &#9989;  |
-| Authentication Token | `token`         | Plex Server Authentication Token                                       |   N/A   | &#9989;  |
-| Plex Timeout         | `timeout`       | Plex Server Timeout                                                    |   60    | &#10060; |
-| Clean Bundles        | `clean_bundles` | Runs Clean Bundles on the Server after all Metadata Files are run      |  false  | &#10060; |
-| Empty Trash          | `empty_trash`   | Runs Empty Trash on the Server after all Metadata Files are run        |  false  | &#10060; |
-| Optimize             | `optimize`      | Runs Optimize on the Server after all Metadata Files are run           |  false  | &#10060; |
+| Attribute       | Allowed Values                                                         | Default | Required |
+|:----------------|:-----------------------------------------------------------------------|:-------:|:--------:|
+| `url`           | Plex Server URL<br><strong>Example:</strong> http://192.168.1.12:32400 |   N/A   | &#9989;  |
+| `token`         | Plex Server Authentication Token                                       |   N/A   | &#9989;  |
+| `timeout`       | Plex Server Timeout                                                    |   60    | &#10060; |
+| `clean_bundles` | Runs Clean Bundles on the Server after all Metadata Files are run      |  false  | &#10060; |
+| `empty_trash`   | Runs Empty Trash on the Server after all Metadata Files are run        |  false  | &#10060; |
+| `optimize`      | Runs Optimize on the Server after all Metadata Files are run           |  false  | &#10060; |
 
 * This script can be run on a remote Plex server, but be sure that the `url` provided is publicly addressable and it's recommended to use `HTTPS`.
 

@@ -203,7 +203,7 @@ dynamic_collections:
 
 ### Trakt Liked Lists
 Create collections for each of the Trakt lists that the user has liked/
-* Requires [Trakt Authentication](https://metamanager.wiki/en/develop/config/trakt.html) to be configured within the Configuration File
+* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
@@ -224,7 +224,7 @@ dynamic_collections:
 
 ### Trakt User Lists
 Create collections for each of the Trakt list that the user specifies
-* Requires [Trakt Authentication](https://metamanager.wiki/en/develop/config/trakt.html) to be configured within the Configuration File
+* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
@@ -248,7 +248,7 @@ dynamic_collections:
 ```
 ### Trakt People Lists
 Create collections for each of the people found within Trakt lists that the user specifies
-* Requires [Trakt Authentication](https://metamanager.wiki/en/develop/config/trakt.html) to be configured within the Configuration File
+* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>

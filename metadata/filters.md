@@ -72,10 +72,12 @@ The `original_language` and `tmdb_genre` filters will also filter out movies/sho
 | `producer`          | Uses the actor tags to match                                                                                                                          | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
 | `year`              | Uses the year tag to match                                                                                                                            | &#9989;  | &#9989;  | &#9989;  | &#9989;  | &#10060; | &#9989;  | &#9989;  |
 | `writer`            | Uses the writer tags to match                                                                                                                         | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
-| `original_language` | Uses TMDb original language [ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) to match<br>Example: `original_language: en, ko` | &#9989;  | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
 | `resolution`        | Uses the resolution tag to match                                                                                                                      | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
 | `audio_language`    | Uses the audio language tags to match                                                                                                                 | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
 | `subtitle_language` | Uses the subtitle language tags to match                                                                                                              | &#9989;  | &#10060; | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; |
+| `original_language` | Uses TMDb original language [ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) to match<br>Example: `original_language: en, ko` | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
+| `tmdb_status`       | Uses TMDb Status to match<br>**Values:** `returning`, `planned`, `production`, `ended`, `canceled`, `pilot`                                           | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
+| `tmdb_type`         | Uses TMDb Type to match<br>**Values:** `documentary`, `news`, `production`, `miniseries`, `reality`, `scripted`, `talk_show`, `video`                 | &#10060; | &#9989;  | &#10060; | &#10060; | &#10060; | &#10060; | &#10060; |
 
 ## Boolean Filters
 Boolean Filters have no modifiers.
@@ -96,13 +98,13 @@ The `first_episode_aired` and `last_episode_aired` filters will also filter out 
 
 ### Modifier
 
-| Date Modifier | Description                                                           |                   Format                    |
-|:--------------|:----------------------------------------------------------------------|:-------------------------------------------:|
-| No Modifier   | Matches every item where the date attribute is in the last X days     |   **Format:** number of days<br>e.g. `30`   |
-| `.not`        | Matches every item where the date attribute is not in the last X days |   **Format:** number of days<br>e.g. `30`   |
-| `.before`     | Matches every item where the date attribute is before the given date  | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
-| `.after`      | Matches every item where the date attribute is after the given date   | **Format:** MM/DD/YYYY<br>e.g. `01/01/2000` |
-| `.regex`      | Matches every item where the attribute matches the regex given        |                     N/A                     |
+| Date Modifier | Description                                                           |                                   Format                                   |
+|:--------------|:----------------------------------------------------------------------|:--------------------------------------------------------------------------:|
+| No Modifier   | Matches every item where the date attribute is in the last X days     |                  **Format:** number of days<br>e.g. `30`                   |
+| `.not`        | Matches every item where the date attribute is not in the last X days |                  **Format:** number of days<br>e.g. `30`                   |
+| `.before`     | Matches every item where the date attribute is before the given date  | **Format:** MM/DD/YYYY or `today` for the current day<br>e.g. `01/01/2000` |
+| `.after`      | Matches every item where the date attribute is after the given date   | **Format:** MM/DD/YYYY or `today` for the current day<br>e.g. `01/01/2000` |
+| `.regex`      | Matches every item where the attribute matches the regex given        |                              N/A                                           |
 
 ### Attribute
 

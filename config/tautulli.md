@@ -12,9 +12,9 @@ tautulli:
   apikey: ################################
 ```
 
-| Name         | Attribute | Allowed Values                                        | Default | Required |
-|:-------------|:----------|:------------------------------------------------------|:-------:|:--------:|
-| Tautulli URL | `url`     | Tautulli URL<br>**Example:** http://192.168.1.12:8659 |   N/A   | &#9989;  |
-| API Key      | `apikey`  | Tautulli API Key                                      |   N/A   | &#9989;  |
+| Attribute | Allowed Values                                        | Default | Required |
+|:----------|:------------------------------------------------------|:-------:|:--------:|
+| `url`     | Tautulli URL<br>**Example:** http://192.168.1.12:8659 |   N/A   | &#9989;  |
+| `apikey`  | Tautulli API Key                                      |   N/A   | &#9989;  |
 
 * The apikey can be found by going to Tautulli > Settings > Web Interface > API > API Key

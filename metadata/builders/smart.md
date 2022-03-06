@@ -28,12 +28,12 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Special Attributes
 
-| Attribute  | Description & Values                                                                                                                                                                                                                                                                                                                             |
-|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`     | **Description:** The Type of items inside this collection.<br>**Default:**<table class="clearTable"><tr><td>`movies` for Movies Libraries</td></tr><tr><td>`shows` for Show Libraries</td></tr><tr><td>`artists` for Music Libraries</td></tr></table><br>**Values:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks` |
-| `limit`    | **Description:** The max number of item for the filter.<br>**Default:** `all`<br>**Values:** `all` or a number greater then 0                                                                                                                                                                                                                    |
-| `sort_by`  | **Description:** This will control how the filter is sorted in your library.<br>**Default:** `random`<br>**Values:** Any sort options for your filter type in the [Sorts Options Table](#sort-options)                                                                                                                                           |
-| `validate` | **Description:** Determines if a collection will fail on a validation error<br>**Default:** `true`<br>**Values**: `true` or `false`                                                                                                                                                                                                              |
+| Attribute  | Description & Values                                                                                                                                                                                                                                                                                                                         |
+|:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`     | **Description:** The Type of items inside this collection.<br>**Default:**<table class="clearTable"><tr><td>`movies` for Movies Libraries</td></tr><tr><td>`shows` for Show Libraries</td></tr><tr><td>`artists` for Music Libraries</td></tr></table>**Values:** `movies`, `shows`, `seasons`, `episodes`, `artists`, `albums`, or `tracks` |
+| `limit`    | **Description:** The max number of item for the filter.<br>**Default:** `all`<br>**Values:** `all` or a number greater then 0                                                                                                                                                                                                                |
+| `sort_by`  | **Description:** This will control how the filter is sorted in your library.<br>**Default:** `random`<br>**Values:** Any sort options for your filter type in the [Sorts Options Table](#sort-options)                                                                                                                                       |
+| `validate` | **Description:** Determines if a collection will fail on a validation error<br>**Default:** `true`<br>**Values**: `true` or `false`                                                                                                                                                                                                          |
 
 ## Sort Options
 
@@ -161,12 +161,12 @@ No date filter can take multiple values.
 
 ### Date Modifiers
 
-| Date Modifier | Description                                                                                                                 | Plex Web UI Display  |
-|:--------------|:----------------------------------------------------------------------------------------------------------------------------|:--------------------:|
-| No Modifier   | Matches every item where the date attribute is in the last X days<br>**Format:** number of days<br>**Example:** `30`        |   `is in the last`   |
-| `.not`        | Matches every item where the date attribute is not in the last X days<br>**Format:** number of days<br>**Example:** `30`    | `is not in the last` |
-| `.before`     | Matches every item where the date attribute is before the given date<br>**Format:** MM/DD/YYYY<br>**Example:** `01/01/2000` |     `is before`      |
-| `.after`      | Matches every item where the date attribute is after the given date<br>**Format:** MM/DD/YYYY<br>**Example:** `01/01/2000`  |      `is after`      |
+| Date Modifier | Description                                                                                                                                                | Plex Web UI Display  |
+|:--------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------:|
+| No Modifier   | Matches every item where the date attribute is in the last X days<br>**Format:** number of days<br>**Example:** `30`                                       |   `is in the last`   |
+| `.not`        | Matches every item where the date attribute is not in the last X days<br>**Format:** number of days<br>**Example:** `30`                                   | `is not in the last` |
+| `.before`     | Matches every item where the date attribute is before the given date<br>**Format:** MM/DD/YYYY or `today` for the current day<br>**Example:** `01/01/2000` |     `is before`      |
+| `.after`      | Matches every item where the date attribute is after the given date<br>**Format:** MM/DD/YYYY or `today` for the current day<br>**Example:** `01/01/2000`  |      `is after`      |
 
 ### Date Attributes
 

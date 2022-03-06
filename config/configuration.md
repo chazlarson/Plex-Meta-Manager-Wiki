@@ -8,19 +8,19 @@ A template Configuration File can be found in the [GitHub Repo](https://github.c
 
 The below table outlines the third-party services that are compatible with Plex Meta Manager. Each service has specific requirements for setup that can be found by clicking the links within the table.
 
-| Name                       | YAML Attribute   |              Required              |
-|:---------------------------|:-----------------|:----------------------------------:|
-| [Libraries](libraries)     | `libraries`      |              &#9989;               |
-| [Playlist Files](playlist) | `playlist_files` |              &#10060;              |
-| [Settings](settings)       | `settings`       |              &#10060;              |
-| [Webhooks](webhooks)       | `webhooks`       |              &#10060;              |
-| [Plex](plex)               | `plex`           | &#9989; <br/>Either here or per library |
-| [TMDb](tmdb)               | `tmdb`           |              &#9989;               |
-| [Tautulli](tautulli)       | `tautulli`       |              &#10060;              |
-| [OMDb](omdb)               | `omdb`           |              &#10060;              |
-| [Notifiarr](notifiarr)     | `notifiarr`      |              &#10060;              |
-| [AniDB](anidb)             | `anidb`          |              &#10060;              |
-| [Radarr](radarr)           | `radarr`         |              &#10060;              |
-| [Sonarr](sonarr)           | `sonarr`         |              &#10060;              |
-| [Trakt](trakt)             | `trakt`          |              &#10060;              |
-| [MyAnimeList](myanimelist) | `mal`            |              &#10060;              |
+| Attribute                    |                Required                 |
+|:-----------------------------|:---------------------------------------:|
+| [`libraries`](libraries)     |                 &#9989;                 |
+| [`playlist_files`](playlist) |                &#10060;                 |
+| [`settings`](settings)       |                &#10060;                 |
+| [`webhooks`](webhooks)       |                &#10060;                 |
+| [`plex`](plex)               | &#9989; <br/>Either here or per library |
+| [`tmdb`](tmdb)               |                 &#9989;                 |
+| [`tautulli`](tautulli)       |                &#10060;                 |
+| [`omdb`](omdb)               |                &#10060;                 |
+| [`notifiarr`](notifiarr)     |                &#10060;                 |
+| [`anidb`](anidb)             |                &#10060;                 |
+| [`radarr`](radarr)           |                &#10060;                 |
+| [`sonarr`](sonarr)           |                &#10060;                 |
+| [`trakt`](trakt)             |                &#10060;                 |
+| [`mal`](myanimelist)         |                &#10060;                 |

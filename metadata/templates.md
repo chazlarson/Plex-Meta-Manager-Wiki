@@ -11,6 +11,7 @@ In any attribute, you can specify template variables that will be changed when c
 To call a template from a collection mapping you use the `template` attribute. The only required attribute under `template` is `name` which must correspond exactly to the template mapping name. Any other attributes under `template` are considered template variables whose names correspond exactly with the template variable name surrounded by `<<` and `>>` in the templates. These template variables will replace any part of any value that contains the template variable name surrounded by `<<` and `>>` in the template with the specified template variable's value.
 
 Here's an example Actor template and two different ways to call it.
+
 ```yaml
 templates:
   Actor:
@@ -29,12 +30,14 @@ collections:
 ```
 
 There are three attributes unique to `templates`, `default`, `optional`, and `move_prefix`. 
+
 * `default` can set default values for template variables to be used if they're not specified in the call. 
 * `optional` can specify variables that if not specified on the template call will cause any attribute using one of those variables to be ignored in the template. You can make any template variable optional per collection by setting it to `null`.
 * `move_prefix` can be given a list or comma-separated string of prefixes to move to the end of the collection/playlist name for sorting.
     i.e. If you have `move_prefix: The` and a collection is called `The Avengers` then `<<collection_name>>` is replaced with `Avengers, The` instead of `The Avengers` for that collection.
 
 Here's an example IMDB Genre template and two different ways to call it.
+
 ```yaml
 templates:
   IMDb Genre:
