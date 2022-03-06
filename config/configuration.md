@@ -2,7 +2,7 @@
 
 Plex Meta Manager utilizes a YAML configuration file to connect with the Plex Media Server and other third-party services via API.
 
-By default and unless otherwise stated, Plex Meta Manager looks for the configuration file within `/config/config.yml`
+By default, and unless otherwise stated, Plex Meta Manager looks for the configuration file within `/config/config.yml`
 
 A template Configuration File can be found in the [GitHub Repo](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template). 
 

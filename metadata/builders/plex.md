@@ -42,7 +42,7 @@ collection:
 
 Finds every item that is not in a collection unless the collection is in the exclusion list. This is a special collection type to help keep your library looking correct. When items in your library are in multiple collections it can mess up how they're displayed in your library.
 
-For Example, if you have a `Marvel Cinematic Universe` Collection set to `Show this collection and its items` and an `Iron Man` Collection set to `Hide items in this collection` what happens is the show overrides the hide and you end up with both the collections and the 3 Iron Man movies all displaying.
+For Example, if you have a `Marvel Cinematic Universe` Collection set to `Show this collection and its items` and an `Iron Man` Collection set to `Hide items in this collection` what happens is the show overrides the hide, and you end up with both the collections and the 3 Iron Man movies all displaying.
 
 Alternatively, if you set the `Marvel Cinematic Universe` Collection to `Hide items in this collection` then movies without a collection like `The Incredible Hulk` will be hidden from the library view.
 
@@ -71,7 +71,7 @@ collections:
 
 Uses Plex's [Advance Filters](https://support.plex.tv/articles/201273953-collections/) to find all items based on the search parameters provided.
 
-Any Advance Filter made using the Plex UI should be able to be recreated using `plex_search`. If you're having trouble getting `plex_search` to work correctly, build the collection you want inside of Plex's Advance Filters and take a screenshot of the parameters in the Plex UI and post it in either the [Discussions](https://github.com/meisnate12/Plex-Meta-Manager/discussions) or on [Discord](https://discord.gg/TsdpsFYqqm) and I'll do my best to help you. 
+Any Advance Filter made using the Plex UI should be able to be recreated using `plex_search`. If you're having trouble getting `plex_search` to work correctly, build the collection you want inside of Plex's Advance Filters and take a screenshot of the parameters in the Plex UI and post it in either the [Discussions](https://github.com/meisnate12/Plex-Meta-Manager/discussions) or on [Discord](https://discord.gg/TsdpsFYqqm), and I'll do my best to help you. 
 
 like Plex's [Advance Filters](https://support.plex.tv/articles/201273953-collections/) you have to start each search with either `any` or `all` as a base. You can only have one base attribute and all search attributes must be under the base.
 

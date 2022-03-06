@@ -104,7 +104,7 @@ The `first_episode_aired` and `last_episode_aired` filters will also filter out 
 | `.not`        | Matches every item where the date attribute is not in the last X days |                  **Format:** number of days<br>e.g. `30`                   |
 | `.before`     | Matches every item where the date attribute is before the given date  | **Format:** MM/DD/YYYY or `today` for the current day<br>e.g. `01/01/2000` |
 | `.after`      | Matches every item where the date attribute is after the given date   | **Format:** MM/DD/YYYY or `today` for the current day<br>e.g. `01/01/2000` |
-| `.regex`      | Matches every item where the attribute matches the regex given        |                              N/A                                           |
+| `.regex`      | Matches every item where the attribute matches the regex given        |                                    N/A                                     |
 
 ### Attribute
 
