@@ -6,7 +6,7 @@ Each template is defined by the mapping name which becomes the name of the templ
 
 Inside a template, you can give it all the Builders, Details, and [Filters](filters) attributes that you can give collections/playlists expect `template`. 
 
-In any attribute, you can specify template variables that will be changed when calling the template. In the text just replace the text you want to be changed with the template variable name surrounded by `<<` and `>>`. For example, I can use the person template variable like so `tmdb_person: <<person>>`. The template variable name can be whatever you want but it must match when calling the template. To use the collection mapping name as a variable use `<<collection_name>>`.
+In any attribute, you can specify template variables that will be changed when calling the template. In the text just replace the text you want to be changed with the template variable name surrounded by `<<` and `>>`. For example, I can use the person template variable like so `tmdb_person: <<person>>`. The template variable name can be whatever you want, but it must match when calling the template. To use the collection mapping name as a variable use `<<collection_name>>`.
 
 To call a template from a collection mapping you use the `template` attribute. The only required attribute under `template` is `name` which must correspond exactly to the template mapping name. Any other attributes under `template` are considered template variables whose names correspond exactly with the template variable name surrounded by `<<` and `>>` in the templates. These template variables will replace any part of any value that contains the template variable name surrounded by `<<` and `>>` in the template with the specified template variable's value.
 

@@ -32,7 +32,7 @@ pip install -r requirements.txt
 pip install -r requirements.txt --ignore-installed
 ```
 
-At this point Plex Meta Manager has been installed and you can verify installation by running:
+At this point Plex Meta Manager has been installed, and you can verify installation by running:
 
 ```shell
 python plex_meta_manager.py
@@ -49,7 +49,7 @@ docker run -it -v <PATH_TO_CONFIG>:/config:rw meisnate12/plex-meta-manager
 * The `-v <PATH_TO_CONFIG>:/config:rw` flag mounts the location you choose as a persistent volume to store your files. 
   * Change `<PATH_TO_CONFIG>` to a folder where your config.yml and other files are. 
   * The docker image defaults to running the configuration file named `config.yml` which resides in your persistent volume.
-  * If your directory has spaces (such as "My Documentes"), place quotation marks around your directory pathing as shown here: `-v "<PATH_TO_CONFIG>:/config:rw"`
+  * If your directory has spaces (such as "My Documents"), place quotation marks around your directory pathing as shown here: `-v "<PATH_TO_CONFIG>:/config:rw"`
 
 
 Example Docker Run command:

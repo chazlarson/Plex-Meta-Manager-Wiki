@@ -4,7 +4,7 @@ Configuring [Sonarr](https://sonarr.tv/) is optional but will allow you to send 
 
 Sonarr V2 may work, but it is not supported please upgrade to V3 if you can.
 
-A `sonarr` mapping can be either in the root of the config file as global mapping for all libraries or you can specify the `sonarr` mapping individually per library.
+A `sonarr` mapping can be either in the root of the config file as global mapping for all libraries, or you can specify the `sonarr` mapping individually per library.
 
 Below is a `sonarr` mapping example and the full set of attributes:
 ```YAML

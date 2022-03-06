@@ -4,7 +4,7 @@ Configuring [Radarr](https://radarr.video/) is optional but will allow you to se
 
 Radarr V2 may work, but it is not supported please upgrade to V3 if you can.
 
-A `radarr` mapping can be either in the root of the config file as global mapping for all libraries or you can specify the `radarr` mapping individually per library.
+A `radarr` mapping can be either in the root of the config file as global mapping for all libraries, or you can specify the `radarr` mapping individually per library.
 
 Below is a `radarr` mapping example and the full set of attributes:
 ```yaml

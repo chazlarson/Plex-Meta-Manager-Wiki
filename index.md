@@ -25,11 +25,11 @@ Plex Meta Manager is an open source Python 3 project that has been designed to e
 
 ## Development & Nightly Builds
 There is a [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) build which will have the most updated fixes and enhancements to the script.
-. To access the Docker Image for the develop build use the `develop` tag by adding `:develop` to the image name. i.e. `meisnate12/plex-meta-manager:develop`
+. To access the Docker Image for the develop build, use the `develop` tag by adding `:develop` to the image name. i.e. `meisnate12/plex-meta-manager:develop`
 
 If switching to the develop build, it is recommended to also use the [develop](https://metamanager.wiki/en/develop/) branch of the wiki documents any changes made from the Master build.
 
-There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break and the features are not documented until they're in develop. To access the Docker Image for the nightly build use the `nightly` tag by adding `:nightly` to the image name. i.e. `meisnate12/plex-meta-manager:nightly`. As this build is subject to extreme change, there is no nightly branch of the wiki and all discussions relating to changes made in the nightly build will be held within the [Plex Meta Manager Discord Server](https://discord.gg/NfH6mGFuAB).
+There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break and the features are not documented until they're in develop. To access the Docker Image for the nightly build use the `nightly` tag by adding `:nightly` to the image name. i.e. `meisnate12/plex-meta-manager:nightly`. As this build is subject to extreme change, there is no nightly branch of the wiki and all discussions relating to any change made in the nightly build will be held within the [Plex Meta Manager Discord Server](https://discord.gg/NfH6mGFuAB).
 
 ## Example Usage
 
