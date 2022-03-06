@@ -164,5 +164,5 @@ p {
   background-color: #00a379 !important;
 }
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
+  color: #000000 !important;
 }
