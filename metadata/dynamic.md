@@ -82,7 +82,7 @@ default_template:
   tmdb_collection_details: <<tmdb_collection>>
 ```
 
-    </td>
+</td>
   </tr>
 </table>
 
@@ -267,21 +267,18 @@ Create a collection for each actor found in the library.
             </tr>
             <tr>
                 <td><code>actor_depth</code></td>
-                <td><strong>Description:</strong> Number of actors to look at per item<br>
-                <strong>Values:</strong> Number greater then 0<br>
-                <strong>Default:</strong> 3</td>
+                <td><strong>Values:</strong> Number greater then 0</td> 
+                <td><strong>Default:</strong> 3</td>
             </tr>
             <tr>
                 <td><code>actor_minimum</code></td>
-                <td><strong>Description:</strong> Minimum number of appearances required for an actor<br>
-                <strong>Values:</strong> Number greater then 0<br>
-                <strong>Default:</strong> 3</td>
+                <td><strong>Values:</strong> Number greater then 0</td> 
+                <td><strong>Default:</strong> 3</td>
             </tr>
             <tr>
                 <td><code>number_of_actors</code></td>
-                <td><strong>Description:</strong> Max number of actor collections to create<br>
-                <strong>Values:</strong> Number greater then 0<br>
-                <strong>Default:</strong> None</td>
+                <td><strong>Values:</strong> Number greater then 0</td> 
+                <td><strong>Default:</strong> None</td>
             </tr>
         </table>
     </td>
@@ -292,48 +289,81 @@ Create a collection for each actor found in the library.
 
 ```yaml
 default_template: 
-  smart_filter: 
-    limit: 50
-    sort_by: critic_rating.desc
-    any:
-      genre: <<genre>>
+  tmdb_person: <<actor>>
+  plex_search:
+    all:
+      actor: tmdb
 ```
 
-    </td>
+</td>
   </tr>
 </table>
 
-* `actor_depth` searches the top billed actor per movie they are in (i.e. if they play a cameo role, this is unlikely to be counted)
-* `actor_minimum` is the minimum number of times the actor must appear within `actor_depth` for the collection to be created.
+* `actor_depth` determines how many top billed actor per item they are in. (i.e. if they play a cameo role, this is unlikely to be counted)
+* `actor_minimum` determines the minimum number of times the actor must appear within `actor_depth` for the collection to be created.
+* `number_of_actors` determines the number of actor collection to max out at. (i.e. if to make collections for the top 25 actors)
 
 #### Example:
+
 * Create a collection for actors who appear in the top 5 billing credits of movies
 * Only create the collection if they are in the top 5 billing credits of at least 20 movies
 
 ```yaml
 dynamic_collections:
-  Actors:         # this name does not matter
+  Actors:         # mapping name does not matter just needs to be unique
     type: actor
     data:
       actor_depth: 5
       actor_minimum: 20
 ```
 
+#### Example:
+
+* Create a collection for the top 25 actors who appear in the top 5 billing credits of movies
+
+```yaml
+dynamic_collections:
+  Top Actors:         # mapping name does not matter just needs to be unique
+    type: actor
+    data:
+      actor_depth: 5
+      number_of_actors: 25
+```
+
 ### Genre
 
-Create a collection for each genre found in the library 
+Create a collection for each genre found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
     <th><code>type</code> Option</th>
-    <td><code>actor</code></td>
+    <td><code>genre</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      genre: <<genre>>
+```
+
+</td>
   </tr>
 </table>
 
 #### Example: 
 * Create a collection for the top 100 items for each genre found in the library (TV and Movies)
 * Exclude the "Talk Show" genre
-* Name the collection "Top [Genre] Movies or Top [Genre] Shows
+* Name the collection Top [Genre] Movies or Top [Genre] Shows
 
 ```yaml
 templates:
@@ -343,14 +373,93 @@ templates:
       sort_by: critic_rating.desc
       all: 
         genre: <<genre>>
-    sort_title: <<collection_name>>
 dynamic_collections:
-  Genres:         # this name does not matter
+  Genres:         # mapping name does not matter just needs to be unique
     type: genre
     exclude:
           - Talk Show
     title_format: Top <<title>> <<library_type>>s
     template: genre collection
+```
+
+### Year
+
+Create a collection for each year found in the library.
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>year</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      year: <<year>>
+```
+
+</td>
+  </tr>
+</table>
+
+### Decade
+
+Create a collection for each decade found in the library 
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>decade</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      decade: <<decade>>
+```
+
+</td>
+  </tr>
+</table>
+
+
+#### Example: 
+* Create a collection for the top 100 items for each decade found in the library (TV and Movies)
+* Name the collection Top [Decade] Movies
+
+```yaml
+templates:
+  decade collection:
+    smart_filter: 
+      limit: 100
+      decade: critic_rating.desc
+      all: 
+        decade: <<decade>>
+dynamic_collections:
+  Decades:         # mapping name does not matter just needs to be unique
+    type: decade
+    title_format: Top <<title>> <<library_type>>s
+    template: decade collection
 ```
 
 ## Country
@@ -362,11 +471,31 @@ Create a collection for each country found in the library
     <th><code>type</code> Option</th>
     <td><code>country</code></td>
   </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      country: <<country>>
+```
+
+</td>
+  </tr>
 </table>
 
-#### Example: 
-* Create a collection for the top 100 items for each country found in the library
-* Name the collection "Top [Genre] Movies or Top [Genre] Shows
+#### Example:
+
+* Create a collection for the top 100 movies from each country found in the library
+* Name the collection Top [Country] Cinema
 
 
 ```yaml
@@ -377,150 +506,162 @@ templates:
       sort_by: critic_rating.desc
       all: 
         country: <<country>>
-    sort_title: +4_2_<<collection_name>>
 dynamic_collections:
-  Genres:         # this name does not matter
+  Countries:         # mapping name does not matter just needs to be unique
     type: country
-    title_format: <<country>> Cinema
+    title_format: Top <<country>> Cinema
     template: country_dynamic
 ```
 
 
+### Network
 
-# Special Attributes
-
-## Overview
-Some attributes require the user to specify the `type` and `data` of the attribute, allowing for personalization of the dynamic collections that are created.
-For these, the name of the collection within the Metadata file is a placeholder and will be replaced with the title used within the template of the attribute being used.
-
-The below example will create dynamic collections for the 10 most popular actors
-```yaml
-dynamic_collections:
-  TMDb Popular People:          # This name is the mapping name
-    type: tmdb_popular_people
-    data: 10
-```
-
-This example will create dynamic collections based on the lists that the user defines
-```yaml
-dynamic_collections:
-  Trakt User Lists:          # This name is the mapping name
-    type: trakt_user_lists
-    data:
-     - URL1
-     - URL2
-     - URL3
-```
-
-## Attribute Types
-
-### TMDb Popular People
-
-Create collections based on the most popular people according to TMDb
+Create a collection for each network found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
     <th><code>type</code> Option</th>
-    <td><code>tmdb_popular_people</code></td>
+    <td><code>network</code></td>
+  </tr>
   <tr>
     <th><code>data</code> Value</th>
-    <td>Any integer</td>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      network: <<network>>
+```
+
+</td>
   </tr>
 </table>
 
-##### Example: Create collection for the top 10 popular people
+
+#### Example: 
+
+* Create a collection for each network found in a TV Shows library
+
 ```yaml
+templates:
+  network collection:
+    smart_filter: 
+      sort_by: critic_rating.desc
+      all: 
+        network: <<network>>
+    sort_title: <<collection_name>>
 dynamic_collections:
-  TMDb Popular People:          # This name is the mapping name
-    type: tmdb_popular_people
-    data: 10
+  Networks:         # mapping name does not matter just needs to be unique
+    type: network
+    title_format: <<title>>
+    template: network collection
 ```
-### TMDb Collection
-Create collections based on the list of TMDb Collections specified.
+
+### Mood
+
+Create a collection for each mood found in the library. 
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
     <th><code>type</code> Option</th>
-    <td><code>tmdb_collection</code></td>
+    <td><code>mood</code></td>
+  </tr>
   <tr>
     <th><code>data</code> Value</th>
-    <td>Comma-separated list of TMDb collections</td>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      mood: <<mood>>
+```
+
+</td>
   </tr>
 </table>
 
-##### Example: Create collections for Star Wars, The Hunger Games and Lord of the Rings
+#### Example:
+
+* Create a collection for the top 100 items for each mood found in the Music library
+* Name the collection Top [Mood] Tracks
+
 ```yaml
+templates:
+  mood collection:
+    smart_filter: 
+      limit: 100
+      sort_by: critic_rating.desc
+      type: tracks
+      all: 
+        mood: <<mood>>
 dynamic_collections:
-  TMDb Collections:          # This name is the mapping name
-    type: tmdb_collections
-    data: 10, 131635, 119
+  Moods:         # mapping name does not matter just needs to be unique
+    type: mood
+    title_format: Top <<title>> Tracks
+    template: mood collection
 ```
 
-### Trakt Liked Lists
-Create collections for each of the Trakt lists that the user has liked/
-* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
+### Style
+
+Create a collection for each style found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
     <th><code>type</code> Option</th>
-    <td><code>trakt_liked_lists</code></td>
+    <td><code>style</code></td>
+  </tr>
   <tr>
     <th><code>data</code> Value</th>
-    <td>Not Required</td>
+    <td>Not Used</td>
   </tr>
-</table>
+  <tr>
+    <th>Default Template</th>
+    <td>
 
-##### Example: Create collections for each of the lists that the user has liked within Trakt
 ```yaml
-dynamic_collections:
-  Trakt Liked Lists:          # This name is the mapping name
-    type: trakt_liked_lists
+default_template: 
+  smart_filter:
+  limit: 50
+  sort_by: critic_rating.desc
+    any:
+      style: <<style>>
 ```
 
-### Trakt User Lists
-Create collections for each of the Trakt list that the user specifies
-* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
-
-<table class="dualTable colwidths-auto align-default table">
-  <tr>
-    <th><code>type</code> Option</th>
-    <td><code>trakt_user_lists</code></td>
-  <tr>
-    <th><code>data</code> Value</th>
-    <td>List of Trakt URLs</td>
+</td>
   </tr>
 </table>
 
-##### Example: Create collections for each of the lists that the user has liked within Trakt
-```yaml
-dynamic_collections:
-  Trakt User Lists:          # This name is the mapping name
-    type: trakt_user_lists
-    data:
-     - https://trakt.tv/users/giladg/lists/latest-releases      
-     - https://trakt.tv/users/donxy/lists/marvel-cinematic-universe
-     - https://trakt.tv/users/yozoraxcii/lists/christmas-extravaganza-non-tv-movie
-```
-### Trakt People Lists
-Create collections for each of the people found within Trakt lists that the user specifies
-* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
+#### Example: 
 
-<table class="dualTable colwidths-auto align-default table">
-  <tr>
-    <th><code>type</code> Option</th>
-    <td><code>trakt_user_lists</code></td>
-  <tr>
-    <th><code>data</code> Value</th>
-    <td>List of Trakt URLs</td>
-  </tr>
-</table>
+* Create a collection for the top 100 items for each style found in the Music library
+* Name the collection Top [Style] Tracks
 
-##### Example: Create a collection for each of the people within the Star Wars Canon franchise
 ```yaml
+templates:
+  mood collection:
+    smart_filter: 
+      limit: 100
+      sort_by: critic_rating.desc
+      type: tracks
+      all: 
+        style: <<style>>
 dynamic_collections:
-  Trakt User Lists:
-    type: trakt_people_lists
-    data:
-     - https://trakt.tv/users/movistapp/lists/star-wars
-     - https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline
+  Moods:         # mapping name does not matter just needs to be unique
+    type: style
+    title_format: Top <<title>> Tracks
+    template: mood collection
 ```
