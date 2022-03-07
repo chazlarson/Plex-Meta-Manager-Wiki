@@ -16,7 +16,7 @@ To make a collection a Smart Label Collection,the `smart_label` attribute must a
         smart_label: release.desc
     ```
 
-2. Provide a whole `smart_filter` to determine exactly how the smart collection should be built, ensuring to include `lable: <<smart_label>>`, which will link it to the collection labels.
+2. Provide a whole `smart_filter` to determine exactly how the smart collection should be built, ensuring to include `label: <<smart_label>>`, which will link it to the collection labels.
     ```yaml
     collections:
       Unplayed Marvel Cinematic Universe:
