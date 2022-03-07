@@ -33,10 +33,10 @@ There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/n
 
 ## Example Usage
 
-Plex Meta Manager gives the user the power to curate a set of Collections to make discovering and organizing media easy. They can be built either using plex-based searches/filters, or by using popular builders such as TMDB, IMDB, Trakt, MDBList, MyAnimeList and many more.
+Plex Meta Manager gives the user the power to curate a set of Collections to make discovering and organizing media easy. They can be built either using plex-based searches/filters, or by using popular builders such as TMDb, IMDb, Trakt, MDBList, MyAnimeList and many more.
 
 Some example collections that can be created are:
-  * Trending/Popular (based on TMDB, IMDB, Trakt, etc.)
+  * Trending/Popular (based on TMDb, IMDb, Trakt, etc.)
   * Streaming Service (such as Netflix, Disney+, etc.)
   * Networks
   * Studios

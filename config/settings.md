@@ -477,7 +477,7 @@ Set alist or comma-separated string of IMDb IDs to ignore in all collections.
   </tr>
   <tr>
     <th>Allowed Values</th>
-    <td>List or comma-separated string of IMDB IDs</td>
+    <td>List or comma-separated string of IMDb IDs</td>
   </tr>
 </table>
 

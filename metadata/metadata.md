@@ -49,7 +49,7 @@ Plex Meta Manager can run a number of different operations within `collections:`
 
 Plex Meta Manager can automatically create dynamic collections based on different criteria, such as
 
-* Collections for the top `X` popular people on TMDB (Bruce Willis, Tom Hanks etc.)
+* Collections for the top `X` popular people on TMDb (Bruce Willis, Tom Hanks etc.)
 * Collections for each decade represented in the library (Best of 1990s, Best of 2000s etc.)
 * Collections for each of the moods/styles within a Music library (A Cappella, Pop Rock etc.)
 

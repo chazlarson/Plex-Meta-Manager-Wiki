@@ -36,7 +36,7 @@ There are three attributes unique to `templates`, `default`, `optional`, and `mo
 * `move_prefix` can be given a list or comma-separated string of prefixes to move to the end of the collection/playlist name for sorting.
     i.e. If you have `move_prefix: The` and a collection is called `The Avengers` then `<<collection_name>>` is replaced with `Avengers, The` instead of `The Avengers` for that collection.
 
-Here's an example IMDB Genre template and two different ways to call it.
+Here's an example IMDb Genre template and two different ways to call it.
 
 ```yaml
 templates:

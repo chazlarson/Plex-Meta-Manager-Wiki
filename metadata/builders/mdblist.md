@@ -44,7 +44,7 @@ The default `sort_by` when it's not specified is `score.desc`.
 | `released.asc`<br>`released.desc`       | Sort by Release Date     |
 | `imdbrating.asc`<br>`imdbrating.desc`   | Sort by IMDb Rating      |
 | `imdbvotes.asc`<br>`imdbvotes.desc`     | Sort by IMDb Votes       |
-| `imdbpopular.asc`<br>`imdbpopular.desc` | Sort by IMDB Popular     |
+| `imdbpopular.asc`<br>`imdbpopular.desc` | Sort by IMDb Popular     |
 | `tmdbpopular.asc`<br>`tmdbpopular.desc` | Sort by TMDb Popular     |
 | `rogerebert.asc`<br>`rogerebert.desc`   | Sort by RogerEvert Score |
 | `budget.asc`<br>`budget.desc`           | Sort by Budget           |
