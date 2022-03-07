@@ -1,11 +1,11 @@
-# Run Commands & Environmental Variables
+# Run Commands & Environment Variables
 
-The below table outlines the run commands and environment variables that can be utilized to customise the running of Plex Meta Manager to the user's requirements. Environmental Variable values are used over Shell Command values.
+This table outlines the run commands and environment variables that can be utilized to customize the running of Plex Meta Manager to the user's requirements. Environment Variable values are used over Shell Command values.
 
 If you run into a race condition where you have set an Environment Variable within your system and also use a Shell Command for the same attribute, then the Environment Variable will take priority.
 
 
-| Attribute                                             | Shell Command                      | Environmental Variable   |
+| Attribute                                             | Shell Command                      | Environment Variable     |
 |:------------------------------------------------------|:-----------------------------------|:-------------------------|
 | [Config](#config)                                     | `-c` or `--config`                 | `PMM_CONFIG`             |
 | [Time to Run](#time-to-run)                           | `-t` or `--time`                   | `PMM_TIME`               |
@@ -186,7 +186,7 @@ Run Plex Meta Manager in test/debug mode
   </tr>
 </table>
 
-* Only collections with `test: true` enabled will be run 
+* Only collections with `test: true` enabled will be run
 
 <details>
   <summary>Local Environment</summary>
@@ -494,7 +494,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 ### Ignore Ghost
 
-Ignore all ghost logging for the run. A ghost log is what's printed to the console to show progress during steps. 
+Ignore all ghost logging for the run. A ghost log is what's printed to the console to show progress during steps.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
@@ -612,7 +612,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
-### No Countdown 
+### No Countdown
 
 Run without displaying a countdown to the next scheduled run.
 
@@ -651,7 +651,7 @@ docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex
 
 </details>
 
-### No Missing 
+### No Missing
 
 Run without utilizing the missing movie/show functions.
 

@@ -125,7 +125,7 @@ html_theme_options = {
                 ("unRAID Walkthrough", "home/guides/unraid"),
                 ("Kubernetes Walkthrough", "home/guides/kubernetes"),
             ]),
-            ("Run Commands & Environmental Variables", "home/environmental"),
+            ("Run Commands & Environment Variables", "home/environmental"),
             ("_divider", ),
             ("Configuration File", "config/configuration"),
             ("Metadata File", "metadata/metadata"),
