@@ -18,11 +18,11 @@ something like this
 That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).  In some cases it's displaying *output* from a command you've typed, but the difference should be apparent in context.
 
 IMPORTANT NOTE:
-This walkthrough is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Python script going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path walkthrough, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
+This walkthrough is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Python script going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
 
 I am assuming you do not have any of these tools already installed.  When writing this up I started with a brand new Windows 10 install.
 
-<h4>If you are using Windows, do everything here in Powershell.  You don't need to run it as an Administrator.  Git, notably, installs its own command line interface.  Don't use that.  Do everything here is Powershell.</h4>
+<h4>If you are using Windows, do everything here in Powershell.  You don't need to run it as an Administrator.  Git, notably, installs its own command line interface.  Don't use that.  Do everything here in Powershell.</h4>
 
 <h4>On OSX or Linux, you can use any terminal or shell.</h4>
 
@@ -52,7 +52,8 @@ You need to use Python 3.9, not Python 3.10.  There's one specific requirement t
   ```
   python3 --version
   ```
-  If this doesn't return a version number, you'll need to get Python 3 installed.
+
+  If this doesn't return `3.9.[something]`, you'll need to get Python 3.9 installed.
 
   Follow the instructions here: [Installing Python 3 on Mac OS X](https://docs.python-guide.org/starting/install3/osx/)
 </details>
@@ -113,7 +114,7 @@ You need to use Python 3.9, not Python 3.10.  There's one specific requirement t
 
   ![Git Install](git-install.png)
 
-  This install comes with its own command line interface.  Do not use this interface in this walkthrough.  Continue to do everything here in Powershell.
+  This install comes with its own command line interface.  **Do not use this interface in this walkthrough**.  Continue to do everything here in Powershell.
 
 </details>
 
@@ -197,7 +198,7 @@ This walkthrough is going to use a "virtual environment", since that provides a 
   ```
   Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
   ```
-  that indicates that you didn't check the “Add to path” checkbox when you installed Python.  "Repair" your Python install and check "add python to environment variables".
+  You apparently didn't check the “Add to path” checkbox above under [installing Python](#installing-python).  "Repair" your Python install and check "add python to environment variables".
 </details>
 
 ---
@@ -228,7 +229,7 @@ That will create the virtual environment, and then you need to activate it:
       + CategoryInfo          : SecurityError: (:) [], PSSecurityException
       + FullyQualifiedErrorId : UnauthorizedAccess
   ```
-  You apparently skipped the "enable scripts in Powershell" step above under installing Python for Windows.
+  You apparently skipped the "enable scripts in Powershell" step above under [installing Python](#installing-python) for Windows.
 
   You will need to take care of that before moving on.
 
@@ -238,7 +239,26 @@ That will create the virtual environment, and then you need to activate it:
 
 An advantage of doing this in a venv is that in the event something goes wrong, you can delete that pmm-venv directory and do the setup again.
 
-**IMPORTANT: In the future, when you want to run the script, you will need to do this "activation" step every time.  Not the venv creation, just the activation**
+**IMPORTANT: In the future, when you want to run the script, you will need to do this "activation" step every time.  Not the venv creation, just the activation**:
+
+<details>
+  <summary>OS X/Linux</summary>
+  <br />
+
+  ```
+  source pmm-venv/bin/activate
+  ```
+</details>
+
+<details>
+  <summary>Windows</summary>
+  <br />
+
+  ```
+  .\pmm-venv\Scripts\activate
+  ```
+</details>
+
 
 ### Installing requirements
 
@@ -249,8 +269,6 @@ These support libraries are called “requirements”, and they are defined in t
 ```
 python -m pip install -r requirements.txt
 ```
-
-Note that now you can type `python` instead of `python3` [if you used the latter before]; that's another benefit of the virtual environment; the default Python in here is Python 3 and you no longer have to call it specifically.
 
 You should see something like this [I’ve removed a few lines for space, and the specific versions may have changed since this was captured]:
 
@@ -269,7 +287,7 @@ WARNING: You are using pip version 21.1.3; however, version 21.3 is available.
 You should consider upgrading via the '/Users/mroche/Plex-Meta-Manager/pmm-venv/bin/python -m pip install --upgrade pip' command.
 ```
 
-Don't worry about the WARNING.
+Don't worry about the WARNING if it comes up.
 
 Let’s make sure it’s working so far.  At the command prompt, type:
 
@@ -306,7 +324,7 @@ Go to https://www.themoviedb.org/.  Log into your account [or create one if you 
 
 In the sidebar menu on the left, select “API”.
 
-Click to generate a new API key under "Request an API Key".  If there is already one there, copy it and go to the next step.
+Click to generate a new API key under "Request an API Key".  If there is already one there, copy it and go to the [next step](#getting-a-plex-url-and-token).
 
 There will be a form to fill out; the answers are arbitrary.  The URL can be your personal website, or probably even google.com or the like.
 
@@ -320,7 +338,7 @@ The Plex URL is whatever URL you’d use **from this machine** to connect direct
 
 As with the TMDb API Key, if you already have a Plex Token, you can use that one.
 
-This article will describe how to get a token: [Finding an authentication token](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)
+This article describes how to get a token: [Finding an authentication token](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)
 
 
 #### Editing the config template
@@ -371,7 +389,7 @@ Now open the copy in an editor:
 
 </details>
 
-From here on in, when I say "open the config file", I mean this `nano` or `notepad` command.  You don't want to copy the template again.
+From here on in, when I say "open the config file", I mean this `nano` or `notepad` command.  **Don't copy the template again**.
 
 ---
 
@@ -493,7 +511,7 @@ $ python plex_meta_manager.py -r
 ...
 ```
 
-We can see there that it connected to the Plex Library, failed to find a metadata file, and then quit.
+We can see there that it connected to the Plex Library, failed to find that `Main Movies.yml` metadata file, and then quit.
 
 So far so good.
 
@@ -582,7 +600,7 @@ This time you should see that the metadata file gets loaded:
 
 And this time it will catalog all your movies.  This could take a while depending on how many movies are in that library.
 
-Once this mapping is complete it will move on to build those three collections.
+Once this cataloging is complete it will move on to build those three collections.
 
 As it builds the collections, you should see a fair amount of logging about which movies are being added and which ones aren’t found.  Once it completes, go to Plex, go to your Movies library, and click “Collections” at the top.
 
@@ -608,7 +626,7 @@ That line is a link into the github repo of examples I referred to above, so you
 
 If you prefer to create your own, do that in the metadata file.
 
-TV Shows and other libraries work the same way.  Create a `Libraries:` section in the config.yml, create a metadata file, define collections, run the script.
+TV Shows and other libraries work the same way.  Create a section under `Libraries:` in the config.yml, create a metadata file, define collections, run the script.
 
 Investigate the rest of the wiki to learn about everything else Plex-Meta-Manager can do for you.
 
