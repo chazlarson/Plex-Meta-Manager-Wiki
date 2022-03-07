@@ -519,7 +519,7 @@ dynamic_collections:
   Decades:         # mapping name does not matter just needs to be unique
     type: decade
     title_format: Top <<title>> <<library_type>>s
-    titles:
+    title_override:
       2020: Top <<title>> <<library_type>>s (so far)
 ```
 
