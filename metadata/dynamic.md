@@ -19,9 +19,9 @@ dynamic_collections:
     remove_suffix: "Collection"
 ```
 
-## Keys
+## Dynamic Keys
 
-A `key` are used to refer to a specific value/result from the initial dynamic collection criteria that will be used to create the collection.
+A `dynamic key` or `key` for short is used to refer to a specific value/result from the dynamic collection criteria that will be used to create the collection.
 
 An example of some keys that would be generated from a `genre` dynamic collection are; "Animation", "Horror" and "Comedy"
 
@@ -36,7 +36,7 @@ dynamic_collections:
   Genres:         # mapping name does not matter, just needs to be unique
     type: genre
     exclude:
-          - Horror
+      - Horror
 ```
 
 * Using the `keys` attribute to change the formatting of "France" to "French" so that a collection can be named "French Cinema" instead of simply "France"
@@ -69,23 +69,23 @@ dynamic_collections:
 
 ## Attributes
 
-| Attribute                                          | Description                                                                                                                    |     Required      |
-|:---------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:-----------------:|
-| [`type`](#type-&-data)                             | Type of Dynamic Collection to be created.                                                                                      |      &#9989;      |
-| [`data`](#type-&-data)                             | Data to determine how certain `type`s of dynamic collections are created.                                                      | Depends on `type` | 
-| [`exclude`](#example-key-usage)                    | Exclude this list of keys from being created into collections.                                                                 |     &#10060;      |
-| [`addons`](#example-key-usage)                     | Defines how multiple keys can be combined under a parent key.                                                                  |     &#10060;      |
-| [`remove_suffix`](#tmdb-collection)                | Removes suffixes from the key before it's used in the collection title.                                                        |     &#10060;      |
-| [`remove_prefix`](#tmdb-collection)                | Removes prefixes from the key before it's used in the collection title.                                                        |     &#10060;      |
-| [`template`](#genre)                               | Name of the template to use for these dynamic collections.                                                                     |     &#10060;      |
-| [`template_variables`](#template-variables)        | Defines how template variables can be defined by key.                                                                          |     &#10060;      |
-| [`title_format`](#example-key-usage)               | This is the format for the collection titles.                                                                                  |     &#10060;      |
-| [`titles_override`](#decade)                       | Defines how collection titles can be overridden by key.                                                                        |     &#10060;      |
-| [`keys_override`](#example-key-usage)              | Defines how keys can be overridden before being turned into collection titles.                                                 |     &#10060;      |
-| [`test`](#../../home/environmental.html#run-tests) | Can set all dynamic collections to having `test: true` for test runs.                                                          |     &#10060;      |
-| [`sync`](#sync)                                    | Will remove dynamic collections that are no longer in the creation list.                                                       |     &#10060;      |
-| [`include`](#year)                                 | Define a list of keys to be made into collections.                                                                             |     &#10060;      |
-| [`other_name`](#other-name)                        | Used in combination with `include`. When defined, all keys not in `include` or `addons` will be combined into this collection. |     &#10060;      |
+| Attribute                                   | Description                                                                                                                    |     Required      |
+|:--------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:-----------------:|
+| [`type`](#type--data)                       | Type of Dynamic Collection to be created.                                                                                      |      &#9989;      |
+| [`data`](#type--data)                       | Data to determine how certain `type`s of dynamic collections are created.                                                      | Depends on `type` | 
+| [`exclude`](#exclude)                       | Exclude this list of keys from being created into collections.                                                                 |     &#10060;      |
+| [`addons`](#addons)                         | Defines how multiple keys can be combined under a parent key.                                                                  |     &#10060;      |
+| [`remove_suffix`](#remove-suffix)           | Removes suffixes from the key before it's used in the collection title.                                                        |     &#10060;      |
+| [`remove_prefix`](#remove-prefix)           | Removes prefixes from the key before it's used in the collection title.                                                        |     &#10060;      |
+| [`template`](#template)                     | Name of the template to use for these dynamic collections.                                                                     |     &#10060;      |
+| [`template_variables`](#template-variables) | Defines how template variables can be defined by key.                                                                          |     &#10060;      |
+| [`title_format`](#title-format)             | This is the format for the collection titles.                                                                                  |     &#10060;      |
+| [`title_override`](#title-override)         | Defines how collection titles can be overridden by key.                                                                        |     &#10060;      |
+| [`key_override`](#key-override)             | Defines how keys can be overridden before being turned into collection titles.                                                 |     &#10060;      |
+| [`test`](#test)                             | Can set all dynamic collections to having `test: true` for test runs.                                                          |     &#10060;      |
+| [`sync`](#sync)                             | Will remove dynamic collections that are no longer in the creation list.                                                       |     &#10060;      |
+| [`include`](#include)                       | Define a list of keys to be made into collections.                                                                             |     &#10060;      |
+| [`other_name`](#other-name)                 | Used in combination with `include`. When defined, all keys not in `include` or `addons` will be combined into this collection. |     &#10060;      |
 
 ## Type & Data
 
@@ -144,7 +144,6 @@ dynamic_collections:
     remove_suffix: Collection
     remove_prefix: The
 ```
-
 
 ### TMDb Popular People
 
@@ -365,6 +364,20 @@ dynamic_collections:
     data:
       actor_depth: 5
       number_of_actors: 25
+```
+
+#### Example:
+
+* Create a collection for actors who appear in the top 5 billing credits of movies
+* Only create the collection if they are in the top 5 billing credits of at least 20 movies
+
+```yaml
+dynamic_collections:
+  Actors:         # mapping name does not matter just needs to be unique
+    type: actor
+    data:
+      actor_depth: 5
+      actor_minimum: 20
 ```
 
 ### Genre
@@ -719,3 +732,29 @@ dynamic_collections:
     title_format: Top <<title>> Tracks
     template: mood collection
 ```
+
+## Exclude
+
+## Addons
+
+## Remove Suffix
+
+## Remove Prefix
+
+## Template
+
+## Template Variables
+
+## Title Format
+
+## Title Override
+
+## Key Override
+
+## Test
+
+## Sync
+
+## Include
+
+## Other Name
