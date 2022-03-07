@@ -43,7 +43,7 @@ The mapping name is the album name.
 
 To edit the metadata of a particular Track on an Album use the `tracks` attribute on its album.
 
-The mapping name is the track number in that Album or the title of the Track.
+The mapping name is the track number on that Album, or the title of the Track.
 
 ## Metadata Edits
 

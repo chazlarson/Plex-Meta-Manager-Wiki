@@ -18,10 +18,10 @@ trakt:
     created_at:
 ```
 
-| Name          | Attribute       | Allowed Values                  | Default | Required |
-|:--------------|:----------------|:--------------------------------|:-------:|:--------:|
-| Client ID     | `client_id`     | Trakt Application Client ID     |   N/A   | &#9989;  |
-| Client Secret | `client_secret` | Trakt Application Client Secret |   N/A   | &#9989;  |
+| Attribute       | Allowed Values                  | Default | Required |
+|:----------------|:--------------------------------|:-------:|:--------:|
+| `client_id`     | Trakt Application Client ID     |   N/A   | &#9989;  |
+| `client_secret` | Trakt Application Client Secret |   N/A   | &#9989;  |
 
 * All other attributes will be filled in by the script. 
 

@@ -21,7 +21,7 @@ collections:
     collection_order: custom
     sync_mode: sync
 ```
-You can also limit the number of items to search for by using the `limit` and `url` parameters under `mdblist_list`.
+You can also limit the number of items to search for by using the `limit` and `url` attributes under `mdblist_list`.
 
 ```yaml
 collections:
@@ -29,6 +29,36 @@ collections:
     mdblist_list: 
       url: https://mdblist.com/lists/linaspurinis/top-watched-movies-of-the-week
       limit: 10
+    collection_order: custom
+    sync_mode: sync
+```
+You can also sort the items by using the `sort_by` and `url` attributes under `mdblist_list`.
+
+The default `sort_by` when it's not specified is `score.desc`.
+
+### Sort Options
+
+| Option                                  | Description              |
+|:----------------------------------------|:-------------------------|
+| `score.asc`<br>`score.desc`             | Sort by MdbList Score    |
+| `released.asc`<br>`released.desc`       | Sort by Release Date     |
+| `imdbrating.asc`<br>`imdbrating.desc`   | Sort by IMDb Rating      |
+| `imdbvotes.asc`<br>`imdbvotes.desc`     | Sort by IMDb Votes       |
+| `imdbpopular.asc`<br>`imdbpopular.desc` | Sort by IMDb Popular     |
+| `tmdbpopular.asc`<br>`tmdbpopular.desc` | Sort by TMDb Popular     |
+| `rogerebert.asc`<br>`rogerebert.desc`   | Sort by RogerEvert Score |
+| `budget.asc`<br>`budget.desc`           | Sort by Budget           |
+| `revenue.asc`<br>`revenue.desc`         | Sort by Revenue          |
+| `added.asc`<br>`added.desc`             | Sort by Date Added       |
+
+For these sorts to be reflected in your collection you must use `collection_order: custom`.
+
+```yaml
+collections:
+  Top 10 Movies of The Week:
+    mdblist_list: 
+      url: https://mdblist.com/lists/linaspurinis/top-watched-movies-of-the-week
+      sort_by: imdbrating.desc
     collection_order: custom
     sync_mode: sync
 ```

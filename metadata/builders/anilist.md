@@ -173,12 +173,12 @@ No number attribute can take multiple values.
 
 ### Number Modifiers
 
-| Number Modifier | Description                                                                                                                                     |
-|:----------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
-| `.gt`           | Matches every item where the number attribute is greater then the given number<br>**Format:** number<br>e.g. `30`, `1995`, or `7.5`             |
-| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<br>**Format:** number<br>e.g. `30`, `1995`, or `7.5` |
-| `.lt`           | Matches every item where the number attribute is less then the given number<br>**Format:** number<br>e.g. `30`, `1995`, or `7.5`                |
-| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<br>**Format:** number<br>e.g. `30`, `1995`, or `7.5`    |
+| Number Modifier | Description                                                                                                                                             |
+|:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `.gt`           | Matches every item where the number attribute is greater then the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5`             |
+| `.gte`          | Matches every item where the number attribute is greater then or equal to the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5` |
+| `.lt`           | Matches every item where the number attribute is less then the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5`                |
+| `.lte`          | Matches every item where the number attribute is less then or equal to the given number<br>**Format:** number<br>**Example:** `30`, `1995`, or `7.5`    |
 
 ### Number Attributes
 

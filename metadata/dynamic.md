@@ -1,53 +1,420 @@
 # Dynamic Collections
-
-
-Plex Meta Manager can automatically create dynamic collections based on different criteria, such as
-* Collections for the top `X` popular people on TMDB (Bruce Willis, Tom Hanks etc.)
-* Collections for each decade represented in the library (Best of 1990s, Best of 2000s etc.)
-* Collections for each of the moods/styles within a Music library (A Cappella, Pop Rock etc.)
+Plex Meta Manager can dynamically create collections based on different criteria, such as
+* Collections based on the Collections from TMDb for every item in the library. ([Star Wars](https://www.themoviedb.org/collection/10-star-wars-collection), [The Lord of the Rings](https://www.themoviedb.org/collection/119), etc...)
+* Collections based on each of a Users Trakt Lists
+* Collections for the top `X` popular people on TMDb (Bruce Willis, Tom Hanks, etc...)
+* Collections for each decade represented in the library (Best of 1990s, Best of 2000s, etc...)
+* Collections for each of the moods/styles within a Music library (A Cappella, Pop Rock, etc...)
 
 The main purpose of dynamic collections is to automate the creation of collections which would otherwise require considerable user input and repetition (such as creating a collection for every genre).
 
-Below is an example dynamic collection which will create a collection for each of the decades represented within the library:
+Each dynamic collection like collections must have a mapping name, which is also attached to the collection as a label to mark the collections created by this dynamic collection. 
+
+Below is an example dynamic collection which will create a collection for every TMDb Collection associated with items in the library.
 
 ```yaml
 dynamic_collections:
-  Decades:
-    type: decade
+  TMDb Collections:          # This name is the mapping name
+    type: tmdb_collections
+    remove_suffix: "Collection"
 ```
 
-# Attributes
+## Dynamic Keys
 
-The available attributes for dynamic collections are shown below. Example usage of each attribute can be found further down this page.
+A `dynamic key` or `key` for short is used to refer to a specific value/result from the dynamic collection criteria that will be used to create the collection.
 
-| Attribute                            | Description                                                                                     | Works with Movies | Works with Shows | Works with Music | Playlists and Custom Sort |
-|:-------------------------------------|:------------------------------------------------------------------------------------------------|:-----------------:|:----------------:|:----------------:|:-------------------------:|
-| [`genre`](#genre)                    | Create a collection for each genre found in the library                                         |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`actor`](#actor)                    | Create a collection for each actor found in the library                                         |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`year`](#year)                      | Create a collection for each year found in the library                                          |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`decade`](#decade)                  | Create a collection for each decade found in the library                                        |      &#9989;      |     &#10060;     |     &#10060;     |         &#10060;          |
-| [`country`](#country)                | Create a collection for each country found in the library                                       |      &#9989;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`network`](#network)                | Create a collection for each network found in the library                                       |     &#10060;      |     &#9989;      |     &#10060;     |          &#9989;          |
-| [`mood`](#mood)                      | Create a collection for each mood found in the library                                          |     &#10060;      |     &#10060;     |     &#9989;      |         &#10060;          |
-| [`style`](#style)                    | Create a collection for each style found in the library                                         |     &#10060;      |     &#10060;     |     &#9989;      |         &#10060;          |
+An example of some keys that would be generated from a `genre` dynamic collection are; "Animation", "Horror" and "Comedy"
 
-## Attribute Examples
+### Example Key Usage
 
-### Genre
+Keys can be used for a number of purposes, examples can be found throughout this page. A few examples are shown below:
 
-Create a collection for each genre found in the library 
+* Excluding the "Horror" key from the `Genre` dynamic collection definition
+
+```yaml
+dynamic_collections:
+  Genres:         # mapping name does not matter, just needs to be unique
+    type: genre
+    exclude:
+      - Horror
+```
+
+* Using the `keys` attribute to change the formatting of "France" to "French" so that a collection can be named "French Cinema" instead of simply "France"
+  * This particular example also uses the `title_format` attribute to manipulate the naming convention of the collections.
+
+```yaml
+dynamic_collections:
+  Countries:         # mapping name does not matter, just needs to be unique
+    type: country
+    title_format: <<country>> Cinema
+    template: country_dynamic
+    keys:
+      France: French
+```
+
+* Using the `addons` attribute to combine multiple `keys`, i.e. merging "MTV", "MTV2", "MTV3" and "MTV (UK)" into one "MTV Worldwide" collection.
+  * When doing this, individual collections will not be created for the individual MTV collections, instead they will be merged within the "MTV Worldwide" collection.
+
+```yaml
+dynamic_collections:
+  networks:
+    type: network
+     addons:
+      MTV: 
+        - MTV
+        - MTV2
+        - MTV3
+        - MTV (UK)
+```
+
+## Attributes
+
+| Attribute                                   | Description                                                                                                                    |     Required      |
+|:--------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:-----------------:|
+| [`type`](#type--data)                       | Type of Dynamic Collection to be created.                                                                                      |      &#9989;      |
+| [`data`](#type--data)                       | Data to determine how certain `type`s of dynamic collections are created.                                                      | Depends on `type` | 
+| [`exclude`](#exclude)                       | Exclude this list of keys from being created into collections.                                                                 |     &#10060;      |
+| [`addons`](#addons)                         | Defines how multiple keys can be combined under a parent key.                                                                  |     &#10060;      |
+| [`remove_suffix`](#remove-suffix)           | Removes suffixes from the key before it's used in the collection title.                                                        |     &#10060;      |
+| [`remove_prefix`](#remove-prefix)           | Removes prefixes from the key before it's used in the collection title.                                                        |     &#10060;      |
+| [`template`](#template)                     | Name of the template to use for these dynamic collections.                                                                     |     &#10060;      |
+| [`template_variables`](#template-variables) | Defines how template variables can be defined by key.                                                                          |     &#10060;      |
+| [`title_format`](#title-format)             | This is the format for the collection titles.                                                                                  |     &#10060;      |
+| [`title_override`](#title-override)         | Defines how collection titles can be overridden by key.                                                                        |     &#10060;      |
+| [`key_override`](#key-override)             | Defines how keys can be overridden before being turned into collection titles.                                                 |     &#10060;      |
+| [`test`](#test)                             | Can set all dynamic collections to having `test: true` for test runs.                                                          |     &#10060;      |
+| [`sync`](#sync)                             | Will remove dynamic collections that are no longer in the creation list.                                                       |     &#10060;      |
+| [`include`](#include)                       | Define a list of keys to be made into collections.                                                                             |     &#10060;      |
+| [`other_name`](#other-name)                 | Used in combination with `include`. When defined, all keys not in `include` or `addons` will be combined into this collection. |     &#10060;      |
+
+## Type & Data
+
+Specifies the type of dynamic collection to be created.
+
+Depending on the `type` of dynamic collection, `data` is used to specify the options that are required to fulfill the requirements of creating the collection.
+
+| Type Option                                   | Description                                                                                                 | Uses<br>`data` |  Movies  |  Shows   |  Music   |  Video   |
+|:----------------------------------------------|:------------------------------------------------------------------------------------------------------------|:--------------:|:--------:|:--------:|:--------:|:--------:|
+| [`tmdb_collection`](#tmdb-collection)         | Create a collection for each TMDb Collection associated with an item in the library                         |    &#10060;    | &#9989;  | &#10060; | &#10060; | &#10060; |
+| [`tmdb_popular_people`](#tmdb-popular-people) | Create a collection for each actor found on [TMDb's Popular People List](https://www.themoviedb.org/person) |    &#9989;     | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`trakt_user_lists`](#trakt-user-lists)       | Create a collection for each list from specific trakt users                                                 |    &#9989;     | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`trakt_liked_lists`](#trakt-liked-lists)     | Create a collection for each list the authenticated trakt user likes                                        |    &#10060;    | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`trakt_people_list`](#trakt-people-lists)    | Create a collection for each actor found in the trakt list                                                  |    &#9989;     | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`actor`](#actor)                             | Create a collection for each actor found in the library                                                     |    &#9989;     | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`genre`](#genre)                             | Create a collection for each genre found in the library                                                     |    &#10060;    | &#9989;  | &#9989;  | &#9989;  | &#9989;  |
+| [`year`](#year)                               | Create a collection for each year found in the library                                                      |    &#10060;    | &#9989;  | &#9989;  | &#10060; | &#10060; |
+| [`decade`](#decade)                           | Create a collection for each decade found in the library                                                    |    &#10060;    | &#9989;  | &#10060; | &#10060; | &#10060; |
+| [`country`](#country)                         | Create a collection for each country found in the library                                                   |    &#10060;    | &#9989;  | &#10060; | &#9989;  | &#9989;  |
+| [`network`](#network)                         | Create a collection for each network found in the library                                                   |    &#10060;    | &#10060; | &#9989;  | &#10060; | &#10060; |
+| [`mood`](#mood)                               | Create a collection for each mood found in the library                                                      |    &#10060;    | &#10060; | &#10060; | &#9989;  | &#10060; |
+| [`style`](#style)                             | Create a collection for each style found in the library                                                     |    &#10060;    | &#10060; | &#10060; | &#9989;  | &#10060; |
+
+### TMDb Collection
+
+Create collections based on the TMDb Collections associated with items in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>Type</th>
+    <th><code>type</code> Option</th>
+    <td><code>tmdb_collection</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  tmdb_collection_details: <<tmdb_collection>>
+```
+
+</td>
+  </tr>
+</table>
+
+#### Example: Create collection for every TMDb Collection found in the library.
+
+```yaml
+dynamic_collections:
+  TMDb Collections:          # This name is the mapping name
+    type: tmdb_collections
+    remove_suffix: Collection
+    remove_prefix: The
+```
+
+### TMDb Popular People
+
+Create collections based on each actor found on [TMDb's Popular People List](https://www.themoviedb.org/person).
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>tmdb_popular_people</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Number greater then 0</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  tmdb_person: <<tmdb_popular_people>>
+  plex_search: 
+    all: 
+      actor: tmdb
+```
+
+</td>
+  </tr>
+</table>
+
+#### Example: Create collection for the top 10 popular people
+
+```yaml
+dynamic_collections:
+  TMDb Popular People:          # This name is the mapping name
+    type: tmdb_popular_people
+    data: 10
+```
+
+### Trakt User Lists
+
+Create collections for each of the Trakt lists for the specified users. Use `me` to reference the authenticated user.
+
+* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>trakt_user_lists</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>List of Trakt Users</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  trakt_list_details: <<trakt_user_lists>>
+```
+
+</td>
+  </tr>
+</table>
+
+#### Example: Create collections for each of the lists that the users have created
+
+```yaml
+dynamic_collections:
+  Trakt User Lists:          # This name is the mapping name
+    type: trakt_user_lists
+    data:
+     - me
+     - yozoraxcii
+```
+
+### Trakt Liked Lists
+
+Create collections for each of the Trakt lists that the authenticated user has liked.
+
+* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>trakt_liked_lists</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  trakt_list_details: <<trakt_liked_lists>>
+```
+
+</td>
+  </tr>
+</table>
+
+#### Example: Create collections for each of the lists that the user has liked within Trakt
+
+```yaml
+dynamic_collections:
+  Trakt Liked Lists:          # This name is the mapping name
+    type: trakt_liked_lists
+```
+
+### Trakt People Lists
+
+Create collections for each of the people found within Trakt lists that the user specifies.
+
+* Requires [Trakt Authentication](../config/trakt) to be configured within the Configuration File
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>trakt_user_lists</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>List of Trakt URLs</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  tmdb_person: <<trakt_people_list>>
+  plex_search: 
+    all: 
+      actor: tmdb
+```
+
+</td>
+  </tr>
+</table>
+
+#### Example: Create a collection for each of the people on the trakt list
+```yaml
+dynamic_collections:
+  Trakt User Lists:
+    type: trakt_people_lists
+    data:
+     - https://trakt.tv/users/ash9001/lists/all-time-top-actors
+```
+
+### Actor
+
+Create a collection for each actor found in the library.
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
     <td><code>actor</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Values</th>
+    <td>
+        <table class="clearTable">
+            <tr>
+                <th>Attribute</th>
+                <th>Description & Values</th>
+            </tr>
+            <tr>
+                <td><code>actor_depth</code></td>
+                <td><strong>Values:</strong> Number greater then 0</td> 
+                <td><strong>Default:</strong> 3</td>
+            </tr>
+            <tr>
+                <td><code>actor_minimum</code></td>
+                <td><strong>Values:</strong> Number greater then 0</td> 
+                <td><strong>Default:</strong> 3</td>
+            </tr>
+            <tr>
+                <td><code>number_of_actors</code></td>
+                <td><strong>Values:</strong> Number greater then 0</td> 
+                <td><strong>Default:</strong> None</td>
+            </tr>
+        </table>
+    </td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  tmdb_person: <<actor>>
+  plex_search:
+    all:
+      actor: tmdb
+```
+
+</td>
+  </tr>
+</table>
+
+* `actor_depth` determines how many top billed actor per item they are in. (i.e. if they play a cameo role, this is unlikely to be counted)
+* `actor_minimum` determines the minimum number of times the actor must appear within `actor_depth` for the collection to be created.
+* `number_of_actors` determines the number of actor collection to max out at. (i.e. if to make collections for the top 25 actors)
+
+#### Example:
+
+* Create a collection for the top 25 actors who appear in the top 5 billing credits of movies
+
+```yaml
+dynamic_collections:
+  Top Actors:         # mapping name does not matter just needs to be unique
+    type: actor
+    data:
+      actor_depth: 5
+      number_of_actors: 25
+```
+
+#### Example:
+
+* Create a collection for actors who appear in the top 5 billing credits of movies
+* Only create the collection if they are in the top 5 billing credits of at least 20 movies
+
+```yaml
+dynamic_collections:
+  Actors:         # mapping name does not matter just needs to be unique
+    type: actor
+    data:
+      actor_depth: 5
+      actor_minimum: 20
+```
+
+### Genre
+
+Create a collection for each genre found in the library.
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>genre</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        genre: <<genre>>
+```
+
+</td>
   </tr>
 </table>
 
 #### Example: 
-* Create a collection for the top 100 items for each genre found in the library (TV and Movies)
+* Create dynamic collections based on each genre found in the library (TV and Movies)
+* Amend the template to increase the limit from 50 to 100
 * Exclude the "Talk Show" genre
-* Name the collection "Top [Genre] Movies or Top [Genre] Shows
+* Name the collection Top [Genre] Movies or Top [Genre] Shows
 
 ```yaml
 templates:
@@ -57,9 +424,8 @@ templates:
       sort_by: critic_rating.desc
       all: 
         genre: <<genre>>
-    sort_title: <<collection_name>>
 dynamic_collections:
-  Genres:         # this name does not matter
+  Genres:         # mapping name does not matter just needs to be unique
     type: genre
     exclude:
           - Talk Show
@@ -67,52 +433,133 @@ dynamic_collections:
     template: genre collection
 ```
 
-### Actor
+### Year
 
-Create a collection for each actor found in the library 
+Create a collection for each year found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>Type</th>
-    <td><code>actor</code></td>
+    <th><code>type</code> Option</th>
+    <td><code>year</code></td>
+  </tr>
   <tr>
-    <th>Data</th>
-    <td><code>`actor_depth`</code>: integer<br>
-    <code>`actor_minimum`</code>: integer</td>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        year: <<year>>
+```
+
+</td>
   </tr>
 </table>
 
-* `actor_depth` searches the top billed actor per movie they are in (i.e. if they play a cameo role, this is unlikely to be counted)
-* `actor_minimum` is the minimum number of times the actor must appear within `actor_depth` for the collection to be created.
+#### Example
 
-#### Example:
-* Create a collection for actors who appear in the top 5 billing credits of movies
-* Only create the collection if they are in the top 5 billing credits of at least 20 movies
+* Create dynamic collections based on each year found in the library (TV and Movies)
+* Use the `include` attribute to only show collections for years "2020", "2021" and "2022"
+* Name the collection "Best of (year)"
 
 ```yaml
 dynamic_collections:
-  Actors:         # this name does not matter
-    type: actor
-    data:
-      actor_depth: 5
-      actor_minimum: 20
+  Years:         # mapping name does not matter just needs to be unique
+    type: year
+    include:
+      - 2020
+      - 2021
+      - 2022
+    title_format: Best of <<title>>
 ```
 
-## Country
+### Decade
+
+Create a collection for each decade found in the library 
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th><code>type</code> Option</th>
+    <td><code>decade</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        decade: <<decade>>
+```
+
+</td>
+  </tr>
+</table>
+
+### Example: 
+* Create a collection for each decade found in the library (TV and Movies)
+* Name the collection Top [Decade] Movies
+* Rename the `2020` collection name to "Top 2020 Movies (so far)"
+
+```yaml
+dynamic_collections:
+  Decades:         # mapping name does not matter just needs to be unique
+    type: decade
+    title_format: Top <<title>> <<library_type>>s
+    template: decade collection
+    titles:
+      2020: Top <<title>> <<library_type>>s (so far)
+```
+
+### Country
 
 Create a collection for each country found in the library 
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>Type</th>
+    <th><code>type</code> Option</th>
     <td><code>country</code></td>
+  </tr>
+  <tr>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        country: <<country>>
+```
+
+</td>
   </tr>
 </table>
 
-#### Example: 
-* Create a collection for the top 100 items for each country found in the library
-* Name the collection "Top [Genre] Movies or Top [Genre] Shows
+#### Example:
 
+* Create a collection for the top 100 movies from each country found in the library
+* Name the collection Top [Country] Cinema
+* The `keys` attribute is used here in combination with the `title_format` to change the collection name from "France" which would be the default title, to "Top French Cinema"
 
 ```yaml
 templates:
@@ -122,150 +569,192 @@ templates:
       sort_by: critic_rating.desc
       all: 
         country: <<country>>
-    sort_title: +4_2_<<collection_name>>
 dynamic_collections:
-  Genres:         # this name does not matter
+  Countries:         # mapping name does not matter just needs to be unique
     type: country
-    title_format: <<country>> Cinema
+    title_format: Top <<country>> Cinema
     template: country_dynamic
+    keys:
+      France: French
+      Germany: German
+      India: Indian
 ```
 
 
+### Network
 
-# Special Attributes
-
-## Overview
-Some attributes require the user to specify the `type` and `data` of the attribute, allowing for personalization of the dynamic collections that are created.
-For these, the name of the collection within the Metadata file is a placeholder and will be replaced with the title used within the template of the attribute being used.
-
-The below example will create dynamic collections for the 10 most popular actors
-```yaml
-dynamic_collections:
-  TMDB Popular People:          # This name is a placeholder
-    type: tmdb_popular_people
-    data: 10
-```
-
-This example will create dynamic collections based on the lists that the user defines
-```yaml
-dynamic_collections:
-  Trakt User Lists:          # This name is a placeholder
-    type: trakt_user_lists
-    data:
-     - URL1
-     - URL2
-     - URL3
-```
-
-## Attribute Types
-
-### TMDB Popular People
-
-Create collections based on the most popular people according to TMDB
+Create a collection for each network found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>Type</th>
-    <td><code>tmdb_popular_people</code></td>
+    <th><code>type</code> Option</th>
+    <td><code>network</code></td>
+  </tr>
   <tr>
-    <th>Data</th>
-    <td>Any integer</td>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        network: <<network>>
+```
+
+</td>
   </tr>
 </table>
 
-##### Example: Create collection for the top 10 popular people
+
+#### Example: 
+
+* Create a collection for each network found in a TV Shows library
+
 ```yaml
+templates:
+  network collection:
+    smart_filter: 
+      sort_by: critic_rating.desc
+      all: 
+        network: <<network>>
+    sort_title: <<collection_name>>
 dynamic_collections:
-  TMDB Popular People:          # This name is a placeholder
-    type: tmdb_popular_people
-    data: 10
+  Networks:         # mapping name does not matter just needs to be unique
+    type: network
+    title_format: <<title>>
+    template: network collection
 ```
-### TMDB Collection
-Create collections based on the list of TMDB Collections specified.
+
+### Mood
+
+Create a collection for each mood found in the library. 
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>Type</th>
-    <td><code>tmdb_collection</code></td>
+    <th><code>type</code> Option</th>
+    <td><code>mood</code></td>
+  </tr>
   <tr>
-    <th>Data</th>
-    <td>Comma-separated list of TMDB collections</td>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        mood: <<mood>>
+```
+
+</td>
   </tr>
 </table>
 
-##### Example: Create collections for Star Wars, The Hunger Games and Lord of the Rings
+#### Example:
+
+* Create a collection for the top 100 items for each mood found in the Music library
+* Name the collection Top [Mood] Tracks
+
 ```yaml
+templates:
+  mood collection:
+    smart_filter: 
+      limit: 100
+      sort_by: critic_rating.desc
+      type: tracks
+      all: 
+        mood: <<mood>>
 dynamic_collections:
-  TMDB Collections:          # This name is a placeholder
-    type: tmdb_collections
-    data: 10, 131635, 119
+  Moods:         # mapping name does not matter just needs to be unique
+    type: mood
+    title_format: Top <<title>> Tracks
+    template: mood collection
 ```
 
-### Trakt Liked Lists
-Create collections for each of the Trakt lists that the user has liked/
-* Requires [Trakt Authentication](https://metamanager.wiki/en/develop/config/trakt.html) to be configured within the Configuration File
+### Style
+
+Create a collection for each style found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>Type</th>
-    <td><code>trakt_liked_lists</code></td>
+    <th><code>type</code> Option</th>
+    <td><code>style</code></td>
+  </tr>
   <tr>
-    <th>Data</th>
-    <td>Not Required</td>
+    <th><code>data</code> Value</th>
+    <td>Not Used</td>
+  </tr>
+  <tr>
+    <th>Default Template</th>
+    <td>
+
+```yaml
+default_template: 
+  smart_filter:
+    limit: 50
+    sort_by: critic_rating.desc
+      any:
+        style: <<style>>
+```
+
+</td>
   </tr>
 </table>
 
-##### Example: Create collections for each of the lists that the user has liked within Trakt
+#### Example: 
+
+* Create a collection for the top 100 items for each style found in the Music library
+* Name the collection Top [Style] Tracks
+
 ```yaml
+templates:
+  mood collection:
+    smart_filter: 
+      limit: 100
+      sort_by: critic_rating.desc
+      type: tracks
+      all: 
+        style: <<style>>
 dynamic_collections:
-  Trakt Liked Lists:          # This name is a placeholder
-    type: trakt_liked_lists
+  Moods:         # mapping name does not matter just needs to be unique
+    type: style
+    title_format: Top <<title>> Tracks
+    template: mood collection
 ```
 
-### Trakt User Lists
-Create collections for each of the Trakt list that the user specifies
-* Requires [Trakt Authentication](https://metamanager.wiki/en/develop/config/trakt.html) to be configured within the Configuration File
+## Exclude
 
-<table class="dualTable colwidths-auto align-default table">
-  <tr>
-    <th>Type</th>
-    <td><code>trakt_user_lists</code></td>
-  <tr>
-    <th>Data</th>
-    <td>List of Trakt URLs</td>
-  </tr>
-</table>
+## Addons
 
-##### Example: Create collections for each of the lists that the user has liked within Trakt
-```yaml
-dynamic_collections:
-  Trakt User Lists:          # This name is a placeholder
-    type: trakt_user_lists
-    data:
-     - https://trakt.tv/users/giladg/lists/latest-releases      
-     - https://trakt.tv/users/donxy/lists/marvel-cinematic-universe
-     - https://trakt.tv/users/yozoraxcii/lists/christmas-extravaganza-non-tv-movie
-```
-### Trakt People Lists
-Create collections for each of the people found within Trakt lists that the user specifies
-* Requires [Trakt Authentication](https://metamanager.wiki/en/develop/config/trakt.html) to be configured within the Configuration File
+## Remove Suffix
 
-<table class="dualTable colwidths-auto align-default table">
-  <tr>
-    <th>Type</th>
-    <td><code>trakt_user_lists</code></td>
-  <tr>
-    <th>Data</th>
-    <td>List of Trakt URLs</td>
-  </tr>
-</table>
+## Remove Prefix
 
-##### Example: Create a collection for each of the people within the Star Wars Canon franchise
-```yaml
-dynamic_collections:
-  Trakt User Lists:
-    type: trakt_people_lists
-    data:
-     - https://trakt.tv/users/movistapp/lists/star-wars
-     - https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline
-```
+## Template
+
+## Template Variables
+
+## Title Format
+
+## Title Override
+
+## Key Override
+
+## Test
+
+## Sync
+
+## Include
+
+## Other Name

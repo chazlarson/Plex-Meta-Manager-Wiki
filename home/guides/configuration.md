@@ -144,7 +144,7 @@ mal:
 
 In this specific example there are four Plex libraries that are being connected to: `Movies - 4K`, `TV Shows`, `Animé` and `Music`. These names **must**  match the name of the library as it appears within Plex, including any special characters such as the é within `Animé`.
 
-Using `Movies - 4K:` as an example, `metadata_path:` instructs PMM that the next piece of code is where to look for the [Metadata Files](https://metamanager.wiki/en/develop/metadata/metadata.html) which will be covered in the next section.
+Using `Movies - 4K:` as an example, `metadata_path:` instructs PMM that the next piece of code is where to look for the [Metadata Files](../../metadata/metadata) which will be covered in the next section.
 <br/>
 <br/>
 
