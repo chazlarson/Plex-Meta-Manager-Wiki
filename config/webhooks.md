@@ -14,12 +14,12 @@ webhooks:
   changes:
 ```
 
-| Name                                                  | Attribute   | Global  | Library  | Collection |
-|:------------------------------------------------------|:------------|:-------:|:--------:|:----------:|
-| [Error](#error-notifications)                         | `error`     | &#9989; | &#9989;  |  &#10060;  |
-| [Run Start](#run-start-notifications)                 | `run_start` | &#9989; | &#10060; |  &#10060;  |
-| [Run End](#run-end-notifications)                     | `run_end`   | &#9989; | &#10060; |  &#10060;  |
-| [Collection/Playlist Changes](#changes-notifications) | `changes`   | &#9989; | &#9989;  |  &#9989;   |
+| Attribute                               | Global  | Library  | Collection |
+|:----------------------------------------|:-------:|:--------:|:----------:|
+| [`error`](#error-notifications)         | &#9989; | &#9989;  |  &#10060;  |
+| [`run_start`](#run-start-notifications) | &#9989; | &#10060; |  &#10060;  |
+| [`run_end`](#run-end-notifications)     | &#9989; | &#10060; |  &#10060;  |
+| [`changes`](#changes-notifications)     | &#9989; | &#9989;  |  &#9989;   |
 
 * Each Attribute can be either a webhook url as a string or a comma-separated list of webhooks urls.
 * To send notifications to [Notifiarr](notifiarr) just add `notifiarr` to a webhook instead of the webhook url.
@@ -102,6 +102,10 @@ The Run End notification will be sent at the end of every run with statistics.
   "items_removed": int,         // Number of Items removed across all Collections/Playlists
   "added_to_radarr": int,       // Number of Items added to Radarr
   "added_to_sonarr": int        // Number of Items added to Sonarr
+  "names": [
+    "name": str,                // Name of collection or playlist in the run 
+    "library": str              // Library the collection is in or PLAYLIST
+  ]
 }
 ```
 

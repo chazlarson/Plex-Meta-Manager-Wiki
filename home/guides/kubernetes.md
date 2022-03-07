@@ -278,7 +278,7 @@ metadata:
 
 ## Creating dynamic configuration files with an Init Container
 
-IMDB search results may include results for media which has not yet been released, resulting in a collection that is 
+IMDb search results may include results for media which has not yet been released, resulting in a collection that is 
 incomplete.  In order to solve for this you can replace a static config map with a config file that is (re)generated when
 the cronjob starts each time.  This can be done by including an init container which renders a 
 [Jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/) template to a file in the PVC.

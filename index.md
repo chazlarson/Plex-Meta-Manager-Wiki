@@ -96,10 +96,10 @@ As this build is subject to extreme change, there is no nightly branch of the wi
 
 ## Example Usage
 
-Plex Meta Manager gives the user the power to curate a set of Collections to make discovering and organizing media easy. They can be built either using plex-based searches/filters, or by using popular builders such as TMDB, IMDB, Trakt, MDBList, MyAnimeList and many more.
+Plex Meta Manager gives the user the power to curate a set of Collections to make discovering and organizing media easy. They can be built either using plex-based searches/filters, or by using popular builders such as TMDb, IMDb, Trakt, MDBList, MyAnimeList and many more.
 
 Some example collections that can be created are:
-  * Trending/Popular (based on TMDB, IMDB, Trakt, etc.)
+  * Trending/Popular (based on TMDb, IMDb, Trakt, etc.)
   * Streaming Service (such as Netflix, Disney+, etc.)
   * Networks
   * Studios
@@ -134,6 +134,6 @@ If you are unable to use the [Plex Meta Manager Discord Server](https://discord.
 
 [IBRACORP](https://ibracorp.io/) made a video walkthough for installing Plex Meta Manager on unRAID. While you might not be using unRAID the video goes over many key aspects of Plex Meta Manager and can be a great place to start learning how to use the script.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dF69MNoot3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br/>
+<div style="margin: 40px 0 40px 0;" align="center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/dF69MNoot3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

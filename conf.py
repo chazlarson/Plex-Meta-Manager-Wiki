@@ -152,6 +152,7 @@ html_theme_options = {
                 ("TMDb Attributes", "config/tmdb"),
                 ("Tautulli Attributes", "config/tautulli"),
                 ("OMDb Attributes", "config/omdb"),
+                ("MdbList Attributes", "config/mdblist"),
                 ("Notifiarr Attributes", "config/notifiarr"),
                 ("AniDB Attributes", "config/anidb"),
                 ("Radarr Attributes", "config/radarr"),

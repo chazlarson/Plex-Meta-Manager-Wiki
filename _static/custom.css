@@ -160,3 +160,9 @@ p {
   -webkit-hyphens: none !important;
   hyphens: none !important;
 }
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #00a379 !important;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: #222222 !important;
+}

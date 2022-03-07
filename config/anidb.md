@@ -13,7 +13,7 @@ anidb:
   password: ######
 ```
 
-| Name     | Attribute  | Allowed Values | Required |
-|:---------|:-----------|:---------------|:--------:|
-| Username | `username` | AniDB Username | &#9989;  |
-| Password | `password` | AniDB Password | &#9989;  |
+| Attribute  | Allowed Values | Required |
+|:-----------|:---------------|:--------:|
+| `username` | AniDB Username | &#9989;  |
+| `password` | AniDB Password | &#9989;  |

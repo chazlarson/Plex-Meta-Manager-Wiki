@@ -18,6 +18,7 @@ If you run into a race condition where you have set an Environment Variable with
 | [Run Metadata Files](#run-metadata-files)             | `-rm` or `--run-metadata-files`    | `PMM_METADATA_FILES`     |
 | [Libraries First](#libraries-first)                   | `-lf` or `--libraries-first`       | `PMM_LIBRARIES_FIRST`    |
 | [Ignore Schedules](#ignore-schedules)                 | `-is` or `--ignore-schedules`      | `PMM_IGNORE_SCHEDULES`   |
+| [Ignore Ghost](#ignore-ghost)                         | `-ig` or `--ignore-ghost`          | `PMM_IGNORE_GHOST`       |
 | [Delete Collections](#delete-collections)             | `-dc` or `--delete-collections`    | `PMM_DELETE_COLLECTIONS` |
 | [Resume Run](#resume-run)                             | `-re` or `--resume`                | `PMM_RESUME`             |
 | [No Countdown](#no-countdown)                         | `-nc` or `--no-countdown`          | `PMM_NO_COUNTDOWN`       |
@@ -487,6 +488,45 @@ python plex_meta_manager.py --ignore-schedules
 
 ```shell
 docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --ignore-schedules
+```
+
+</details>
+
+### Ignore Ghost
+
+Ignore all ghost logging for the run. A ghost log is what's printed to the console to show progress during steps. 
+
+<table class="dualTable colwidths-auto align-default table">
+  <tr>
+    <th style="background-color: #222;"></th>
+    <th>Shell</th>
+    <th>Environmental</th>
+  </tr>
+  <tr>
+    <th>Flags</th>
+    <td><code>-ig</code> or <code>--ignore-ghost</code></td>
+    <td><code>PMM_IGNORE_GHOST</code></td>
+  </tr>
+  <tr>
+    <th>Example</th>
+    <td><code>--ignore-ghost</code></td>
+    <td><code>PMM_IGNORE_GHOST=true</code></td>
+  </tr>
+</table>
+
+<details>
+  <summary>Local Environment</summary>
+
+```shell
+python plex_meta_manager.py --ignore-ghost
+```
+
+</details>
+<details>
+  <summary>Docker Environment</summary>
+
+```shell
+docker run -it -v "X:\Media\Plex Meta Manager\config:/config:rw" meisnate12/plex-meta-manager --ignore-ghost
 ```
 
 </details>

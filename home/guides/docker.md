@@ -152,12 +152,12 @@ Next you’ll set up the config file.  ThIs tells PMM how to connect to Plex and
 
 Before you do this you’ll need:
 
-1. TMDB API key.  They’re free.
+1. TMDb API key.  They’re free.
 1. Plex URL and Token
 
 There are a bunch of other services you *can* configure in the config file, but these two are the bare minimum.
 
-#### Getting a TMDB API Key
+#### Getting a TMDb API Key
 
 Note that if you already have an API key, you can use that one.  You don’t need another.
 
@@ -177,7 +177,7 @@ Copy that value, you’ll need it for the config file.
 
 The Plex URL is whatever URL you’d use **from this machine** to connect directly to your Plex server [i.e. NOT app.plex.tv].
 
-As with the TMDB API Key, if you already have a Plex Token, you can use that one.
+As with the TMDb API Key, if you already have a Plex Token, you can use that one.
 
 This article will describe how to get a token: [Finding an authentication token](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)
 
@@ -220,7 +220,7 @@ From here on in, when I say "open the config file", I mean the `nano` or `notepa
 
 ---
 
-Scroll down a bit and update the three things you just collected; Plex URL, Plex Token, and TMDB API Key.
+Scroll down a bit and update the three things you just collected; Plex URL, Plex Token, and TMDb API Key.
 
 ```
 plex:                                           # Can be individually specified per library as well
@@ -231,7 +231,7 @@ plex:                                           # Can be individually specified 
   empty_trash: false
   optimize: false
 tmdb:
-  apikey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   <<< ENTER YOUR TMDB API
+  apikey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   <<< ENTER YOUR TMDb API
   language: en
 ```
 
@@ -319,7 +319,7 @@ I’ve removed some of the lines for space, but have left the important bits:
 ...
 ```
 
-You can see there that PMM found its config file, was able to connect to TMDB, was able to connect to Plex, and then failed trying to read the “Movies-HIDDEN” library, which of course doesn’t exist.
+You can see there that PMM found its config file, was able to connect to TMDb, was able to connect to Plex, and then failed trying to read the “Movies-HIDDEN” library, which of course doesn’t exist.
 
 Open the config file again and change "Movies-HIDDEN" [or whatever you used in the previous step] to reflect your Plex.  Also fix the name of the config file to match the library.  Then delete any lines that start with “git”.  Those are all sets of collections, and we just want to create a few as examples.
 
@@ -444,7 +444,7 @@ I chose a letterboxd list for the last one since trakt requires authentication a
 
 This is going to create three collections.  One contains movies that feature Bill Murray.  One is up to 100 movies that came out in the 1980s sorted by popularity.  The last are movies that appear on a list of good endings according to Vulture.
 
-The first one is based on a template, so if you wanted to create a collection for another actor you just have to copy and edit those two lines [the ID comes from TMDB].  All the other config details come from the template.
+The first one is based on a template, so if you wanted to create a collection for another actor you just have to copy and edit those two lines [the ID comes from TMDb].  All the other config details come from the template.
 
 ```
    Amy Adams:

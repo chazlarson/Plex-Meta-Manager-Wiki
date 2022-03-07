@@ -1,6 +1,6 @@
 # Scheduling Guide
 
-Plex Meta Manager is designed to be a background running service that "wakes up" and "sleeps" when it is scheduled to do so. By default and unless configured using the [Time to Run Command](https://metamanager.wiki/en/develop/home/environmental.html#time-to-run), Plex Meta Manager expects to run every day at 3AM local time.
+Plex Meta Manager is designed to be a background running service that "wakes up" and "sleeps" when it is scheduled to do so. By default and unless configured using the [Time to Run Command](../environmental.md#time-to-run), Plex Meta Manager expects to run every day at 3AM local time.
 
 Whilst it is possible to have `python plex-meta-manager.py` running in an open window constantly, this is not the recommended approach as it relies on an always-open command window that can be obtrusive to the user.
 
@@ -12,7 +12,7 @@ Instead, it is recommended to set an automated scheduling service so that Plex M
   <summary>Click to Expand</summary>
   <br />
 
-Using docker is the most simple and robust solution to automating Plex Meta Manager scheduling. When utilizing Plex Meta Manageer within docker, the session will resume after a system reboot (assuming Docker is set to start at system startup, which is the default) and will allow Plex Meta Manager to run in the background at all times.
+Using docker is the most simple and robust solution to automating Plex Meta Manager scheduling. When utilizing Plex Meta Manager within docker, the session will resume after a system reboot (assuming Docker is set to start at system startup, which is the default) and will allow Plex Meta Manager to run in the background at all times.
 
 There's a [Docker Walkthrough](docker) with more detailed instructions on setting up Plex Meta Manager within docker. The simplest command to facilitate a docker run is:
 
@@ -25,7 +25,7 @@ docker run -d \
 
 This will run Plex Meta Manager in the background persistently until it is stopped by the user. Whilst the docker container will be persistently running, Plex Meta Manager will not begin the run until the scheduled time.
 
-Further customizations of the docker run command can be used to specify set times to run Plex Meta Manager, further information on this and other Run Commands can be found [here](https://metamanager.wiki/en/develop/home/environmental.html#time-to-run)
+Further customizations of the docker run command can be used to specify set times to run Plex Meta Manager, further information on this and other Run Commands can be found [here](../environmental.md#time-to-run)
 </details>
 
 ## Windows
@@ -36,7 +36,7 @@ Further customizations of the docker run command can be used to specify set time
 
 ### Task Scheduler
 
-Windows Task Scheduler is advised for those who followed the Windows instructions in the [Local Walkthrough Guides](https://metamanager.wiki/en/develop/home/guides/local.html) and/or do not want to run Plex Meta Manager within docker.
+Windows Task Scheduler is advised for those who followed the Windows instructions in the [Local Walkthrough Guides](local) and/or do not want to run Plex Meta Manager within docker.
 
 Windows Task Scheduler allows the user to run commands and services at scheduled times and intervals.
 
@@ -46,15 +46,16 @@ There are two methods of running Plex Meta Manager:
 
 These will be explained further down this page.
 
-These guides assumes the user has followed the Windows instructions in the [Local Walkthrough Guides](https://metamanager.wiki/en/develop/home/guides/local.html) which includes setting up the [virtual environment](https://metamanager.wiki/en/develop/home/guides/local.html#setting-up-a-virtual-environment). Please also ensure to edit any commands to be reflective of the live environment (such as usernames, installation directories).
+These guides assume the user has followed the Windows instructions in the [Local Walkthrough Guides](local) which includes setting up the [virtual environment](local.md#setting-up-a-virtual-environment). Please also ensure to edit any commands to be reflective of the live environment (such as usernames, installation directories).
 
 ### Background Run Scheduled Task
+
 This method will start Plex Meta Manager at system startup and will keep the script running in the background indefinitely. The user can then define set days and times for the Configuration File to be processed, and Plex Meta Manager will handle processing as and when required. 
 
 This is the recommended approach as it allows the user additional control over how and when Plex Meta Manager processes.
 
 <details>
-  <summary>Backgound Run Scheduled Task</summary>
+  <summary>Background Run Scheduled Task</summary>
   <br />
 
 1. Create a `waiter.cmd` file by opening the text editor (i.e. Notepad, TextEdit) and pasting the following code:
@@ -91,23 +92,24 @@ This is the recommended approach as it allows the user additional control over h
 
    ![task-scheduler](task-scheduler/06-basic-task-05.png)
 
-   Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
+8. Copy the directory everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
 
    ![task-scheduler](task-scheduler/04-basic-task-06.png)
 
-8. Check "Open the properties dialog" if desired (not required) then select "Finish".
+9. Check "Open the properties dialog" if desired (not required) then select "Finish".
 
    ![task-scheduler](task-scheduler/04-basic-task-07.png)
 
-9. Click "Task Schedule Library" on the left. The PMM Run task should be visible.
+10. Click "Task Schedule Library" on the left. The PMM Run task should be visible.
 
-   ![task-scheduler](task-scheduler/04-basic-task-09.png)
+    ![task-scheduler](task-scheduler/04-basic-task-09.png)
 
 Plex Meta Manager will now launch at system startup, but will wait until the user-specified scheduled time before executing, and will then wait in the background for the next scheduled run.
 
 </details>
 
 ### Single Run Scheduled Task
+
 This method will start Plex Meta Manager at the desired time, immediately begin running the Configuration File and will then kill the process once it has completed.
 
 <details>
@@ -154,7 +156,7 @@ This method will start Plex Meta Manager at the desired time, immediately begin 
 
    ![task-scheduler](task-scheduler/04-basic-task-05.png)
 
-9. Copy the directory [everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
+9. Copy the directory everything up to but not including `runner.cmd` from the "Program/Script" field, and paste it into the "Start in" field.  This is `C:\User\IEUser\Plex-Meta-Manager-1.15.1` in the example below, then select "next".
 
    ![task-scheduler](task-scheduler/04-basic-task-06.png)
 

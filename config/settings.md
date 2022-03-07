@@ -17,40 +17,40 @@ There are some attributes which can be specified at the collection level using [
 The available setting attributes which can be set at each level are outlined below:
 
 
-| Name                                                        | Attribute                     | Global Level | Library Level | Collection/Playlist Level |
-|:------------------------------------------------------------|:------------------------------|:------------:|:-------------:|:-------------------------:|
-| [Cache](#cache)                                             | `cache`                       |   &#9989;    |   &#10060;    |         &#10060;          |
-| [Cache Expiration](#cache-expiration)                       | `cache_expiration`            |   &#9989;    |   &#10060;    |         &#10060;          |
-| [Image Asset Directory](#image-asset-directory)             | `asset_directory`             |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Image Asset Folders](#image-asset-folders)                 | `asset_folders`               |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Asset Depth](#asset-depth)                                 | `asset_depth`                 |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Create Asset Folders](#create-asset-folders)               | `create_asset_folders`        |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Dimensional Asset Rename](#dimensional-asset-rename)       | `dimensional_asset_rename`    |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Download URL Assets](#download-url-assets)                 | `download_url_assets`         |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Show Missing Season Assets](#show-missing-season-assets)   | `show_missing_season_assets`  |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Show Missing Episode Assets](#show-missing-episode-assets) | `show_missing_episode_assets` |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Show Asset Not Needed](#show-asset-not-needed)             | `show_asset_not_needed`       |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Sync Mode](#sync-mode)                                     | `sync_mode`                   |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Default Collection Order](#default-collection-order)       | `default_collection_order`    |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Minimum Items](#minimum-items)                             | `minimum_items`               |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Delete Below Minimum](#delete-below-minimum)               | `delete_below_minimum`        |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Delete Not Scheduled](#delete-not-scheduled)               | `delete_not_scheduled `       |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Run Again Delay](#run-again-delay)                         | `run_again_delay`             |   &#9989;    |   &#10060;    |         &#10060;          |
-| [Missing Only Released](#missing-only-released)             | `missing_only_released`       |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Show Unmanaged Collections](#show-unmanaged-collections)   | `show_unmanaged`              |   &#9989;    |    &#9989;    |         &#10060;          |
-| [Show Filtered](#show-filtered)                             | `show_filtered`               |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Show Options](#show-options)                               | `show_options`                |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Show Missing](#show-missing)                               | `show_missing`                |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Only Filter Missing](#only-filter-missing)                 | `only_filter_missing`         |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Show Missing Assets](#show-missing-assets)                 | `show_missing_assets`         |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Save Missing](#save-missing)                               | `save_missing`                |   &#9989;    |    &#9989;    |          &#9989;          |
-| [TVDb Language](#tvdb-language)                             | `tvdb_language`               |   &#9989;    |   &#10060;    |         &#10060;          |
-| [Ignore IDs](#ignore-ids)                                   | `ignore_ids`                  |   &#9989;    |    &#9989;    |          &#9989;          | 
-| [Ignore IMDb IDs](#ignore-imdb-ids)                         | `ignore_imdb_ids`             |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Item Refresh Delay](#item-refresh-delay)                   | `item_refresh_delay`          |   &#9989;    |    &#9989;    |          &#9989;          |
-| [Playlist Sync to Users](#playlist-sync-to-users)           | `playlist_sync_to_users`      |   &#9989;    |   &#10060;    |          &#9989;          |
-| [Custom Repo](#custom-repo)                                 | `custom_repo`                 |   &#9989;    |   &#10060;    |         &#10060;          |
-| [Verify SSL](#verify-ssl)                                   | `verify_ssl`                  |   &#9989;    |   &#10060;    |         &#10060;          |
+| Attribute                                                     | Global Level | Library Level | Collection/Playlist Level |
+|:--------------------------------------------------------------|:------------:|:-------------:|:-------------------------:|
+| [`cache`](#cache)                                             |   &#9989;    |   &#10060;    |         &#10060;          |
+| [`cache_expiration`](#cache-expiration)                       |   &#9989;    |   &#10060;    |         &#10060;          |
+| [`asset_directory`](#image-asset-directory)                   |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`asset_folders`](#image-asset-folders)                       |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`asset_depth`](#asset-depth)                                 |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`create_asset_folders`](#create-asset-folders)               |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`dimensional_asset_rename`](#dimensional-asset-rename)       |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`download_url_assets`](#download-url-assets)                 |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`show_missing_season_assets`](#show-missing-season-assets)   |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`show_missing_episode_assets`](#show-missing-episode-assets) |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`show_asset_not_needed`](#show-asset-not-needed)             |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`sync_mode`](#sync-mode)                                     |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`default_collection_order`](#default-collection-order)       |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`minimum_items`](#minimum-items)                             |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`delete_below_minimum`](#delete-below-minimum)               |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`delete_not_scheduled`d](#delete-not-scheduled)              |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`run_again_delay`](#run-again-delay)                         |   &#9989;    |   &#10060;    |         &#10060;          |
+| [`missing_only_released`](#missing-only-released)             |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`show_unmanaged`](#show-unmanaged-collections)               |   &#9989;    |    &#9989;    |         &#10060;          |
+| [`show_filtered`](#show-filtered)                             |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`show_options`](#show-options)                               |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`show_missing`](#show-missing)                               |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`only_filter_missing`](#only-filter-missing)                 |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`show_missing_assets`](#show-missing-assets)                 |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`save_missing`](#save-missing)                               |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`tvdb_language`](#tvdb-language)                             |   &#9989;    |   &#10060;    |         &#10060;          |
+| [`ignore_ids`](#ignore-ids)                                   |   &#9989;    |    &#9989;    |          &#9989;          | 
+| [`ignore_imdb_ids`](#ignore-imdb-ids)                         |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`item_refresh_delay`](#item-refresh-delay)                   |   &#9989;    |    &#9989;    |          &#9989;          |
+| [`playlist_sync_to_users`](#playlist-sync-to-users)           |   &#9989;    |   &#10060;    |          &#9989;          |
+| [`custom_repo`](#custom-repo)                                 |   &#9989;    |   &#10060;    |         &#10060;          |
+| [`verify_ssl`](#verify-ssl)                                   |   &#9989;    |   &#10060;    |         &#10060;          |
 
 ## Cache
 Cache the Plex GUID and associated IDs for each library item for faster subsequent processing. The cache file is created in the same directory as the configuration file. 
@@ -145,7 +145,7 @@ Whilst searching for assets, if an asset folder cannot be found within the `asse
 
 
 ## Dimensional Asset Rename
-Whilst searching for assets, scan the folders within the `asset_directory` and if an asset poster (i.e. `/ASSET_NAME/poster.ext`) was not found , rename the first image found that has a height greater than or equal to its width to `poster.ext`. If an asset background (i.e. `/ASSET_NAME/background.ext`), rename the first image found that has a width greater than its height to `background.ext`,
+Whilst searching for assets, scan the folders within the `asset_directory` and if an asset poster (i.e. `/ASSET_NAME/poster.ext`) was not found, rename the first image found that has a height greater than or equal to its width to `poster.ext`. If an asset background (i.e. `/ASSET_NAME/background.ext`), rename the first image found that has a width greater than its height to `background.ext`.
 * `asset_folders` must be set to `true` for this to take effect.
 
 <table class="dualTable colwidths-auto align-default table">
@@ -477,7 +477,7 @@ Set alist or comma-separated string of IMDb IDs to ignore in all collections.
   </tr>
   <tr>
     <th>Allowed Values</th>
-    <td>List or comma-separated string of IMDB IDs</td>
+    <td>List or comma-separated string of IMDb IDs</td>
   </tr>
 </table>
 

@@ -117,5 +117,5 @@ collections:
     imdb_list:
       url: https://www.imdb.com/search/title/?series=tt0096697&sort=user_rating,desc
       limit: 100
-    summary: The top 100 Simpsons episodes by IMDB user rating
+    summary: The top 100 Simpsons episodes by IMDb user rating
 ```
