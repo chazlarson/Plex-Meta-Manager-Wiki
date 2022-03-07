@@ -267,21 +267,21 @@ Create a collection for each actor found in the library.
             </tr>
             <tr>
                 <td><code>actor_depth</code></td>
-                <td>Number of actors to look at per item<br>
-                **Values:** Number greater then 0<br>
-                **Default:** 3</td>
+                <td><strong>Description:</strong> Number of actors to look at per item<br>
+                <strong>Values:</strong> Number greater then 0<br>
+                <strong>Default:</strong> 3</td>
             </tr>
             <tr>
                 <td><code>actor_minimum</code></td>
-                <td>Minimum number of appearances required for an actor<br>
-                **Values:** Number greater then 0<br>
-                **Default:** 3</td>
+                <td><strong>Description:</strong> Minimum number of appearances required for an actor<br>
+                <strong>Values:</strong> Number greater then 0<br>
+                <strong>Default:</strong> 3</td>
             </tr>
             <tr>
                 <td><code>number_of_actors</code></td>
-                <td>Max number of actor collections to create<br>
-                **Values:** Number greater then 0<br>
-                **Default:** None</td>
+                <td><strong>Description:</strong> Max number of actor collections to create<br>
+                <strong>Values:</strong> Number greater then 0<br>
+                <strong>Default:</strong> None</td>
             </tr>
         </table>
     </td>
