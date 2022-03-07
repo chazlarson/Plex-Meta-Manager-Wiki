@@ -8,9 +8,11 @@ Plex Meta Manager can dynamically create collections based on different criteria
 
 The main purpose of dynamic collections is to automate the creation of collections which would otherwise require considerable user input and repetition (such as creating a collection for every genre).
 
-Each dynamic collection like collections must have a mapping name, which is also attached to the collection as a label to mark the collections created by this dynamic collection. 
+Each dynamic collection must have a mapping name (just like standard collections), which is also attached to the collection as a label to mark it as having been created by this dynamic collection.
 
-Below is an example dynamic collection which will create a collection for every TMDb Collection associated with items in the library.
+By default, the collections generated will be named for the thing being used to create them; things like genres, countries or actors.  This default naming can be modified; there are examples of this further down.
+
+The below example will create a collection for every TMDb Collection associated with items in the library.
 
 ```yaml
 dynamic_collections:
@@ -47,8 +49,7 @@ dynamic_collections:
   Countries:         # mapping name does not matter, just needs to be unique
     type: country
     title_format: <<country>> Cinema
-    template: country_dynamic
-    keys:
+    key_override:
       France: French
 ```
 
@@ -60,7 +61,7 @@ dynamic_collections:
   networks:
     type: network
      addons:
-      MTV: 
+      MTV Worldwide: 
         - MTV
         - MTV2
         - MTV3
@@ -69,23 +70,23 @@ dynamic_collections:
 
 ## Attributes
 
-| Attribute                                   | Description                                                                                                                    |     Required      |
-|:--------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:-----------------:|
-| [`type`](#type--data)                       | Type of Dynamic Collection to be created.                                                                                      |      &#9989;      |
-| [`data`](#type--data)                       | Data to determine how certain `type`s of dynamic collections are created.                                                      | Depends on `type` | 
-| [`exclude`](#exclude)                       | Exclude this list of keys from being created into collections.                                                                 |     &#10060;      |
-| [`addons`](#addons)                         | Defines how multiple keys can be combined under a parent key.                                                                  |     &#10060;      |
-| [`remove_suffix`](#remove-suffix)           | Removes suffixes from the key before it's used in the collection title.                                                        |     &#10060;      |
-| [`remove_prefix`](#remove-prefix)           | Removes prefixes from the key before it's used in the collection title.                                                        |     &#10060;      |
-| [`template`](#template)                     | Name of the template to use for these dynamic collections.                                                                     |     &#10060;      |
-| [`template_variables`](#template-variables) | Defines how template variables can be defined by key.                                                                          |     &#10060;      |
-| [`title_format`](#title-format)             | This is the format for the collection titles.                                                                                  |     &#10060;      |
-| [`title_override`](#title-override)         | Defines how collection titles can be overridden by key.                                                                        |     &#10060;      |
-| [`key_override`](#key-override)             | Defines how keys can be overridden before being turned into collection titles.                                                 |     &#10060;      |
-| [`test`](#test)                             | Can set all dynamic collections to having `test: true` for test runs.                                                          |     &#10060;      |
-| [`sync`](#sync)                             | Will remove dynamic collections that are no longer in the creation list.                                                       |     &#10060;      |
-| [`include`](#include)                       | Define a list of keys to be made into collections.                                                                             |     &#10060;      |
-| [`other_name`](#other-name)                 | Used in combination with `include`. When defined, all keys not in `include` or `addons` will be combined into this collection. |     &#10060;      |
+| Attribute                                   | Description                                                                                                                                                              |     Required      |
+|:--------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------:|
+| [`type`](#type--data)                       | Type of Dynamic Collection to be created.                                                                                                                                |      &#9989;      |
+| [`data`](#type--data)                       | Data to determine how certain `type`s of dynamic collections are created.                                                                                                | Depends on `type` | 
+| [`exclude`](#exclude)                       | Exclude this list of keys from being created into collections.                                                                                                           |     &#10060;      |
+| [`addons`](#addons)                         | Defines how multiple keys can be combined under a parent key.                                                                                                            |     &#10060;      |
+| [`remove_suffix`](#remove-suffix)           | Removes suffixes from the key before it's used in the collection title.                                                                                                  |     &#10060;      |
+| [`remove_prefix`](#remove-prefix)           | Removes prefixes from the key before it's used in the collection title.                                                                                                  |     &#10060;      |
+| [`template`](#template)                     | Name of the template to use for these dynamic collections.                                                                                                               |     &#10060;      |
+| [`template_variables`](#template-variables) | Defines how template variables can be defined by key.                                                                                                                    |     &#10060;      |
+| [`title_format`](#title-format)             | This is the format for the collection titles.  |     &#10060;      |
+| [`title_override`](#title-override)         | Defines how collection titles can be overridden by key.                                                                                                                  |     &#10060;      |
+| [`key_override`](#key-override)             | Defines how keys can be overridden before being turned into collection titles.                                                                                           |     &#10060;      |
+| [`test`](#test)                             | Can set all dynamic collections to having `test: true` for test runs.                                                                                                    |     &#10060;      |
+| [`sync`](#sync)                             | Will remove dynamic collections that are no longer in the creation list.                                                                                                 |     &#10060;      |
+| [`include`](#include)                       | Define a list of keys to be made into collections.                                                                                                                       |     &#10060;      |
+| [`other_name`](#other-name)                 | Used in combination with `include`. When defined, all keys not in `include` or `addons` will be combined into this collection.                                           |     &#10060;      |
 
 ## Type & Data
 
@@ -520,8 +521,7 @@ dynamic_collections:
   Decades:         # mapping name does not matter just needs to be unique
     type: decade
     title_format: Top <<title>> <<library_type>>s
-    template: decade collection
-    titles:
+    title_override:
       2020: Top <<title>> <<library_type>>s (so far)
 ```
 
@@ -557,24 +557,16 @@ default_template:
 
 #### Example:
 
-* Create a collection for the top 100 movies from each country found in the library
+* Create a collection for the top movies from each country found in the library
 * Name the collection Top [Country] Cinema
 * The `keys` attribute is used here in combination with the `title_format` to change the collection name from "France" which would be the default title, to "Top French Cinema"
 
 ```yaml
-templates:
-  country_dynamic:
-    smart_filter: 
-      limit: 100
-      sort_by: critic_rating.desc
-      all: 
-        country: <<country>>
 dynamic_collections:
   Countries:         # mapping name does not matter just needs to be unique
     type: country
     title_format: Top <<country>> Cinema
-    template: country_dynamic
-    keys:
+    key_override:
       France: French
       Germany: German
       India: Indian
@@ -617,18 +609,10 @@ default_template:
 * Create a collection for each network found in a TV Shows library
 
 ```yaml
-templates:
-  network collection:
-    smart_filter: 
-      sort_by: critic_rating.desc
-      all: 
-        network: <<network>>
-    sort_title: <<collection_name>>
 dynamic_collections:
   Networks:         # mapping name does not matter just needs to be unique
     type: network
     title_format: <<title>>
-    template: network collection
 ```
 
 ### Mood
