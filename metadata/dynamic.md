@@ -66,11 +66,11 @@ Create collections based on the TMDb Collections associated with items in the li
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>tmdb_collection</code></td>
   </tr>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>Not Used</td>
   </tr>
   <tr>
@@ -101,11 +101,11 @@ Create collections based on each actor found on [TMDb's Popular People List](htt
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>tmdb_popular_people</code></td>
   </tr>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>Number greater then 0</td>
   </tr>
   <tr>
@@ -120,7 +120,7 @@ default_template:
       actor: tmdb
 ```
 
-    </td>
+</td>
   </tr>
 </table>
 
@@ -141,11 +141,11 @@ Create collections for each of the Trakt lists for the specified users. Use `me`
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>trakt_user_lists</code></td>
   </tr>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>List of Trakt Users</td>
   </tr>
   <tr>
@@ -157,7 +157,7 @@ default_template:
   trakt_list_details: <<trakt_user_lists>>
 ```
 
-    </td>
+</td>
   </tr>
 </table>
 
@@ -180,11 +180,11 @@ Create collections for each of the Trakt lists that the authenticated user has l
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>trakt_liked_lists</code></td>
   </tr>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>Not Used</td>
   </tr>
   <tr>
@@ -196,7 +196,7 @@ default_template:
   trakt_list_details: <<trakt_liked_lists>>
 ```
 
-    </td>
+</td>
   </tr>
 </table>
 
@@ -216,11 +216,11 @@ Create collections for each of the people found within Trakt lists that the user
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>trakt_user_lists</code></td>
   </tr>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>List of Trakt URLs</td>
   </tr>
   <tr>
@@ -235,7 +235,7 @@ default_template:
       actor: tmdb
 ```
 
-    </td>
+</td>
   </tr>
 </table>
 
@@ -254,24 +254,34 @@ Create a collection for each actor found in the library.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>actor</code></td>
   </tr>
   <tr>
-    <th>`data` Values</th>
+    <th><code>data</code> Values</th>
     <td>
         <table class="clearTable">
             <tr>
-                <td><code>`actor_depth`</code></td>
-                <td>Number greater then 0</td>
+                <th>Attribute</th>
+                <th>Description & Values</th>
             </tr>
             <tr>
-                <td><code>`actor_minimum`</code></td>
-                <td>Number greater then 0</td>
+                <td><code>actor_depth</code></td>
+                <td>Number of actors to look at per item<br>
+                **Values:** Number greater then 0<br>
+                **Default:** 3</td>
             </tr>
             <tr>
-                <td><code>`number_of_actors`</code></td>
-                <td>Number greater then 0</td>
+                <td><code>actor_minimum</code></td>
+                <td>Minimum number of appearances required for an actor<br>
+                **Values:** Number greater then 0<br>
+                **Default:** 3</td>
+            </tr>
+            <tr>
+                <td><code>number_of_actors</code></td>
+                <td>Max number of actor collections to create<br>
+                **Values:** Number greater then 0<br>
+                **Default:** None</td>
             </tr>
         </table>
     </td>
@@ -315,7 +325,7 @@ Create a collection for each genre found in the library
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>actor</code></td>
   </tr>
 </table>
@@ -349,7 +359,7 @@ Create a collection for each country found in the library
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>country</code></td>
   </tr>
 </table>
@@ -410,10 +420,10 @@ Create collections based on the most popular people according to TMDb
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>tmdb_popular_people</code></td>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>Any integer</td>
   </tr>
 </table>
@@ -430,10 +440,10 @@ Create collections based on the list of TMDb Collections specified.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>tmdb_collection</code></td>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>Comma-separated list of TMDb collections</td>
   </tr>
 </table>
@@ -452,10 +462,10 @@ Create collections for each of the Trakt lists that the user has liked/
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>trakt_liked_lists</code></td>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>Not Required</td>
   </tr>
 </table>
@@ -473,10 +483,10 @@ Create collections for each of the Trakt list that the user specifies
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>trakt_user_lists</code></td>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>List of Trakt URLs</td>
   </tr>
 </table>
@@ -497,10 +507,10 @@ Create collections for each of the people found within Trakt lists that the user
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
-    <th>`type` Option</th>
+    <th><code>type</code> Option</th>
     <td><code>trakt_user_lists</code></td>
   <tr>
-    <th>`data` Value</th>
+    <th><code>data</code> Value</th>
     <td>List of Trakt URLs</td>
   </tr>
 </table>
