@@ -47,8 +47,7 @@ dynamic_collections:
   Countries:         # mapping name does not matter, just needs to be unique
     type: country
     title_format: <<country>> Cinema
-    template: country_dynamic
-    keys:
+    key_override:
       France: French
 ```
 
@@ -520,7 +519,6 @@ dynamic_collections:
   Decades:         # mapping name does not matter just needs to be unique
     type: decade
     title_format: Top <<title>> <<library_type>>s
-    template: decade collection
     titles:
       2020: Top <<title>> <<library_type>>s (so far)
 ```
@@ -557,24 +555,16 @@ default_template:
 
 #### Example:
 
-* Create a collection for the top 100 movies from each country found in the library
+* Create a collection for the top movies from each country found in the library
 * Name the collection Top [Country] Cinema
 * The `keys` attribute is used here in combination with the `title_format` to change the collection name from "France" which would be the default title, to "Top French Cinema"
 
 ```yaml
-templates:
-  country_dynamic:
-    smart_filter: 
-      limit: 100
-      sort_by: critic_rating.desc
-      all: 
-        country: <<country>>
 dynamic_collections:
   Countries:         # mapping name does not matter just needs to be unique
     type: country
     title_format: Top <<country>> Cinema
-    template: country_dynamic
-    keys:
+    key_override:
       France: French
       Germany: German
       India: Indian
@@ -617,18 +607,10 @@ default_template:
 * Create a collection for each network found in a TV Shows library
 
 ```yaml
-templates:
-  network collection:
-    smart_filter: 
-      sort_by: critic_rating.desc
-      all: 
-        network: <<network>>
-    sort_title: <<collection_name>>
 dynamic_collections:
   Networks:         # mapping name does not matter just needs to be unique
     type: network
     title_format: <<title>>
-    template: network collection
 ```
 
 ### Mood
