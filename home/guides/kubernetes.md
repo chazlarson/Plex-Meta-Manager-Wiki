@@ -17,10 +17,10 @@ do not, but are interested, [minikube](https://minikube.sigs.k8s.io/docs/start/)
 When running PMM in Kubernetes, executing it as a CronJob gives us the ability to define a schedule for execution and have
 Kubernetes manage the rest.
 
-Some parts of the below to tweak to your needs:
+Some parts of this to tweak to your needs:
 
-1. The namespace should be set to whatever you desire, in the below example it runs in the `media` namespace.
-2. The schedule, in the below example it runs at 00:00 UTC.  [https://crontab.guru/](https://crontab.guru/) is a good 
+1. The namespace should be set to whatever you desire, in this example it runs in the `media` namespace.
+2. The schedule, in this example it runs at 00:00 UTC.  [https://crontab.guru/](https://crontab.guru/) is a good 
 site if you aren't sure on how to create a schedule.
 
 ``` 

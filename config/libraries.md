@@ -8,7 +8,7 @@ Attributes are used to instruct Plex Meta Manager what actions to take, such as 
 
 ## Example 
 
-The below example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
+This example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
 
 <details>
   <summary>Click to Expand</summary>
@@ -119,7 +119,7 @@ plex:
 
 The `metadata_path` attribute is used to define the metadata (aka YAML) files that will be executed against the parent library. 
 
-By default, when `metadata_path` is missing the script will look within the root PMM directory for a metadata file called `<MAPPING_NAME>.yml`. In the below example, `"TV Shows.yml"` will be searched for.
+By default, when `metadata_path` is missing the script will look within the root PMM directory for a metadata file called `<MAPPING_NAME>.yml`. In this example, `"TV Shows.yml"` will be searched for.
 ```yaml
 libraries:
   TV Shows:
@@ -127,7 +127,7 @@ libraries:
 
 ### Path Types
 
-In the below example, four metadata file path types are  defined for the `"TV Shows"` library:
+In this example, four metadata file path types are  defined for the `"TV Shows"` library:
 ```yaml
   TV Shows:
     metadata_path:

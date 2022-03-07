@@ -1,6 +1,6 @@
 # Configuration File Walkthrough
 
-The below example outlines what a "standard" config.yml file might look like when in use.
+This example outlines what a "standard" config.yml file might look like when in use.
 
 <details>
   <summary>Example config.yml file</summary>

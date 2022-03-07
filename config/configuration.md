@@ -6,7 +6,7 @@ By default, and unless otherwise stated, Plex Meta Manager looks for the configu
 
 A template Configuration File can be found in the [GitHub Repo](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template). 
 
-The below table outlines the third-party services that are compatible with Plex Meta Manager. Each service has specific requirements for setup that can be found by clicking the links within the table.
+This table outlines the third-party services that are compatible with Plex Meta Manager. Each service has specific requirements for setup that can be found by clicking the links within the table.
 
 | Attribute                    |                Required                 |
 |:-----------------------------|:---------------------------------------:|
