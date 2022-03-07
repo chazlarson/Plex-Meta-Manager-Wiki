@@ -10,11 +10,11 @@
 [![Read the Docs](https://img.shields.io/readthedocs/plex-meta-manager-wiki?style=plastic)](https://metamanager.wiki)
 [![Sponsor or Donate](https://img.shields.io/badge/-Sponsor_or_Donate-blueviolet?style=plastic)](https://github.com/sponsors/meisnate12)
 
-Plex Meta Manager (PMM) is an open source Python 3 project that has been designed to ease the creation and maintenance of metadata, collections, and playlists within a Plex Media Server. The script is designed to be run continuously and be able to update information based on sources outside your plex environment. Plex Meta Manager supports Movie/TV/Music libraries and Playlists.
+Plex Meta Manager is an open source Python 3 project that has been designed to ease the creation and maintenance of metadata, collections, and playlists within a Plex Media Server. The script is designed to be run continuously and be able to update information based on sources outside your plex environment. Plex Meta Manager supports Movie/TV/Music libraries and Playlists.
 
 ## Getting Started
 
-1. Install PMM; this process is described [here](/home/installation).
+1. Install Plex Meta Manager; this process is described [here](/home/installation).
 
 2. Once installed, you have to create a [Configuration File](config/configuration), which contains URLs and credentials and the like which are used to connect to services like Plex and TMDB.
 
@@ -24,11 +24,11 @@ Plex Meta Manager (PMM) is an open source Python 3 project that has been designe
 
 ## Walkthroughs
 
-If you find steps 1-3 above daunting, there are some walkthroughs available that will take you through those three steps: getting PMM installed, creating a config file, and creating a couple collections to show how the process works.
+If you find steps 1-3 above daunting, there are some walkthroughs available that will take you through those three steps: getting Plex Meta Manager installed, creating a config file, and creating a couple collections to show how the process works.
 
    1. The [Local Walkthrough](home/guides/local) covers installing the script natively [not in docker] on your local computer or a remote server.
    2. The [Docker Walkthrough](home/guides/docker) covers the same thing, running the script via Docker.
-   3. The [unRAID Walkthrough](home/guides/unraid) gets you started configuring the script in UNRaid.  It doesn't go through the same steps with regard to creating the config file and metadata file, so you may want to go through the docker walkthrough first to gain that understanding.
+   3. The [unRAID Walkthrough](home/guides/unraid) gets you started configuring the script in UNRaid.  It doesn't go through the same steps with regard to creating the config file and metadata file, so you may want to go through the [Docker Walkthrough](home/guides/docker) first on your computer to gain that understanding.
 
 ## Development & Nightly Builds
 There is a [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) build which will have the most updated fixes and enhancements to the script.
