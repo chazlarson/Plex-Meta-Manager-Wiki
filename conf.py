@@ -43,8 +43,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
-    'myst_parser'
+    'myst_parser',
+    'sphinx_inline_tabs'
 ]
+
 source_suffix = ['.rst', '.md']
 myst_heading_anchors = 4
 
@@ -258,4 +260,4 @@ html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 
 def setup(app):
-    app.add_stylesheet("custom.css")
+    app.add_css_file("custom.css")

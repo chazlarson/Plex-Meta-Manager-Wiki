@@ -14,22 +14,85 @@ Plex Meta Manager is an open source Python 3 project that has been designed to e
 
 ## Getting Started
 
-1. Install Plex Meta Manager either by following the [Local Walkthrough](home/guides/local)
-   or by installing Docker and following the [Docker Walkthrough](home/guides/docker) or the [unRAID Walkthrough](home/guides/unraid).
+1. Install Plex Meta Manager; this process is described [here](/home/installation).
 
-2. Once installed, you have to create a [Configuration File](config/configuration) filled with all your values to connect to the various services.
+2. Once installed, you have to create a [Configuration File](config/configuration), which contains URLs and credentials and the like which are used to connect to services like Plex and TMDB.
 
 3. After that you can start updating Metadata and building automatic Collections by creating a [Metadata File](metadata/metadata) for each Library you want to interact with.
 
-4. Explore the Wiki to see all the different Collection Builders that can be used to create collections.
+4. After that, explore the Wiki to see all the different Collection Builders that can be used to create collections.
+
+## Walkthroughs
+
+If you find steps 1-3 above daunting, there are some walkthroughs available that will take you through those three steps: getting Plex Meta Manager installed, creating a config file, and creating a couple collections to show how the process works.
+
+   1. The [Local Walkthrough](home/guides/local) covers installing the script natively [not in docker] on your local computer or a remote server.
+   2. The [Docker Walkthrough](home/guides/docker) covers the same thing, running the script via Docker.
+   3. The [unRAID Walkthrough](home/guides/unraid) gets you started configuring the script in UNRaid.  It doesn't go through the same steps with regard to creating the config file and metadata file, so you may want to go through the [Docker Walkthrough](home/guides/docker) first on your computer to gain that understanding.
 
 ## Development & Nightly Builds
 There is a [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) build which will have the most updated fixes and enhancements to the script.
-. To access the Docker Image for the develop build, use the `develop` tag by adding `:develop` to the image name. i.e. `meisnate12/plex-meta-manager:develop`
+
+Switching to `develop`:
+
+````{tab} if running in Docker
+<br/>
+Add ":develop" to the image name in your run command or configuration:
+
+```
+meisnate12/plex-meta-manager:develop
+```
+<br/>
+````
+````{tab} if running on the host:
+
+In the directory where you cloned PMM:
+
+```bash
+git checkout develop
+```
+
+To switch back:
+
+```bash
+git checkout master
+```
+<br/>
+````
 
 If switching to the develop build, it is recommended to also use the [develop](https://metamanager.wiki/en/develop/) branch of the wiki documents any changes made from the Master build.
 
-There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break and the features are not documented until they're in develop. To access the Docker Image for the nightly build use the `nightly` tag by adding `:nightly` to the image name. i.e. `meisnate12/plex-meta-manager:nightly`. As this build is subject to extreme change, there is no nightly branch of the wiki and all discussions relating to any change made in the nightly build will be held within the [Plex Meta Manager Discord Server](https://discord.gg/NfH6mGFuAB).
+There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break and the features are not documented until they're in develop.
+
+Switching to `nightly`:
+
+````{tab} if running in Docker
+<br/>
+Add `:nightly` to the image name in your run command or configuration:
+
+```
+meisnate12/plex-meta-manager:nightly
+```
+<br/>
+````
+````{tab} if running on the host:
+
+In the directory where you cloned PMM:
+
+```bash
+git checkout nightly
+```
+
+To switch back:
+
+```bash
+git checkout master
+```
+<br/>
+````
+
+
+As this build is subject to extreme change, there is no nightly branch of the wiki and all discussions relating to changes made in the nightly build will be held within the [Plex Meta Manager Discord Server](https://discord.gg/NfH6mGFuAB).
 
 ## Example Usage
 
@@ -69,7 +132,7 @@ If you are unable to use the [Plex Meta Manager Discord Server](https://discord.
 
 ## IBRACORP Video Walkthrough
 
-[IBRACORP](https://ibracorp.io/) made a video walkthough for installing Plex Meta Manager on unRAID. While you might not be using unRAID the video goes over many key accepts of Plex Meta Manager and can be a great place to start learning how to use the script.
+[IBRACORP](https://ibracorp.io/) made a video walkthough for installing Plex Meta Manager on unRAID. While you might not be using unRAID the video goes over many key aspects of Plex Meta Manager and can be a great place to start learning how to use the script.
 
 <div style="margin: 40px 0 40px 0;" align="center">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/dF69MNoot3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
