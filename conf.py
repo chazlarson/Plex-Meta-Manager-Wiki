@@ -43,8 +43,10 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
-    'myst_parser'
+    'myst_parser',
+    'sphinx_inline_tabs'
 ]
+
 source_suffix = ['.rst', '.md']
 myst_heading_anchors = 4
 
