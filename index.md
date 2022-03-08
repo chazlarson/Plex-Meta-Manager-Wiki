@@ -31,7 +31,10 @@ If you find steps 1-3 above daunting, there are some walkthroughs available that
    3. The [unRAID Walkthrough](home/guides/unraid) gets you started configuring the script in UNRaid.  It doesn't go through the same steps with regard to creating the config file and metadata file, so you may want to go through the [Docker Walkthrough](home/guides/docker) first on your computer to gain that understanding.
 
 ## Development & Nightly Builds
-There is a [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) build which will have the most updated fixes and enhancements to the script.
+
+### Development
+
+The [develop](https://github.com/meisnate12/Plex-Meta-Manager/tree/develop) branch has the most updated **documented** fixes and enhancements to Plex Meta Manager.  This version is tested and documented to some degree, but it is still an active development branch, so there may be rough edges.
 
 Switching to `develop`:
 
@@ -60,15 +63,17 @@ git checkout master
 <br/>
 ````
 
-If switching to the develop build, it is recommended to also use the [develop](https://metamanager.wiki/en/develop/) branch of the wiki documents any changes made from the Master build.
+If switching to the develop build, it is recommended to also use the [develop](https://metamanager.wiki/en/develop/) branch of the wiki, which documents any changes made from the Master build.
 
-There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break and the features are not documented until they're in develop.
+### Nightly
+
+There is also a [nightly](https://github.com/meisnate12/Plex-Meta-Manager/tree/nightly) build which will have the absolute latest version of the script, but it could easily break, there is no guarantee that it even works, and any new features will not be documented.
 
 Switching to `nightly`:
 
 ````{tab} if running in Docker
 <br/>
-Add `:nightly` to the image name in your run command or configuration:
+Add ":nightly" to the image name in your run command or configuration:
 
 ```
 meisnate12/plex-meta-manager:nightly

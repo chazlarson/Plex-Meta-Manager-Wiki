@@ -133,7 +133,7 @@ The available attributes for editing movies are as follows
 
 ### Tag Attributes
 
-You can add `.remove` to any tag attribute to only remove those tags i.e. `genre.remove`. 
+You can add `.remove` to any tag attribute to only remove those tags i.e. `genre.remove`.
 
 You can add `.sync` to any tag attribute to sync all tags vs just appending the new ones i.e. `genre.sync`.
 
@@ -147,7 +147,7 @@ You can add `.sync` to any tag attribute to sync all tags vs just appending the 
 | `collection` | List or comma-separated text of each Collection Tag |
 | `label`      | List or comma-separated text of each Label Tag      |
 
-### Advance Attributes
+### Advanced Attributes
 
 | Attribute            | Allowed Values                                                                                                                                                                                                                                                                                                                                                                                      |
 |:---------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

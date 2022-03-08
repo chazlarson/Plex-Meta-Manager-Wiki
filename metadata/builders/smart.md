@@ -36,11 +36,11 @@ Reach out on the [Plex Meta Manager Discord](https://discord.gg/TsdpsFYqqm) or i
 
 ## Smart Filter
 
-Uses Plex's [Advance Filters](https://support.plex.tv/articles/201273953-collections/) to create a smart collection based on the filter parameters provided.
+Uses Plex's [Advanced Filters](https://support.plex.tv/articles/201273953-collections/) to create a smart collection based on the filter parameters provided.
 
-Any Advance Filter made using the Plex UI should be able to be recreated using `smart_filter`. If you're having trouble getting `smart_filter` to work correctly, build the collection you want inside of Plex's Advance Filters and take a screenshot of the parameters in the Plex UI and post it in either the [Discussions](https://github.com/meisnate12/Plex-Meta-Manager/discussions) or on [Discord](https://discord.gg/TsdpsFYqqm), and I'll do my best to help you. 
+Any Advanced Filter made using the Plex UI should be able to be recreated using `smart_filter`. If you're having trouble getting `smart_filter` to work correctly, build the collection you want inside of Plex's Advanced Filters and take a screenshot of the parameters in the Plex UI and post it in either the [Discussions](https://github.com/meisnate12/Plex-Meta-Manager/discussions) or on [Discord](https://discord.gg/TsdpsFYqqm), and I'll do my best to help you. 
 
-like Plex's [Advance Filters](https://support.plex.tv/articles/201273953-collections/) you have to start each filter with either `any` or `all` as a base. You can only have one base attribute and all filter attributes must be under the base.
+like Plex's [Advanced Filters](https://support.plex.tv/articles/201273953-collections/) you have to start each filter with either `any` or `all` as a base. You can only have one base attribute and all filter attributes must be under the base.
 
 Inside the base attribute you can use any filter below or nest more `any` or `all`. You can have as many nested `any` or `all` next to each other as you want. If using multiple `any` or `all` you will have to do so in the form of a list.  
 
@@ -87,7 +87,7 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Filters
 
-There are three fields per filter option when using Plex's Advance Filters in the Web UI.
+There are three fields per filter option when using Plex's Advanced Filters in the Web UI.
 
 1. **Attribute:** What attribute you wish to filter.
 2. **Modifier:** Which modifier to use.

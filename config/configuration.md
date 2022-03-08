@@ -1,12 +1,12 @@
 # Configuration File
 
-Plex Meta Manager utilizes a YAML configuration file to connect with the Plex Media Server and other third-party services via API.
+Plex Meta Manager uses a YAML configuration file; this file contains swettings that deterimine how Plex Meta Manaegr behaves, and the required connection details needed to connect to Plex Media Server, Radarr, Sonarr, and other third-party services via API.
 
 By default, and unless otherwise stated, Plex Meta Manager looks for the configuration file within `/config/config.yml`
 
-A template Configuration File can be found in the [GitHub Repo](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template). 
+A template Configuration File can be found in the [GitHub Repo](https://github.com/meisnate12/Plex-Meta-Manager/blob/master/config/config.yml.template).
 
-This table outlines the third-party services that are compatible with Plex Meta Manager. Each service has specific requirements for setup that can be found by clicking the links within the table.
+This table outlines the third-party services that Plex Meta Manager can make use of. Each service has specific requirements for setup that can be found by clicking the links within the table.
 
 | Attribute                    |                Required                 |
 |:-----------------------------|:---------------------------------------:|

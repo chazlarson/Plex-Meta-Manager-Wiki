@@ -102,7 +102,7 @@ collections:
 
 Finds the anime specified by the AniList Search the options are detailed below. 
 
-There are three fields per search option when using AniList's Search just like Plex's Advance Filters in the Web UI. The first is the **Attribute** (what attribute you wish to search), the second is the **Modifier** (which modifier to use), and the third is the **Term** (actual term to search).
+There are three fields per search option when using AniList's Search just like Plex's Advanced Filters in the Web UI. The first is the **Attribute** (what attribute you wish to search), the second is the **Modifier** (which modifier to use), and the third is the **Term** (actual term to search).
 
 The `sync_mode: sync` and `collection_order: custom` Details are recommended since the lists are continuously updated and in a specific order. 
 
@@ -143,7 +143,7 @@ String attributes can take multiple values as a **list or a comma-separated stri
 | `status`       | **Description:** Uses the anime's status to match<br>**Values:** `finished`, `airing`, `not_yet_aired`, `cancelled`, `hiatus`                                                                  |
 | `genre`        | **Description:** Uses the anime's genre to match<br>**Values:** Any Genre in the Genre Dropdown box on the [AniList Search Page](https://anilist.co/search/anime)                              |
 | `tag`          | **Description:** Uses the anime's tag to match<br>**Values:** Any Tag in the Genre Dropdown box on the [AniList Search Page](https://anilist.co/search/anime)                                  |
-| `tag_category` | **Description:** Uses the anime's tag category to match<br>**Values:** Any Tag Category in the Advance Genres & Tag Filters Menu on the [AniList Search Page](https://anilist.co/search/anime) |
+| `tag_category` | **Description:** Uses the anime's tag category to match<br>**Values:** Any Tag Category in the Advanced Genres & Tag Filters Menu on the [AniList Search Page](https://anilist.co/search/anime) |
 
 ## Date Attributes
 

@@ -82,7 +82,7 @@ The available attributes for editing artists, albums, and tracks are as follows
 
 ### Tag Attributes
 
-You can add `.remove` to any tag attribute to only remove those tags i.e. `genre.remove`. 
+You can add `.remove` to any tag attribute to only remove those tags i.e. `genre.remove`.
 
 You can add `.sync` to any tag attribute to sync all tags vs just appending the new ones i.e. `genre.sync`.
 
@@ -105,7 +105,7 @@ You can add `.sync` to any tag attribute to sync all tags vs just appending the 
 | `url_background`  | URL of image publicly available on the internet | &#9989; | &#9989; | &#10060; |
 | `file_background` | Path to image in the file system                | &#9989; | &#9989; | &#10060; |
 
-### Advance Attributes
+### Advanced Attributes
 
 All these attributes only work with Artists.
 

@@ -1,16 +1,18 @@
 # Settings
 
 ## Overview
-The `settings:` attribute and subsequent settings can be used to command various aspects of the functionality of Plex Meta Manager. 
+The `settings:` attribute and subsequent settings can be used to command various aspects of the functionality of Plex Meta Manager.
 
 Examples of these settings include the ability to:
 * Cache each Plex GUID and IDs to increase performance
 * Create asset folders for collections so that custom posters can be stored for upload.
-* Use a custom repository as the base for all `git` Metadata files. 
+* Use a custom repository as the base for all `git` Metadata files.
 
 The settings attribute and attributes can be specified individually per library, or can be inherited from the global value if it has been set. If an attribute is specified at both the library and global level, then the library level attribute will take priority.
 
-There are some attributes which can be specified at the collection level using [Setting Details](../metadata/details/setting). Attributes set at the collection label will take priority over any library or global-level attribute.
+There are some attributes which can be specified at the collection level using [Setting Details](../metadata/details/setting).
+
+Attributes set at the collection level will take priority over any library or global-level attribute.
 
 ## Attributes
 
@@ -45,7 +47,7 @@ The available setting attributes which can be set at each level are outlined bel
 | [`show_missing_assets`](#show-missing-assets)                 |   &#9989;    |    &#9989;    |          &#9989;          |
 | [`save_missing`](#save-missing)                               |   &#9989;    |    &#9989;    |          &#9989;          |
 | [`tvdb_language`](#tvdb-language)                             |   &#9989;    |   &#10060;    |         &#10060;          |
-| [`ignore_ids`](#ignore-ids)                                   |   &#9989;    |    &#9989;    |          &#9989;          | 
+| [`ignore_ids`](#ignore-ids)                                   |   &#9989;    |    &#9989;    |          &#9989;          |
 | [`ignore_imdb_ids`](#ignore-imdb-ids)                         |   &#9989;    |    &#9989;    |          &#9989;          |
 | [`item_refresh_delay`](#item-refresh-delay)                   |   &#9989;    |    &#9989;    |          &#9989;          |
 | [`playlist_sync_to_users`](#playlist-sync-to-users)           |   &#9989;    |   &#10060;    |          &#9989;          |
@@ -53,7 +55,7 @@ The available setting attributes which can be set at each level are outlined bel
 | [`verify_ssl`](#verify-ssl)                                   |   &#9989;    |   &#10060;    |         &#10060;          |
 
 ## Cache
-Cache the Plex GUID and associated IDs for each library item for faster subsequent processing. The cache file is created in the same directory as the configuration file. 
+Cache the Plex GUID and associated IDs for each library item for faster subsequent processing. The cache file is created in the same directory as the configuration file.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
@@ -221,7 +223,7 @@ Whilst searching for assets, show or hide the `update not needed` messages.
 </table>
 
 ## Sync Mode
-Set the default `sync_mode` for collections. 
+Set the default `sync_mode` for collections.
 
 <table class="dualTable colwidths-auto align-default table">
   <tr>
@@ -437,7 +439,7 @@ Save missing items from collections to a YAML file in the same directory as your
 </table>
 
 ## TVDb Language
-Specify the language to query TVDb in. 
+Specify the language to query TVDb in.
 * If no language is specified or the specified language is not found then the original language is used.
 
 <table class="dualTable colwidths-auto align-default table">

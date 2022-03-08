@@ -1,4 +1,4 @@
-# Movie Library Metadata
+# TV Show Library Metadata
 
 You can have the script edit the metadata of Shows, Seasons, and Episodes by adding them to the `metadata` mapping of a Metadata File.
 
@@ -11,10 +11,10 @@ metadata:
       1:
         title: "Book One: Water"
         summary: >-
-              After a lapse of 100 years, the Avatar-spiritual master of the elements-has returned. And just in 
-              the nick of time. The Four Nations (Water, Earth, Fire, and Air) have become unbalanced. The Fire 
-              Nation wants to rule the world, and its first conquest will be the Northern Water Tribe. It's up to 
-              a 12-year-old Airbender named Aang to find a way to stop it. Join Aang, Katara, Sokka, Momo, and 
+              After a lapse of 100 years, the Avatar-spiritual master of the elements-has returned. And just in
+              the nick of time. The Four Nations (Water, Earth, Fire, and Air) have become unbalanced. The Fire
+              Nation wants to rule the world, and its first conquest will be the Northern Water Tribe. It's up to
+              a 12-year-old Airbender named Aang to find a way to stop it. Join Aang, Katara, Sokka, Momo, and
               Appa as they head north on the adventure of a lifetime.
         episodes:
           1:
@@ -24,20 +24,20 @@ metadata:
         summary: >-
               Avatar Aang continues his quest to master the four elements before the end of summer. Together with
               Katara, Sokka, Momo, and Appa, he journeys across the Earth Kingdom in search of an Earthbending
-              mentor. Along the way, he confronts Princess Azula, treacherous  daughter of Firelord Ozai and 
-              sister to Prince Zuko. More powerful than her brother, Azula will stop nothing to defeat the Avatar. 
-              But Aang and the gang find plenty of Earth Kingdom allies to help them along the way. From the swamps 
+              mentor. Along the way, he confronts Princess Azula, treacherous  daughter of Firelord Ozai and
+              sister to Prince Zuko. More powerful than her brother, Azula will stop nothing to defeat the Avatar.
+              But Aang and the gang find plenty of Earth Kingdom allies to help them along the way. From the swamps
               of the South to the Earth King's palace, Avatar: Book 2 is an adventure like no other.
       3:
         title: "Book Three: Fire"
         summary: >-
               Having survived the terrible battle with Azula, Aang faces new challenges as he and his brave
               friends secretly enter the Fire Nation. Their quest is to find and defeat Firelord Ozai. Along
-              the way, they discover that Ozai has plans of his own. The leader of the Fire Nation intends to 
-              use the massive power of Sozin's comet to spread his dominion permanently across the four nations. 
-              Short on time, Aang has a lot of bending to learn and no master to help him learn it. However, his 
-              friends are there to help, and he finds unexpected allies deep in the heart of the Fire Nation. In 
-              the spectacular four-part conclusion, Aang must fulfill his destiny and become a fully realized 
+              the way, they discover that Ozai has plans of his own. The leader of the Fire Nation intends to
+              use the massive power of Sozin's comet to spread his dominion permanently across the four nations.
+              Short on time, Aang has a lot of bending to learn and no master to help him learn it. However, his
+              friends are there to help, and he finds unexpected allies deep in the heart of the Fire Nation. In
+              the spectacular four-part conclusion, Aang must fulfill his destiny and become a fully realized
               Avatar, or watch the world go up in smoke.
         episodes:
           21:
@@ -128,7 +128,7 @@ The available attributes for editing shows, seasons, and episodes are as follows
 
 ### Tag Attributes
 
-You can add `.remove` to any tag attribute to only remove those tags i.e. `genre.remove`. 
+You can add `.remove` to any tag attribute to only remove those tags i.e. `genre.remove`.
 
 You can add `.sync` to any tag attribute to sync all tags vs just appending the new ones i.e. `genre.sync`.
 
@@ -149,7 +149,7 @@ You can add `.sync` to any tag attribute to sync all tags vs just appending the 
 | `url_background`  | URL of image publicly available on the internet | &#9989; | &#9989; | &#10060; |
 | `file_background` | Path to image in the file system                | &#9989; | &#9989; | &#10060; |
 
-### Advance Attributes
+### Advanced Attributes
 
 All these attributes only work with Shows.
 
@@ -163,4 +163,4 @@ All these attributes only work with Shows.
 | `metadata_language`<sup>1</sup>  | `default`, `ar-SA`, `ca-ES`, `cs-CZ`, `da-DK`, `de-DE`, `el-GR`, `en-AU`, `en-CA`, `en-GB`, `en-US`, `es-ES`, `es-MX`, `et-EE`, `fa-IR`, `fi-FI`, `fr-CA`, `fr-FR`, `he-IL`, `hi-IN`, `hu-HU`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `lt-LT`, `lv-LV`, `nb-NO`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `ru-RU`, `sk-SK`, `sv-SE`, `th-TH`, `tr-TR`, `uk-UA`, `vi-VN`, `zh-CN`, `zh-HK`, `zh-TW`                                                                       |
 | `use_original_title`<sup>1</sup> | <table class="clearTable"><tbody><tr><td>`default`</td><td>Library default</td></tr><tr><td>`no`</td><td>No</td></tr><tr><td>`yes`</td><td>Yes</td></tr></tbody></table>                                                                                                                                                                                                                                                                                                  |
 
-<sup>1</sup> Must be using the **New Plex TV Agent** 
+<sup>1</sup> Must be using the **New Plex TV Agent**

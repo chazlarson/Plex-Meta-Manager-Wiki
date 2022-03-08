@@ -69,11 +69,11 @@ collections:
 
 ## Plex Search
 
-Uses Plex's [Advance Filters](https://support.plex.tv/articles/201273953-collections/) to find all items based on the search parameters provided.
+Uses Plex's [Advanced Filters](https://support.plex.tv/articles/201273953-collections/) to find all items based on the search parameters provided.
 
-Any Advance Filter made using the Plex UI should be able to be recreated using `plex_search`. If you're having trouble getting `plex_search` to work correctly, build the collection you want inside of Plex's Advance Filters and take a screenshot of the parameters in the Plex UI and post it in either the [Discussions](https://github.com/meisnate12/Plex-Meta-Manager/discussions) or on [Discord](https://discord.gg/TsdpsFYqqm), and I'll do my best to help you. 
+Any Advanced Filter made using the Plex UI should be able to be recreated using `plex_search`. If you're having trouble getting `plex_search` to work correctly, build the collection you want inside of Plex's Advanced Filters and take a screenshot of the parameters in the Plex UI and post it in either the [Discussions](https://github.com/meisnate12/Plex-Meta-Manager/discussions) or on [Discord](https://discord.gg/TsdpsFYqqm), and I'll do my best to help you. 
 
-like Plex's [Advance Filters](https://support.plex.tv/articles/201273953-collections/) you have to start each search with either `any` or `all` as a base. You can only have one base attribute and all search attributes must be under the base.
+like Plex's [Advanced Filters](https://support.plex.tv/articles/201273953-collections/) you have to start each search with either `any` or `all` as a base. You can only have one base attribute and all search attributes must be under the base.
 
 Inside the base attribute you can use any search below or nest more `any` or `all`. You can have as many nested `any` or `all` next to each other as you want. If using multiple `any` or `all` you will have to do so in the form of a list.  
 
@@ -120,7 +120,7 @@ There are a couple other attributes you can have at the top level only along wit
 
 ## Searches
 
-There are three fields per search option when using Plex's Advance Filters in the Web UI. 
+There are three fields per search option when using Plex's Advanced Filters in the Web UI. 
 
 1. **Attribute:** What attribute you wish to search.
 2. **Modifier:** Which modifier to use.

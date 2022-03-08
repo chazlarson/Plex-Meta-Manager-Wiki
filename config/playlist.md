@@ -19,10 +19,9 @@ playlist_files:
 ```
 The four path types are outlined as follows:
 
-* `- file:` refers to a playlist file which is located within the system that PMM is being run from. 
-* `- folder:` refers to a directory containing playlist files which is located within the system that PMM is being run from. 
-* `- git:` refers to a playlist file which is hosted on the [GitHub Configs Repo](https://github.com/meisnate12/Plex-Meta-Manager-Configs) unless the user has specified a custom repository within the settings section of the config.yml file.
-* `- url:` refers to a playlist file which is hosted publicly on the internet.
+* `- file:` refers to a playlist file which is located within the system that PMM is being run from.
+* `- folder:` refers to a directory containing playlist files which is located within the system that PMM is being run from.
+* `- git:` refers to a playlist file which is hosted on GitHub.  This file is assumed to be in the [Configs Repo](https://github.com/meisnate12/Plex-Meta-Manager-Configs) unless the user has specified a custom repository with the * `- url:` refers to a playlist file which is hosted publicly on the internet.
 
 Within the above example, PMM will:
 
